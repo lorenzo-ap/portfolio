@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
         <>
-            <section className="flex flex-col justify-center h-[605px] px-5">
+            <section className="flex flex-col justify-center md:h-[605px] px-5">
                 <div className="text-4xl text-faded-text mb-7 font-semibold">
                     <span className="text-text">Hello, I am </span>
                     <Link className="big-link" to="about">
