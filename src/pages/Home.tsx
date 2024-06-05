@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <section className="flex flex-col justify-center md:h-[605px] mb-24 md:mb-0 px-5">
+            <section className="flex flex-col justify-center sm:h-[605px] px-5 pt-8 sm:pt-0 mb-24 sm:mb-0">
                 <div className="text-4xl text-faded-text mb-7 font-semibold">
                     <span className="text-text">Hello, I am </span>
                     <Link className="link" to="about">

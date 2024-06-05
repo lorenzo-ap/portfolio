@@ -14,7 +14,7 @@ const Project = ({ index, title, description, link, label }: Props) => {
             className={`flex justify-between items-center pt-[14px] ${
                 index !== 0 ? 'border-t border-faded-line' : ''
             }`}>
-            <div className="max-w-lg">
+            <div className="max-w-lg me-5">
                 <Link
                     className="text-subfaded-text hover:text-text text-[18px] transition-colors duration-150"
                     to={link}
@@ -22,7 +22,7 @@ const Project = ({ index, title, description, link, label }: Props) => {
                     {title}
                 </Link>
 
-                {description && <p className="text-text text-[14px]">{description}</p>}
+                {description && <p className="mt-1 text-text text-[14px]">{description}</p>}
             </div>
 
             <div className="py-[1px] px-[3px] rounded-sm text-[10px] uppercase text-text bg-faded-bg font-medium">
