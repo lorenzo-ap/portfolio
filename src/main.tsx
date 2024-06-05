@@ -7,6 +7,7 @@ import NoPage from './pages/NoPage.tsx';
 import Home from './pages/Home.tsx';
 import Projects from './pages/Projects.tsx';
 import PageTitle from './components/PageTitle.tsx';
+import { AnimatePresence } from 'framer-motion';
 
 const router = createBrowserRouter([
     {
@@ -14,7 +15,10 @@ const router = createBrowserRouter([
         element: (
             <>
                 <PageTitle title="Welcome | Lorenzo" />
-                <Home />
+
+                <AnimatePresence mode="wait">
+                    <Home key={'/'} />
+                </AnimatePresence>
             </>
         ),
     },
@@ -23,7 +27,10 @@ const router = createBrowserRouter([
         element: (
             <>
                 <PageTitle title="About | Lorenzo" />
-                <About />
+
+                <AnimatePresence mode="wait">
+                    <About key={'/about'} />
+                </AnimatePresence>
             </>
         ),
     },
@@ -32,7 +39,10 @@ const router = createBrowserRouter([
         element: (
             <>
                 <PageTitle title="Projects | Lorenzo" />
-                <Projects />
+
+                <AnimatePresence mode="wait">
+                    <Projects key={'/projects'} />
+                </AnimatePresence>
             </>
         ),
     },
@@ -41,7 +51,10 @@ const router = createBrowserRouter([
         element: (
             <>
                 <PageTitle title="404. | Lorenzo" />
-                <NoPage />
+
+                <AnimatePresence mode="wait">
+                    <NoPage key={'/*'} />
+                </AnimatePresence>
             </>
         ),
     },

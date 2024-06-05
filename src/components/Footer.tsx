@@ -21,13 +21,13 @@ const Footer = () => {
 
     return (
         <footer>
-            <div className="flex justify-between items-center mt-[28px] pt-[14px] px-[21px] border-t-[1px] border-faded-line">
+            <div className="flex justify-between items-center mt-[50px] pt-[14px] px-[21px] border-t-[1px] border-faded-line">
                 <div className="flex justify-start items-center gap-x-[7px] text-[14px]">
                     <span>&copy; 2024.</span>
                     <span className="dot" />
                     <Link to="https://github.com/lorenzo-ap" target="_blank">
                         <svg
-                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-100"
+                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-150"
                             strokeLinejoin="round"
                             height="16"
                             viewBox="0 0 16 16">
@@ -48,7 +48,7 @@ const Footer = () => {
                     </Link>
                     <Link to="https://www.linkedin.com/in/lorenzo-apl/" target="_blank">
                         <svg
-                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-100"
+                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-150"
                             role="img"
                             height="16"
                             strokeLinejoin="round"
@@ -68,7 +68,7 @@ const Footer = () => {
                     <button
                         className={`${
                             !isDarkModeSelected && 'bg-faded-bg rounded-md'
-                        } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-100`}
+                        } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-150`}
                         type="button"
                         onClick={() => setTheme('light')}>
                         <svg height="16" strokeLinejoin="round" viewBox="0 0 16 16" width="16">
@@ -83,7 +83,7 @@ const Footer = () => {
                     <button
                         className={`${
                             isDarkModeSelected && 'bg-faded-bg rounded-md'
-                        } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-100`}
+                        } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-150`}
                         type="button"
                         onClick={() => setTheme('dark')}>
                         <svg height="16" strokeLinejoin="round" viewBox="0 0 16 16" width="16">

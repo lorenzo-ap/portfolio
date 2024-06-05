@@ -6,7 +6,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="flex justify-between items-center px-5">
+            <div className="flex justify-between items-center mb-[50px] px-5">
                 <Link className="hover:rotate-180 transition-transform duration-500" to="/">
                     <svg width="40px" height="40px" viewBox="0 0 24 24">
                         <g fill="var(--text)">
@@ -21,7 +21,7 @@ const Header = () => {
                             <Link
                                 className={`${
                                     currentPath === '/about' && 'text-text border-text'
-                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-100`}
+                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-150`}
                                 to="/about">
                                 About
                             </Link>
@@ -30,7 +30,7 @@ const Header = () => {
                             <Link
                                 className={`${
                                     currentPath === '/projects' && 'text-text border-text'
-                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-100`}
+                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-150`}
                                 to="/projects">
                                 Projects
                             </Link>

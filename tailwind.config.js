@@ -7,9 +7,10 @@ export default {
             colors: {
                 'bg-color': 'var(--bg-color)',
                 text: 'var(--text)',
-                'faded-text-light': 'var(--faded-text)',
+                'faded-text': 'var(--faded-text)',
                 'faded-line': 'var(--faded-line)',
                 'faded-bg': 'var(--faded-bg)',
+                'subfaded-text': 'var(--subfaded-text)',
             },
             listStyleType: {
                 square: 'square',
