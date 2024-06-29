@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const [isDarkModeSelected, setIsDarkModeSelected] = useState<boolean>(false);
+    const [isDarkModeSelected, setIsDarkModeSelected] = useState<boolean>(true);
 
     useEffect(() => {
         setIsDarkModeSelected(localStorage.getItem('theme') === 'dark');
