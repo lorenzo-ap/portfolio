@@ -14,14 +14,14 @@ export default function About() {
                 <h1 className="mt-[28px] mb-[14px] text-4xl font-semibold">Well, hi again!</h1>
 
                 <p className="text-[18px]">
-                    I&#39;m Lorenzo, a software engineer, educator and speaker based in Oradea, Romania. I&#39;m
-                    currently working as a Frontend Developer, helping companies build and promote their products. In
-                    the meantime, I&#39;m also doing some freelance and personal projects like this one.
+                    I&#39;m Lorenzo, a software engineer and student at the University of Oradea, based in Oradea,
+                    Romania. Currently, I work as a Frontend Developer, helping companies build and promote their
+                    products. In addition, I am also engaged in freelance and personal projects like this one.
                 </p>
 
                 <p className="text-[18px]">
-                    My field of interests is quite extensive, ranging from web development and creative coding to IoT
-                    applications, interactive design, and human-computer interaction.
+                    My field of interests is quite extensive, ranging from web development and creative coding to
+                    interactive design, and human-computer interaction.
                 </p>
 
                 <p className="text-[18px]">
