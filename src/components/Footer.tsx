@@ -5,7 +5,11 @@ const Footer = () => {
     const [isDarkModeSelected, setIsDarkModeSelected] = useState<boolean>(true);
 
     useEffect(() => {
-        setIsDarkModeSelected(localStorage.getItem('theme') === 'dark');
+        if (!localStorage.length) {
+            setTheme('dark');
+        } else {
+            setIsDarkModeSelected(localStorage.getItem('theme') === 'dark');
+        }
     }, []);
 
     const setTheme = (theme: 'dark' | 'light') => {
