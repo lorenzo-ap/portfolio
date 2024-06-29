@@ -1,26 +1,27 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Theme } from '../enums/theme.enum';
 
 const Footer = () => {
     const [isDarkModeSelected, setIsDarkModeSelected] = useState<boolean>(true);
 
     useEffect(() => {
         if (!localStorage.length) {
-            setTheme('dark');
+            setTheme(Theme.Dark);
         } else {
-            setIsDarkModeSelected(localStorage.getItem('theme') === 'dark');
+            setIsDarkModeSelected(localStorage.getItem('theme') === Theme.Dark);
         }
     }, []);
 
-    const setTheme = (theme: 'dark' | 'light') => {
-        const oppositeTheme = theme === 'dark' ? 'light' : 'dark';
+    const setTheme = (theme: Theme) => {
+        const oppositeTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark;
 
         localStorage.setItem('theme', theme);
 
         document.documentElement.classList.remove(oppositeTheme);
         document.documentElement.classList.add(theme);
 
-        setIsDarkModeSelected(theme === 'dark');
+        setIsDarkModeSelected(theme === Theme.Dark);
     };
 
     return (
@@ -74,7 +75,7 @@ const Footer = () => {
                             !isDarkModeSelected && 'bg-faded-bg rounded-md'
                         } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-150`}
                         type="button"
-                        onClick={() => setTheme('light')}>
+                        onClick={() => setTheme(Theme.Light)}>
                         <svg height="16" strokeLinejoin="round" viewBox="0 0 16 16" width="16">
                             <path
                                 fillRule="evenodd"
@@ -89,7 +90,7 @@ const Footer = () => {
                             isDarkModeSelected && 'bg-faded-bg rounded-md'
                         } px-1.5 py-1 hover:bg-faded-bg rounded-md transition-colors duration-150`}
                         type="button"
-                        onClick={() => setTheme('dark')}>
+                        onClick={() => setTheme(Theme.Dark)}>
                         <svg height="16" strokeLinejoin="round" viewBox="0 0 16 16" width="16">
                             <path
                                 fillRule="evenodd"
