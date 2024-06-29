@@ -26,14 +26,19 @@ export default function Home() {
                 </div>
 
                 <div className="text-faded-text font-semibold text-[21.6px] leading-[1.3]">
-                    My latest work is{' '}
-                    <Link className="link link__blue" to="https://github.com/lorenzo-ap/weather-app" target="_blank">
-                        Weather App using React + TS
+                    My latest projects are{' '}
+                    <Link className="link link__blue" to="https://lorenzo-ap.github.io/weather-app/" target="_blank">
+                        Weather App
                     </Link>{' '}
-                    and while you&apos;re here, you can check the latest news in{' '}
-                    <Link className="link link__yellow" to="https://javascriptweekly.com/issues" target="_blank">
-                        JavaScript.
+                    and{' '}
+                    <Link className="link link__blue" to="https://lorenzo-typing-game.vercel.app/" target="_blank">
+                        Typing Game
                     </Link>
+                    , also while you&apos;re still here, you can check the latest news in{' '}
+                    <Link className="link link__yellow" to="https://javascriptweekly.com/issues" target="_blank">
+                        JavaScript
+                    </Link>
+                    .
                 </div>
             </section>
 
