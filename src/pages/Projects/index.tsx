@@ -1,15 +1,14 @@
-import { motion } from 'framer-motion';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import useTheme from '../hooks/useTheme';
-import Project from '../components/Project';
-import { misc, projects } from '../data/projects';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import useTheme from '../../hooks/useTheme';
+import Project from '../../components/Project';
+import { misc, projects } from '../../data/projects';
 
-export default function Projects() {
+const Projects = () => {
     useTheme();
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <>
             <Header />
 
             <section className="flex flex-col gap-[14px] px-5 text-text">
@@ -29,7 +28,7 @@ export default function Projects() {
                 <h2 className="mt-[42px] text-[21px] font-semibold">Misc & Experiments.</h2>
 
                 <p>
-                    This is a collection of small projects, experiments and interesting things I’ve worked on. Not
+                    This is a collection of small projects, experiments and interesting things I&#39;ve worked on. Not
                     particularly useful, maintained or actively developed.
                 </p>
 
@@ -39,6 +38,8 @@ export default function Projects() {
             </section>
 
             <Footer />
-        </motion.div>
+        </>
     );
-}
+};
+
+export default Projects;

@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
-import useTheme from '../hooks/useTheme';
-import { motion } from 'framer-motion';
+import Footer from '../../components/Footer';
+import useTheme from '../../hooks/useTheme';
 
-export default function NoPage() {
+const ErrorPage = () => {
     useTheme();
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <section className="px-5">
+        <>
+            <section className="flex flex-col justify-center items-start px-5 pt-12 sm:pt-0 sm:h-[calc(100vh-340px)]">
                 <div className="text-4xl text-faded-text mb-7 font-semibold">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.{' '}
                     <span className="text-text">The void is calling.</span> Contrary to popular belief, Lorem Ipsum is
@@ -24,6 +23,8 @@ export default function NoPage() {
             </section>
 
             <Footer />
-        </motion.div>
+        </>
     );
-}
+};
+
+export default ErrorPage;

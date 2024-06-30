@@ -2,60 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import About from './pages/About.tsx';
-import NoPage from './pages/NoPage.tsx';
-import Home from './pages/Home.tsx';
-import Projects from './pages/Projects.tsx';
-import PageTitle from './components/PageTitle.tsx';
-import { AnimatePresence } from 'framer-motion';
+import About from './pages/About';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Page from './components/Page';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: (
-            <>
-                <PageTitle title="Welcome | Lorenzo" />
-
-                <AnimatePresence mode="wait">
-                    <Home key={'/'} />
-                </AnimatePresence>
-            </>
+            <Page key="/" title="Welcome | Lorenzo">
+                <Home />
+            </Page>
         ),
     },
     {
         path: '/about',
         element: (
-            <>
-                <PageTitle title="About | Lorenzo" />
-
-                <AnimatePresence mode="wait">
-                    <About key={'/about'} />
-                </AnimatePresence>
-            </>
+            <Page key="/about" title="About | Lorenzo">
+                <About />
+            </Page>
         ),
     },
     {
         path: '/projects',
         element: (
-            <>
-                <PageTitle title="Projects | Lorenzo" />
-
-                <AnimatePresence mode="wait">
-                    <Projects key={'/projects'} />
-                </AnimatePresence>
-            </>
+            <Page key="/projects" title="Projects | Lorenzo">
+                <Projects />
+            </Page>
         ),
     },
     {
         path: '*',
         element: (
-            <>
-                <PageTitle title="404. | Lorenzo" />
-
-                <AnimatePresence mode="wait">
-                    <NoPage key={'/*'} />
-                </AnimatePresence>
-            </>
+            <Page key="/*" title="404. | Lorenzo">
+                <ErrorPage />
+            </Page>
         ),
     },
 ]);

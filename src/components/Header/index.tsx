@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import HeaderLink from './HeaderLink';
 
 const Header = () => {
     const location = useLocation();
@@ -18,22 +19,10 @@ const Header = () => {
                 <nav>
                     <ul className="flex gap-x-3">
                         <li>
-                            <Link
-                                className={`${
-                                    currentPath === '/about' && 'text-text border-text'
-                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-150`}
-                                to="/about">
-                                About
-                            </Link>
+                            <HeaderLink {...{ currentPath, targetPath: '/about', linkText: 'About' }} />
                         </li>
                         <li>
-                            <Link
-                                className={`${
-                                    currentPath === '/projects' && 'text-text border-text'
-                                } border-b border-solid border-faded-line hover:text-text hover:border-text transition-colors duration-150`}
-                                to="/projects">
-                                Projects
-                            </Link>
+                            <HeaderLink {...{ currentPath, targetPath: '/projects', linkText: 'Projects' }} />
                         </li>
                     </ul>
                 </nav>

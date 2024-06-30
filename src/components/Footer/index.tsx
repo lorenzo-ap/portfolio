@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Theme } from '../enums/theme.enum';
+import { Theme } from '../../enums/theme.enum';
 
 const Footer = () => {
     const [isDarkModeSelected, setIsDarkModeSelected] = useState<boolean>(true);
@@ -32,7 +32,7 @@ const Footer = () => {
                     <span className="dot" />
                     <Link to="https://github.com/lorenzo-ap" target="_blank">
                         <svg
-                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-150"
+                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-100"
                             strokeLinejoin="round"
                             height="16"
                             viewBox="0 0 16 16">
@@ -53,7 +53,7 @@ const Footer = () => {
                     </Link>
                     <Link to="https://www.linkedin.com/in/lorenzo-apl/" target="_blank">
                         <svg
-                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-150"
+                            className="hover:text-[#000] dark:hover:text-[#fff] transition-colors duration-100"
                             role="img"
                             height="16"
                             strokeLinejoin="round"

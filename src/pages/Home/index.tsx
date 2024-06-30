@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
-import useTheme from '../hooks/useTheme';
-import { motion } from 'framer-motion';
+import Footer from '../../components/Footer';
+import useTheme from '../../hooks/useTheme';
 
-export default function Home() {
+const Home = () => {
     useTheme();
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <section className="flex flex-col justify-center sm:h-[605px] px-5 pt-8 sm:pt-0 mb-24 sm:mb-0">
+        <>
+            <section className="flex flex-col justify-center sm:h-[calc(100vh-340px)] px-5 pt-12 sm:pt-0 mb-24 sm:mb-0">
                 <div className="text-4xl text-faded-text mb-7 font-semibold">
                     <span className="text-text">Hello, I am </span>
                     <Link className="link" to="about">
@@ -20,9 +19,9 @@ export default function Home() {
                     </Link>{' '}
                     I like to write about software and try to create{' '}
                     <Link className="link" to="projects">
-                        some stuff.
+                        some stuff
                     </Link>{' '}
-                    Occasionally I travel and participate at coding events.
+                    for the web. Occasionally I travel and participate at coding events.
                 </div>
 
                 <div className="text-faded-text font-semibold text-[21.6px] leading-[1.3]">
@@ -43,6 +42,8 @@ export default function Home() {
             </section>
 
             <Footer />
-        </motion.div>
+        </>
     );
-}
+};
+
+export default Home;
