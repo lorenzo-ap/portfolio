@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import PageTitle from "./PageTitle";
-import { PropsWithChildren } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import PageTitle from './PageTitle';
+import { PropsWithChildren } from 'react';
 
 interface PageProps extends PropsWithChildren {
   title: string;
@@ -12,7 +12,7 @@ const Page = ({ title, key, children }: PageProps) => {
     <>
       <PageTitle title={title} />
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode='wait'>
         <motion.div
           key={key}
           initial={{ opacity: 0 }}

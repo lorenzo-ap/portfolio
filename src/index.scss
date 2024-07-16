@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 18px;
   color: var(--faded-text);
   background-color: var(--bg-color);
@@ -74,10 +74,7 @@ a {
 .link {
   display: inline;
   color: var(--text);
-  background-image: linear-gradient(
-    transparent calc(85% - 5px),
-    var(--faded-line) 5px
-  );
+  background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line) 5px);
   background-size: 0;
   background-repeat: no-repeat;
   transition: 0.5s cubic-bezier(0.65, -0.05, 0.25, 1);
@@ -88,25 +85,16 @@ a {
 
   &__orange {
     color: var(--text-orange);
-    background-image: linear-gradient(
-      transparent calc(85% - 5px),
-      var(--faded-line-orange) 5px
-    );
+    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-orange) 5px);
   }
 
   &__blue {
     color: var(--text-blue);
-    background-image: linear-gradient(
-      transparent calc(85% - 5px),
-      var(--faded-line-blue) 5px
-    );
+    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-blue) 5px);
   }
 
   &__yellow {
     color: var(--text-yellow);
-    background-image: linear-gradient(
-      transparent calc(85% - 5px),
-      var(--faded-line-yellow) 5px
-    );
+    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-yellow) 5px);
   }
 }

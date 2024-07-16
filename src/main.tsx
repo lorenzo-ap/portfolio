@@ -1,52 +1,52 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import About from "./pages/About";
-import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import Page from "./components/Page";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.scss';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import About from './pages/About';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Page from './components/Page';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: (
-      <Page key="/" title="Welcome | Lorenzo">
+      <Page key='/' title='Welcome | Lorenzo'>
         <Home />
       </Page>
-    ),
+    )
   },
   {
-    path: "/about",
+    path: '/about',
     element: (
-      <Page key="/about" title="About | Lorenzo">
+      <Page key='/about' title='About | Lorenzo'>
         <About />
       </Page>
-    ),
+    )
   },
   {
-    path: "/projects",
+    path: '/projects',
     element: (
-      <Page key="/projects" title="Projects | Lorenzo">
+      <Page key='/projects' title='Projects | Lorenzo'>
         <Projects />
       </Page>
-    ),
+    )
   },
   {
-    path: "*",
+    path: '*',
     element: (
-      <Page key="/*" title="404. | Lorenzo">
+      <Page key='/*' title='404. | Lorenzo'>
         <ErrorPage />
       </Page>
-    ),
-  },
+    )
+  }
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="flex flex-col justify-center gap-y-[50px] max-w-[700px] my-[50px] mx-auto">
+    <div className='flex flex-col justify-center gap-y-[50px] max-w-[700px] my-[50px] mx-auto'>
       <RouterProvider router={router} />
     </div>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
