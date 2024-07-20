@@ -1,5 +1,5 @@
 export enum Label {
-  Development = 'Development',
+  Development = 'In development',
   Finished = 'Finished',
   React = 'React',
   Angular = 'Angular',

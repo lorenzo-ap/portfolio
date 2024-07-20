@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <>
-      <section className='flex flex-col justify-center sm:h-[calc(100vh-340px)] px-5 pt-12 sm:pt-0 mb-24 sm:mb-0'>
+      <section className='flex flex-col justify-center sm:h-[calc(100vh-300px)] px-5 pt-12 sm:pt-0 mb-24 sm:mb-0'>
         <div className='text-4xl text-faded-text mb-7 font-semibold'>
           <span className='text-text'>Hello, I am </span>
           <Link className='link' to='about'>
@@ -30,8 +30,8 @@ const Home = () => {
             Weather App
           </Link>{' '}
           and{' '}
-          <Link className='link link__blue' to='https://lorenzo-typing-game.vercel.app/' target='_blank'>
-            Typing Game
+          <Link className='link link__blue' to='https://image-generator-lorenzo.vercel.app/' target='_blank'>
+            Image Generator*
           </Link>
           , also while you&apos;re still here, you can check the latest news in{' '}
           <Link className='link link__yellow' to='https://javascriptweekly.com/issues' target='_blank'>
@@ -39,6 +39,8 @@ const Home = () => {
           </Link>
           .
         </div>
+
+        <p className='text-sm mt-2'>* - in development, but still usable.</p>
       </section>
 
       <Footer />
