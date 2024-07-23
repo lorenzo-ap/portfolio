@@ -14,8 +14,8 @@ const Home = () => {
             Lorenzo.
           </Link>
           <br />a software engineer and a tech enthusiast from Republic of Moldova. Currently working for{' '}
-          <Link className='link link__orange' to='https://www.globallogic.com/' target='_blank'>
-            GlobalLogic.
+          <Link className='link link__orange' to='https://www.globallogic.com/ro/about/' target='_blank'>
+            GlobalLogic Romania.
           </Link>{' '}
           I like to write about software and try to create{' '}
           <Link className='link' to='projects'>
