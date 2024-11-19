@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Page key='/' title='Welcome | Lorenzo'>
+      <Page title='Welcome | Lorenzo'>
         <Home />
       </Page>
     )
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: (
-      <Page key='/about' title='About | Lorenzo'>
+      <Page title='About | Lorenzo'>
         <About />
       </Page>
     )
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   {
     path: '/projects',
     element: (
-      <Page key='/projects' title='Projects | Lorenzo'>
+      <Page title='Projects | Lorenzo'>
         <Projects />
       </Page>
     )
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: (
-      <Page key='/*' title='404. | Lorenzo'>
+      <Page title='404. | Lorenzo'>
         <ErrorPage />
       </Page>
     )

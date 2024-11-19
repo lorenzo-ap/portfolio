@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import { Label } from '../../enums/label.enum';
 
 export interface Props {
   index: number;
   title: string;
   description?: string;
   link: string;
-  label: string;
+  label: Label;
 }
 
 const Project = ({ index, title, description, link, label }: Props) => {
