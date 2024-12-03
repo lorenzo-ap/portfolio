@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Page from './components/Page';
+import './index.scss';
 import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import Page from './components/Page';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Page title='Welcome | Lorenzo'>
+      <Page key='/' title='Welcome | Lorenzo'>
         <Home />
       </Page>
     )
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: (
-      <Page title='About | Lorenzo'>
+      <Page key='/about' title='About | Lorenzo'>
         <About />
       </Page>
     )
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
   {
     path: '/projects',
     element: (
-      <Page title='Projects | Lorenzo'>
+      <Page key='/project' title='Projects | Lorenzo'>
         <Projects />
       </Page>
     )
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: (
-      <Page title='404. | Lorenzo'>
+      <Page key='/*' title='404. | Lorenzo'>
         <ErrorPage />
       </Page>
     )

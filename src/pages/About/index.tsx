@@ -33,10 +33,10 @@ const About = () => {
 
         <ul className='flex flex-col gap-y-[14px] ps-[18px] list-square'>
           <li>
-            <strong>Frontend</strong>: Angular, React, TypeScript, SCSS, TailwindCSS, Bootstrap.
+            <strong>Frontend</strong>: Angular, React, TypeScript, Tailwind CSS, Bootstrap.
           </li>
           <li>
-            <strong>Backend</strong>: Node.js.
+            <strong>Backend</strong>: Express.
           </li>
         </ul>
 
@@ -52,15 +52,15 @@ const About = () => {
           </li>
 
           <li>
-            <strong>Terminal</strong>: Git Bash, CMD.
+            <strong>Terminal</strong>: Git Bash, CMD, Powershell.
           </li>
 
           <li>
-            <strong>Design</strong>: Figma.
+            <strong>Design</strong>: Figma, Adobe XD.
           </li>
 
           <li>
-            <strong>Communication</strong>: Telegram, Discord.
+            <strong>Communication</strong>: Telegram, Slack, Discord.
           </li>
         </ul>
       </section>
