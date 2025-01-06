@@ -33,7 +33,7 @@ const About = () => {
 
         <ul className='flex flex-col gap-y-[14px] ps-[18px] list-square'>
           <li>
-            <strong>Frontend</strong>: Angular, React, TypeScript, Tailwind CSS, Bootstrap.
+            <strong>Frontend</strong>: React, Angular, TypeScript, Tailwind CSS, Bootstrap.
           </li>
           <li>
             <strong>Backend</strong>: Express.
