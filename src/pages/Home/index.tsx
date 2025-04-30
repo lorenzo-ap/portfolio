@@ -13,11 +13,11 @@ const Home = () => {
           <Link className='link' to='about'>
             Lorenzo.
           </Link>
-          <br />a software engineer and a tech enthusiast from Republic of Moldova. Currently working for{' '}
+          <br />A software engineer and a tech enthusiast from Republic of Moldova. Currently working for{' '}
           <Link className='link link__orange' to='https://www.globallogic.com/ro/about/' target='_blank'>
-            GlobalLogic Romania.
-          </Link>{' '}
-          I like to write about software and try to create{' '}
+            GlobalLogic
+          </Link>
+          . I like everything related to software and try to create{' '}
           <Link className='link' to='projects'>
             some stuff
           </Link>{' '}
@@ -25,22 +25,16 @@ const Home = () => {
         </div>
 
         <div className='text-faded-text font-semibold text-[21.6px] leading-[1.3]'>
-          My latest projects are{' '}
-          <Link className='link link__blue' to='https://lorenzo-ap.github.io/weather-app/' target='_blank'>
-            Weather App
-          </Link>{' '}
-          and{' '}
-          <Link className='link link__blue' to='https://image-generator-lorenzo.vercel.app/' target='_blank'>
-            Image Generator*
+          My latest project is{' '}
+          <Link className='link link__blue' to='https://ainterest.live/' target='_blank'>
+            AInterest
           </Link>
-          , also while you&apos;re still here, you can check the latest news in{' '}
+          , while you&apos;re here, you can check the latest{' '}
           <Link className='link link__yellow' to='https://javascriptweekly.com/issues' target='_blank'>
             JavaScript
-          </Link>
-          .
+          </Link>{' '}
+          news.
         </div>
-
-        <p className='text-sm mt-2'>* - in development, but still usable.</p>
       </section>
 
       <Footer />

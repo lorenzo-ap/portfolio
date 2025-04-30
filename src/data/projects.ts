@@ -2,11 +2,11 @@ import { Label } from '../enums/label.enum';
 
 export const projects = [
   {
-    title: 'Image Generator',
+    title: 'AInterest',
     description:
       'A full-stack app that generates images based on user input. The frontend is built with React and TypeScript, while the backend is a Node.js server with Express.',
-    link: 'https://github.com/lorenzo-ap/image-generator-fe',
-    label: Label.Development
+    link: 'https://github.com/lorenzo-ap/ainterest-fe',
+    label: Label.Finished
   },
   {
     title: 'Weather App',

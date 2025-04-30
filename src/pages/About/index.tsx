@@ -23,7 +23,7 @@ const About = () => {
           design, and human-computer interaction.
         </p>
 
-        <p>During my career, I&#39;ve mostly worked with Frontend tools, my favorite frameworks are React & Angular.</p>
+        <p>During my career, I&#39;ve mostly worked with Frontend tools, my favorite frameworks are Next.js & React.</p>
 
         <h2 className='mt-7 text-[21px] font-semibold'>Tech Stack.</h2>
 
@@ -33,7 +33,7 @@ const About = () => {
 
         <ul className='flex flex-col gap-y-[14px] ps-[18px] list-square'>
           <li>
-            <strong>Frontend</strong>: React, Angular, TypeScript, Tailwind CSS, Bootstrap.
+            <strong>Frontend</strong>: Next.js, React, Solid.js, Angular.
           </li>
           <li>
             <strong>Backend</strong>: Express.
