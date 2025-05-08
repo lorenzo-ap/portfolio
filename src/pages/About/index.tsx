@@ -9,7 +9,7 @@ const About = () => {
     <>
       <Header />
 
-      <section className='flex flex-col gap-[14px] px-5 text-text'>
+      <section className='flex flex-col gap-[14px] px-6 text-text'>
         <h1 className='mt-[28px] mb-[14px] text-4xl font-semibold'>Well, hi again!</h1>
 
         <p>

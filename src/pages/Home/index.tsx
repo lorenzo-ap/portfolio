@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <>
-      <section className='flex flex-col justify-center sm:h-[calc(100vh-300px)] px-5 pt-12 sm:pt-0 mb-24 sm:mb-0'>
+      <section className='flex flex-col justify-center sm:h-[calc(100vh-400px)] px-6 max-md:mt-20'>
         <div className='text-4xl text-faded-text mb-7 font-semibold'>
           <span className='text-text'>Hello, I am </span>
           <Link className='link' to='about'>

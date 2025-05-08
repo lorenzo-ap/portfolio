@@ -7,7 +7,7 @@ const ErrorPage = () => {
 
   return (
     <>
-      <section className='flex flex-col justify-center items-start px-5 pt-12 sm:pt-0 sm:h-[calc(100vh-340px)]'>
+      <section className='flex flex-col justify-center items-start px-6 pt-12 sm:pt-0 sm:h-[calc(100vh-340px)]'>
         <div className='text-4xl text-faded-text mb-7 font-semibold'>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.{' '}
           <span className='text-text'>The void is calling.</span> Contrary to popular belief, Lorem Ipsum is not simply

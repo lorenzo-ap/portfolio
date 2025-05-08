@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className='flex justify-between items-center mt-[50px] pt-[14px] px-[21px] border-t-[1px] border-faded-line'>
+      <div className='flex justify-between items-center my-[50px] pt-[14px] px-[21px] border-t-[1px] border-faded-line'>
         <div className='flex justify-start items-center gap-x-[7px] text-[14px]'>
           <span>&copy; {new Date().getFullYear()}</span>
           <span className='dot' />

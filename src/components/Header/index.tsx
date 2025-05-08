@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className='flex justify-between items-center mb-[50px] px-5'>
+      <div className='flex justify-between items-center my-[50px] px-6'>
         <Link className='hover:rotate-180 transition-transform duration-500' to='/'>
           <svg width='40px' height='40px' viewBox='0 0 24 24'>
             <g fill='var(--text)'>
