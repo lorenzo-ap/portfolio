@@ -1,54 +1,69 @@
-import { Label } from '../types';
+import { type ProjectModel, Skill } from '../types';
 
-export const projects = [
+export const projects: ProjectModel[] = [
 	{
-		title: 'AInterest',
+		name: 'AInterest',
+		link: 'https://www.ainterest.live',
+		skills: [Skill.React, Skill.TypeScript, Skill.Fastify],
 		description:
-			'A full-stack app that generates images based on user input. The frontend is built with React and TypeScript, while the backend is a Node.js server with Fastify.',
-		link: 'https://github.com/lorenzo-ap/ainterest-fe',
-		label: Label.Finished
+			'A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.'
 	},
 	{
-		title: 'Weather',
-		description:
-			'A React and TypeScript web app where you can check the weather for your current spot or look up forecasts for any city.',
-		link: 'https://github.com/lorenzo-ap/weather-app',
-		label: Label.Finished
+		name: 'Weather',
+		link: 'https://lorenzo-ap.github.io/weather-app',
+		skills: [Skill.React, Skill.TypeScript],
+		description: 'A web app where you can check the weather for your current spot or look up forecasts for any city.'
 	},
 	{
-		title: 'Pulse',
-		description: 'A sports store web app template made with jQuery, created for learning and focused on layout and UI.',
-		link: 'https://github.com/lorenzo-ap/pulse',
-		label: Label.Finished
+		name: 'Pulse',
+		link: 'https://lorenzo-pulse.netlify.app',
+		skills: [Skill.HTML, Skill.CSS, Skill.jQuery],
+		description: 'A sports store web app template, created for learning and focused on layout.'
 	},
 	{
-		title: 'Writer Works',
+		name: 'Writer Works',
+		link: 'https://lorenzo-writer.netlify.app',
+		skills: [Skill.HTML, Skill.CSS, Skill.JavaScript],
 		description:
-			'A web app template built with core web technologies, focused on animations, layout, and visual design.',
-		link: 'https://github.com/lorenzo-ap/writer-works',
-		label: Label.Finished
+			'A web app template built with core web technologies, focused on animations, layout, and visual design.'
 	}
 ];
 
-export const misc = [
+export const clientProjects: ProjectModel[] = [
 	{
-		title: 'Typing Game',
-		link: 'https://github.com/lorenzo-ap/typing-game',
-		label: Label.React
+		name: 'Kraanveld',
+		link: 'https://www.kraanveld.nl',
+		skills: [Skill.NextJS, Skill.TypeScript],
+		description: 'Website for a crane rental company, showcasing services, projects, and key information.'
 	},
 	{
-		title: 'Budget App',
-		link: 'https://github.com/lorenzo-ap/budget-app',
-		label: Label.Angular
+		name: 'Nextremum',
+		link: 'https://nextremum.net',
+		skills: [Skill.NextJS, Skill.TypeScript],
+		description:
+			'Website for a telecommunications provider offering private networking and connectivity services across Europe and Asia.'
+	}
+];
+
+export const misc: ProjectModel[] = [
+	{
+		name: 'Typing Game',
+		link: 'https://lorenzo-typing-game.vercel.app',
+		skills: [Skill.React]
 	},
 	{
-		title: 'Kanban Board',
-		link: 'https://github.com/lorenzo-ap/ng-kanban',
-		label: Label.Angular
+		name: 'Budget App',
+		link: 'https://lorenzo-ap.github.io/budget-app',
+		skills: [Skill.Angular]
 	},
 	{
-		title: 'Background Generator',
-		link: 'https://github.com/lorenzo-ap/background-generator',
-		label: Label.JavaScript
+		name: 'Kanban Board',
+		link: 'https://lorenzo-ap.github.io/ng-kanban',
+		skills: [Skill.Angular]
+	},
+	{
+		name: 'Background Generator',
+		link: 'https://lorenzo-ap.github.io/background-generator',
+		skills: [Skill.JavaScript]
 	}
 ];

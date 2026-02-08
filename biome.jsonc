@@ -11,9 +11,6 @@
         "useBlockStatements": "off",
         "useFilenamingConvention": "off"
       },
-      "suspicious": {
-        "noArrayIndexKey": "off"
-      },
       "performance": {
         "noBarrelFile": "off"
       }
