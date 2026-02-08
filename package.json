@@ -6,40 +6,33 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky"
+    "check": "ultracite check",
+    "fix": "ultracite fix"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
     "framer-motion": "^11.2.9",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.4.38",
-    "prettier": "^3.3.3",
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
+    "ultracite": "7.1.5",
     "vite": "^5.2.0"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint",
-      "prettier --write"
-    ],
-    "src/**/*.scss": "prettier --write"
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "pnpx ultracite fix"
+    ]
   }
 }
