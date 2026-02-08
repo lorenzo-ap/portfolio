@@ -16,7 +16,7 @@ export const Project = ({ index, title, description, link, label }: Props) => {
 		>
 			<div className='me-5 max-w-lg'>
 				<Link
-					className='text-[18px] text-subfaded-text underline-offset-2 transition-colors duration-150 hover:text-text hover:underline'
+					className='text-[18px] text-subfaded-text underline-offset-2 hover:text-text hover:underline'
 					target='_blank'
 					to={link}
 				>

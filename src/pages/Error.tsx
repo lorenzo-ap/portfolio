@@ -9,10 +9,7 @@ export const ErrorPage = () => {
 				random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
 			</div>
 
-			<Link
-				className='border-faded-line border-b border-solid transition-colors duration-150 hover:border-text hover:text-text'
-				to='/'
-			>
+			<Link className='border-faded-line border-b border-solid hover:border-text hover:text-text' to='/'>
 				Go back home
 			</Link>
 		</section>

@@ -33,7 +33,7 @@ export const Footer = () => {
 					<span className='dot' />
 					<Link target='_blank' to='https://github.com/lorenzo-ap'>
 						<svg
-							className='transition-colors duration-100 hover:text-[#000] dark:hover:text-[#fff]'
+							className='hover:text-[#000] dark:hover:text-[#fff]'
 							height='16'
 							strokeLinejoin='round'
 							viewBox='0 0 16 16'
@@ -56,7 +56,7 @@ export const Footer = () => {
 					</Link>
 					<Link target='_blank' to='https://www.linkedin.com/in/lorenzo-apl/'>
 						<svg
-							className='transition-colors duration-100 hover:text-[#000] dark:hover:text-[#fff]'
+							className='hover:text-[#000] dark:hover:text-[#fff]'
 							height='16'
 							role='img'
 							strokeLinejoin='round'
@@ -76,9 +76,7 @@ export const Footer = () => {
 
 				<div className='flex rounded-md bg-faded-bg'>
 					<button
-						className={`${
-							!isDarkModeSelected && 'rounded-md bg-faded-bg'
-						} rounded-md px-1.5 py-1 transition-colors duration-150 hover:bg-faded-bg`}
+						className={`${!isDarkModeSelected && 'rounded-md bg-faded-bg'} rounded-md px-1.5 py-1 hover:bg-faded-bg`}
 						onClick={() => setTheme(Theme.Light)}
 						type='button'
 					>
@@ -93,9 +91,7 @@ export const Footer = () => {
 						</svg>
 					</button>
 					<button
-						className={`${
-							isDarkModeSelected && 'rounded-md bg-faded-bg'
-						} rounded-md px-1.5 py-1 transition-colors duration-150 hover:bg-faded-bg`}
+						className={`${isDarkModeSelected && 'rounded-md bg-faded-bg'} rounded-md px-1.5 py-1 hover:bg-faded-bg`}
 						onClick={() => setTheme(Theme.Dark)}
 						type='button'
 					>

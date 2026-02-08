@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { PropsWithChildren } from 'react';
 import { usePageTitle } from '../hooks';
 import { Footer } from './Footer';
@@ -13,18 +13,19 @@ export const Page = ({ title, withHeader, children }: PageProps) => {
 	usePageTitle(title);
 
 	return (
-		<AnimatePresence mode='wait'>
+		<>
+			{withHeader && <Header />}
+
 			<motion.div
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				initial={{ opacity: 0 }}
-				key={title}
 				transition={{ duration: 0.15 }}
 			>
-				{withHeader && <Header />}
 				{children}
-				<Footer />
 			</motion.div>
-		</AnimatePresence>
+
+			<Footer />
+		</>
 	);
 };

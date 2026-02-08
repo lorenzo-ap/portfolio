@@ -11,7 +11,7 @@ export const HeaderLink = ({ currentPath, targetPath, linkText }: HeaderLinkProp
 		<Link
 			className={`${
 				currentPath === targetPath && 'border-text text-text'
-			} border-faded-line border-b border-solid transition-colors duration-150 hover:border-text hover:text-text`}
+			} border-faded-line border-b border-solid hover:border-text hover:text-text`}
 			to={targetPath}
 		>
 			{linkText}
