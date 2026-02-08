@@ -8,13 +8,13 @@ export const HomePage = () => {
 				<Link className='link' to='about'>
 					Lorenzo.
 				</Link>
-				<br />A software engineer and a tech enthusiast from Republic of Moldova. Currently working for{' '}
+				<br />A software engineer and a tech enthusiast. Currently working for{' '}
 				<Link className='link link__orange' target='_blank' to='https://www.globallogic.com/ro/about/'>
 					GlobalLogic
 				</Link>
-				. I like everything related to software and try to create{' '}
+				. I like everything related to development and enjoy creating{' '}
 				<Link className='link' to='projects'>
-					some stuff
+					things
 				</Link>{' '}
 				for the web.
 			</div>

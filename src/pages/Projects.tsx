@@ -5,7 +5,7 @@ export const ProjectsPage = () => {
 	return (
 		<>
 			<section className='flex flex-col gap-[14px] px-6 text-text'>
-				<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Projects</h1>
+				<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Projects.</h1>
 
 				<p>Here are some of the projects I&#39;ve worked on as a maintainer, contributor or just for fun.</p>
 

@@ -4,7 +4,7 @@ export const AboutPage = () => {
 			<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Well, hi again!</h1>
 
 			<p>
-				I am Lorenzo, a software engineer and Master&#39;s student at the University of Oradea, based in Oradea,
+				I am Lorenzo, a software engineer and Master&apos;s student at the University of Oradea, based in Oradea,
 				Romania. I currently work as a Frontend Developer, helping companies design, build, and promote digital
 				products.
 			</p>
@@ -26,7 +26,9 @@ export const AboutPage = () => {
 
 			<h2 className='mt-7 font-semibold text-[21px]'>Tech Stack.</h2>
 
-			<p>In my day-to-day work, I&#39;m using a variety of technologies, including but not limited to the following:</p>
+			<p>
+				In my day-to-day work, I&apos;m using a variety of technologies, including but not limited to the following:
+			</p>
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
