@@ -21,7 +21,7 @@ export const HomePage = () => {
 
 			<div className='font-semibold text-[21.6px] text-faded-text leading-[1.3]'>
 				My latest project is{' '}
-				<Link className='link link__blue' target='_blank' to='https://ainterest.live/'>
+				<Link className='link link__purple' target='_blank' to='https://ainterest.live/'>
 					AInterest
 				</Link>
 				, while you&apos;re here, you can check the latest{' '}

@@ -6,11 +6,11 @@
 
 :root {
   --text-orange: #f37037;
-  --text-blue: #478be6;
+  --text-purple: #9775fa;
   --text-yellow: #f7df1e;
 
   --faded-line-orange: rgba(243, 112, 55, 0.2);
-  --faded-line-blue: rgba(71, 139, 230, 0.2);
+  --faded-line-purple: rgba(151, 117, 250, 0.2);
   --faded-line-yellow: rgba(247, 223, 30, 0.2);
 }
 
@@ -87,9 +87,9 @@ a {
     background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-orange) 5px);
   }
 
-  &__blue {
-    color: var(--text-blue);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-blue) 5px);
+  &__purple {
+    color: var(--text-purple);
+    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-purple) 5px);
   }
 
   &__yellow {
