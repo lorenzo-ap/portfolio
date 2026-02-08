@@ -4,17 +4,25 @@ export const AboutPage = () => {
 			<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Well, hi again!</h1>
 
 			<p>
-				I&#39;m Lorenzo, a software engineer and student at the University of Oradea, based in Oradea, Romania.
-				Currently, I work as a Frontend Developer, helping companies build and promote their products. In addition, I am
-				also engaged in freelance and personal projects like this one.
+				I am Lorenzo, a software engineer and Master&#39;s student at the University of Oradea, based in Oradea,
+				Romania. I currently work as a Frontend Developer, helping companies design, build, and promote digital
+				products.
 			</p>
 
 			<p>
-				My field of interests is quite extensive, ranging from web development and creative coding to interactive
-				design, and human-computer interaction.
+				Alongside my professional role, I take on freelance work and personal projects, where I experiment with ideas
+				and refine my approach to modern web development.
 			</p>
 
-			<p>During my career, I&#39;ve mostly worked with Frontend tools, my favorite frameworks are Next.js & React.</p>
+			<p>
+				My interests include web development, creative coding, and interactive design, with a strong focus on building
+				fast, responsive interfaces and smooth user experiences.
+			</p>
+
+			<p>
+				Throughout my career, I have mainly worked with frontend technologies. I prefer React and Next.js, which I use
+				to build scalable, high-performance web applications.
+			</p>
 
 			<h2 className='mt-7 font-semibold text-[21px]'>Tech Stack.</h2>
 
@@ -22,10 +30,10 @@ export const AboutPage = () => {
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
-					<strong>Frontend</strong>: Next.js, React, Solid.js, Angular.
+					<strong>Frontend</strong>: React, Next.js, Solid.js, Angular.
 				</li>
 				<li>
-					<strong>Backend</strong>: Express.
+					<strong>Backend</strong>: Fastify, Express.
 				</li>
 			</ul>
 
@@ -33,15 +41,11 @@ export const AboutPage = () => {
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
-					<strong>Editors</strong>: VSCode, IntelliJ.
+					<strong>Editors</strong>: VSCode, Cursor, IntelliJ.
 				</li>
 
 				<li>
 					<strong>Browsers</strong>: Chrome, Safari.
-				</li>
-
-				<li>
-					<strong>Terminal</strong>: Git Bash, CMD, Powershell.
 				</li>
 
 				<li>

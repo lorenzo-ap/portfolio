@@ -16,7 +16,7 @@ export const HomePage = () => {
 				<Link className='link' to='projects'>
 					some stuff
 				</Link>{' '}
-				for the web. Occasionally I travel and participate at coding events.
+				for the web.
 			</div>
 
 			<div className='font-semibold text-[21.6px] text-faded-text leading-[1.3]'>

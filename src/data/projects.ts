@@ -4,12 +4,12 @@ export const projects = [
 	{
 		title: 'AInterest',
 		description:
-			'A full-stack app that generates images based on user input. The frontend is built with React and TypeScript, while the backend is a Node.js server with Express.',
+			'A full-stack app that generates images based on user input. The frontend is built with React and TypeScript, while the backend is a Node.js server with Fastify.',
 		link: 'https://github.com/lorenzo-ap/ainterest-fe',
 		label: Label.Finished
 	},
 	{
-		title: 'Weather App',
+		title: 'Weather',
 		description:
 			'A React and TypeScript web app where you can check the weather for your current spot or look up forecasts for any city.',
 		link: 'https://github.com/lorenzo-ap/weather-app',
@@ -17,32 +17,15 @@ export const projects = [
 	},
 	{
 		title: 'Pulse',
-		description: 'A sports store web app made with jQuery.',
+		description: 'A sports store web app template made with jQuery, created for learning and focused on layout and UI.',
 		link: 'https://github.com/lorenzo-ap/pulse',
 		label: Label.Finished
 	},
 	{
 		title: 'Writer Works',
-		description: 'A web app made with pure JavaScript, offering full dissertation help.',
+		description:
+			'A web app template built with core web technologies, focused on animations, layout, and visual design.',
 		link: 'https://github.com/lorenzo-ap/writer-works',
-		label: Label.Finished
-	},
-	{
-		title: 'Wax',
-		description: 'A JavaScript-powered app for seamless cryptocurrency transactions.',
-		link: 'https://github.com/lorenzo-ap/wax',
-		label: Label.Finished
-	},
-	{
-		title: 'Marketis',
-		description: 'An all-in-one sneaker shopping platform, crafted with pure JavaScript.',
-		link: 'https://github.com/lorenzo-ap/marketis',
-		label: Label.Finished
-	},
-	{
-		title: 'Swipe',
-		description: 'A JavaScript-based platform offering paid assistance to launch your business venture.',
-		link: 'https://github.com/lorenzo-ap/swipe',
 		label: Label.Finished
 	}
 ];
@@ -62,11 +45,6 @@ export const misc = [
 		title: 'Kanban Board',
 		link: 'https://github.com/lorenzo-ap/ng-kanban',
 		label: Label.Angular
-	},
-	{
-		title: 'Robofriends',
-		link: 'https://github.com/lorenzo-ap/robofriends',
-		label: Label.React
 	},
 	{
 		title: 'Background Generator',
