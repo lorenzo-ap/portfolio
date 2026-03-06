@@ -3,7 +3,7 @@ import { type ProjectModel, Skill } from '../types';
 export const projects: ProjectModel[] = [
 	{
 		name: 'AInterest',
-		link: 'https://www.ainterest.live',
+		link: 'https://www.ainterest.me',
 		skills: [Skill.React, Skill.TypeScript, Skill.Fastify],
 		description:
 			'A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.'
