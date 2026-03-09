@@ -9,6 +9,12 @@ export const projects: ProjectModel[] = [
 			'A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.'
 	},
 	{
+		name: 'Wayport',
+		link: 'https://github.com/lorenzo-ap/hacktech',
+		skills: [Skill.ReactNative, Skill.TypeScript],
+		description: 'An airport indoor navigation app for travelers, built during a 48-hour hackathon.'
+	},
+	{
 		name: 'Weather',
 		link: 'https://lorenzo-ap.github.io/weather-app',
 		skills: [Skill.React, Skill.TypeScript],

@@ -8,6 +8,7 @@ export const Skill = {
 	jQuery: 'jQuery',
 	HTML: 'HTML',
 	CSS: 'CSS',
-	Fastify: 'Fastify'
+	Fastify: 'Fastify',
+	ReactNative: 'React Native'
 };
 export type Skill = (typeof Skill)[keyof typeof Skill];
