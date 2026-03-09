@@ -9,12 +9,6 @@ export const projects: ProjectModel[] = [
 			'A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.'
 	},
 	{
-		name: 'Wayport',
-		link: 'https://github.com/lorenzo-ap/hacktech',
-		skills: [Skill.ReactNative, Skill.TypeScript],
-		description: 'An airport indoor navigation app for travelers, built during a 48-hour hackathon.'
-	},
-	{
 		name: 'Weather',
 		link: 'https://lorenzo-ap.github.io/weather-app',
 		skills: [Skill.React, Skill.TypeScript],
@@ -48,6 +42,23 @@ export const clientProjects: ProjectModel[] = [
 		skills: [Skill.NextJS, Skill.TypeScript],
 		description:
 			'Website for a telecommunications provider offering private networking and connectivity services across Europe and Asia.'
+	}
+];
+
+export const hackathonProjects: ProjectModel[] = [
+	{
+		name: 'Wayport',
+		link: 'https://github.com/lorenzo-ap/hacktech',
+		skills: [Skill.ReactNative, Skill.TypeScript],
+		description: 'Indoor airport navigation app helping travelers quickly find gates, services, and facilities.',
+		hackathonLink: 'https://hack-tech.ai/airport-chapter'
+	},
+	{
+		name: 'Cahul Connect',
+		link: 'https://github.com/serezha13/cahul-connect',
+		skills: [Skill.NextJS, Skill.TypeScript],
+		description: 'Web platform for a city showcasing local businesses, events, and public services.',
+		hackathonLink: 'https://gigahack.md/deeptech-gigahack-2023/'
 	}
 ];
 

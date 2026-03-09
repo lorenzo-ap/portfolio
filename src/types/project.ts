@@ -5,4 +5,5 @@ export interface ProjectModel {
 	link: string;
 	skills: Skill[];
 	description?: string;
+	hackathonLink?: string;
 }

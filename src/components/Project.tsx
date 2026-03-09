@@ -48,6 +48,16 @@ export const Project = ({ index, project, isMisc }: ProjectProps) => {
 			{description && <p className='mt-1 mb-1.5 text-[14px] text-text'>{description}</p>}
 
 			{!isMisc && <Skills skills={skills} />}
+
+			{project.hackathonLink && (
+				<Link
+					className='text-[10px] text-subfaded-text underline-offset-2 hover:text-text hover:underline'
+					target='_blank'
+					to={project.hackathonLink}
+				>
+					(hackathon)
+				</Link>
+			)}
 		</div>
 	);
 };

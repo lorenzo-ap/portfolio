@@ -1,5 +1,5 @@
 import { Project } from '../components';
-import { clientProjects, misc, projects } from '../data/projects';
+import { clientProjects, hackathonProjects, misc, projects } from '../data/projects';
 
 export const ProjectsPage = () => {
 	return (
@@ -14,7 +14,7 @@ export const ProjectsPage = () => {
 				))}
 			</section>
 
-			<section className='my-[80px] flex flex-col gap-[14px] px-6 text-text'>
+			<section className='my-[100px] flex flex-col gap-[14px] px-6 text-text'>
 				<h2 className='font-semibold text-[21px]'>Client Projects.</h2>
 
 				<p>
@@ -23,6 +23,19 @@ export const ProjectsPage = () => {
 				</p>
 
 				{clientProjects.map((project, index) => (
+					<Project index={index} key={project.name} project={project} />
+				))}
+			</section>
+
+			<section className='my-[100px] flex flex-col gap-[14px] px-6 text-text'>
+				<h2 className='font-semibold text-[21px]'>Hackathon Projects.</h2>
+
+				<p>
+					Projects built during hackathons, showcasing rapid development, creativity and problem-solving skills under
+					time constraints.
+				</p>
+
+				{hackathonProjects.map((project, index) => (
 					<Project index={index} key={project.name} project={project} />
 				))}
 			</section>
