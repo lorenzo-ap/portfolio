@@ -32,7 +32,7 @@ export const Project = ({ index, project, isMisc }: ProjectProps) => {
 	const { name, description, link, skills } = project;
 
 	return (
-		<div className={index !== 0 ? 'border-faded-line border-t pt-[14px]' : 'mt-[14px]'}>
+		<div className={index === 0 ? 'mt-[14px]' : 'border-faded-line border-t pt-[14px]'}>
 			<div className='flex items-center justify-between'>
 				<Link
 					className='text-[18px] text-subfaded-text underline-offset-2 hover:text-text hover:underline'
@@ -55,7 +55,7 @@ export const Project = ({ index, project, isMisc }: ProjectProps) => {
 					target='_blank'
 					to={project.hackathonLink}
 				>
-					(hackathon)
+					[hackathon link]
 				</Link>
 			)}
 		</div>

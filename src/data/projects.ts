@@ -31,6 +31,12 @@ export const projects: ProjectModel[] = [
 
 export const clientProjects: ProjectModel[] = [
 	{
+		name: 'AI for Frontend Developers',
+		link: 'https://itlogia.ru/ai-front',
+		skills: [Skill.AITooling, Skill.CurriculumDesign],
+		description: 'Created and recorded an online course on AI-assisted frontend development using modern AI tools.'
+	},
+	{
 		name: 'Kraanveld',
 		link: 'https://www.kraanveld.nl',
 		skills: [Skill.NextJS, Skill.TypeScript],
@@ -58,7 +64,7 @@ export const hackathonProjects: ProjectModel[] = [
 		link: 'https://github.com/serezha13/cahul-connect',
 		skills: [Skill.NextJS, Skill.TypeScript],
 		description: 'Web platform for a city showcasing local businesses, events, and public services.',
-		hackathonLink: 'https://gigahack.md/deeptech-gigahack-2023/'
+		hackathonLink: 'https://old.gigahack.md/deeptech-gigahack-2023/'
 	}
 ];
 

@@ -8,9 +8,9 @@ export const HomePage = () => {
 				<Link className='link' to='about'>
 					Lorenzo.
 				</Link>
-				<br />A software engineer and a tech enthusiast. Currently working for{' '}
-				<Link className='link link__orange' target='_blank' to='https://www.globallogic.com/ro/about/'>
-					GlobalLogic
+				<br />A software engineer and a tech enthusiast. Currently working on <br />
+				<Link className='link link__barca' target='_blank' to='https://www.barcamobile.com/'>
+					Barça Mobile
 				</Link>
 				. I like everything related to development and enjoy creating{' '}
 				<Link className='link' to='projects'>

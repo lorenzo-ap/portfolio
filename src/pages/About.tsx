@@ -4,9 +4,8 @@ export const AboutPage = () => {
 			<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Well, hi again!</h1>
 
 			<p>
-				I am Lorenzo, a software engineer and Master&apos;s student at the University of Oradea, based in Oradea,
-				Romania. I currently work as a Frontend Developer, helping companies design, build, and promote digital
-				products.
+				I am Lorenzo, a software engineer and Master&apos;s student at the University of Oradea. I currently work as a
+				Senior Software Engineer, helping companies design, build, and promote digital products.
 			</p>
 
 			<p>
@@ -37,13 +36,16 @@ export const AboutPage = () => {
 				<li>
 					<strong>Backend</strong>: Fastify, Express.
 				</li>
+				<li>
+					<strong>Agentic coding</strong>: Claude Code.
+				</li>
 			</ul>
 
 			<h2 className='mt-7 font-semibold text-[21px]'>Tools I use.</h2>
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
-					<strong>Editors</strong>: VSCode, Cursor, IntelliJ.
+					<strong>Editors</strong>: VS Code, Cursor, IntelliJ.
 				</li>
 
 				<li>
@@ -51,7 +53,7 @@ export const AboutPage = () => {
 				</li>
 
 				<li>
-					<strong>Design</strong>: Figma, Adobe XD.
+					<strong>Design</strong>: Figma.
 				</li>
 
 				<li>
