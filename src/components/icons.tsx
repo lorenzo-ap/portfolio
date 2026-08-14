@@ -1,0 +1,74 @@
+interface IconProps {
+	title?: string;
+	className?: string;
+	size?: number;
+}
+
+const base = (size: number) => ({ height: size, width: size, viewBox: '0 0 16 16' });
+
+export const ArrowIcon = ({ title, className, size = 14 }: IconProps) => (
+	<svg aria-hidden={title ? undefined : 'true'} className={className} fill='none' {...base(size)}>
+		<title>{title ?? 'Arrow'}</title>
+		<path d='M3 8h10m0 0-4-4m4 4-4 4' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' />
+	</svg>
+);
+
+export const ArrowUpRightIcon = ({ title, className, size = 14 }: IconProps) => (
+	<svg aria-hidden={title ? undefined : 'true'} className={className} fill='none' {...base(size)}>
+		<title>{title ?? 'Opens in a new tab'}</title>
+		<path d='M5 11 11 5m0 0H6m5 0v5' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' />
+	</svg>
+);
+
+export const GithubIcon = ({ title, className, size = 16 }: IconProps) => (
+	<svg className={className} strokeLinejoin='round' {...base(size)}>
+		<title>{title ?? 'GitHub'}</title>
+		<path
+			clipRule='evenodd'
+			d='M8 0C3.58 0 0 3.57879 0 7.99729C0 11.5361 2.29 14.5251 5.47 15.5847C5.87 15.6547 6.02 15.4148 6.02 15.2049C6.02 15.0149 6.01 14.3851 6.01 13.7154C4 14.0852 3.48 13.2255 3.32 12.7757C3.23 12.5458 2.84 11.836 2.5 11.6461C2.22 11.4961 1.82 11.1262 2.49 11.1162C3.12 11.1062 3.57 11.696 3.72 11.936C4.44 13.1455 5.59 12.8057 6.05 12.5957C6.12 12.0759 6.33 11.726 6.56 11.5261C4.78 11.3262 2.92 10.6364 2.92 7.57743C2.92 6.70773 3.23 5.98797 3.74 5.42816C3.66 5.22823 3.38 4.40851 3.82 3.30888C3.82 3.30888 4.49 3.09895 6.02 4.1286C6.66 3.94866 7.34 3.85869 8.02 3.85869C8.7 3.85869 9.38 3.94866 10.02 4.1286C11.55 3.08895 12.22 3.30888 12.22 3.30888C12.66 4.40851 12.38 5.22823 12.3 5.42816C12.81 5.98797 13.12 6.69773 13.12 7.57743C13.12 10.6464 11.25 11.3262 9.47 11.5261C9.76 11.776 10.01 12.2558 10.01 13.0056C10.01 14.0752 10 14.9349 10 15.2049C10 15.4148 10.15 15.6647 10.55 15.5847C12.1381 15.0488 13.5182 14.0284 14.4958 12.6673C15.4735 11.3062 15.9996 9.67293 16 7.99729C16 3.57879 12.42 0 8 0Z'
+			fill='currentColor'
+			fillRule='evenodd'
+		/>
+	</svg>
+);
+
+export const LinkedinIcon = ({ title, className, size = 16 }: IconProps) => (
+	<svg className={className} strokeLinejoin='round' {...base(size)}>
+		<title>{title ?? 'LinkedIn'}</title>
+		<path
+			clipRule='evenodd'
+			d='M2 0C0.895431 0 0 0.895431 0 2V14C0 15.1046 0.895431 16 2 16H14C15.1046 16 16 15.1046 16 14V2C16 0.895431 15.1046 0 14 0H2ZM5 6.75V13H3V6.75H5ZM5 4.50008C5 5.05554 4.61409 5.5 3.99408 5.5H3.98249C3.38582 5.5 3 5.05554 3 4.50008C3 3.93213 3.39765 3.5 4.00584 3.5C4.61409 3.5 4.98845 3.93213 5 4.50008ZM8.5 13H6.5C6.5 13 6.53178 7.43224 6.50007 6.75H8.5V7.78371C8.5 7.78371 9 6.75 10.5 6.75C12 6.75 13 7.59782 13 9.83107V13H11V10.1103C11 10.1103 11 8.46616 9.7361 8.46616C8.4722 8.46616 8.5 9.93972 8.5 9.93972V13Z'
+			fill='currentColor'
+			fillRule='evenodd'
+		/>
+	</svg>
+);
+
+export const ChevronIcon = ({ title, className, size = 12 }: IconProps) => (
+	<svg aria-hidden={title ? undefined : 'true'} className={className} fill='none' {...base(size)}>
+		<title>{title ?? 'Expand'}</title>
+		<path d='m4 6.5 4 4 4-4' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.4' />
+	</svg>
+);
+
+export const CheckIcon = ({ title, className, size = 13 }: IconProps) => (
+	<svg aria-hidden={title ? undefined : 'true'} className={className} fill='none' {...base(size)}>
+		<title>{title ?? 'Selected'}</title>
+		<path
+			d='m3 8.5 3.2 3.2L13 4.8'
+			stroke='currentColor'
+			strokeLinecap='round'
+			strokeLinejoin='round'
+			strokeWidth='1.6'
+		/>
+	</svg>
+);
+
+export const LogoMark = ({ title, className, size = 34 }: IconProps) => (
+	<svg className={className} height={size} viewBox='0 0 24 24' width={size}>
+		<title>{title ?? 'Home'}</title>
+		<g fill='currentColor'>
+			<path d='M8.06561801,18.9432081 L14.565618,4.44320807 C14.7350545,4.06523433 15.1788182,3.8961815 15.5567919,4.06561801 C15.9032679,4.2209348 16.0741922,4.60676263 15.9697642,4.9611247 L15.934382,5.05679193 L9.43438199,19.5567919 C9.26494549,19.9347657 8.82118181,20.1038185 8.44320807,19.934382 C8.09673215,19.7790652 7.92580781,19.3932374 8.03023576,19.0388753 L8.06561801,18.9432081 L14.565618,4.44320807 L8.06561801,18.9432081 Z M2.21966991,11.4696699 L6.46966991,7.21966991 C6.76256313,6.9267767 7.23743687,6.9267767 7.53033009,7.21966991 C7.79659665,7.48593648 7.8208027,7.90260016 7.60294824,8.19621165 L7.53033009,8.28033009 L3.81066017,12 L7.53033009,15.7196699 C7.8232233,16.0125631 7.8232233,16.4874369 7.53033009,16.7803301 C7.26406352,17.0465966 6.84739984,17.0708027 6.55378835,16.8529482 L6.46966991,16.7803301 L2.21966991,12.5303301 C1.95340335,12.2640635 1.9291973,11.8473998 2.14705176,11.5537883 L2.21966991,11.4696699 L6.46966991,7.21966991 L2.21966991,11.4696699 Z M16.4696699,7.21966991 C16.7359365,6.95340335 17.1526002,6.9291973 17.4462117,7.14705176 L17.5303301,7.21966991 L21.7803301,11.4696699 C22.0465966,11.7359365 22.0708027,12.1526002 21.8529482,12.4462117 L21.7803301,12.5303301 L17.5303301,16.7803301 C17.2374369,17.0732233 16.7625631,17.0732233 16.4696699,16.7803301 C16.2034034,16.5140635 16.1791973,16.0973998 16.3970518,15.8037883 L16.4696699,15.7196699 L20.1893398,12 L16.4696699,8.28033009 C16.1767767,7.98743687 16.1767767,7.51256313 16.4696699,7.21966991 Z' />
+		</g>
+	</svg>
+);

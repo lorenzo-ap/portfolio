@@ -2,9 +2,53 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link href="/logo.svg" rel="icon" type="image/svg+xml">
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
-		<title>Welcome | Lorenzo</title>
+
+		<title>Lorenzo Apolloni | Software engineer</title>
+		<meta
+			content="I'm Lorenzo, a senior software engineer. I build web apps, internal tools, integrations and automation, usually starting from a problem rather than a spec."
+			name="description"
+		>
+
+		<link href="/logo.svg" rel="icon" type="image/svg+xml">
+		<meta content="#0c0c0e" media="(prefers-color-scheme: dark)" name="theme-color">
+		<meta content="#fbfbfa" media="(prefers-color-scheme: light)" name="theme-color">
+
+		<meta content="website" property="og:type">
+		<meta content="Lorenzo Apolloni" property="og:site_name">
+		<meta content="Lorenzo Apolloni | Software engineer" property="og:title">
+		<meta
+			content="I build web apps, internal tools, integrations and automation, usually starting from a problem rather than a spec."
+			property="og:description"
+		>
+		<meta content="summary_large_image" name="twitter:card">
+
+		<link href="https://fonts.googleapis.com" rel="preconnect">
+		<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Lorenzo Apolloni",
+				"jobTitle": "Senior Software Engineer",
+				"description": "Senior software engineer. Web apps, internal tools and automation for businesses.",
+				"sameAs": ["https://github.com/lorenzo-ap", "https://www.linkedin.com/in/lorenzo-apl/"]
+			}
+		</script>
+
+		<script>
+		'use strict';
+		// Applied before first paint so the theme never flashes.
+		(() => {
+			const stored = localStorage.getItem('theme');
+			document.documentElement.classList.add(stored === 'light' ? 'light' : 'dark');
+		})();
+		</script>
 	</head>
 	<body>
 		<div id="root"></div>

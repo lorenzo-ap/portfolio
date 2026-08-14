@@ -9,8 +9,11 @@ export const Skill = {
 	HTML: 'HTML',
 	CSS: 'CSS',
 	Fastify: 'Fastify',
+	Express: 'Express',
+	NodeJS: 'Node.js',
 	ReactNative: 'React Native',
 	CurriculumDesign: 'Curriculum Design',
-	AITooling: 'AI Tooling'
+	AITooling: 'AI Tooling',
+	SystemDesign: 'System Design'
 };
 export type Skill = (typeof Skill)[keyof typeof Skill];

@@ -1,28 +1,223 @@
 {
   "pageTitles": {
-    "home": "Welcome | Lorenzo",
-    "about": "About | Lorenzo",
-    "projects": "Projects | Lorenzo",
-    "error": "404. | Lorenzo"
+    "home": "Lorenzo Apolloni | Software engineer",
+    "work": "Selected work | Lorenzo Apolloni",
+    "about": "About | Lorenzo Apolloni",
+    "error": "Page not found | Lorenzo Apolloni"
+  },
+  "meta": {
+    "home": "I'm Lorenzo, a senior software engineer. I build web apps, internal tools, integrations and automation, usually starting from a problem rather than a spec.",
+    "work": "Selected work. Full-stack AI products, client platforms and a couple of things built at hackathon speed, with what was actually hard about each one.",
+    "about": "Senior software engineer. Frontend heavy, comfortable across the backend and architecture. How I think about building software, and what I've built."
   },
   "nav": {
     "home": "Home",
+    "work": "Work",
     "about": "About",
-    "projects": "Projects"
+    "menu": "Open menu",
+    "close": "Close menu",
+    "skipToContent": "Skip to content"
   },
-  "home": {
-    "intro": "<hl>Hello, I am </hl><me>Lorenzo.</me><br/>A software engineer and a tech enthusiast. Currently working on <br/><barca>Barça Mobile</barca>. I like everything related to development and enjoy creating <things>things</things> for the web.",
-    "latest": "My latest project is <ainterest>AInterest</ainterest>, while you're here, you can check the latest <js>JavaScript</js> news."
+  "actions": {
+    "startProject": "Get in touch",
+    "startConversation": "Email me",
+    "seeWork": "See what I've built",
+    "emailMe": "Email me",
+    "allWork": "All work",
+    "visitSite": "Visit site",
+    "hackathonLink": "Hackathon",
+    "sourceLink": "Source",
+    "moreAbout": "More about me",
+    "backHome": "Back home",
+    "backToTop": "Back to top",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "hero": {
+    "status": "Open to a couple of projects",
+    "headline": {
+      "line1": "I build software",
+      "line2": "for problems still",
+      "line3": "solved by hand."
+    },
+    "lede": "I'm Lorenzo. I write software for a living: web apps, APIs, internal tools. The hard part is usually working out what to build, so that's where I start.",
+    "facts": {
+      "currentLabel": "Right now",
+      "currentValue": "Senior engineer on",
+      "latestLabel": "Latest thing I built",
+      "latestValue": "AInterest, a full-stack AI app",
+      "studyingLabel": "Also",
+      "studyingValue": "Finishing a master's at Oradea"
+    }
+  },
+  "capabilities": {
+    "eyebrow": "What I do",
+    "title": "Nobody hands me a finished spec.",
+    "lede": "It's usually a description of something slow, repetitive, or held together by a spreadsheet. Working out what to build from that is most of the job. This is the kind of thing it turns into.",
+    "items": {
+      "productsFromScratch": {
+        "title": "Products from nothing",
+        "body": "An idea turned into something people can sign up for. Architecture, interface, API, database, deploys. AInterest is the whole thing done this way, so you can go and click around it."
+      },
+      "internalTools": {
+        "title": "Internal tools",
+        "body": "The admin panel, the dashboard, the thing that finally replaces a shared spreadsheet nobody trusts. Built around how the work actually happens."
+      },
+      "automation": {
+        "title": "Automating the boring parts",
+        "body": "The report someone assembles by hand every Monday. Data copied between two systems. Anything repetitive enough that people have stopped reading it properly."
+      },
+      "integrations": {
+        "title": "Getting systems to talk",
+        "body": "APIs, third-party services, an old database nobody wants to touch. Most of the work is in the failure cases, which is also what decides whether anyone trusts the output."
+      },
+      "aiWorkflows": {
+        "title": "AI where it's worth it",
+        "body": "I've shipped AI features to production and recorded a course on working with AI tooling. That's also why I'll tell you when a model is a worse answer than fifty lines of code."
+      },
+      "modernisation": {
+        "title": "Codebases that got slow",
+        "body": "Frontend architecture, performance, structure. Usually an app that grew faster than anyone had time to plan for, where every small change now takes a week."
+      }
+    }
+  },
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "Things I've built.",
+    "lede": "What each one was, and the part that turned out to be hard.",
+    "pageTitle": "Selected work.",
+    "pageLede": "Products, client work, and a couple of things built at hackathon speed. For each one I've written down the problem, what I built, and where it got difficult.",
+    "labels": {
+      "problem": "The problem",
+      "built": "What I built",
+      "challenge": "What was hard",
+      "value": "Why it mattered",
+      "stack": "Stack"
+    },
+    "kinds": {
+      "product": "My own product",
+      "client": "Client work",
+      "hackathon": "Hackathon",
+      "course": "Course",
+      "experiment": "Experiment"
+    },
+    "archive": {
+      "eyebrow": "Archive",
+      "title": "Everything else.",
+      "lede": "Smaller builds, hackathon entries and old experiments. Most of them aren't maintained. They're here because this is the honest version of the list."
+    },
+    "cases": {
+      "ainterest": {
+        "summary": "A full-stack AI image app with a shared feed.",
+        "problem": "Image generation tools bury everything in a chat log. You can't easily go back to what you made last week, and you never see what anyone else is doing with the same model.",
+        "built": "Prompt goes in, image comes out, and you can publish it to a feed anyone can browse. React and TypeScript on the front, a Fastify API behind it, with accounts, storage and persistence.",
+        "challenge": "Almost none of the difficulty is the model call. Generation is slow, it costs money, and it fails in ways a normal API doesn't. The interface has to be honest about that without looking broken, and the feed has to stay quick as it fills up.",
+        "value": "Talking about AI features is easy. Shipping one with accounts, storage and a UI people can actually use is the part that counts, so I did that."
+      },
+      "nextremum": {
+        "summary": "A telecoms provider that had to be understandable before anyone would call.",
+        "problem": "Nextremum sells private networking and connectivity across Europe and Asia. It's a technical purchase with a lot of trust attached, and nobody starts that conversation before they understand the offer.",
+        "built": "A Next.js and TypeScript site built around services and coverage. Layouts that survive the offering growing, and pages that still read properly on a phone.",
+        "challenge": "Infrastructure copy is dense. It had to become scannable for whoever signs off on the budget without losing the detail the engineer on the call is checking for.",
+        "value": "The offer holds up whether the person reading it is buying it or specifying it."
+      },
+      "kraanveld": {
+        "summary": "A crane rental company, presented like someone you'd trust with a crane.",
+        "problem": "Renting heavy equipment is a trust decision. Before anyone picks up the phone they want to see the fleet, what you've lifted, and that this clearly isn't your first job.",
+        "built": "Next.js and TypeScript. Services, completed projects, contact. Built so it can be updated for years instead of rebuilt in two.",
+        "challenge": "The work is visual, so the site leans on large photography. That has to load quickly on a phone at a site with bad signal, not only on a fast connection.",
+        "value": "Whatever gets someone to pick up the phone is the first thing on the page."
+      },
+      "aiForFrontend": {
+        "summary": "An online course on using AI tooling for frontend work.",
+        "problem": "Teams were adopting AI coding tools without agreeing on where they help and where they quietly cost an afternoon.",
+        "built": "I designed and recorded the whole course. Curriculum, worked examples, delivery.",
+        "challenge": "The tooling moves every few months, so the material had to be about how you work rather than whichever tool happened to be ahead that month.",
+        "value": "Explaining AI-assisted development to other developers is a stricter test than using it yourself."
+      },
+      "wayport": {
+        "summary": "Indoor airport navigation, built at hackathon speed.",
+        "problem": "Airports are hard to read when you're late. Gates, services and facilities are exactly what you can't find at the moment you need them.",
+        "built": "A React Native app for getting around inside an airport. Designed, built and demoed inside a hackathon.",
+        "challenge": "Deciding what to cut. With a fixed deadline the only way to end up with something real is to pick the one flow that has to work and drop everything else.",
+        "value": "Same instinct an MVP needs. Pick the thing that proves the idea and build that part properly."
+      }
+    },
+    "archiveItems": {
+      "cahulConnect": "A city platform pulling local businesses, events and public services into one place. Built at GigaHack.",
+      "weather": "Weather where you are, or the forecast for any city you look up.",
+      "pulse": "A sports store template, built to get the layout fundamentals right.",
+      "writerWorks": "A template on plain web technologies, mostly an excuse to work on animation and layout."
+    }
+  },
+  "process": {
+    "eyebrow": "How I work",
+    "title": "You talk to the person writing the code.",
+    "lede": "Small engagements, no account manager in the middle.",
+    "steps": {
+      "understand": {
+        "title": "Understand the problem",
+        "body": "A call and a lot of questions about how the work gets done today. Fairly often the thing worth building isn't the thing that was asked for."
+      },
+      "scope": {
+        "title": "Agree the smallest useful version",
+        "body": "What ships first, what it costs, what's deliberately left out. No open-ended discovery phase billed by the hour."
+      },
+      "build": {
+        "title": "Build where you can see it",
+        "body": "You get something you can click through while it's being built. Changing direction is cheap early and expensive late, so I'd rather hear it early."
+      },
+      "handOver": {
+        "title": "Ship it and hand it over",
+        "body": "Deployed, documented, yours. You shouldn't need me on a retainer to keep it running."
+      }
+    }
+  },
+  "aboutTeaser": {
+    "eyebrow": "Who you'd be working with",
+    "title": "One person, start to finish.",
+    "body1": "I'm Lorenzo. Senior software engineer, currently working on <barca>Barça Mobile</barca>, with a small number of client projects alongside it. I'm also finishing a master's at the University of Oradea.",
+    "body2": "Most of my work has been frontend heavy (React, Next.js, Solid.js, Angular) but I've built and run the backend side too, mostly Fastify and Express. I use agentic tooling every day and recorded a course teaching it.",
+    "body3": "In practice that means one person holding the whole thing, from the first conversation about what's going wrong to the version running in production."
+  },
+  "contact": {
+    "eyebrow": "Next step",
+    "title": "Tell me what isn't working.",
+    "lede": "A few sentences is enough. I'll tell you honestly whether it's worth building, and whether I'm the right person to build it.",
+    "emailLabel": "Email",
+    "availability": "Open to new work"
   },
   "about": {
-    "title": "Well, hi again!",
-    "intro": "I am Lorenzo, a software engineer and Master's student at the University of Oradea. I currently work as a Senior Software Engineer, helping companies design, build, and promote digital products.",
-    "freelance": "Alongside my professional role, I take on freelance work and personal projects, where I experiment with ideas and refine my approach to modern web development.",
-    "interests": "My interests include web development, creative coding, and interactive design, with a strong focus on building fast, responsive interfaces and smooth user experiences.",
-    "career": "Throughout my career, I have mainly worked with frontend technologies. I prefer React and Next.js, which I use to build scalable, high-performance web applications.",
+    "title": "The longer version.",
+    "lede": "Software engineer. Currently senior, still mostly curious.",
+    "intro": "I'm Lorenzo, a software engineer and a master's student at the University of Oradea. Day to day I work as a Senior Software Engineer on <barca>Barça Mobile</barca>.",
+    "freelance": "On the side I take a small number of client projects and keep my own things running. That's where I try ideas out before they end up in anyone's production system.",
+    "career": "Most of my career has been spent near the interface, React and Next.js above all. The interesting problems are rarely only frontend though. I've built APIs, designed data models, made architecture calls, and owned features from the first conversation through to deploy.",
+    "interests": "The part I actually enjoy comes before the code, working out what should exist at all. Fast interfaces and interactions that feel right are the craft. Deciding what to build is the harder half.",
+    "principles": {
+      "title": "A few things I believe about building software.",
+      "items": {
+        "problem": {
+          "title": "The brief is a guess",
+          "body": "People describe solutions because that's the vocabulary they have. My first job is finding the problem underneath and checking whether the requested solution actually solves it."
+        },
+        "smallest": {
+          "title": "Ship the smallest real thing",
+          "body": "A narrow version in production teaches you more than a broad version in a document. Scope is a design decision, not a negotiating position."
+        },
+        "maintainable": {
+          "title": "Someone has to maintain this",
+          "body": "Clever code is a liability. I write for whoever reads it in a year, which is usually me. Structure, types, boring predictable patterns."
+        },
+        "ai": {
+          "title": "AI is a tool, not a plan",
+          "body": "I use agentic tooling every day and taught a course on it. That's exactly why I'll say when a model is the wrong answer to your problem."
+        }
+      }
+    },
     "techStack": {
-      "title": "Tech Stack.",
-      "intro": "In my day-to-day work, I'm using a variety of technologies, including but not limited to the following:",
+      "title": "What I reach for.",
+      "intro": "The choice follows the problem. These are the ones I know well enough to argue about.",
       "frontend": "Frontend",
       "backend": "Backend",
       "agentic": "Agentic coding"
@@ -33,46 +228,27 @@
       "browsers": "Browsers",
       "design": "Design",
       "communication": "Communication"
-    }
-  },
-  "projects": {
-    "title": "Projects.",
-    "intro": "Here are some of the projects I've worked on as a maintainer, contributor or just for fun.",
-    "client": {
-      "title": "Client Projects.",
-      "intro": "A selection of projects delivered for external clients, focused on web development and design, built to real requirements."
     },
-    "hackathon": {
-      "title": "Hackathon Projects.",
-      "intro": "Projects built during hackathons, showcasing rapid development, creativity and problem-solving skills under time constraints."
-    },
-    "misc": {
-      "title": "Misc & Experiments.",
-      "intro": "This is a collection of small projects, experiments and interesting things I've worked on. Not particularly useful, maintained or actively developed."
-    },
-    "hackathonLink": "[hackathon link]",
-    "items": {
-      "ainterest": "A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.",
-      "weather": "A web app where you can check the weather for your current spot or look up forecasts for any city.",
-      "pulse": "A sports store web app template, created for learning and focused on layout.",
-      "writerWorks": "A web app template built with core web technologies, focused on animations, layout, and visual design.",
-      "aiForFrontend": "Created and recorded an online course on AI-assisted frontend development using modern AI tools.",
-      "kraanveld": "Website for a crane rental company, showcasing services, projects, and key information.",
-      "nextremum": "Website for a telecommunications provider offering private networking and connectivity services across Europe and Asia.",
-      "wayport": "Indoor airport navigation app helping travelers quickly find gates, services, and facilities.",
-      "cahulConnect": "Web platform for a city showcasing local businesses, events, and public services."
+    "outro": {
+      "title": "Away from the screen.",
+      "body": "I read more JavaScript newsletters than is reasonable, and spend a fair amount of time on creative coding, which has no business case whatsoever. That's mostly the appeal."
     }
   },
   "error": {
-    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. <hl>The void is calling.</hl> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
-    "goHome": "Go back home"
+    "code": "404",
+    "title": "This page doesn't exist.",
+    "text": "Shame, because most of the things I build do. Try the work instead.",
+    "goHome": "Back home"
   },
   "footer": {
+    "tagline": "Web apps, internal tools and automation for businesses that have outgrown the workaround.",
+    "navLabel": "Pages",
+    "contactLabel": "Get in touch",
     "languages": { "en": "English", "ru": "Russian", "ro": "Romanian" },
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "lightMode": "Light Mode",
-    "darkMode": "Dark Mode",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
     "language": "Language"
   }
 }

@@ -1,21 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-orange: #f37037;
-  --text-purple: #9775fa;
-  --text-yellow: #f7df1e;
-  --text-blue: #004D98;
-  --text-garnet: #A50044;
+/* ---------------------------------------------------------------------------
+   Design tokens
 
-  --faded-line-orange: rgba(243, 112, 55, 0.2);
-  --faded-line-purple: rgba(151, 117, 250, 0.2);
-  --faded-line-yellow: rgba(247, 223, 30, 0.2);
-  --faded-line-blue: rgba(0, 77, 152, 0.2);
-  --faded-line-garnet: rgba(165, 0, 68, 0.2);
+   One accent (cobalt) plus a neutral scale. Every interactive colour in the
+   site resolves back to the --accent-* group, so changing the brand is a
+   two-block edit in this file.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --shell-gutter: clamp(1.25rem, 0.5rem + 2.4vw, 3rem);
+  --section-gap: clamp(5rem, 3rem + 8vw, 9.5rem);
+  --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  --text: #16161a;
+  --bg-color: #fbfbfa;
+  --faded-text: rgba(22, 22, 26, 0.62);
+  --faded-line: rgba(22, 22, 26, 0.14);
+  --faded-bg: rgba(22, 22, 26, 0.05);
+  --subfaded-text: rgba(22, 22, 26, 0.8);
+
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-raised: #ffffff;
+  --border: rgba(22, 22, 26, 0.1);
+  --border-strong: rgba(22, 22, 26, 0.22);
+
+  /* Accent: cobalt. --accent is for text and details, --accent-solid is the
+     fill behind white text, so both stay above 4.5:1 in their own context. */
+  --accent: #1f47e0;
+  --accent-solid: #1f47e0;
+  --accent-strong: #17379f;
+  --accent-contrast: #ffffff;
+  --accent-line: rgba(31, 71, 224, 0.32);
+  --accent-soft: rgba(31, 71, 224, 0.055);
+  --accent-glow: rgba(31, 71, 224, 0.24);
+
+  --grid-line: rgba(22, 22, 26, 0.055);
+  --spotlight: rgba(31, 71, 224, 0.1);
+  --bg-translucent: rgba(251, 251, 250, 0.85);
+  --wordmark: rgba(22, 22, 26, 0.07);
+
+  color-scheme: light;
+
+  &.dark {
+    --text: #f4f4f2;
+    --bg-color: #0c0c0e;
+    --faded-text: rgba(244, 244, 242, 0.58);
+    --faded-line: rgba(244, 244, 242, 0.14);
+    --faded-bg: rgba(244, 244, 242, 0.06);
+    --subfaded-text: rgba(244, 244, 242, 0.8);
+
+    --surface: rgba(255, 255, 255, 0.028);
+    --surface-raised: #141417;
+    --border: rgba(244, 244, 242, 0.1);
+    --border-strong: rgba(244, 244, 242, 0.24);
+
+    --accent: #8da5ff;
+    --accent-solid: #3b57e8;
+    --accent-strong: #5570f5;
+    --accent-contrast: #ffffff;
+    --accent-line: rgba(141, 165, 255, 0.36);
+    --accent-soft: rgba(141, 165, 255, 0.12);
+    --accent-glow: rgba(59, 87, 232, 0.4);
+
+    --grid-line: rgba(244, 244, 242, 0.05);
+    --spotlight: rgba(90, 120, 255, 0.14);
+    --bg-translucent: rgba(12, 12, 14, 0.82);
+    --wordmark: rgba(244, 244, 242, 0.07);
+
+    color-scheme: dark;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  color: var(--subfaded-text);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent-solid);
+  color: var(--accent-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar {
@@ -35,112 +123,231 @@
   background: var(--faded-text);
 }
 
-html {
-  --text: #171717;
-  --bg-color: #ffffff;
-  --faded-text: rgba(33, 33, 33, 0.4);
-  --faded-line: rgba(33, 33, 33, 0.2);
-  --faded-bg: rgba(33, 33, 33, 0.06);
-  --subfaded-text: rgba(33, 33, 33, 0.8);
-
-  &.dark {
-    --text: #f3f4f6;
-    --bg-color: #18181a;
-    --faded-text: rgba(243, 244, 246, 0.4);
-    --faded-line: rgba(243, 244, 246, 0.2);
-    --faded-bg: rgba(243, 244, 246, 0.06);
-    --subfaded-text: rgba(243, 244, 246, 0.8);
-  }
-}
-
-body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 18px;
-  color: var(--faded-text);
-  background-color: var(--bg-color);
-}
-
 a {
   cursor: pointer;
 }
 
-.dot {
-  display: inline-block;
-  width: 0.2em;
-  height: 0.2em;
-  border-radius: 50%;
-  background-color: var(--faded-text);
-}
+@layer components {
+  /* ---------------------------------------------------------------------------
+     Primitives
+     --------------------------------------------------------------------------- */
 
-.link {
-  display: inline;
-  color: var(--text);
-  background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line) 5px);
-  background-size: 0;
-  background-repeat: no-repeat;
-  transition:
-    background-size 0.5s cubic-bezier(0.65, -0.05, 0.25, 1),
-    color 0.03s cubic-bezier(0.65, -0.05, 0.25, 1);
-
-  &:hover {
-    background-size: 100%;
+  .shell {
+    width: 100%;
+    max-width: calc(1180px + var(--shell-gutter) * 2);
+    margin-inline: auto;
+    padding-inline: var(--shell-gutter);
   }
 
-  &__orange {
-    color: var(--text-orange);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-orange) 5px);
-  }
-
-  &__purple {
-    color: var(--text-purple);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-purple) 5px);
-  }
-
-  &__yellow {
-    color: var(--text-yellow);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-yellow) 5px);
-  }
-
-  &__blue {
-    color: var(--text-blue);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-blue) 5px);
-  }
-
-  &__barca {
-    position: relative;
+  .dot {
     display: inline-block;
-    padding-bottom: 0.08em;
-    color: transparent;
-    background-image: linear-gradient(90deg, var(--text-blue), var(--text-garnet));
-    background-repeat: no-repeat;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 0.2em;
+    height: 0.2em;
+    border-radius: 50%;
+    background-color: var(--faded-text);
+  }
 
-    &::after {
+  /* Hairline grid used as a structural backdrop instead of decorative blobs. */
+  .grid-backdrop {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .mask-fade-y {
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 78%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 78%, transparent);
+  }
+
+  /* Pointer-tracked spotlight. Coordinates are written as CSS vars from JS so
+     the effect costs one compositor-friendly repaint and no React re-render. */
+  .spotlight {
+    background: radial-gradient(
+      520px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+      var(--spotlight),
+      transparent 70%
+    );
+    transition: opacity 0.6s var(--ease-expo);
+  }
+
+  /* ---------------------------------------------------------------------------
+     Links, in three tiers:
+       .link          inline reference inside a paragraph
+       .link-action   a standalone action that isn't important enough to be a button
+       .btn           the actual call to action
+     --------------------------------------------------------------------------- */
+
+  /* text-decoration rather than a background gradient: the gradient trick only
+     works while the anchor is genuinely inline, and it painted a stray bar the
+     moment a flex or grid parent blockified it. */
+  .link {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    transition:
+      color 0.25s var(--ease-expo),
+      text-decoration-color 0.25s var(--ease-expo);
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent-line);
+    }
+
+    /* Accent links are always underlined, but with a hairline that sits low
+       enough not to read as a default browser link. */
+    &__accent {
+      color: var(--accent);
+      text-decoration-color: var(--accent-line);
+
+      &:hover {
+        color: var(--accent-strong);
+        text-decoration-color: currentcolor;
+      }
+    }
+  }
+
+  .link-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    color: var(--text);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    transition: color 0.25s var(--ease-expo);
+
+    &__label {
+      position: relative;
+    }
+
+    /* Underline is drawn under the label only, so the icon keeps its own space. */
+    &__label::after {
       content: '';
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to right, var(--faded-line-blue), var(--faded-line-garnet));
-      background-size: 100% 12px;
-      background-position: bottom;
-      background-repeat: no-repeat;
+      inset-inline: 0;
+      bottom: -2px;
+      height: 1px;
+      background-color: currentcolor;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.5s cubic-bezier(0.65, -0.05, 0.25, 1);
+      transition: transform 0.45s var(--ease-expo);
     }
 
-    &:hover::after {
+    &__icon {
+      display: inline-flex;
+      transition: transform 0.4s var(--ease-expo);
+    }
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &:hover &__label::after {
       transform: scaleX(1);
+    }
+
+    &:hover &__icon {
+      transform: translateX(3px);
+    }
+
+    /* External links use the diagonal arrow, so it travels diagonally too. */
+    &__diagonal:hover &__icon {
+      transform: translate(2px, -2px);
+    }
+
+    /* Muted variant for footer and secondary navigation. */
+    &__muted {
+      color: var(--subfaded-text);
     }
   }
 
-  &__garnet {
-    color: var(--text-garnet);
-    background-image: linear-gradient(transparent calc(85% - 5px), var(--faded-line-garnet) 5px);
+  /* ---------------------------------------------------------------------------
+     Buttons
+     --------------------------------------------------------------------------- */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6875rem 1.375rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.006em;
+    white-space: nowrap;
+    transition:
+      background-color 0.28s var(--ease-expo),
+      border-color 0.28s var(--ease-expo),
+      color 0.28s var(--ease-expo),
+      box-shadow 0.28s var(--ease-expo),
+      transform 0.28s var(--ease-expo);
+
+    &__icon {
+      display: inline-flex;
+      transition: transform 0.4s var(--ease-expo);
+    }
+
+    &:hover &__icon {
+      transform: translateX(3px);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+      transition-duration: 0.08s;
+    }
+
+    &__primary {
+      background-color: var(--accent-solid);
+      color: var(--accent-contrast);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+
+      &:hover {
+        background-color: var(--accent-strong);
+        box-shadow: 0 6px 18px -8px var(--accent-glow);
+      }
+    }
+
+    &__ghost {
+      border-color: var(--border-strong);
+      color: var(--text);
+
+      &:hover {
+        border-color: var(--accent-line);
+        background-color: var(--accent-soft);
+        color: var(--accent);
+      }
+    }
+
+    /* Small size for the persistent header CTA. */
+    &__sm {
+      min-height: 2.375rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion safety
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

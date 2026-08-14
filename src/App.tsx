@@ -1,8 +1,20 @@
-import { AnimatePresence } from 'framer-motion';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { Page } from './components';
-import { useTheme } from './hooks';
-import { AboutPage, ErrorPage, HomePage, ProjectsPage } from './pages';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
+import { useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Footer, Header, Page, ScrollProgress } from './components';
+import { AboutPage, ErrorPage, HomePage, WorkPage } from './pages';
+
+/** Every route change starts at the top, including browser back/forward. */
+const ScrollToTop = () => {
+	const { pathname } = useLocation();
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: pathname is the trigger, not a value the effect reads
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'auto' });
+	}, [pathname]);
+
+	return null;
+};
 
 const AnimatedRoutes = () => {
 	const location = useLocation();
@@ -12,7 +24,7 @@ const AnimatedRoutes = () => {
 			<Routes key={location.pathname} location={location}>
 				<Route
 					element={
-						<Page titleKey='home'>
+						<Page descriptionKey='home' titleKey='home'>
 							<HomePage />
 						</Page>
 					}
@@ -20,19 +32,21 @@ const AnimatedRoutes = () => {
 				/>
 				<Route
 					element={
-						<Page titleKey='about' withHeader>
+						<Page descriptionKey='work' titleKey='work'>
+							<WorkPage />
+						</Page>
+					}
+					path='/work'
+				/>
+				{/* The old URL, kept alive so existing links and search results still resolve. */}
+				<Route element={<Navigate replace to='/work' />} path='/projects' />
+				<Route
+					element={
+						<Page descriptionKey='about' titleKey='about'>
 							<AboutPage />
 						</Page>
 					}
 					path='/about'
-				/>
-				<Route
-					element={
-						<Page titleKey='projects' withHeader>
-							<ProjectsPage />
-						</Page>
-					}
-					path='/projects'
 				/>
 				<Route
 					element={
@@ -47,19 +61,25 @@ const AnimatedRoutes = () => {
 	);
 };
 
-export const App = () => {
-	useTheme();
-
-	return (
+export const App = () => (
+	<MotionConfig reducedMotion='user'>
 		<BrowserRouter
 			future={{
 				v7_relativeSplatPath: true,
 				v7_startTransition: true
 			}}
 		>
-			<div className='mx-auto flex min-h-dvh max-w-[700px] flex-col justify-center gap-y-[50px]'>
-				<AnimatedRoutes />
+			<ScrollToTop />
+			<ScrollProgress />
+			<Header />
+
+			<div className='flex min-h-dvh flex-col'>
+				<div className='flex-1'>
+					<AnimatedRoutes />
+				</div>
+
+				<Footer />
 			</div>
 		</BrowserRouter>
-	);
-};
+	</MotionConfig>
+);

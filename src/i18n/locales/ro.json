@@ -1,28 +1,223 @@
 {
   "pageTitles": {
-    "home": "Bine ai venit | Lorenzo",
-    "about": "Despre | Lorenzo",
-    "projects": "Proiecte | Lorenzo",
-    "error": "404. | Lorenzo"
+    "home": "Lorenzo Apolloni | Inginer software",
+    "work": "Proiecte selectate | Lorenzo Apolloni",
+    "about": "Despre | Lorenzo Apolloni",
+    "error": "Pagina nu a fost găsită | Lorenzo Apolloni"
+  },
+  "meta": {
+    "home": "Sunt Lorenzo, inginer software senior. Construiesc aplicații web, unelte interne, integrări și automatizări, pornind de obicei de la o problemă, nu de la o specificație.",
+    "work": "Proiecte selectate. Produse full-stack cu AI, platforme pentru clienți și câteva lucruri făcute în ritm de hackathon, cu partea care a fost cu adevărat grea la fiecare.",
+    "about": "Inginer software senior. Cu accent pe frontend, dar confortabil și în backend și arhitectură. Cum gândesc construirea de software și ce am construit."
   },
   "nav": {
     "home": "Acasă",
+    "work": "Proiecte",
     "about": "Despre",
-    "projects": "Proiecte"
+    "menu": "Deschide meniul",
+    "close": "Închide meniul",
+    "skipToContent": "Sari la conținut"
   },
-  "home": {
-    "intro": "<hl>Salut, sunt </hl><me>Lorenzo.</me><br/>Inginer software și pasionat de tehnologie. În prezent lucrez la <br/><barca>Barça Mobile</barca>. Îmi place tot ce ține de dezvoltare și îmi face plăcere să creez <things>lucruri</things> pentru web.",
-    "latest": "Cel mai recent proiect al meu este <ainterest>AInterest</ainterest>, iar cât timp ești aici, poți citi cele mai noi știri despre <js>JavaScript</js>."
+  "actions": {
+    "startProject": "Ia legătura",
+    "startConversation": "Scrie-mi",
+    "seeWork": "Vezi ce am construit",
+    "emailMe": "Scrie-mi",
+    "allWork": "Toate proiectele",
+    "visitSite": "Vezi site-ul",
+    "hackathonLink": "Hackathon",
+    "sourceLink": "Cod sursă",
+    "moreAbout": "Mai multe despre mine",
+    "backHome": "Înapoi acasă",
+    "backToTop": "Sus",
+    "switchToLight": "Comută pe modul luminos",
+    "switchToDark": "Comută pe modul întunecat"
+  },
+  "hero": {
+    "status": "Deschis pentru câteva proiecte",
+    "headline": {
+      "line1": "Construiesc software",
+      "line2": "pentru probleme",
+      "line3": "rezolvate încă manual."
+    },
+    "lede": "Sunt Lorenzo. Scriu software: aplicații web, API-uri, unelte interne. Partea grea e de obicei să înțelegi ce trebuie construit, așa că de acolo încep.",
+    "facts": {
+      "currentLabel": "Acum",
+      "currentValue": "Inginer senior la",
+      "latestLabel": "Cel mai recent proiect",
+      "latestValue": "AInterest, o aplicație full-stack cu AI",
+      "studyingLabel": "În paralel",
+      "studyingValue": "Termin masterul la Oradea"
+    }
+  },
+  "capabilities": {
+    "eyebrow": "Ce fac",
+    "title": "Nimeni nu-mi dă o specificație gata scrisă.",
+    "lede": "De obicei primesc descrierea a ceva lent, repetitiv sau ținut în viață de un fișier Excel. Cea mai mare parte a muncii e să stabilesc ce trebuie construit din asta. Iată în ce se transformă.",
+    "items": {
+      "productsFromScratch": {
+        "title": "Produse de la zero",
+        "body": "O idee transformată în ceva la care oamenii se pot înregistra. Arhitectură, interfață, API, bază de date, deployment. AInterest e exact asta, așa că poți intra să te uiți."
+      },
+      "internalTools": {
+        "title": "Unelte interne",
+        "body": "Panoul de administrare, dashboardul, lucrul care înlocuiește în sfârșit un Excel în care nu mai are nimeni încredere. Construit după cum se lucrează în realitate."
+      },
+      "automation": {
+        "title": "Automatizarea părților plictisitoare",
+        "body": "Raportul pe care cineva îl face manual în fiecare luni. Datele copiate între două sisteme. Orice e destul de repetitiv cât să nu-l mai citească nimeni cu atenție."
+      },
+      "integrations": {
+        "title": "Sisteme care vorbesc între ele",
+        "body": "API-uri, servicii externe, o bază de date veche de care nu vrea nimeni să se atingă. Cea mai mare parte a muncii e în cazurile de eroare, iar de asta depinde dacă cineva are încredere în rezultat."
+      },
+      "aiWorkflows": {
+        "title": "AI acolo unde merită",
+        "body": "Am dus funcționalități AI în producție și am înregistrat un curs despre lucrul cu unelte AI. De asta îți voi spune și când un model e un răspuns mai prost decât cincizeci de linii de cod."
+      },
+      "modernisation": {
+        "title": "Proiecte care au încetinit",
+        "body": "Arhitectură frontend, performanță, structură. De obicei o aplicație care a crescut mai repede decât a avut cineva timp să planifice, unde acum orice modificare mică ia o săptămână."
+      }
+    }
+  },
+  "work": {
+    "eyebrow": "Proiecte selectate",
+    "title": "Lucruri pe care le-am construit.",
+    "lede": "Ce a fost fiecare și partea care s-a dovedit grea.",
+    "pageTitle": "Proiecte selectate.",
+    "pageLede": "Produse, proiecte pentru clienți și câteva lucruri făcute în ritm de hackathon. Pentru fiecare am scris problema, ce am construit și unde s-a complicat.",
+    "labels": {
+      "problem": "Problema",
+      "built": "Ce am construit",
+      "challenge": "Ce a fost greu",
+      "value": "De ce a contat",
+      "stack": "Tehnologii"
+    },
+    "kinds": {
+      "product": "Produsul meu",
+      "client": "Proiect pentru client",
+      "hackathon": "Hackathon",
+      "course": "Curs",
+      "experiment": "Experiment"
+    },
+    "archive": {
+      "eyebrow": "Arhivă",
+      "title": "Restul lucrurilor.",
+      "lede": "Proiecte mai mici, hackathoane și experimente vechi. Majoritatea nu mai sunt întreținute. Sunt aici pentru că asta e varianta sinceră a listei."
+    },
+    "cases": {
+      "ainterest": {
+        "summary": "O aplicație full-stack de generare de imagini cu AI, cu feed comun.",
+        "problem": "Uneltele de generare de imagini îngroapă totul într-un chat. Nu te mai poți întoarce ușor la ce ai făcut săptămâna trecută și nu vezi niciodată ce fac alții cu același model.",
+        "built": "Scrii un prompt, iese o imagine și o poți publica într-un feed pe care îl poate răsfoi oricine. React și TypeScript în față, un API Fastify în spate, cu conturi, stocare și persistență.",
+        "challenge": "Aproape nimic din partea grea nu ține de apelul către model. Generarea e lentă, costă bani și eșuează altfel decât un API obișnuit. Interfața trebuie să fie onestă în privința asta fără să pară stricată, iar feed-ul trebuie să rămână rapid pe măsură ce se umple.",
+        "value": "E ușor să vorbești despre funcționalități AI. Partea care contează e să livrezi una cu conturi, stocare și o interfață pe care oamenii chiar o pot folosi, așa că asta am făcut."
+      },
+      "nextremum": {
+        "summary": "Un furnizor de telecom care trebuia înțeles înainte ca cineva să sune.",
+        "problem": "Nextremum vinde rețele private și conectivitate în Europa și Asia. E o achiziție tehnică, cu multă încredere la mijloc, iar nimeni nu începe discuția înainte să înțeleagă oferta.",
+        "built": "Un site în Next.js și TypeScript construit în jurul serviciilor și al acoperirii. Layout-uri care rezistă când oferta se extinde și pagini care se citesc bine și pe telefon.",
+        "challenge": "Textul de infrastructură e dens. Trebuia să devină ușor de parcurs pentru cine aprobă bugetul, fără să piardă detaliile pe care le verifică inginerul din apel.",
+        "value": "Oferta stă în picioare fie că o citește cel care cumpără, fie cel care o specifică."
+      },
+      "kraanveld": {
+        "summary": "O firmă de închiriat macarale, prezentată ca cineva căruia i-ai încredința o macara.",
+        "problem": "Închirierea de utilaje grele e o decizie bazată pe încredere. Înainte să sune, oamenii vor să vadă parcul de utilaje, ce ai ridicat și că evident nu e prima ta lucrare.",
+        "built": "Next.js și TypeScript. Servicii, proiecte finalizate, contact. Construit ca să fie actualizat ani la rând, nu refăcut peste doi.",
+        "challenge": "Munca e vizuală, deci site-ul se sprijină pe fotografii mari. Acestea trebuie să se încarce repede pe un telefon, pe șantier, cu semnal prost, nu doar pe o conexiune rapidă.",
+        "value": "Ce determină pe cineva să ridice telefonul e primul lucru de pe pagină."
+      },
+      "aiForFrontend": {
+        "summary": "Un curs online despre folosirea uneltelor AI în munca de frontend.",
+        "problem": "Echipele adoptau unelte AI de programare fără să cadă de acord unde ajută și unde te costă discret o după-amiază.",
+        "built": "Am proiectat și înregistrat tot cursul. Curriculum, exemple lucrate, livrare.",
+        "challenge": "Uneltele se schimbă la câteva luni, așa că materialul trebuia să fie despre felul în care lucrezi, nu despre unealta care era în frunte luna aceea.",
+        "value": "Să explici dezvoltarea asistată de AI altor programatori e un test mai dur decât să o folosești singur."
+      },
+      "wayport": {
+        "summary": "Navigație în interiorul aeroportului, făcută în ritm de hackathon.",
+        "problem": "Aeroporturile sunt greu de citit când ești în întârziere. Porțile, serviciile și facilitățile sunt exact ce nu găsești în momentul în care ai nevoie de ele.",
+        "built": "O aplicație React Native pentru orientarea în interiorul aeroportului. Proiectată, construită și demonstrată în cadrul unui hackathon.",
+        "challenge": "Decizia despre ce tai. Cu un termen fix, singura cale să ajungi la ceva real e să alegi singurul flux care trebuie să funcționeze și să renunți la restul.",
+        "value": "Același instinct de care are nevoie un MVP. Alegi lucrul care demonstrează ideea și construiești bine partea aceea."
+      }
+    },
+    "archiveItems": {
+      "cahulConnect": "O platformă pentru un oraș, care adună afacerile locale, evenimentele și serviciile publice într-un singur loc. Făcută la GigaHack.",
+      "weather": "Vremea de unde ești sau prognoza pentru orice oraș cauți.",
+      "pulse": "Un șablon pentru un magazin de articole sportive, construit ca să exersez fundamentele de layout.",
+      "writerWorks": "Un șablon pe tehnologii web de bază, mai degrabă un pretext ca să lucrez la animație și layout."
+    }
+  },
+  "process": {
+    "eyebrow": "Cum lucrez",
+    "title": "Vorbești cu omul care scrie codul.",
+    "lede": "Colaborări mici, fără account manager la mijloc.",
+    "steps": {
+      "understand": {
+        "title": "Înțeleg problema",
+        "body": "Un apel și multe întrebări despre cum se face treaba acum. Destul de des, lucrul care merită construit nu e cel care a fost cerut."
+      },
+      "scope": {
+        "title": "Stabilim cea mai mică versiune utilă",
+        "body": "Ce se livrează primul, cât costă, ce rămâne deliberat pe dinafară. Fără fază de descoperire fără capăt, facturată la oră."
+      },
+      "build": {
+        "title": "Construiesc la vedere",
+        "body": "Primești ceva ce poți testa în timp ce se construiește. Schimbarea de direcție e ieftină devreme și scumpă târziu, așa că prefer să aud devreme."
+      },
+      "handOver": {
+        "title": "Livrez și predau",
+        "body": "Pus în producție, documentat, al tău. N-ar trebui să ai nevoie de mine pe abonament ca să meargă mai departe."
+      }
+    }
+  },
+  "aboutTeaser": {
+    "eyebrow": "Cu cine ai lucra",
+    "title": "Un singur om, de la cap la coadă.",
+    "body1": "Sunt Lorenzo. Inginer software senior, momentan la <barca>Barça Mobile</barca>, cu câteva proiecte pentru clienți în paralel. Termin și masterul la Universitatea din Oradea.",
+    "body2": "Cea mai mare parte a muncii mele a fost pe frontend (React, Next.js, Solid.js, Angular), dar am construit și dus mai departe și partea de backend, în special cu Fastify și Express. Folosesc unelte agentice zilnic și am înregistrat un curs despre ele.",
+    "body3": "În practică asta înseamnă un singur om care ține toată problema în cap, de la prima discuție despre ce nu merge până la versiunea care rulează în producție."
+  },
+  "contact": {
+    "eyebrow": "Pasul următor",
+    "title": "Spune-mi ce nu funcționează.",
+    "lede": "Câteva fraze sunt de ajuns. Îți spun sincer dacă merită construit și dacă eu sunt omul potrivit.",
+    "emailLabel": "Email",
+    "availability": "Deschis pentru proiecte noi"
   },
   "about": {
-    "title": "Ei bine, salut din nou!",
-    "intro": "Sunt Lorenzo, inginer software și masterand la Universitatea din Oradea. În prezent lucrez ca Senior Software Engineer și ajut companiile să proiecteze, să construiască și să promoveze produse digitale.",
-    "freelance": "Pe lângă activitatea de la job, lucrez și ca freelancer și dezvolt proiecte personale, unde testez idei noi și îmi rafinez abordarea în dezvoltarea web modernă.",
-    "interests": "Mă interesează dezvoltarea web, programarea creativă și designul interactiv, cu accent pe interfețe rapide și responsive și pe experiențe fluide pentru utilizatori.",
-    "career": "De-a lungul carierei am lucrat în principal cu tehnologii frontend. Prefer React și Next.js, pe care le folosesc pentru a construi aplicații web scalabile și performante.",
+    "title": "Varianta lungă.",
+    "lede": "Inginer software. Momentan senior, încă mai ales curios.",
+    "intro": "Sunt Lorenzo, inginer software și masterand la Universitatea din Oradea. Zi de zi lucrez ca Senior Software Engineer la <barca>Barça Mobile</barca>.",
+    "freelance": "În paralel iau câteva proiecte pentru clienți și îmi țin propriile lucruri în viață. Acolo încerc idei înainte să ajungă în producția cuiva.",
+    "career": "Cea mai mare parte a carierei am petrecut-o aproape de interfață, în special React și Next.js. Problemele interesante sunt însă rareori doar de frontend. Am construit API-uri, am proiectat modele de date, am luat decizii de arhitectură și am dus funcționalități de la prima discuție până la deployment.",
+    "interests": "Partea care îmi place cu adevărat vine înaintea codului, când stabilești ce ar trebui să existe. Interfețele rapide și interacțiunile care se simt bine sunt meșteșugul. Decizia despre ce construiești e jumătatea mai grea.",
+    "principles": {
+      "title": "Câteva lucruri pe care le cred despre construirea de software.",
+      "items": {
+        "problem": {
+          "title": "Brieful e o presupunere",
+          "body": "Oamenii descriu soluții pentru că ăsta e vocabularul pe care îl au. Prima mea treabă e să găsesc problema de dedesubt și să verific dacă soluția cerută chiar o rezolvă."
+        },
+        "smallest": {
+          "title": "Livrează cel mai mic lucru real",
+          "body": "O versiune îngustă în producție te învață mai mult decât una largă într-un document. Scopul e o decizie de design, nu o poziție de negociere."
+        },
+        "maintainable": {
+          "title": "Cineva va trebui să întrețină codul ăsta",
+          "body": "Codul deștept e o datorie. Scriu pentru cine îl citește peste un an, care de obicei sunt tot eu. Structură, tipuri, tipare plictisitoare și previzibile."
+        },
+        "ai": {
+          "title": "AI e o unealtă, nu un plan",
+          "body": "Folosesc unelte agentice zilnic și am ținut un curs despre ele. Exact de asta îți voi spune când un model e răspunsul greșit pentru problema ta."
+        }
+      }
+    },
     "techStack": {
-      "title": "Stack tehnologic.",
-      "intro": "În activitatea de zi cu zi folosesc o mulțime de tehnologii, printre care și cele de mai jos:",
+      "title": "Ce folosesc.",
+      "intro": "Alegerea urmează problema. Astea sunt cele pe care le cunosc suficient cât să le pot contesta.",
       "frontend": "Frontend",
       "backend": "Backend",
       "agentic": "Programare agentică"
@@ -33,41 +228,22 @@
       "browsers": "Browsere",
       "design": "Design",
       "communication": "Comunicare"
-    }
-  },
-  "projects": {
-    "title": "Proiecte.",
-    "intro": "Iată câteva dintre proiectele la care am lucrat ca maintainer, contribuitor sau pur și simplu de plăcere.",
-    "client": {
-      "title": "Proiecte pentru clienți.",
-      "intro": "O selecție de proiecte livrate pentru clienți externi, axate pe dezvoltare web și design, realizate pornind de la cerințe reale."
     },
-    "hackathon": {
-      "title": "Proiecte de hackathon.",
-      "intro": "Proiecte create în cadrul hackathoanelor, care arată dezvoltare rapidă, creativitate și capacitatea de a rezolva probleme sub presiunea timpului."
-    },
-    "misc": {
-      "title": "Diverse și experimente.",
-      "intro": "O colecție de proiecte mici, experimente și lucruri interesante la care am lucrat. Nu sunt neapărat utile, nu le întrețin și nu le mai dezvolt activ."
-    },
-    "hackathonLink": "[link hackathon]",
-    "items": {
-      "ainterest": "O aplicație full-stack cu AI, inspirată de Pinterest, pentru generarea și explorarea imaginilor pornind de la prompturi.",
-      "weather": "O aplicație web în care poți vedea vremea din locația ta sau căuta prognoza pentru orice oraș.",
-      "pulse": "Un șablon de aplicație web pentru un magazin de articole sportive, creat pentru învățare și axat pe layout.",
-      "writerWorks": "Un șablon de aplicație web construit cu tehnologii web fundamentale, axat pe animații, layout și design vizual.",
-      "aiForFrontend": "Am creat și înregistrat un curs online despre dezvoltarea frontend cu ajutorul instrumentelor AI moderne.",
-      "kraanveld": "Site pentru o companie de închiriere de macarale, care prezintă servicii, proiecte și informații esențiale.",
-      "nextremum": "Site pentru un furnizor de telecomunicații care oferă servicii de rețele private și conectivitate în Europa și Asia.",
-      "wayport": "Aplicație de navigație în interiorul aeroportului, care ajută călătorii să găsească rapid porțile, serviciile și facilitățile.",
-      "cahulConnect": "Platformă web pentru un oraș, care prezintă afaceri locale, evenimente și servicii publice."
+    "outro": {
+      "title": "Departe de ecran.",
+      "body": "Citesc mai multe newslettere de JavaScript decât e rezonabil și petrec destul timp cu programare creativă, care nu are nicio justificare de business. Cam ăsta e și farmecul."
     }
   },
   "error": {
-    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. <hl>Golul te cheamă.</hl> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
-    "goHome": "Înapoi la pagina principală"
+    "code": "404",
+    "title": "Pagina asta nu există.",
+    "text": "Păcat, pentru că majoritatea lucrurilor pe care le construiesc există. Încearcă proiectele.",
+    "goHome": "Înapoi acasă"
   },
   "footer": {
+    "tagline": "Aplicații web, unelte interne și automatizări pentru afaceri care au depășit soluțiile improvizate.",
+    "navLabel": "Pagini",
+    "contactLabel": "Ia legătura",
     "languages": { "en": "Engleză", "ru": "Rusă", "ro": "Română" },
     "github": "GitHub",
     "linkedin": "LinkedIn",
