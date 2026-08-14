@@ -12,7 +12,7 @@ const AnimatedRoutes = () => {
 			<Routes key={location.pathname} location={location}>
 				<Route
 					element={
-						<Page title='Welcome | Lorenzo'>
+						<Page titleKey='home'>
 							<HomePage />
 						</Page>
 					}
@@ -20,7 +20,7 @@ const AnimatedRoutes = () => {
 				/>
 				<Route
 					element={
-						<Page title='About | Lorenzo' withHeader>
+						<Page titleKey='about' withHeader>
 							<AboutPage />
 						</Page>
 					}
@@ -28,7 +28,7 @@ const AnimatedRoutes = () => {
 				/>
 				<Route
 					element={
-						<Page title='Projects | Lorenzo' withHeader>
+						<Page titleKey='projects' withHeader>
 							<ProjectsPage />
 						</Page>
 					}
@@ -36,7 +36,7 @@ const AnimatedRoutes = () => {
 				/>
 				<Route
 					element={
-						<Page title='404. | Lorenzo'>
+						<Page titleKey='error'>
 							<ErrorPage />
 						</Page>
 					}

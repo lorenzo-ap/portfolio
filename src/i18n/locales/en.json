@@ -1,0 +1,78 @@
+{
+  "pageTitles": {
+    "home": "Welcome | Lorenzo",
+    "about": "About | Lorenzo",
+    "projects": "Projects | Lorenzo",
+    "error": "404. | Lorenzo"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "home": {
+    "intro": "<hl>Hello, I am </hl><me>Lorenzo.</me><br/>A software engineer and a tech enthusiast. Currently working on <br/><barca>Barça Mobile</barca>. I like everything related to development and enjoy creating <things>things</things> for the web.",
+    "latest": "My latest project is <ainterest>AInterest</ainterest>, while you're here, you can check the latest <js>JavaScript</js> news."
+  },
+  "about": {
+    "title": "Well, hi again!",
+    "intro": "I am Lorenzo, a software engineer and Master's student at the University of Oradea. I currently work as a Senior Software Engineer, helping companies design, build, and promote digital products.",
+    "freelance": "Alongside my professional role, I take on freelance work and personal projects, where I experiment with ideas and refine my approach to modern web development.",
+    "interests": "My interests include web development, creative coding, and interactive design, with a strong focus on building fast, responsive interfaces and smooth user experiences.",
+    "career": "Throughout my career, I have mainly worked with frontend technologies. I prefer React and Next.js, which I use to build scalable, high-performance web applications.",
+    "techStack": {
+      "title": "Tech Stack.",
+      "intro": "In my day-to-day work, I'm using a variety of technologies, including but not limited to the following:",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "agentic": "Agentic coding"
+    },
+    "tools": {
+      "title": "Tools I use.",
+      "editors": "Editors",
+      "browsers": "Browsers",
+      "design": "Design",
+      "communication": "Communication"
+    }
+  },
+  "projects": {
+    "title": "Projects.",
+    "intro": "Here are some of the projects I've worked on as a maintainer, contributor or just for fun.",
+    "client": {
+      "title": "Client Projects.",
+      "intro": "A selection of projects delivered for external clients, focused on web development and design, built to real requirements."
+    },
+    "hackathon": {
+      "title": "Hackathon Projects.",
+      "intro": "Projects built during hackathons, showcasing rapid development, creativity and problem-solving skills under time constraints."
+    },
+    "misc": {
+      "title": "Misc & Experiments.",
+      "intro": "This is a collection of small projects, experiments and interesting things I've worked on. Not particularly useful, maintained or actively developed."
+    },
+    "hackathonLink": "[hackathon link]",
+    "items": {
+      "ainterest": "A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.",
+      "weather": "A web app where you can check the weather for your current spot or look up forecasts for any city.",
+      "pulse": "A sports store web app template, created for learning and focused on layout.",
+      "writerWorks": "A web app template built with core web technologies, focused on animations, layout, and visual design.",
+      "aiForFrontend": "Created and recorded an online course on AI-assisted frontend development using modern AI tools.",
+      "kraanveld": "Website for a crane rental company, showcasing services, projects, and key information.",
+      "nextremum": "Website for a telecommunications provider offering private networking and connectivity services across Europe and Asia.",
+      "wayport": "Indoor airport navigation app helping travelers quickly find gates, services, and facilities.",
+      "cahulConnect": "Web platform for a city showcasing local businesses, events, and public services."
+    }
+  },
+  "error": {
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. <hl>The void is calling.</hl> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    "goHome": "Go back home"
+  },
+  "footer": {
+    "languages": { "en": "English", "ru": "Russian", "ro": "Romanian" },
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "language": "Language"
+  }
+}

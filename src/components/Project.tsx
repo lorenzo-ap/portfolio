@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import type { ProjectModel, Skill } from '../types';
 
@@ -29,7 +30,8 @@ interface ProjectProps {
 }
 
 export const Project = ({ index, project, isMisc }: ProjectProps) => {
-	const { name, description, link, skills } = project;
+	const { t } = useTranslation();
+	const { name, descriptionKey, link, skills } = project;
 
 	return (
 		<div className={index === 0 ? 'mt-[14px]' : 'border-faded-line border-t pt-[14px]'}>
@@ -45,7 +47,7 @@ export const Project = ({ index, project, isMisc }: ProjectProps) => {
 				{isMisc && <Skills skills={skills} />}
 			</div>
 
-			{description && <p className='mt-1 mb-1.5 text-[14px] text-text'>{description}</p>}
+			{descriptionKey && <p className='mt-1 mb-1.5 text-[14px] text-text'>{t(`projects.items.${descriptionKey}`)}</p>}
 
 			{!isMisc && <Skills skills={skills} />}
 
@@ -55,7 +57,7 @@ export const Project = ({ index, project, isMisc }: ProjectProps) => {
 					target='_blank'
 					to={project.hackathonLink}
 				>
-					[hackathon link]
+					{t('projects.hackathonLink')}
 				</Link>
 			)}
 		</div>

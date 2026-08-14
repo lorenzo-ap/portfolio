@@ -1,63 +1,53 @@
+import { useTranslation } from 'react-i18next';
+
 export const AboutPage = () => {
+	const { t } = useTranslation();
+
 	return (
 		<section className='flex flex-col gap-[14px] px-6 text-text'>
-			<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Well, hi again!</h1>
+			<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>{t('about.title')}</h1>
 
-			<p>
-				I am Lorenzo, a software engineer and Master&apos;s student at the University of Oradea. I currently work as a
-				Senior Software Engineer, helping companies design, build, and promote digital products.
-			</p>
+			<p>{t('about.intro')}</p>
 
-			<p>
-				Alongside my professional role, I take on freelance work and personal projects, where I experiment with ideas
-				and refine my approach to modern web development.
-			</p>
+			<p>{t('about.freelance')}</p>
 
-			<p>
-				My interests include web development, creative coding, and interactive design, with a strong focus on building
-				fast, responsive interfaces and smooth user experiences.
-			</p>
+			<p>{t('about.interests')}</p>
 
-			<p>
-				Throughout my career, I have mainly worked with frontend technologies. I prefer React and Next.js, which I use
-				to build scalable, high-performance web applications.
-			</p>
+			<p>{t('about.career')}</p>
 
-			<h2 className='mt-7 font-semibold text-[21px]'>Tech Stack.</h2>
+			<h2 className='mt-7 font-semibold text-[21px]'>{t('about.techStack.title')}</h2>
 
-			<p>
-				In my day-to-day work, I&apos;m using a variety of technologies, including but not limited to the following:
-			</p>
+			<p>{t('about.techStack.intro')}</p>
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
-					<strong>Frontend</strong>: React, Next.js, Solid.js, Angular.
+					<strong>{t('about.techStack.frontend')}</strong>: React, Next.js, Solid.js, Angular.
 				</li>
 				<li>
-					<strong>Backend</strong>: Fastify, Express.
+					<strong>{t('about.techStack.backend')}</strong>: Fastify, Express.
 				</li>
 				<li>
-					<strong>Agentic coding</strong>: Claude Code.
+					<strong>{t('about.techStack.agentic')}</strong>: Claude Code.
 				</li>
 			</ul>
 
-			<h2 className='mt-7 font-semibold text-[21px]'>Tools I use.</h2>
+			<h2 className='mt-7 font-semibold text-[21px]'>{t('about.tools.title')}</h2>
 
 			<ul className='flex list-square flex-col gap-y-[14px] ps-[18px]'>
 				<li>
-					<strong>Editors</strong>: VS Code, Cursor, IntelliJ.
+					<strong>{t('about.tools.editors')}</strong>: VS Code, Cursor, IntelliJ.
 				</li>
 
 				<li>
-					<strong>Browsers</strong>: Chrome, Safari.
+					<strong>{t('about.tools.browsers')}</strong>: Chrome, Safari.
 				</li>
 
 				<li>
-					<strong>Design</strong>: Figma.
+					<strong>{t('about.tools.design')}</strong>: Figma.
 				</li>
 
 				<li>
-					<strong>Communication</strong>: Telegram, Slack, Discord.
+					<strong>{t('about.tools.communication')}</strong>: Telegram, Slack, Discord.
 				</li>
 			</ul>
 		</section>

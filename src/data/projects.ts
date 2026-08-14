@@ -5,27 +5,25 @@ export const projects: ProjectModel[] = [
 		name: 'AInterest',
 		link: 'https://www.ainterest.me',
 		skills: [Skill.React, Skill.TypeScript, Skill.Fastify],
-		description:
-			'A full-stack AI-powered, Pinterest-inspired app for generating and exploring images from user prompts.'
+		descriptionKey: 'ainterest'
 	},
 	{
 		name: 'Weather',
 		link: 'https://lorenzo-ap.github.io/weather-app',
 		skills: [Skill.React, Skill.TypeScript],
-		description: 'A web app where you can check the weather for your current spot or look up forecasts for any city.'
+		descriptionKey: 'weather'
 	},
 	{
 		name: 'Pulse',
 		link: 'https://lorenzo-pulse.netlify.app',
 		skills: [Skill.HTML, Skill.CSS, Skill.jQuery],
-		description: 'A sports store web app template, created for learning and focused on layout.'
+		descriptionKey: 'pulse'
 	},
 	{
 		name: 'Writer Works',
 		link: 'https://lorenzo-writer.netlify.app',
 		skills: [Skill.HTML, Skill.CSS, Skill.JavaScript],
-		description:
-			'A web app template built with core web technologies, focused on animations, layout, and visual design.'
+		descriptionKey: 'writerWorks'
 	}
 ];
 
@@ -34,20 +32,19 @@ export const clientProjects: ProjectModel[] = [
 		name: 'AI for Frontend Developers',
 		link: 'https://itlogia.ru/ai-front',
 		skills: [Skill.AITooling, Skill.CurriculumDesign],
-		description: 'Created and recorded an online course on AI-assisted frontend development using modern AI tools.'
+		descriptionKey: 'aiForFrontend'
 	},
 	{
 		name: 'Kraanveld',
 		link: 'https://www.kraanveld.nl',
 		skills: [Skill.NextJS, Skill.TypeScript],
-		description: 'Website for a crane rental company, showcasing services, projects, and key information.'
+		descriptionKey: 'kraanveld'
 	},
 	{
 		name: 'Nextremum',
 		link: 'https://nextremum.net',
 		skills: [Skill.NextJS, Skill.TypeScript],
-		description:
-			'Website for a telecommunications provider offering private networking and connectivity services across Europe and Asia.'
+		descriptionKey: 'nextremum'
 	}
 ];
 
@@ -56,14 +53,14 @@ export const hackathonProjects: ProjectModel[] = [
 		name: 'Wayport',
 		link: 'https://github.com/lorenzo-ap/hacktech',
 		skills: [Skill.ReactNative, Skill.TypeScript],
-		description: 'Indoor airport navigation app helping travelers quickly find gates, services, and facilities.',
+		descriptionKey: 'wayport',
 		hackathonLink: 'https://hack-tech.ai/airport-chapter'
 	},
 	{
 		name: 'Cahul Connect',
 		link: 'https://github.com/serezha13/cahul-connect',
 		skills: [Skill.NextJS, Skill.TypeScript],
-		description: 'Web platform for a city showcasing local businesses, events, and public services.',
+		descriptionKey: 'cahulConnect',
 		hackathonLink: 'https://old.gigahack.md/deeptech-gigahack-2023/'
 	}
 ];

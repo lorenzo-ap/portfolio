@@ -1,0 +1,78 @@
+{
+  "pageTitles": {
+    "home": "Bine ai venit | Lorenzo",
+    "about": "Despre | Lorenzo",
+    "projects": "Proiecte | Lorenzo",
+    "error": "404. | Lorenzo"
+  },
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre",
+    "projects": "Proiecte"
+  },
+  "home": {
+    "intro": "<hl>Salut, sunt </hl><me>Lorenzo.</me><br/>Inginer software și pasionat de tehnologie. În prezent lucrez la <br/><barca>Barça Mobile</barca>. Îmi place tot ce ține de dezvoltare și îmi face plăcere să creez <things>lucruri</things> pentru web.",
+    "latest": "Cel mai recent proiect al meu este <ainterest>AInterest</ainterest>, iar cât timp ești aici, poți citi cele mai noi știri despre <js>JavaScript</js>."
+  },
+  "about": {
+    "title": "Ei bine, salut din nou!",
+    "intro": "Sunt Lorenzo, inginer software și masterand la Universitatea din Oradea. În prezent lucrez ca Senior Software Engineer și ajut companiile să proiecteze, să construiască și să promoveze produse digitale.",
+    "freelance": "Pe lângă activitatea de la job, lucrez și ca freelancer și dezvolt proiecte personale, unde testez idei noi și îmi rafinez abordarea în dezvoltarea web modernă.",
+    "interests": "Mă interesează dezvoltarea web, programarea creativă și designul interactiv, cu accent pe interfețe rapide și responsive și pe experiențe fluide pentru utilizatori.",
+    "career": "De-a lungul carierei am lucrat în principal cu tehnologii frontend. Prefer React și Next.js, pe care le folosesc pentru a construi aplicații web scalabile și performante.",
+    "techStack": {
+      "title": "Stack tehnologic.",
+      "intro": "În activitatea de zi cu zi folosesc o mulțime de tehnologii, printre care și cele de mai jos:",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "agentic": "Programare agentică"
+    },
+    "tools": {
+      "title": "Instrumente pe care le folosesc.",
+      "editors": "Editoare",
+      "browsers": "Browsere",
+      "design": "Design",
+      "communication": "Comunicare"
+    }
+  },
+  "projects": {
+    "title": "Proiecte.",
+    "intro": "Iată câteva dintre proiectele la care am lucrat ca maintainer, contribuitor sau pur și simplu de plăcere.",
+    "client": {
+      "title": "Proiecte pentru clienți.",
+      "intro": "O selecție de proiecte livrate pentru clienți externi, axate pe dezvoltare web și design, realizate pornind de la cerințe reale."
+    },
+    "hackathon": {
+      "title": "Proiecte de hackathon.",
+      "intro": "Proiecte create în cadrul hackathoanelor, care arată dezvoltare rapidă, creativitate și capacitatea de a rezolva probleme sub presiunea timpului."
+    },
+    "misc": {
+      "title": "Diverse și experimente.",
+      "intro": "O colecție de proiecte mici, experimente și lucruri interesante la care am lucrat. Nu sunt neapărat utile, nu le întrețin și nu le mai dezvolt activ."
+    },
+    "hackathonLink": "[link hackathon]",
+    "items": {
+      "ainterest": "O aplicație full-stack cu AI, inspirată de Pinterest, pentru generarea și explorarea imaginilor pornind de la prompturi.",
+      "weather": "O aplicație web în care poți vedea vremea din locația ta sau căuta prognoza pentru orice oraș.",
+      "pulse": "Un șablon de aplicație web pentru un magazin de articole sportive, creat pentru învățare și axat pe layout.",
+      "writerWorks": "Un șablon de aplicație web construit cu tehnologii web fundamentale, axat pe animații, layout și design vizual.",
+      "aiForFrontend": "Am creat și înregistrat un curs online despre dezvoltarea frontend cu ajutorul instrumentelor AI moderne.",
+      "kraanveld": "Site pentru o companie de închiriere de macarale, care prezintă servicii, proiecte și informații esențiale.",
+      "nextremum": "Site pentru un furnizor de telecomunicații care oferă servicii de rețele private și conectivitate în Europa și Asia.",
+      "wayport": "Aplicație de navigație în interiorul aeroportului, care ajută călătorii să găsească rapid porțile, serviciile și facilitățile.",
+      "cahulConnect": "Platformă web pentru un oraș, care prezintă afaceri locale, evenimente și servicii publice."
+    }
+  },
+  "error": {
+    "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. <hl>Golul te cheamă.</hl> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    "goHome": "Înapoi la pagina principală"
+  },
+  "footer": {
+    "languages": { "en": "Engleză", "ru": "Rusă", "ro": "Română" },
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "lightMode": "Mod luminos",
+    "darkMode": "Mod întunecat",
+    "language": "Limbă"
+  }
+}

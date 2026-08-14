@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import type { PropsWithChildren } from 'react';
 import { usePageTitle } from '../hooks';
+import type { PageTitleKey } from '../types';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
 interface PageProps extends PropsWithChildren {
-	title: string;
+	titleKey: PageTitleKey;
 	withHeader?: boolean;
 }
 
-export const Page = ({ title, withHeader, children }: PageProps) => {
-	usePageTitle(title);
+export const Page = ({ titleKey, withHeader, children }: PageProps) => {
+	usePageTitle(titleKey);
 
 	return (
 		<>

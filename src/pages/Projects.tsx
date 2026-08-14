@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import { Project } from '../components';
 import { clientProjects, hackathonProjects, misc, projects } from '../data/projects';
 
 export const ProjectsPage = () => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<section className='flex flex-col gap-[14px] px-6 text-text'>
-				<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>Projects.</h1>
+				<h1 className='mt-[28px] mb-[14px] font-semibold text-4xl'>{t('projects.title')}</h1>
 
-				<p>Here are some of the projects I&#39;ve worked on as a maintainer, contributor or just for fun.</p>
+				<p>{t('projects.intro')}</p>
 
 				{projects.map((project, index) => (
 					<Project index={index} key={project.name} project={project} />
@@ -15,12 +18,9 @@ export const ProjectsPage = () => {
 			</section>
 
 			<section className='my-[100px] flex flex-col gap-[14px] px-6 text-text'>
-				<h2 className='font-semibold text-[21px]'>Client Projects.</h2>
+				<h2 className='font-semibold text-[21px]'>{t('projects.client.title')}</h2>
 
-				<p>
-					A selection of projects delivered for external clients, focused on web development and design, built to real
-					requirements.
-				</p>
+				<p>{t('projects.client.intro')}</p>
 
 				{clientProjects.map((project, index) => (
 					<Project index={index} key={project.name} project={project} />
@@ -28,12 +28,9 @@ export const ProjectsPage = () => {
 			</section>
 
 			<section className='my-[100px] flex flex-col gap-[14px] px-6 text-text'>
-				<h2 className='font-semibold text-[21px]'>Hackathon Projects.</h2>
+				<h2 className='font-semibold text-[21px]'>{t('projects.hackathon.title')}</h2>
 
-				<p>
-					Projects built during hackathons, showcasing rapid development, creativity and problem-solving skills under
-					time constraints.
-				</p>
+				<p>{t('projects.hackathon.intro')}</p>
 
 				{hackathonProjects.map((project, index) => (
 					<Project index={index} key={project.name} project={project} />
@@ -41,12 +38,9 @@ export const ProjectsPage = () => {
 			</section>
 
 			<section className='flex flex-col gap-[14px] px-6 text-text'>
-				<h2 className='font-semibold text-[21px]'>Misc & Experiments.</h2>
+				<h2 className='font-semibold text-[21px]'>{t('projects.misc.title')}</h2>
 
-				<p>
-					This is a collection of small projects, experiments and interesting things I&#39;ve worked on. Not
-					particularly useful, maintained or actively developed.
-				</p>
+				<p>{t('projects.misc.intro')}</p>
 
 				{misc.map((project, index) => (
 					<Project index={index} isMisc key={project.name} project={project} />
