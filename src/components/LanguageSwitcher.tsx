@@ -3,13 +3,16 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ease } from '../lib/motion';
 import { Language, languages } from '../types';
-import { CheckIcon, ChevronIcon } from './icons';
+import { CheckIcon } from './icons';
 
 interface LanguageSwitcherProps {
 	className?: string;
 	/** `inline` lays the options out flat, for the mobile menu where a popover would be clipped. */
 	variant?: 'dropdown' | 'inline';
 }
+
+/** The mono scale tracks wide, which pushes short labels off-centre unless the lead is padded back. */
+const code = 'pl-[0.14em] font-medium font-mono text-eyebrow uppercase';
 
 export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: LanguageSwitcherProps) => {
 	const { i18n, t } = useTranslation();
@@ -49,13 +52,13 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 
 	if (variant === 'inline') {
 		return (
-			<div className={`flex rounded-full border border-border p-0.5 ${className}`}>
+			<div className={`flex items-center gap-1 rounded-full border border-border p-1 ${className}`}>
 				{languages.map((language) => (
 					<button
 						aria-current={language === currentLanguage}
 						aria-label={t(`footer.languages.${language}`)}
-						className={`rounded-full px-2.5 py-1.5 font-medium font-mono text-[0.6875rem] uppercase leading-none tracking-wider transition-colors duration-300 ease-expo ${
-							language === currentLanguage ? 'bg-faded-bg text-text' : 'text-faded-text hover:text-text'
+						className={`${code} rounded-full px-2.5 py-2 transition-colors duration-300 ease-expo ${
+							language === currentLanguage ? 'bg-accent-soft text-accent' : 'text-faded-text hover:text-text'
 						}`}
 						key={language}
 						onClick={() => i18n.changeLanguage(language)}
@@ -70,32 +73,31 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 
 	return (
 		<div className={`relative ${className}`} ref={rootRef}>
+			{/* Sized and shaped exactly like the theme toggle, so the two read as one pair of controls. */}
 			<button
 				aria-expanded={open}
 				aria-haspopup='listbox'
 				aria-label={t('footer.language')}
-				className={`flex h-10 items-center gap-1.5 rounded-full border px-2.5 transition-colors duration-300 ease-expo ${
-					open ? 'border-border text-text' : 'border-transparent text-faded-text hover:border-border hover:text-text'
+				className={`${code} flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 ease-expo ${
+					open
+						? 'border-border bg-faded-bg text-text'
+						: 'border-transparent text-faded-text hover:border-border hover:text-text'
 				}`}
 				onClick={() => setOpen((isOpen) => !isOpen)}
 				ref={triggerRef}
+				title={t('footer.language')}
 				type='button'
 			>
-				<span className='font-medium font-mono text-[0.6875rem] uppercase leading-none tracking-wider'>
-					{currentLanguage}
-				</span>
-				<motion.span animate={{ rotate: open ? 180 : 0 }} className='flex' transition={{ duration: 0.3, ease }}>
-					<ChevronIcon size={12} />
-				</motion.span>
+				{currentLanguage}
 			</button>
 
 			<AnimatePresence>
 				{open && (
 					<motion.ul
 						animate={{ opacity: 1, y: 0, scale: 1 }}
-						className='absolute top-[calc(100%+0.5rem)] right-0 z-50 min-w-[10rem] origin-top-right rounded-xl border border-border bg-surface-raised p-1 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.45)]'
-						exit={{ opacity: 0, y: -6, scale: 0.96 }}
-						initial={{ opacity: 0, y: -6, scale: 0.96 }}
+						className='absolute top-[calc(100%+0.625rem)] right-0 z-50 min-w-[11.5rem] origin-top-right rounded-2xl border border-border bg-surface-raised p-1.5 shadow-[0_20px_44px_-28px_var(--shadow-pop)]'
+						exit={{ opacity: 0, y: -6, scale: 0.97 }}
+						initial={{ opacity: 0, y: -6, scale: 0.97 }}
 						role='listbox'
 						transition={{ duration: 0.22, ease }}
 					>
@@ -106,21 +108,15 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 								<li key={language}>
 									<button
 										aria-selected={isSelected}
-										className={`flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2 text-left text-[0.875rem] transition-colors duration-200 ease-expo ${
-											isSelected ? 'text-accent' : 'text-subfaded-text hover:bg-accent-soft hover:text-text'
+										className={`flex w-full items-center justify-between gap-6 rounded-full px-3.5 py-2 text-left text-[0.9375rem] transition-colors duration-300 ease-expo ${
+											isSelected ? 'text-accent' : 'text-faded-text hover:bg-faded-bg hover:text-text'
 										}`}
 										onClick={() => select(language)}
 										role='option'
 										type='button'
 									>
 										{t(`footer.languages.${language}`)}
-										{isSelected ? (
-											<CheckIcon size={13} />
-										) : (
-											<span className='font-mono text-[0.625rem] text-faded-text uppercase tracking-wider'>
-												{language}
-											</span>
-										)}
+										{isSelected ? <CheckIcon size={13} /> : <span className={`${code} opacity-70`}>{language}</span>}
 									</button>
 								</li>
 							);

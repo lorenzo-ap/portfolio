@@ -41,6 +41,8 @@ html {
 
   --grid-line: rgba(22, 22, 26, 0.055);
   --spotlight: rgba(31, 71, 224, 0.1);
+  /* Elevation for the one thing that floats above the page: the header popover. */
+  --shadow-pop: rgba(22, 22, 26, 0.5);
   --bg-translucent: rgba(251, 251, 250, 0.85);
   --wordmark: rgba(22, 22, 26, 0.07);
 
@@ -69,6 +71,7 @@ html {
 
     --grid-line: rgba(244, 244, 242, 0.05);
     --spotlight: rgba(90, 120, 255, 0.14);
+    --shadow-pop: rgba(0, 0, 0, 0.7);
     --bg-translucent: rgba(12, 12, 14, 0.82);
     --wordmark: rgba(244, 244, 242, 0.07);
 
