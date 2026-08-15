@@ -37,7 +37,7 @@ interface CaseStudyTitleProps {
  * The product's own icon, then its name. The icon is sized in `em` so it tracks
  * whichever heading size the surface uses, and stays inline so it rides the
  * first line when a title wraps instead of centring itself between two lines.
- * It's decorative — the name beside it already carries the meaning.
+ * It's decorative, since the name beside it already carries the meaning.
  */
 const CaseStudyTitle = ({ caseStudy, className, as: Heading = 'h3' }: CaseStudyTitleProps) => (
 	<Heading className={className}>

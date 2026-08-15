@@ -17,9 +17,9 @@ export const site = {
 
 /**
  * Secondary messaging handles. Fill one in and its link appears everywhere;
- * leave it empty and nothing renders — no dead links, no placeholders.
+ * leave it empty and nothing renders, so there are no dead links or placeholders.
  *
- * `whatsapp`: a wa.me link — either the click-to-chat short link from the
+ * `whatsapp`: a wa.me link, either the click-to-chat short link from the
  * WhatsApp app or 'https://wa.me/<international number, digits only>'.
  * `telegram`: username, with or without the leading '@'.
  */

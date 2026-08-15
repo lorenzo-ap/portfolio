@@ -99,7 +99,7 @@ export const Header = () => {
 						</Link>
 
 						<div className='flex items-center gap-3 md:gap-5'>
-							<nav aria-label='Primary' className='hidden md:block'>
+							<nav aria-label={t('nav.label')} className='hidden md:block'>
 								<ul className='flex items-center gap-7'>
 									{routes.map((route) => (
 										<li key={route.path}>
@@ -153,7 +153,7 @@ export const Header = () => {
 							initial={{ height: 0, opacity: 0 }}
 							transition={{ duration: 0.45, ease }}
 						>
-							<nav aria-label='Mobile' className='shell flex flex-col gap-1 py-6'>
+							<nav aria-label={t('nav.label')} className='shell flex flex-col gap-1 py-6'>
 								{routes.map((route, index) => (
 									<motion.div
 										animate={{ opacity: 1, y: 0 }}
