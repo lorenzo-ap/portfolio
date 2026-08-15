@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { featuredCaseStudies } from '../data/projects';
+import { productCaseStudies, teachingCaseStudy } from '../data/projects';
 import { ButtonLink } from './Button';
-import { FeaturedCaseStudy } from './CaseStudy';
+import { FeaturedCaseStudy, FeaturedTeaching } from './CaseStudy';
 import { Reveal } from './Reveal';
 import { Section, SectionHeader } from './Section';
 
@@ -23,10 +23,13 @@ export const SelectedWork = () => {
 				title={t('work.title')}
 			/>
 
-			<div className='mt-20 flex flex-col gap-24 lg:gap-32'>
-				{featuredCaseStudies.map((caseStudy, index) => (
+			<div className='mt-20 flex flex-col gap-24 lg:mt-24 lg:gap-32'>
+				{productCaseStudies.map((caseStudy, index) => (
 					<FeaturedCaseStudy caseStudy={caseStudy} index={index} key={caseStudy.key} />
 				))}
+
+				{/* Same weight, different shape: the visitor should read it as a different kind of work. */}
+				<FeaturedTeaching caseStudy={teachingCaseStudy} index={productCaseStudies.length} />
 			</div>
 		</Section>
 	);

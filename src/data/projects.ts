@@ -1,107 +1,59 @@
-import { type ArchiveProjectModel, type CaseStudyModel, Skill } from '../types';
+import type { CaseStudyModel } from '../types';
 
 /**
- * Case studies, strongest first. `key` resolves the Problem / Built / Challenge /
- * Value copy from the locale files so every language tells the same story.
+ * Four pieces of work, in the order they're meant to be read:
+ * real product → complex product → my own product → teaching.
+ *
+ * `key` resolves the Situation / What I did / Hard part / What this shows copy
+ * from the locale files, so every language tells the same story.
  */
-export const caseStudies: CaseStudyModel[] = [
-	{
-		key: 'ainterest',
-		name: 'AInterest',
-		link: 'https://www.ainterest.me',
-		kind: 'product',
-		skills: [Skill.React, Skill.TypeScript, Skill.Fastify, Skill.SystemDesign],
-		hue: 232
-	},
-	{
-		key: 'nextremum',
-		name: 'Nextremum',
-		link: 'https://nextremum.net',
-		kind: 'client',
-		skills: [Skill.NextJS, Skill.TypeScript],
-		hue: 210
-	},
-	{
-		key: 'kraanveld',
-		name: 'Kraanveld',
-		link: 'https://www.kraanveld.nl',
-		kind: 'client',
-		skills: [Skill.NextJS, Skill.TypeScript],
-		hue: 248
-	},
-	{
-		key: 'aiForFrontend',
-		name: 'AI for Frontend Developers',
-		link: 'https://itlogia.ru/ai-front',
-		kind: 'course',
-		skills: [Skill.AITooling, Skill.CurriculumDesign],
-		hue: 200
-	},
-	{
-		key: 'wayport',
-		name: 'Wayport',
-		link: 'https://github.com/lorenzo-ap/hacktech',
-		kind: 'hackathon',
-		skills: [Skill.ReactNative, Skill.TypeScript],
-		secondaryLink: { href: 'https://hack-tech.ai/airport-chapter', labelKey: 'hackathonLink' },
-		hue: 222
-	}
-];
 
-/** Shown on the home page. The three that best answer "can he build my thing?". */
-export const featuredCaseStudies = caseStudies.slice(0, 3);
+/** The day job: a live product with paying customers and a brand attached. */
+const barcaMobile: CaseStudyModel = {
+	key: 'barcaMobile',
+	name: 'Barça Mobile',
+	link: 'https://www.barcamobile.com/',
+	kind: 'live',
+	secondaryLink: {
+		href: 'https://apps.apple.com/bg/app/bar%C3%A7a-mobile-your-travel-esim/id6741801803',
+		labelKey: 'appStoreLink'
+	},
+	hue: 214
+};
 
-export const archiveProjects: ArchiveProjectModel[] = [
-	{
-		name: 'Cahul Connect',
-		link: 'https://github.com/serezha13/cahul-connect',
-		kind: 'hackathon',
-		skills: [Skill.NextJS, Skill.TypeScript],
-		descriptionKey: 'cahulConnect'
-	},
-	{
-		name: 'Weather',
-		link: 'https://lorenzo-ap.github.io/weather-app',
-		kind: 'product',
-		skills: [Skill.React, Skill.TypeScript],
-		descriptionKey: 'weather'
-	},
-	{
-		name: 'Pulse',
-		link: 'https://lorenzo-pulse.netlify.app',
-		kind: 'experiment',
-		skills: [Skill.HTML, Skill.CSS, Skill.jQuery],
-		descriptionKey: 'pulse'
-	},
-	{
-		name: 'Writer Works',
-		link: 'https://lorenzo-writer.netlify.app',
-		kind: 'experiment',
-		skills: [Skill.HTML, Skill.CSS, Skill.JavaScript],
-		descriptionKey: 'writerWorks'
-	},
-	{
-		name: 'Typing Game',
-		link: 'https://lorenzo-typing-game.vercel.app',
-		kind: 'experiment',
-		skills: [Skill.React]
-	},
-	{
-		name: 'Budget App',
-		link: 'https://lorenzo-ap.github.io/budget-app',
-		kind: 'experiment',
-		skills: [Skill.Angular]
-	},
-	{
-		name: 'Kanban Board',
-		link: 'https://lorenzo-ap.github.io/ng-kanban',
-		kind: 'experiment',
-		skills: [Skill.Angular]
-	},
-	{
-		name: 'Background Generator',
-		link: 'https://lorenzo-ap.github.io/background-generator',
-		kind: 'experiment',
-		skills: [Skill.JavaScript]
-	}
-];
+/** Client work on a genuinely complicated product. */
+const examin: CaseStudyModel = {
+	key: 'examin',
+	name: 'Examin.ai',
+	link: 'https://examin.ai/',
+	kind: 'client',
+	hue: 226
+};
+
+/** Idea → product → live application, all mine. */
+const ainterest: CaseStudyModel = {
+	key: 'ainterest',
+	name: 'AInterest',
+	link: 'https://www.ainterest.me/',
+	kind: 'product',
+	hue: 236
+};
+
+/** Not software. Same weight on the page, deliberately different in shape. */
+const aiForFrontend: CaseStudyModel = {
+	key: 'aiForFrontend',
+	name: 'AI for Frontend Developers',
+	link: 'https://itlogia.ru/ai-front',
+	kind: 'course',
+	primaryLabelKey: 'viewCourse',
+	hue: 204
+};
+
+/** The three software products, shown as full-width alternating rows. */
+export const productCaseStudies: CaseStudyModel[] = [barcaMobile, examin, ainterest];
+
+/** Teaching sits apart: the same weight, a different kind of proof. */
+export const teachingCaseStudy: CaseStudyModel = aiForFrontend;
+
+/** Everything, in the order the story is told. */
+export const caseStudies: CaseStudyModel[] = [...productCaseStudies, teachingCaseStudy];

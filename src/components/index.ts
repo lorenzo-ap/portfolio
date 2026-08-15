@@ -1,6 +1,5 @@
 export * from './AboutTeaser';
 export * from './ActionLink';
-export * from './ArchiveList';
 export * from './Button';
 export * from './Capabilities';
 export * from './CaseStudy';

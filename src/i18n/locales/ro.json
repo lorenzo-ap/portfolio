@@ -7,7 +7,7 @@
   },
   "meta": {
     "home": "Sunt Lorenzo. Construiesc software pentru părțile dintr-o afacere care se fac încă manual. Nu trebuie să știi ce ar trebui construit. Spune-mi ce nu funcționează și te ajut să dăm de restul.",
-    "work": "Proiecte pentru clienți, produsele mele și câteva lucruri făcute într-un weekend. Pentru fiecare: ce nu mergea, ce am construit și partea care a fost cu adevărat grea.",
+    "work": "Patru lucruri care mi-au fost încredințate: un eSIM de călătorie folosit în toată lumea, un program care se uită în locul oamenilor la camerele de supraveghere, produsul meu și un curs pe care l-am scris. Pentru fiecare: situația, ce am făcut și partea cu adevărat grea.",
     "about": "Cum e să lucrezi cu mine, cum mă gândesc la o problemă înainte să construiesc ceva și câte ceva despre cine sunt."
   },
   "nav": {
@@ -23,10 +23,10 @@
     "startConversation": "Scrie-mi",
     "seeWork": "Vezi ce am construit",
     "emailMe": "Scrie-mi",
-    "allWork": "Toate proiectele",
+    "allWork": "Vezi-le pe toate patru",
     "visitSite": "Vezi site-ul",
-    "hackathonLink": "Hackathon",
-    "sourceLink": "Cod sursă",
+    "appStoreLink": "App Store",
+    "viewCourse": "Vezi cursul",
     "moreAbout": "Mai multe despre mine",
     "backHome": "Înapoi acasă",
     "backToTop": "Sus",
@@ -82,72 +82,68 @@
     }
   },
   "work": {
-    "eyebrow": "Proiecte",
-    "title": "Câteva lucruri pe care le-am construit.",
-    "lede": "Ce nu mergea și ce am făcut în privința asta.",
-    "pageTitle": "Lucruri pe care le-am construit.",
-    "pageLede": "Proiecte pentru clienți, produsele mele și câteva lucruri făcute într-un weekend ca să văd dacă ies. Pentru fiecare: ce nu mergea, ce am construit și partea care a fost cu adevărat grea.",
+    "eyebrow": "Proiecte alese",
+    "title": "Patru lucruri care mi-au fost încredințate.",
+    "lede": "Un eSIM de călătorie vândut sub numele FC Barcelona, un program care se uită în locul oamenilor la camerele de supraveghere, produsul meu și un curs pe care l-am scris. Probleme diferite, aceeași treabă dedesubt.",
+    "pageTitle": "Patru lucruri care mi-au fost încredințate.",
+    "pageLede": "Nu o listă cu tot ce am făcut vreodată. Astea patru, pentru că împreună răspund la ce vrea omul să știe de fapt: care era situația, ce am făcut, ce a fost greu și ce spune asta despre ideea de a-mi da o problemă de-a ta.",
     "labels": {
-      "problem": "Problema",
-      "built": "Ce am construit",
+      "situation": "Situația",
+      "contribution": "Ce am făcut",
       "challenge": "Partea grea",
-      "value": "De ce a contat",
-      "stack": "Construit cu"
+      "proof": "Ce arată asta",
+      "role": "Rolul meu"
     },
     "kinds": {
-      "product": "Produsul meu",
+      "live": "Produs live",
       "client": "Proiect pentru client",
-      "hackathon": "Făcut într-un weekend",
-      "course": "Curs",
-      "experiment": "Experiment"
+      "product": "Produsul meu",
+      "course": "Predare"
     },
-    "archive": {
-      "eyebrow": "Arhivă",
-      "title": "Restul lucrurilor.",
-      "lede": "Lucruri mai mici, proiecte de weekend și experimente vechi. De majoritatea nu m-am mai atins de ani buni. Sunt aici pentru că, fără ele, lista ar arăta mai îngrijită decât e de fapt."
+    "course": {
+      "audienceLabel": "Pentru cine e",
+      "audienceValue": "Programatori frontend care lucrează deja",
+      "formatLabel": "Format",
+      "formatValue": "Online, înregistrat, în ritmul tău",
+      "lengthLabel": "Durată",
+      "lengthValue": "Două module, unsprezece lecții, aproximativ patru săptămâni",
+      "publisherLabel": "Publicat de",
+      "publisherValue": "Itlogia, școală online licențiată",
+      "note": "E singurul lucru de aici care nu e software. E pe listă pentru că a explica ceva clar, unor oameni care se duc să încerce chiar în seara aia, e altă abilitate decât a construi acel ceva — și e motivul pentru care îți voi spune când AI nu e răspunsul la problema ta."
     },
     "cases": {
+      "barcaMobile": {
+        "summary": "Un eSIM de călătorie vândut sub numele FC Barcelona. Produsul la care lucrez zi de zi.",
+        "situation": "Să ai internet în altă țară e încă o mică bătaie de cap: o factură despre care afli după sau o coadă la un magazin din aeroport. Barça Mobile vinde trafic mobil în peste 170 de țări și o face sub un nume pe care oamenii îl recunosc deja, ceea ce ridică ștacheta pentru cum trebuie să se simtă. Omul care îl folosește stă de obicei într-un terminal, încă fără semnal, și fără răbdare pentru un ecran care trebuie descifrat.",
+        "contribution": "Sunt inginer senior în echipa care îl construiește și lucrez pe tot produsul, nu într-un colț al lui: aplicația în care oamenii își gestionează abonamentul, site-ul de unde îl aleg și părțile din spatele amândurora. Concret: alegerea destinației, cumpărarea unui plan, instalarea eSIM-ului pe telefon și vederea traficului rămas — exact momentele în care cineva fie se conectează, fie renunță și se duce la un magazin.",
+        "challenge": "Nimic nu ajunge live pentru că a mers pe calculatorul meu. Instalarea eSIM-ului e pasul care nu iartă: se întâmplă o singură dată, pe un telefon pe care omul nu l-a mai configurat așa niciodată, de obicei pe wifi-ul de împrumut din aeroport, iar dacă iese prost nu mai încearcă a doua oară. Așa că cea mai mare grijă se duce în câteva ecrane unde lucrurile pot merge prost în tăcere și în a fi sigur că o modificare nu a stricat ceva pentru cei care îl folosesc deja.",
+        "proof": "Îmi petrec săptămâna de lucru într-un produs real, cu clienți care plătesc și cu un brand atașat. E altă disciplină decât să construiești ceva și să treci mai departe — versiune după versiune, codul altora, decizii pe care trebuie să le susții și probleme care apar mult după ce credeai că ai terminat. Tot acolo am învățat că ultimii zece la sută sunt partea pe care o subestimează toată lumea.",
+        "role": "Inginer software senior în echipa produsului: aplicația, site-ul și ce stă în spatele lor."
+      },
+      "examin": {
+        "summary": "Un program care se uită la camerele de supraveghere și spune ce tocmai s-a întâmplat.",
+        "situation": "Multe firme au deja camere peste tot și pe nimeni care să aibă timp să se uite la ele. Un panou solar crăpat, un palet pus greșit, cineva într-o zonă unde nu are ce căuta — totul e pe cameră și totul e observat ore mai târziu, dacă e observat. Examin transformă camerele pe care firma le are deja în ceva care spune ce s-a întâmplat cât încă se întâmplă, pentru lucruri la fel de diferite ca verificarea unui parc solar și citirea numerelor de înmatriculare.",
+        "contribution": "Am fost adus să construiesc produsul, nu să îl împodobesc. Adică tot ce atinge omul de tură — imaginile live, alertele, dovada atașată fiecăreia, setările care decid ce merită să întrerupă pe cineva — plus munca de dedesubt care ține totul legat de camere și de ce iese din ele. Am făcut parte și din decizia despre ce ar trebui să fie produsul, nu am primit o specificație gata scrisă.",
+        "challenge": "Reținerea. Un asemenea program poate semnala aproape orice, iar o alertă în care nimeni nu are încredere e mai rea decât nicio alertă — în două săptămâni oamenii o dau pe mut. Așa că multă muncă a mers în ce să nu arăți și în ce îi trebuie omului în secunda în care decide dacă să creadă: cadrul propriu-zis, ora, cât de sigur e sistemul. Apoi, să faci un singur produs să acopere industrii foarte diferite fără să devină un ecran de setări la care nimeni nu se uită.",
+        "proof": "Cineva mi-a dat pe mână un produs cu adevărat complicat și m-a lăsat să ajut la decizia despre ce ar trebui să fie. Dacă ai doar senzația vagă că ceva din procesul tău scapă neobservat și nicio idee clară despre cum arată răspunsul, exact asta e forma de problemă cu care mă simt bine.",
+        "role": "Adus ca programator: produsul pe care îl folosesc oamenii, părțile din spate și un cuvânt de spus în ce s-a construit."
+      },
       "ainterest": {
-        "summary": "O aplicație pentru făcut imagini cu AI, deschisă oricui.",
-        "problem": "Uneltele care fac imagini cu AI îngroapă totul într-un chat. Ce ai făcut săptămâna trecută e pierdut dacă nu te-ai gândit tu să îl salvezi undeva, iar ce fac ceilalți nu ajungi să vezi niciodată.",
-        "built": "Descrii ce vrei și primești o imagine. Tot ce faci rămâne în contul tău și poți publica orice vrei într-un feed pe care îl pot răsfoi și alții.",
-        "challenge": "Aproape nimic din partea grea nu a ținut de AI. O imagine se face încet, costă bani de fiecare dată și uneori pur și simplu eșuează. Aplicația trebuie să fie onestă în privința asta cât aștepți, fără să pară stricată, și trebuie să rămână rapidă pe măsură ce feed-ul se umple.",
-        "value": "E live, oamenii îl folosesc și mi-am plătit singur greșelile pe el. Dacă vrei să vezi cum construiesc ceva de la prima idee până la versiunea pe care o folosesc necunoscuții, acolo trebuie să te uiți."
-      },
-      "nextremum": {
-        "summary": "O firmă de telecom ai cărei clienți trebuiau să înțeleagă oferta înainte să sune.",
-        "problem": "Nextremum vinde conexiuni de rețea pentru companii din Europa și Asia. E o decizie scumpă, care ia luni de zile, și nimeni nu ridică telefonul până nu înțelege ce ar cumpăra.",
-        "built": "Un site construit în jurul a ce vând și unde acoperă, așezat astfel încât să poată adăuga servicii fără să plătească un site nou o dată la doi ani.",
-        "challenge": "Site-ul e citit de doi oameni foarte diferiți. Cel care aprobă banii vrea să înțeleagă în treizeci de secunde despre ce e vorba. Inginerul pe care îl aduce în discuție vrea detaliile de dedesubt. Amândoi trebuiau să fie mulțumiți de aceeași pagină.",
-        "value": "Oricine ajunge pe el își dă seama dacă Nextremum merită o discuție, și asta e tot ce trebuie să facă site-ul."
-      },
-      "kraanveld": {
-        "summary": "O firmă de închiriat macarale care trebuia să pară alegerea sigură.",
-        "problem": "Nimeni nu închiriază o macara de la o firmă în care are dubii. Înainte să sune, oamenii vor să vadă utilajele, lucrările deja făcute și suficient din amândouă cât să înțeleagă că nu e prima săptămână a nimănui.",
-        "built": "Utilajele pe care le au, lucrările pe care le-au terminat și un mod evident de a lua legătura. Fotografii mari peste tot, puse cap la cap astfel încât să poată fi actualizate ani la rând.",
-        "challenge": "Fotografiile sunt toată ideea, iar fotografiile sunt grele. Cea mai mare parte a muncii a plecat în a le face să apară imediat pe un telefon cu o bară de semnal, pe șantier, nu doar pe wifi-ul de la birou.",
-        "value": "Ce determină pe cineva să ridice telefonul e primul lucru pe care îl vede."
+        "summary": "Produsul meu. Faci imagini cu AI și le pui undeva unde le pot vedea și alții.",
+        "situation": "Pe ăsta nu l-a cerut nimeni. Toate uneltele care fac imagini cu AI îngroapă rezultatul într-un chat — ce ai făcut săptămâna trecută e pierdut dacă nu te-ai gândit tu să îl salvezi, iar ce fac ceilalți nu ajungi să vezi niciodată. Mi s-a părut forma greșită pentru ceva ce oamenii fac mai ales din plăcere.",
+        "contribution": "Am construit tot și e live. Descrii ce vrei și primești o imagine; tot ce faci rămâne în contul tău; poți publica orice într-un feed pe care alții îl răsfoiesc și îl caută. Conturi, generare, feed, cât costă să îl ții în viață — toate ale mele. Nu a existat nicio specificație, pentru că nu avea cine să o scrie.",
+        "challenge": "Aproape nimic din greutate nu a ținut de AI. O imagine se face încet, costă bani de fiecare dată și uneori pur și simplu eșuează. Aplicația trebuie să fie onestă în privința asta cât aștepți, fără să pară stricată, și să rămână rapidă pe măsură ce feed-ul se umple. Fiecare decizie greșită a fost una pe care am plătit-o eu în luna aia, ceea ce te învață repede care decizii contează.",
+        "proof": "Ăsta e proiectul care răspunde dacă pot face mai mult decât să construiesc ce mi se spune. Cineva a trebuit să decidă ce e, ce se lasă deoparte, ce se întâmplă când ceva eșuează și când e destul de bun cât să pui un necunoscut în fața lui. Proiectul tău are nevoie de exact același set de decizii, iar aici toate au fost ale mele.",
+        "role": "Al meu, de la cap la coadă: ideea, fiecare decizie de produs, construcția și facturile."
       },
       "aiForFrontend": {
-        "summary": "Un curs online despre folosirea uneltelor AI fără să pierzi timp cu ele.",
-        "problem": "Echipele luau unelte AI fără să cadă de acord unde ajută și unde îți mănâncă discret o după-amiază.",
-        "built": "Am stabilit ce ar trebui să acopere, am scris exemplele și l-am înregistrat pe tot singur.",
-        "challenge": "Uneltele astea se schimbă la câteva luni. Dacă predam uneltele, cursul ar fi fost depășit înainte să îl vadă cineva, așa că am predat obiceiurile.",
-        "value": "Să predai ceva e un test mai dur decât să te pricepi la el. Îți găsești repede golurile din propria gândire, și încă în fața unui public."
-      },
-      "wayport": {
-        "summary": "Cum te orientezi într-un terminal de aeroport.",
-        "problem": "Aeroporturile sunt greu de citit când ești în întârziere. Poarta, toaletele, un loc unde să mănânci: toate sunt cel mai greu de găsit exact în momentul în care ai nevoie de ele.",
-        "built": "O aplicație de telefon pentru orientarea în interiorul unui terminal. Proiectată, construită și prezentată într-un singur weekend.",
-        "challenge": "Decizia despre ce tai. Cu un termen fix, singura cale să ajungi la ceva real e să alegi singurul lucru care trebuie să funcționeze și să renunți la restul.",
-        "value": "E aceeași decizie de care are nevoie orice primă versiune. Stabilești ce parte demonstrează ideea și construiești bine partea aceea."
+        "summary": "Un curs online care îi învață pe programatori să lucreze cu AI ca lumea. L-am scris și îl predau.",
+        "situation": "Programatorii au luat uneltele AI în grabă și au început să le folosească din instinct. O parte economisește o cantitate absurdă de timp. O alta îți mănâncă discret o după-amiază și îți dă ceva ce pare corect și nu e. Lipsea cineva dispus să spună pe șleau unde e linia dintre ele.",
+        "contribution": "Am decis ce acoperă cursul, am scris fiecare exemplu și l-am înregistrat pe tot. Două module și unsprezece lecții: cum funcționează de fapt uneltele astea și unde te induc în eroare, cum să ceri ceva și să primești ceva utilizabil, cum să le folosești pe muncă reală — codul altcuiva, găsit erori, teste, documentație — și cum să faci toate astea fără să renunți la judecata pentru care ai fost angajat. E publicat de Itlogia, școală online licențiată, și e disponibil acum.",
+        "challenge": "Uneltele astea se schimbă la câteva luni. Dacă predai uneltele, cursul e depășit înainte să îl termine cineva, așa că am predat obiceiurile: ce se verifică, ce nu se crede niciodată, unde tot omul trebuie să gândească. Ca să transmit asta, a trebuit să îmi lămuresc ce cred de fapt, ceea ce e mai greu decât sună când ai făcut totul din instinct.",
+        "proof": "Să predai e un test mai dur decât să te pricepi. Nu poți ascunde o explicație vagă de niște oameni care se duc să o încerce chiar în seara aia. E și motivul pentru care îți voi spune când AI nu e răspunsul la problema ta: a trebuit să scriu negru pe alb exact unde uneltele astea încetează să fie utile.",
+        "role": "Autor și profesor. Am ales ce acoperă, am scris materialul și am înregistrat fiecare lecție."
       }
-    },
-    "archiveItems": {
-      "cahulConnect": "Afacerile locale, evenimentele și serviciile publice dintr-un oraș, toate într-un singur loc. Făcut la GigaHack.",
-      "weather": "Vremea de unde ești sau prognoza pentru orice oraș cauți.",
-      "pulse": "Layout pentru un magazin de sport, făcut pe vremea când încă exersam fundamentele.",
-      "writerWorks": "Făcut mai mult ca pretext ca să petrec o săptămână pe animație."
     }
   },
   "process": {
@@ -180,11 +176,11 @@
     "body2": "Construiesc software de ani buni și am făcut fiecare parte, de la ecranele pe care le apasă oamenii până la tot ce rulează liniștit în spatele lor. Ce unelte presupune asta e treaba mea, nu ceva despre care ai nevoie de o părere.",
     "body3": "Adică un singur om ține toată problema, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața.",
     "proof": {
-      "title": "Recent",
-      "productLabel": "Produsul meu",
+      "title": "Cum a arătat asta",
+      "dayToDayLabel": "Zi de zi",
       "clientsLabel": "Proiecte pentru clienți",
-      "teachingLabel": "Predare",
-      "teachingValue": "Un curs despre lucrul cu unelte AI"
+      "productLabel": "Produsul meu",
+      "teachingLabel": "Predare"
     }
   },
   "contact": {

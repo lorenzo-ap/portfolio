@@ -18,9 +18,10 @@ export const AboutTeaser = () => {
 	const { t } = useTranslation();
 
 	const proofRows = [
-		{ label: t('aboutTeaser.proof.productLabel'), value: namesByKind('product') },
+		{ label: t('aboutTeaser.proof.dayToDayLabel'), value: namesByKind('live') },
 		{ label: t('aboutTeaser.proof.clientsLabel'), value: namesByKind('client') },
-		{ label: t('aboutTeaser.proof.teachingLabel'), value: t('aboutTeaser.proof.teachingValue') }
+		{ label: t('aboutTeaser.proof.productLabel'), value: namesByKind('product') },
+		{ label: t('aboutTeaser.proof.teachingLabel'), value: namesByKind('course') }
 	];
 
 	return (

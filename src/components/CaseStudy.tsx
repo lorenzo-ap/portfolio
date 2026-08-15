@@ -2,33 +2,94 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { fadeUp, inView, stagger } from '../lib/motion';
-import type { CaseStudyModel, Skill } from '../types';
+import type { CaseStudyModel } from '../types';
 import { ActionLink } from './ActionLink';
 import { ProjectVisual } from './ProjectVisual';
 import { Reveal } from './Reveal';
-
-interface SkillChipsProps {
-	skills: Skill[];
-	className?: string;
-}
-
-export const SkillChips = ({ skills, className = '' }: SkillChipsProps) => (
-	<ul className={`flex flex-wrap gap-1.5 ${className}`}>
-		{skills.map((skill) => (
-			<li
-				className='rounded-full border border-border px-2.5 py-1 font-medium font-mono text-[0.6875rem] text-faded-text'
-				key={skill}
-			>
-				{skill}
-			</li>
-		))}
-	</ul>
-);
 
 interface CaseStudyProps {
 	caseStudy: CaseStudyModel;
 	index: number;
 }
+
+const eyebrowClass = 'font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]';
+
+/** Index + kind, the pair that tells you what sort of work you're looking at. */
+const CaseStudyMeta = ({ caseStudy, index }: CaseStudyProps) => {
+	const { t } = useTranslation();
+
+	return (
+		<div className={`flex items-center gap-3 ${eyebrowClass}`}>
+			<span className='text-accent'>{String(index + 1).padStart(2, '0')}</span>
+			<span aria-hidden='true' className='h-px w-5 bg-border-strong' />
+			<span>{t(`work.kinds.${caseStudy.kind}`)}</span>
+		</div>
+	);
+};
+
+interface CaseStudyLinksProps {
+	caseStudy: CaseStudyModel;
+}
+
+/** Primary link always; the App Store or another destination alongside it. */
+const CaseStudyLinks = ({ caseStudy }: CaseStudyLinksProps) => {
+	const { t } = useTranslation();
+
+	return (
+		<div className='flex flex-wrap items-center gap-x-7 gap-y-3'>
+			<ActionLink external href={caseStudy.link} label={t(`actions.${caseStudy.primaryLabelKey ?? 'visitSite'}`)} />
+			{caseStudy.secondaryLink && (
+				<ActionLink
+					external
+					href={caseStudy.secondaryLink.href}
+					label={t(`actions.${caseStudy.secondaryLink.labelKey}`)}
+					muted
+				/>
+			)}
+		</div>
+	);
+};
+
+const courseFactKeys = ['audience', 'format', 'length', 'publisher'] as const;
+
+/** What the course actually is, for someone deciding whether it counts. */
+const CourseFactList = () => {
+	const { t } = useTranslation();
+
+	return (
+		<dl className='flex flex-col'>
+			{courseFactKeys.map((factKey) => (
+				<div className='flex flex-col gap-1.5 border-border border-t py-4 first:border-t-0 first:pt-0' key={factKey}>
+					<dt className={eyebrowClass}>{t(`work.course.${factKey}Label`)}</dt>
+					<dd className='text-[0.9375rem] text-text leading-snug'>{t(`work.course.${factKey}Value`)}</dd>
+				</div>
+			))}
+		</dl>
+	);
+};
+
+/**
+ * The course doesn't live behind a browser frame, so it gets its own surface:
+ * same tokens, same accent family, visibly not a website.
+ */
+const courseSurfaceStyle = (hue: number) => ({
+	backgroundImage: `radial-gradient(85% 70% at 88% 0%, hsl(${hue} 85% 58% / 0.18), transparent 62%), radial-gradient(60% 60% at 8% 100%, hsl(${hue} 90% 60% / 0.12), transparent 70%)`
+});
+
+interface CourseSurfaceProps {
+	hue: number;
+	className?: string;
+	children: React.ReactNode;
+}
+
+const CourseSurface = ({ hue, className = '', children }: CourseSurfaceProps) => (
+	<div className={`relative overflow-hidden rounded-2xl border border-border bg-surface ${className}`}>
+		<div aria-hidden='true' className='absolute inset-0' style={courseSurfaceStyle(hue)} />
+		<div aria-hidden='true' className='grid-backdrop absolute inset-0 opacity-50' />
+		<div aria-hidden='true' className='absolute inset-x-0 top-0 h-px bg-accent-line' />
+		<div className='relative'>{children}</div>
+	</div>
+);
 
 /** Home page teaser: alternating visual / narrative rows. */
 export const FeaturedCaseStudy = ({ caseStudy, index }: CaseStudyProps) => {
@@ -56,11 +117,7 @@ export const FeaturedCaseStudy = ({ caseStudy, index }: CaseStudyProps) => {
 			</motion.div>
 
 			<motion.div className={`lg:col-span-5 ${flipped ? 'lg:order-1' : ''}`} variants={fadeUp}>
-				<div className='flex items-center gap-3 font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]'>
-					<span className='text-accent'>{String(index + 1).padStart(2, '0')}</span>
-					<span aria-hidden='true' className='h-px w-5 bg-border-strong' />
-					<span>{t(`work.kinds.${caseStudy.kind}`)}</span>
-				</div>
+				<CaseStudyMeta caseStudy={caseStudy} index={index} />
 
 				<h3 className='mt-5 font-semibold text-text text-title'>{caseStudy.name}</h3>
 
@@ -69,33 +126,67 @@ export const FeaturedCaseStudy = ({ caseStudy, index }: CaseStudyProps) => {
 				</p>
 
 				<p className='mt-5 max-w-prose text-[0.9375rem] text-subfaded-text leading-relaxed'>
-					{t(`work.cases.${caseStudy.key}.problem`)}
+					{t(`work.cases.${caseStudy.key}.situation`)}
 				</p>
 
 				<div className='mt-7'>
-					<ActionLink external href={caseStudy.link} label={t('actions.visitSite')} />
+					<CaseStudyLinks caseStudy={caseStudy} />
 				</div>
 			</motion.div>
 		</motion.article>
 	);
 };
 
-const narrativeRows = ['problem', 'built', 'challenge', 'value'] as const;
+/** Home page teaser for the course: one wide panel instead of a browser frame. */
+export const FeaturedTeaching = ({ caseStudy, index }: CaseStudyProps) => {
+	const { t } = useTranslation();
 
-/** Work page: the full Problem → Built → Hard part → Value story. */
+	return (
+		<CourseSurface hue={caseStudy.hue}>
+			<motion.article
+				className='grid gap-x-14 gap-y-10 p-8 sm:p-10 lg:grid-cols-12 lg:p-14'
+				initial={inView.initial}
+				variants={stagger(0.08)}
+				viewport={inView.viewport}
+				whileInView={inView.whileInView}
+			>
+				<motion.div className='lg:col-span-7' variants={fadeUp}>
+					<CaseStudyMeta caseStudy={caseStudy} index={index} />
+
+					<h3 className='mt-5 max-w-[18ch] text-balance font-semibold text-headline text-text'>{caseStudy.name}</h3>
+
+					<p className='mt-4 max-w-prose text-faded-text text-lede'>{t(`work.cases.${caseStudy.key}.summary`)}</p>
+
+					<p className='mt-5 max-w-prose text-[0.9375rem] text-subfaded-text leading-relaxed'>
+						{t(`work.cases.${caseStudy.key}.situation`)}
+					</p>
+
+					<div className='mt-8'>
+						<CaseStudyLinks caseStudy={caseStudy} />
+					</div>
+				</motion.div>
+
+				<motion.div className='lg:col-span-5' variants={fadeUp}>
+					<CourseFactList />
+				</motion.div>
+			</motion.article>
+		</CourseSurface>
+	);
+};
+
+const narrativeRows = ['situation', 'contribution', 'challenge', 'proof'] as const;
+
+/** Work page: the full Situation → What I did → Hard part → What this shows story. */
 export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 	const { t } = useTranslation();
+	const isCourse = caseStudy.kind === 'course';
 
 	return (
 		<article className='border-border border-t pt-12 lg:pt-16'>
 			<div className='grid gap-x-14 gap-y-6 lg:grid-cols-12'>
 				<div className='lg:col-span-7'>
 					<Reveal>
-						<div className='flex items-center gap-3 font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]'>
-							<span className='text-accent'>{String(index + 1).padStart(2, '0')}</span>
-							<span aria-hidden='true' className='h-px w-5 bg-border-strong' />
-							<span>{t(`work.kinds.${caseStudy.kind}`)}</span>
-						</div>
+						<CaseStudyMeta caseStudy={caseStudy} index={index} />
 					</Reveal>
 
 					<Reveal delay={0.06}>
@@ -109,32 +200,35 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 					</Reveal>
 
 					<Reveal delay={0.14}>
-						<div className='flex flex-wrap items-center gap-x-7 gap-y-3'>
-							<ActionLink external href={caseStudy.link} label={t('actions.visitSite')} />
-							{caseStudy.secondaryLink && (
-								<ActionLink
-									external
-									href={caseStudy.secondaryLink.href}
-									label={t(`actions.${caseStudy.secondaryLink.labelKey}`)}
-									muted
-								/>
-							)}
-						</div>
+						<CaseStudyLinks caseStudy={caseStudy} />
 					</Reveal>
 				</div>
 			</div>
 
 			<Reveal className='mt-12' delay={0.08}>
-				<Link aria-label={caseStudy.name} className='group block' target='_blank' to={caseStudy.link}>
-					<ProjectVisual
-						className='transition-transform duration-700 ease-expo group-hover:-translate-y-1'
-						hue={caseStudy.hue}
-						image={caseStudy.image}
-						link={caseStudy.link}
-						name={caseStudy.name}
-						priority={index === 0}
-					/>
-				</Link>
+				{isCourse ? (
+					<CourseSurface hue={caseStudy.hue}>
+						<div className='p-8 sm:p-10 lg:p-12'>
+							<div className='grid gap-x-14 gap-y-8 lg:grid-cols-2'>
+								<CourseFactList />
+								<p className='max-w-prose self-center text-[0.9375rem] text-subfaded-text leading-relaxed'>
+									{t('work.course.note')}
+								</p>
+							</div>
+						</div>
+					</CourseSurface>
+				) : (
+					<Link aria-label={caseStudy.name} className='group block' target='_blank' to={caseStudy.link}>
+						<ProjectVisual
+							className='transition-transform duration-700 ease-expo group-hover:-translate-y-1'
+							hue={caseStudy.hue}
+							image={caseStudy.image}
+							link={caseStudy.link}
+							name={caseStudy.name}
+							priority={index === 0}
+						/>
+					</Link>
+				)}
 			</Reveal>
 
 			<motion.dl
@@ -150,21 +244,17 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 						key={row}
 						variants={fadeUp}
 					>
-						<dt className='font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em] lg:col-span-3'>
-							{t(`work.labels.${row}`)}
-						</dt>
+						<dt className={`${eyebrowClass} lg:col-span-3`}>{t(`work.labels.${row}`)}</dt>
 						<dd className='max-w-prose text-[1.0625rem] text-subfaded-text leading-[1.65] lg:col-span-9'>
 							{t(`work.cases.${caseStudy.key}.${row}`)}
 						</dd>
 					</motion.div>
 				))}
 
-				<motion.div className='grid gap-x-14 gap-y-3 border-border border-t py-7 lg:grid-cols-12' variants={fadeUp}>
-					<dt className='font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em] lg:col-span-3'>
-						{t('work.labels.stack')}
-					</dt>
-					<dd className='lg:col-span-9'>
-						<SkillChips skills={caseStudy.skills} />
+				<motion.div className='grid gap-x-14 gap-y-2 border-border border-t py-7 lg:grid-cols-12' variants={fadeUp}>
+					<dt className={`${eyebrowClass} lg:col-span-3`}>{t('work.labels.role')}</dt>
+					<dd className='max-w-prose text-[1.0625rem] text-subfaded-text leading-[1.65] lg:col-span-9'>
+						{t(`work.cases.${caseStudy.key}.role`)}
 					</dd>
 				</motion.div>
 			</motion.dl>

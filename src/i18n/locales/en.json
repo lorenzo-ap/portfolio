@@ -7,7 +7,7 @@
   },
   "meta": {
     "home": "I'm Lorenzo. I build software for the parts of a business that are still being done by hand. You don't need to know what should be built. Tell me what isn't working and I'll help work out the rest.",
-    "work": "Client work, my own products, and a few things I built in a weekend. For each one: what was going wrong, what I built, and the part that was actually hard.",
+    "work": "Four things I've been trusted to build: a travel eSIM used all over the world, software that watches camera feeds for a living, my own product, and a course I wrote. For each one: the situation, what I did, and the part that was genuinely hard.",
     "about": "What it's like to work with me, how I think about a problem before I build anything, and a bit about who I am."
   },
   "nav": {
@@ -23,10 +23,10 @@
     "startConversation": "Email me",
     "seeWork": "See what I've built",
     "emailMe": "Email me",
-    "allWork": "All work",
-    "visitSite": "Visit site",
-    "hackathonLink": "Hackathon",
-    "sourceLink": "Source",
+    "allWork": "See all four in full",
+    "visitSite": "Visit the site",
+    "appStoreLink": "App Store",
+    "viewCourse": "See the course",
     "moreAbout": "More about me",
     "backHome": "Back home",
     "backToTop": "Back to top",
@@ -82,72 +82,68 @@
     }
   },
   "work": {
-    "eyebrow": "Work",
-    "title": "A few things I've built.",
-    "lede": "What was going wrong, and what I did about it.",
-    "pageTitle": "Things I've built.",
-    "pageLede": "Client work, my own products, and a couple of things I built in a weekend to see whether they'd work. For each one: what was going wrong, what I built, and the part that was actually hard.",
+    "eyebrow": "Selected work",
+    "title": "Four things I've been trusted to build.",
+    "lede": "A travel eSIM sold under the FC Barcelona name, software that watches camera feeds for a living, a product of my own, and a course I wrote. Different problems, same job underneath.",
+    "pageTitle": "Four things I've been trusted to build.",
+    "pageLede": "Not a list of everything I've ever made. These four, because between them they answer the question people actually have: what was the situation, what did I do about it, what was hard, and what does that say about handing me a problem of your own.",
     "labels": {
-      "problem": "The problem",
-      "built": "What I built",
+      "situation": "The situation",
+      "contribution": "What I did",
       "challenge": "The hard part",
-      "value": "Why it mattered",
-      "stack": "Built with"
+      "proof": "What this shows",
+      "role": "My role"
     },
     "kinds": {
-      "product": "My own product",
+      "live": "Live product",
       "client": "Client work",
-      "hackathon": "Built in a weekend",
-      "course": "Course",
-      "experiment": "Experiment"
+      "product": "My own product",
+      "course": "Teaching"
     },
-    "archive": {
-      "eyebrow": "Archive",
-      "title": "Everything else.",
-      "lede": "Smaller things, weekend builds and old experiments. Most of them haven't been touched in years. They're here because leaving them out would make the list look tidier than it really is."
+    "course": {
+      "audienceLabel": "Who it's for",
+      "audienceValue": "Working frontend developers",
+      "formatLabel": "Format",
+      "formatValue": "Online, recorded, at your own pace",
+      "lengthLabel": "Length",
+      "lengthValue": "Two modules, eleven lessons, about four weeks",
+      "publisherLabel": "Published by",
+      "publisherValue": "Itlogia, a licensed online school",
+      "note": "It's the only thing here that isn't software. It's on the list because being able to explain something clearly, to people who will go and test it that evening, is a different skill from being able to build it — and it's the reason I'll tell you when AI isn't the answer to your problem."
     },
     "cases": {
+      "barcaMobile": {
+        "summary": "A travel eSIM sold under the FC Barcelona name. The product I work on day to day.",
+        "situation": "Getting online in another country is still a small ordeal: a bill you find out about afterwards, or a queue at an airport shop. Barça Mobile sells mobile data in over 170 countries, and it does it under a name people already recognise, which sets the bar for how it has to feel. The person using it is usually standing in a terminal with no signal yet and no patience for a screen that needs working out.",
+        "contribution": "I'm a senior engineer on the team that builds it, and I work across the product rather than one corner of it: the app people manage their plan in, the site where they choose one, and the parts behind both. In practice that's picking a destination, buying a plan, getting the eSIM onto the phone and seeing how much data is left — the moments where somebody either gets connected or gives up and walks to a shop.",
+        "challenge": "Nothing ships because it worked on my machine. Installing an eSIM is the unforgiving step: it happens once, on a phone the person has never set up this way, usually on borrowed airport wifi, and if it goes wrong they don't try again. So most of the care goes into a small number of screens where things can quietly go wrong, and into being sure a change hasn't broken something for the people already using it.",
+        "proof": "I spend my working week inside a real product with paying customers and a brand attached. That's a different discipline from building something and moving on — release after release, other people's code, decisions you have to defend, and problems that surface long after you thought you were finished. It's also where I learned that the last ten per cent is the part everyone underestimates.",
+        "role": "Senior software engineer on the product team, across the app, the site and what sits behind them."
+      },
+      "examin": {
+        "summary": "Software that watches camera feeds and tells people what just happened.",
+        "situation": "Plenty of businesses already have cameras everywhere and nobody with the time to watch them. A cracked solar panel, a pallet in the wrong place, someone in an area they shouldn't be in — all of it is on camera, and all of it gets noticed hours later, if at all. Examin turns cameras a company already owns into something that says what happened while it's still happening, across jobs as different as checking solar farms and reading number plates.",
+        "contribution": "I was brought in to build the product, not to decorate it. That means everything the person on shift touches — the live views, the alerts, the evidence attached to each one, the settings that decide what is worth interrupting someone for — along with the work underneath that keeps it all connected to the cameras and the detections coming out of them. I was also part of deciding what the product should be, rather than being handed a finished specification.",
+        "challenge": "Restraint. Software like this can flag almost anything, and an alert nobody trusts is worse than no alert at all — people mute it inside a week. So a lot of the work was about what not to show, and about what somebody needs in the one second they spend deciding whether to believe it: the actual frame, the time, how certain the system is. Then making one product cover very different industries without turning into a settings screen nobody can face.",
+        "proof": "Someone handed me a genuinely complicated product and let me help decide what it should be. If what you have is a vague sense that something in your process is being missed, and no clear idea what the answer looks like, this is exactly the shape of problem I'm comfortable being given.",
+        "role": "Brought in as the developer: the product people use, the parts behind it, and a say in what got built."
+      },
       "ainterest": {
-        "summary": "An app for making images with AI, open to anyone.",
-        "problem": "Tools that make images with AI bury everything in a chat. Whatever you made last week is gone unless you thought to save it somewhere yourself, and you never get to see what anyone else is doing.",
-        "built": "You describe what you want and you get an image back. Everything you make is kept in your account, and you can publish anything you like to a feed other people can look through.",
-        "challenge": "Almost none of the hard part was the AI. Making one image takes a while, costs real money every time, and sometimes just fails. The app has to be honest about that while you wait without looking broken, and it has to stay quick as the feed fills up.",
-        "value": "It's live, people use it, and I paid for my own mistakes on it. If you want to see how I build something from the first idea to the version strangers use, that's the place to look."
-      },
-      "nextremum": {
-        "summary": "A telecoms company whose customers had to understand the offer before they'd call.",
-        "problem": "Nextremum sells network connections to companies across Europe and Asia. It's an expensive decision that takes months, and nobody picks up the phone until they understand what they'd be buying.",
-        "built": "A site built around what they sell and where they cover it, laid out so they can keep adding services without paying for a new site every two years.",
-        "challenge": "Two very different people read this site. The one approving the money wants to know what it is in thirty seconds. The engineer they bring to the call wants the detail underneath. Both had to be happy with the same page.",
-        "value": "Whoever lands on it can work out whether Nextremum is worth a conversation, which is all the site has to do."
-      },
-      "kraanveld": {
-        "summary": "A crane hire company that needed to look like the safe choice.",
-        "problem": "Nobody hires a crane from a company they feel unsure about. Before they call, people want to see the machines, the jobs already done, and enough of both to know this isn't anyone's first week.",
-        "built": "The machines they own, the work they've finished, and an obvious way to get in touch. Large photographs throughout, put together so it can keep being updated for years.",
-        "challenge": "The photographs are the whole point, and photographs are heavy. Most of the work went into making them appear straight away on a phone with one bar of signal on a building site, not just on the office wifi.",
-        "value": "Whatever makes someone pick up the phone is the first thing they see."
+        "summary": "My own product. Make images with AI, then put them somewhere other people can see them.",
+        "situation": "Nobody asked for this one. Every tool for making images with AI buries the results in a chat window — whatever you made last week is gone unless you thought to save it yourself, and you never get to see what anyone else is doing. That seemed like the wrong shape for something people mostly do for the pleasure of it.",
+        "contribution": "I built the whole thing and it's live. You describe what you want and you get an image; everything you make stays in your account; you can publish any of it to a feed other people browse and search. Accounts, generation, the feed, what it costs to keep running — all of it mine. There was no specification, because there was nobody to write one.",
+        "challenge": "Almost none of the difficulty was the AI. Making one image is slow, costs real money every single time, and sometimes simply fails. The app has to be honest about that while you wait without looking broken, and stay quick as the feed fills up. Every wrong decision was one I paid for myself that month, which is a fast way to learn which decisions matter.",
+        "proof": "This is the one that answers whether I can do more than build what I'm told. Somebody had to decide what it was, what to leave out, what happens when things fail, and when it was good enough to put a stranger in front of. Your project needs that same set of decisions made, and here they were all mine.",
+        "role": "Mine, start to finish: the idea, every product decision, the build, and the bills."
       },
       "aiForFrontend": {
-        "summary": "An online course on using AI tools without wasting time on them.",
-        "problem": "Teams were picking up AI tools without agreeing on where they help and where they quietly eat an afternoon.",
-        "built": "I worked out what it should cover, wrote the examples, and recorded all of it myself.",
-        "challenge": "These tools change every few months. If I'd taught the tools, the course would have been out of date before anyone watched it, so I taught the habits instead.",
-        "value": "Teaching something is a harder test than being good at it. You find the gaps in your own thinking quickly, and in front of an audience."
-      },
-      "wayport": {
-        "summary": "Finding your way around an airport terminal.",
-        "problem": "Airports are hard to read when you're late. The gate, the toilets, somewhere to eat: all of it is hardest to find at exactly the moment you need it.",
-        "built": "A phone app for getting around inside a terminal. Designed, built and demonstrated in one weekend.",
-        "challenge": "Deciding what to cut. With a fixed deadline the only way to end up with something real is to pick the one thing that has to work and drop everything else.",
-        "value": "It's the same decision every first version needs. Work out which part proves the idea, then build that part properly."
+        "summary": "An online course teaching developers to work with AI properly. I wrote it and I teach it.",
+        "situation": "Developers picked up AI tools in a hurry and started using them by feel. Some of it saves an absurd amount of time. Some of it quietly eats an afternoon and hands you something that looks right and isn't. What was missing was anybody willing to say plainly where that line falls.",
+        "contribution": "I decided what the course covers, wrote every example and recorded all of it. Two modules and eleven lessons: how these tools actually work and where they mislead you, how to ask for something and get back something usable, how to use them on real work — someone else's code, finding bugs, tests, documentation — and how to do all that without giving up the judgement that made you worth hiring in the first place. It's published by Itlogia, a licensed online school, and it's available now.",
+        "challenge": "These tools change every few months. Teach the tools and the course is out of date before anyone finishes it, so I taught the habits instead: what to check, what never to trust, where a person still has to think. Getting that across meant working out what I actually believed, which is harder than it sounds when you've been doing it on instinct.",
+        "proof": "Teaching is a stricter test than being good at something. You can't hide a vague explanation from people who will go and try it themselves that evening. It's also why I'll tell you when AI isn't the answer to your problem: I had to write down exactly where these tools stop being useful.",
+        "role": "Author and instructor. I chose what it covers, wrote the material and recorded every lesson."
       }
-    },
-    "archiveItems": {
-      "cahulConnect": "Local businesses, events and council services for one city, all in one place. Built at GigaHack.",
-      "weather": "The weather where you are, or the forecast for any city you look up.",
-      "pulse": "A sports shop layout, built while I was still getting the basics right.",
-      "writerWorks": "Built mostly as an excuse to spend a week on animation."
     }
   },
   "process": {
@@ -180,11 +176,11 @@
     "body2": "I've been building software for years and I've done every part of it, from the screens people click on to everything running quietly behind them. Which tools that takes is my problem to work out, not something you need an opinion about.",
     "body3": "So one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning.",
     "proof": {
-      "title": "Recently",
-      "productLabel": "My own product",
+      "title": "What that's looked like",
+      "dayToDayLabel": "Day to day",
       "clientsLabel": "Client work",
-      "teachingLabel": "Teaching",
-      "teachingValue": "A course on working with AI tools"
+      "productLabel": "My own product",
+      "teachingLabel": "Teaching"
     }
   },
   "contact": {
