@@ -4,7 +4,7 @@ import { ContactCta, Eyebrow, PageHeader, Reveal, RevealGroup, RevealItem, Secti
 import { site } from '../data/site';
 
 const principleKeys = ['problem', 'smallest', 'maintainable', 'ai'] as const;
-const workingKeys = ['noSpec', 'notSure', 'tooSmall', 'existing', 'money'] as const;
+const workingKeys = ['noSpec', 'notSure', 'tooSmall', 'existing', 'managing', 'money'] as const;
 
 interface DefinitionRow {
 	label: string;

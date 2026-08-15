@@ -1,14 +1,14 @@
 {
   "pageTitles": {
     "home": "Lorenzo Apolloni | Software la comandă",
-    "work": "Proiecte selectate | Lorenzo Apolloni",
+    "work": "Proiecte | Lorenzo Apolloni",
     "about": "Despre | Lorenzo Apolloni",
     "error": "Pagina nu a fost găsită | Lorenzo Apolloni"
   },
   "meta": {
-    "home": "Sunt Lorenzo. Construiesc software la comandă pentru afaceri: unelte pentru munca de zi cu zi a echipei, automatizare pentru părțile repetitive și produse pornite de la zero. Tu vii cu problema.",
-    "work": "Proiecte selectate. Pentru fiecare: ce nu funcționa, ce am construit și partea care s-a dovedit cu adevărat grea.",
-    "about": "Cum abordez o problemă care vine fără specificație, cum arată colaborarea cu mine și ce am construit."
+    "home": "Sunt Lorenzo. Construiesc software pentru părțile dintr-o afacere care se fac încă manual. Nu trebuie să știi ce ar trebui construit. Spune-mi ce nu funcționează și te ajut să dăm de restul.",
+    "work": "Proiecte pentru clienți, produsele mele și câteva lucruri făcute într-un weekend. Pentru fiecare: ce nu mergea, ce am construit și partea care a fost cu adevărat grea.",
+    "about": "Cum e să lucrezi cu mine, cum mă gândesc la o problemă înainte să construiesc ceva și câte ceva despre cine sunt."
   },
   "nav": {
     "home": "Acasă",
@@ -40,53 +40,53 @@
       "line2": "pentru probleme",
       "line3": "rezolvate încă manual."
     },
-    "lede": "Sunt Lorenzo. Afacerile vin la mine cu partea de muncă lentă, repetitivă sau ținută în viață de un fișier Excel, iar eu construiesc lucrul care o înlocuiește. Partea grea e de obicei să stabilim ce ar trebui construit, așa că de acolo încep.",
+    "lede": "Sunt Lorenzo. Oamenii vin la mine când ceva din afacerea lor merge greu, se repetă la nesfârșit sau stă într-un fișier Excel pe care îl înțelege cu adevărat un singur om. Nu trebuie să știi ce ar trebui construit. Asta e treaba mea.",
     "facts": {
       "currentLabel": "Acum",
       "currentValue": "Inginer senior la",
       "latestLabel": "Cel mai recent proiect",
-      "latestValue": "AInterest, o aplicație pe care o poate folosi oricine",
+      "latestValue": "AInterest, live și deschis oricui",
       "studyingLabel": "În paralel",
       "studyingValue": "Termin masterul la Oradea"
     }
   },
   "capabilities": {
     "eyebrow": "Cu ce te pot ajuta",
-    "title": "Majoritatea vin cu o problemă, nu cu un plan.",
-    "lede": "De obicei e ceva lent, repetitiv sau care trăiește într-un fișier Excel în care nu mai are nimeni deplină încredere. Cea mai mare parte a muncii e să transform asta în ceva care merită construit. Iar dacă nu ești sigur că răspunsul e software, e un punct de plecare perfect valabil: și asta face parte din treabă.",
+    "title": "Nu trebuie să știi ce anume să construiești.",
+    "lede": "Majoritatea oamenilor scriu cu descrierea a ceva ce nu merge. Un proces care durează prea mult. Informații pe care cineva le retastează în alt sistem în fiecare dimineață. O idee care deocamdată există doar în capul cuiva. E de ajuns ca punct de plecare. Uneori se dovedește că răspunsul nu e deloc un program, și îți spun asta.",
     "items": {
       "manualWork": {
         "title": "Munca pe care echipa o face încă manual",
-        "body": "Raportul refăcut de cineva în fiecare luni. Cifre mutate dintr-un sistem în altul. Orice e destul de repetitiv cât să nu-l mai citească nimeni cu atenție. Partea aceea poate fi făcută în locul vostru, iar orele se întorc la echipă."
+        "body": "Raportul refăcut de cineva în fiecare luni dimineața. Cifre retastate dintr-un sistem în altul. Munca ce se repetă atât de des încât nimeni nu o mai citește cu adevărat. Un program poate prelua partea aceea, iar oamenii tăi își recuperează timpul."
       },
       "customTool": {
         "title": "Unealta pe care ți-ai dori să o ai",
-        "body": "Orice afacere are un mod de lucru în care niciun produs de raft nu intră chiar bine, așa că ajunge împrăștiat prin fișiere Excel, inboxuri comune și memoria cuiva. Ăsta e lucrul construit după cum lucrați voi, nu voi îndoiți după cum funcționează programul."
+        "body": "Aproape orice afacere face ceva într-un fel pe care niciun produs gata făcut nu îl acoperă cum trebuie, așa că ajunge împărțit între câteva fișiere Excel, un inbox comun și ce ține un singur om minte. Ăsta e lucrul construit în jurul felului în care lucrați deja."
       },
       "ideaToProduct": {
         "title": "O idee care trebuie să devină produs",
-        "body": "Ceva pe care oamenii se pot înregistra și pot folosi, nu o prezentare care îl descrie. Mi-am dus propriul produs de la idee la o aplicație live, cu conturi și cu atenție la detalii, așa că poți intra să te uiți la rezultat."
+        "body": "Ai ceva în cap și încă nicio imagine clară despre cum arată. Am făcut asta cu propriul produs, de la prima idee până la ceva la care se poate înregistra oricine astăzi, așa că poți intra să vezi cum a ieșit."
       },
       "systemsTalking": {
         "title": "Programe care nu vorbesc între ele",
-        "body": "Contabilitatea, CRM-ul, portalul unui furnizor, o bază de date veche de care nu vrea nimeni să se atingă. Fac informația să circule singură între ele, suficient de sigur cât oamenii să nu mai verifice manual."
+        "body": "Programul de contabilitate, sistemul în care trăiește echipa de vânzări, site-ul unui furnizor, ceva vechi de care nu vrea nimeni să se atingă. Fac informația să circule singură între ele și să fie corectă suficient de des cât oamenii să nu o mai verifice manual."
       },
       "aiWhereItPays": {
         "title": "AI acolo unde chiar economisește timp",
-        "body": "Am dus funcționalități AI în fața unor utilizatori reali și am înregistrat un curs despre lucrul cu aceste unelte. De asta îți voi spune și când e un răspuns scump la ceva ce se rezolvă mai bine simplu."
+        "body": "Am construit AI într-un produs pe care oamenii îl folosesc și predau un curs despre lucrul cu aceste unelte. De asta îți voi spune și când e un mod scump de a rezolva ceva ce nu are nevoie de el."
       },
       "outgrown": {
         "title": "Ceva ce ai depășit deja",
-        "body": "Încă merge, dar orice modificare mică ia săptămâni, fiecare are soluția lui ocolitoare și nimeni nu vrea să se atingă de el. Uneori merită reparat, alteori merită înlocuit. Îți spun care dintre ele și de ce."
+        "body": "Încă merge, dar orice modificare mică ia săptămâni, fiecare are soluția lui ocolitoare și nimeni nu vrea să fie omul care îl strică. Uneori merită reparat, alteori merită luat de la capăt. Îți spun sincer care dintre ele cred că e cazul."
       }
     }
   },
   "work": {
-    "eyebrow": "Proiecte selectate",
-    "title": "Lucruri pe care le-am construit.",
-    "lede": "Care era problema și ce s-a schimbat după ce a existat soluția.",
-    "pageTitle": "Proiecte selectate.",
-    "pageLede": "Produse, proiecte pentru clienți și câteva lucruri făcute în ritm de hackathon. Pentru fiecare: ce nu funcționa, ce am construit și partea care s-a dovedit grea.",
+    "eyebrow": "Proiecte",
+    "title": "Câteva lucruri pe care le-am construit.",
+    "lede": "Ce nu mergea și ce am făcut în privința asta.",
+    "pageTitle": "Lucruri pe care le-am construit.",
+    "pageLede": "Proiecte pentru clienți, produsele mele și câteva lucruri făcute într-un weekend ca să văd dacă ies. Pentru fiecare: ce nu mergea, ce am construit și partea care a fost cu adevărat grea.",
     "labels": {
       "problem": "Problema",
       "built": "Ce am construit",
@@ -97,88 +97,88 @@
     "kinds": {
       "product": "Produsul meu",
       "client": "Proiect pentru client",
-      "hackathon": "Hackathon",
+      "hackathon": "Făcut într-un weekend",
       "course": "Curs",
       "experiment": "Experiment"
     },
     "archive": {
       "eyebrow": "Arhivă",
       "title": "Restul lucrurilor.",
-      "lede": "Proiecte mai mici, hackathoane și experimente vechi. Majoritatea nu mai sunt întreținute. Sunt aici pentru că asta e varianta sinceră a listei."
+      "lede": "Lucruri mai mici, proiecte de weekend și experimente vechi. De majoritatea nu m-am mai atins de ani buni. Sunt aici pentru că, fără ele, lista ar arăta mai îngrijită decât e de fapt."
     },
     "cases": {
       "ainterest": {
-        "summary": "O aplicație de imagini cu AI pe care se poate înregistra oricine.",
-        "problem": "Uneltele care generează imagini îngroapă totul într-un chat. Ce ai făcut săptămâna trecută e practic pierdut, iar ce fac ceilalți cu aceeași unealtă nu vezi niciodată.",
-        "built": "Descrii ce vrei, primești o imagine și o poți publica într-un feed pe care îl poate răsfoi oricine. Conturi, lucrări salvate, un feed comun: un produs pe care oamenii îl pot folosi, nu o demonstrație.",
-        "challenge": "Aproape nimic din partea grea nu ține de AI în sine. Generarea e lentă, costă bani de fiecare dată și eșuează altfel decât un program obișnuit. Aplicația trebuie să fie onestă în privința asta fără să pară vreodată stricată și să rămână rapidă pe măsură ce feed-ul se umple.",
-        "value": "Oricine poate vorbi despre adăugat AI într-un produs. Partea care contează e să construiești unul pe care necunoscuții se înregistrează, îl folosesc și revin la el, așa că pe acela l-am construit."
+        "summary": "O aplicație pentru făcut imagini cu AI, deschisă oricui.",
+        "problem": "Uneltele care fac imagini cu AI îngroapă totul într-un chat. Ce ai făcut săptămâna trecută e pierdut dacă nu te-ai gândit tu să îl salvezi undeva, iar ce fac ceilalți nu ajungi să vezi niciodată.",
+        "built": "Descrii ce vrei și primești o imagine. Tot ce faci rămâne în contul tău și poți publica orice vrei într-un feed pe care îl pot răsfoi și alții.",
+        "challenge": "Aproape nimic din partea grea nu a ținut de AI. O imagine se face încet, costă bani de fiecare dată și uneori pur și simplu eșuează. Aplicația trebuie să fie onestă în privința asta cât aștepți, fără să pară stricată, și trebuie să rămână rapidă pe măsură ce feed-ul se umple.",
+        "value": "E live, oamenii îl folosesc și mi-am plătit singur greșelile pe el. Dacă vrei să vezi cum construiesc ceva de la prima idee până la versiunea pe care o folosesc necunoscuții, acolo trebuie să te uiți."
       },
       "nextremum": {
-        "summary": "Un furnizor de telecom care trebuia înțeles înainte ca cineva să sune.",
-        "problem": "Nextremum vinde rețele private și conectivitate în Europa și Asia. E o achiziție gândită, cu multă încredere la mijloc, iar nimeni nu începe discuția înainte să înțeleagă ce se oferă de fapt.",
-        "built": "Un site organizat în jurul a ce vând și unde acoperă, structurat ca oferta să poată crește fără refacere și lizibil de pe telefon, în taxi.",
-        "challenge": "Subiectul e dens. Trebuia să fie ușor de parcurs pentru cine aprobă bugetul, fără să piardă detaliile pe care le verifică specialistul din apel. Doi cititori foarte diferiți, o singură pagină.",
-        "value": "Oferta stă în picioare fie că o citește cel care cumpără, fie cel care o specifică."
+        "summary": "O firmă de telecom ai cărei clienți trebuiau să înțeleagă oferta înainte să sune.",
+        "problem": "Nextremum vinde conexiuni de rețea pentru companii din Europa și Asia. E o decizie scumpă, care ia luni de zile, și nimeni nu ridică telefonul până nu înțelege ce ar cumpăra.",
+        "built": "Un site construit în jurul a ce vând și unde acoperă, așezat astfel încât să poată adăuga servicii fără să plătească un site nou o dată la doi ani.",
+        "challenge": "Site-ul e citit de doi oameni foarte diferiți. Cel care aprobă banii vrea să înțeleagă în treizeci de secunde despre ce e vorba. Inginerul pe care îl aduce în discuție vrea detaliile de dedesubt. Amândoi trebuiau să fie mulțumiți de aceeași pagină.",
+        "value": "Oricine ajunge pe el își dă seama dacă Nextremum merită o discuție, și asta e tot ce trebuie să facă site-ul."
       },
       "kraanveld": {
-        "summary": "O firmă de închiriat macarale, prezentată ca cineva căruia i-ai încredința o macara.",
-        "problem": "Închirierea de utilaje grele e o decizie bazată pe încredere. Înainte să sune, oamenii vor să vadă parcul de utilaje, ce s-a ridicat până acum și că evident nu e prima lucrare.",
-        "built": "Parcul de utilaje, lucrările finalizate și datele de contact, construite în jurul fotografiilor mari și făcute ca să fie actualizate ani la rând, nu înlocuite peste doi.",
-        "challenge": "Munca e vizuală, deci site-ul se sprijină pe imagini mari. Ele trebuie să apară imediat pe telefon, pe șantier, cu semnal prost, nu doar pe o conexiune bună de birou. Acolo a plecat cea mai mare parte a muncii.",
+        "summary": "O firmă de închiriat macarale care trebuia să pară alegerea sigură.",
+        "problem": "Nimeni nu închiriază o macara de la o firmă în care are dubii. Înainte să sune, oamenii vor să vadă utilajele, lucrările deja făcute și suficient din amândouă cât să înțeleagă că nu e prima săptămână a nimănui.",
+        "built": "Utilajele pe care le au, lucrările pe care le-au terminat și un mod evident de a lua legătura. Fotografii mari peste tot, puse cap la cap astfel încât să poată fi actualizate ani la rând.",
+        "challenge": "Fotografiile sunt toată ideea, iar fotografiile sunt grele. Cea mai mare parte a muncii a plecat în a le face să apară imediat pe un telefon cu o bară de semnal, pe șantier, nu doar pe wifi-ul de la birou.",
         "value": "Ce determină pe cineva să ridice telefonul e primul lucru pe care îl vede."
       },
       "aiForFrontend": {
-        "summary": "Un curs online despre cum scoți valoare reală din uneltele AI.",
-        "problem": "Echipele adoptau unelte AI fără să cadă vreodată de acord unde ajută și unde te costă discret o după-amiază.",
-        "built": "Am proiectat și înregistrat tot cursul: ce se acoperă, exemplele lucrate, livrarea.",
-        "challenge": "Uneltele astea se schimbă la câteva luni. Materialul trebuia să fie despre felul în care lucrezi, ca să nu expire odată cu unealta care era în frunte luna aceea.",
-        "value": "Să explici ceva suficient de bine cât să îl poți preda e un test mai dur decât să te pricepi tu însuți la el."
+        "summary": "Un curs online despre folosirea uneltelor AI fără să pierzi timp cu ele.",
+        "problem": "Echipele luau unelte AI fără să cadă de acord unde ajută și unde îți mănâncă discret o după-amiază.",
+        "built": "Am stabilit ce ar trebui să acopere, am scris exemplele și l-am înregistrat pe tot singur.",
+        "challenge": "Uneltele astea se schimbă la câteva luni. Dacă predam uneltele, cursul ar fi fost depășit înainte să îl vadă cineva, așa că am predat obiceiurile.",
+        "value": "Să predai ceva e un test mai dur decât să te pricepi la el. Îți găsești repede golurile din propria gândire, și încă în fața unui public."
       },
       "wayport": {
-        "summary": "Navigație în interiorul aeroportului, proiectată și construită într-un weekend.",
-        "problem": "Aeroporturile sunt greu de citit când ești în întârziere. Porțile, serviciile și facilitățile sunt exact ce nu găsești în momentul în care ai nevoie de ele.",
-        "built": "O aplicație de telefon pentru orientarea în interiorul aeroportului. Proiectată, construită și demonstrată în cadrul unui hackathon.",
+        "summary": "Cum te orientezi într-un terminal de aeroport.",
+        "problem": "Aeroporturile sunt greu de citit când ești în întârziere. Poarta, toaletele, un loc unde să mănânci: toate sunt cel mai greu de găsit exact în momentul în care ai nevoie de ele.",
+        "built": "O aplicație de telefon pentru orientarea în interiorul unui terminal. Proiectată, construită și prezentată într-un singur weekend.",
         "challenge": "Decizia despre ce tai. Cu un termen fix, singura cale să ajungi la ceva real e să alegi singurul lucru care trebuie să funcționeze și să renunți la restul.",
-        "value": "E aceeași judecată de care are nevoie o primă versiune. Alegi ce demonstrează ideea și construiești bine partea aceea."
+        "value": "E aceeași decizie de care are nevoie orice primă versiune. Stabilești ce parte demonstrează ideea și construiești bine partea aceea."
       }
     },
     "archiveItems": {
-      "cahulConnect": "O platformă pentru un oraș, care adună afacerile locale, evenimentele și serviciile publice într-un singur loc. Făcută la GigaHack.",
+      "cahulConnect": "Afacerile locale, evenimentele și serviciile publice dintr-un oraș, toate într-un singur loc. Făcut la GigaHack.",
       "weather": "Vremea de unde ești sau prognoza pentru orice oraș cauți.",
-      "pulse": "Un șablon pentru un magazin de articole sportive, construit ca să exersez fundamentele de layout.",
-      "writerWorks": "Un șablon făcut mai degrabă ca pretext ca să lucrez la animație și layout."
+      "pulse": "Layout pentru un magazin de sport, făcut pe vremea când încă exersam fundamentele.",
+      "writerWorks": "Făcut mai mult ca pretext ca să petrec o săptămână pe animație."
     }
   },
   "process": {
     "eyebrow": "Cum lucrez",
     "title": "Vorbești cu omul care o construiește.",
-    "lede": "Colaborări mici, fără account manager la mijloc.",
+    "lede": "Fără account manager și fără cineva pe care nu l-ai văzut niciodată care face treaba efectivă.",
     "steps": {
       "understand": {
         "title": "Găsesc problema reală",
-        "body": "Un apel și multe întrebări despre cum se face treaba acum. Destul de des, lucrul care merită construit nu e cel care a fost cerut, iar acum e mult mai ieftin să afli asta."
+        "body": "O discuție și multe întrebări despre cum se face treaba acum. Destul de des, ce merită construit nu e ce s-a cerut, iar asta e mult mai ieftin de aflat la început."
       },
       "scope": {
         "title": "Stabilim cea mai mică versiune utilă",
-        "body": "Ce se livrează primul, cât costă, ce rămâne deliberat pe dinafară. O listă și o sumă înainte să înceapă ceva, nu o fază de descoperire fără capăt, facturată la oră."
+        "body": "Ce se construiește primul, cât costă și ce lăsăm deoparte intenționat. Primești toate astea în scris înainte să înceapă orice muncă."
       },
       "build": {
         "title": "Construiesc la vedere",
-        "body": "Primești ceva ce poți testa în timp ce încă se construiește. Să te răzgândești e ieftin devreme și scump târziu, așa că prefer mult să aud devreme."
+        "body": "Primești ceva ce poți testa cu mult înainte să fie gata. Să te răzgândești e ieftin la început și scump la final, așa că spune-mi devreme."
       },
       "handOver": {
-        "title": "Livrez și predau",
-        "body": "În producție, documentat și al tău. N-ar trebui să ai nevoie de mine pe abonament lunar doar ca să meargă mai departe."
+        "title": "Predau lucrurile cum trebuie",
+        "body": "Intră în producție, e documentat și e al tău. N-ar trebui să îmi plătești ceva lunar ca să meargă mai departe. Sunt aici dacă vrei, nu pentru că ai rămas blocat cu mine."
       }
     }
   },
   "aboutTeaser": {
     "eyebrow": "Cu cine ai lucra",
     "title": "Un singur om, de la cap la coadă.",
-    "body1": "Sunt Lorenzo. Inginer software, momentan senior pe <barca>Barça Mobile</barca>, cu câteva proiecte pentru clienți în paralel. Termin și masterul la Universitatea din Oradea.",
-    "body2": "Am petrecut ani construind lucruri de la un capăt la altul: partea pe care oamenii o folosesc zilnic, partea care rulează liniștită în spate și deciziile dintre ele. Ce unelte presupune asta e problema mea, nu ceva despre care ar trebui să ai tu o părere.",
-    "body3": "În practică înseamnă un singur om care ține toată problema în cap, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața.",
+    "body1": "Sunt Lorenzo. În timpul săptămânii lucrez ca inginer senior la <barca>Barça Mobile</barca> și iau câteva proiecte pentru clienți în paralel. Termin și masterul la Universitatea din Oradea.",
+    "body2": "Construiesc software de ani buni și am făcut fiecare parte, de la ecranele pe care le apasă oamenii până la tot ce rulează liniștit în spatele lor. Ce unelte presupune asta e treaba mea, nu ceva despre care ai nevoie de o părere.",
+    "body3": "Adică un singur om ține toată problema, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața.",
     "proof": {
       "title": "Recent",
       "productLabel": "Produsul meu",
@@ -190,67 +190,71 @@
   "contact": {
     "eyebrow": "Pasul următor",
     "title": "Spune-mi ce nu funcționează.",
-    "lede": "Nu ai nevoie de specificație, de buget sau de un plan. Câteva fraze despre ce e lent, repetitiv sau enervant sunt de ajuns. Îți spun sincer dacă merită construit și dacă eu sunt omul potrivit să îl construiesc.",
+    "lede": "Nu ai nevoie de un document, de un buget sau de o idee clară despre ce trebuie construit. Câteva fraze despre ce merge prost sunt de ajuns. Dacă mi se pare că nu merită construit sau că altcineva ar face-o mai bine, îți spun și asta.",
     "emailLabel": "Email",
     "availability": "Deschis pentru proiecte noi"
   },
   "about": {
     "title": "Varianta lungă.",
-    "lede": "Inginer software. Momentan senior, încă mai ales curios.",
-    "intro": "Sunt Lorenzo, inginer software și masterand la Universitatea din Oradea. Zi de zi sunt inginer senior pe <barca>Barça Mobile</barca>.",
-    "freelance": "În paralel iau câteva proiecte pentru clienți și îmi țin propriile lucruri în viață. Acolo încerc idei înainte să ajungă în afacerea altcuiva.",
-    "career": "Cea mai mare parte din ce am construit a ajuns în fața unor oameni reali, ceea ce e o disciplină utilă: se vede foarte repede când ceva e confuz sau lent. Am ținut și părțile pe care nu le vede nimeni: cum e structurată informația, cum își pasează sistemele munca între ele și ce se întâmplă în ziua în care ceva cade.",
-    "interests": "Partea care îmi place cu adevărat vine înaintea tuturor acestora: să stau cu o problemă până devine clar ce ar trebui să existe. Destui oameni pot construi ce le descrii. Mai puțini îți vor spune că ce ai descris nu e chiar ce îți trebuie.",
+    "lede": "Cum lucrez, cum decid ce merită construit și cum e să ai de-a face cu mine.",
+    "intro": "Sunt Lorenzo. În timpul săptămânii sunt inginer senior la <barca>Barça Mobile</barca> și termin masterul la Universitatea din Oradea.",
+    "freelance": "În paralel iau câteva proiecte pentru clienți și îmi țin propriile produse în viață. Acolo încerc lucruri înainte să ajungă prin preajma afacerii altcuiva.",
+    "career": "Cea mai mare parte din ce am construit a ajuns în fața unor oameni reali, ceea ce te învață repede. Afli într-o zi dacă ceva e confuz. M-am ocupat și de părțile pe care nu le vede nimeni, alea care decid dacă lucrul respectiv mai merge vineri la ora patru.",
+    "interests": "Partea care îmi place cel mai mult se întâmplă înaintea tuturor acestora, când stai cu o problemă până devine clar ce ar trebui să existe. Destui oameni pot construi ce le descrii. Mai puțini îți vor spune că ce ai descris nu e chiar ce îți trebuie.",
     "principles": {
       "title": "Câteva lucruri pe care le cred despre construirea de software.",
       "items": {
         "problem": {
           "title": "Brieful e o presupunere",
-          "body": "Oamenii descriu soluții pentru că ăsta e vocabularul pe care îl au. Prima mea treabă e să găsesc problema de dedesubt și să verific dacă lucrul cerut o rezolvă cu adevărat."
+          "body": "Oamenii cer soluții, pentru că e mai ușor decât să descrii o problemă. Așa că primul lucru pe care îl fac e să merg înapoi până la ce e de fapt în neregulă și să verific dacă lucrul cerut ar rezolva asta."
         },
         "smallest": {
-          "title": "Livrează cel mai mic lucru real",
-          "body": "O versiune îngustă pe care oamenii o folosesc te învață mai mult decât una largă într-un document. Să începi mic nu e prudență, e felul în care eviți să plătești de două ori pentru lucrul greșit."
+          "title": "Începe cu cel mai mic lucru util",
+          "body": "O versiune mică pe care oamenii o folosesc deja îți spune mai mult decât una mare descrisă într-un document. E și felul în care eviți să plătești de două ori pentru lucrul greșit."
         },
         "maintainable": {
           "title": "Cineva va trăi cu asta",
-          "body": "Orice construiesc trebuie să aibă sens pentru cine îl preia după mine, inclusiv pentru tine. Deșteptul e o datorie. Plictisitorul și previzibilul îmbătrânesc mult mai bine."
+          "body": "Orice construiesc trebuie să aibă sens pentru cine se uită la el după mine, iar acela s-ar putea să fii chiar tu. Soluțiile deștepte sunt de obicei doar mai greu de reparat mai târziu."
         },
         "ai": {
           "title": "AI e o unealtă, nu un plan",
-          "body": "Folosesc uneltele astea zilnic și am înregistrat un curs despre ele. Exact de asta îți voi spune când răspunsul la problema ta nu e deloc AI."
+          "body": "Folosesc uneltele astea zilnic și am înregistrat un curs despre ele. Exact de asta îți spun când răspunsul la problema ta nu e deloc AI."
         }
       }
     },
     "working": {
       "title": "Cum arată de obicei colaborarea cu mine.",
-      "intro": "Aproape tot ce vor oamenii să afle înainte de prima discuție e o variantă a acestor lucruri.",
+      "intro": "Lucrurile pe care oamenii vor de obicei să le știe înainte să ia legătura.",
       "items": {
         "noSpec": {
-          "label": "Nu ai încă specificație",
-          "body": "E normal. Aproape nimeni nu are. O descriere a ceea ce e lent sau enervant e un punct de plecare mai bun decât un document scris ca să ghicească o soluție."
+          "label": "Nu ai un plan",
+          "body": "Ăsta e cazul normal. Aproape nimeni nu vine cu unul. Să îmi spui ce merge greu sau ce se strică mereu e un început mai bun decât un document care ghicește răspunsul."
         },
         "notSure": {
           "label": "Nu ești sigur că e software",
-          "body": "Uneori chiar nu e, și îți spun. O schimbare de proces sau o setare într-un program pe care deja îl plătești bate un produs pe care ar trebui apoi să îl întreții."
+          "body": "Uneori chiar nu e, și îți spun. Să schimbi felul în care se face ceva sau să activezi o setare într-un program pe care deja îl plătești e adesea răspunsul mai bun."
         },
         "tooSmall": {
           "label": "Ți se pare prea mic",
-          "body": "O săptămână de muncă ce elimină ceva ce echipa ta face în fiecare zi e un proiect bun. Prefer asta unui plan de șase luni pe care nu-l termină nimeni."
+          "body": "O săptămână de muncă ce elimină ceva ce echipa ta face în fiecare zi e un proiect bun. Îl prefer unui plan de șase luni care nu se termină niciodată."
         },
         "existing": {
           "label": "Există deja ceva",
-          "body": "Pot prelua ce e deja făcut, pot termina ce s-a blocat sau pot lucra alături de cine l-a construit. Să o iei de la zero e o decizie, nu o alegere implicită."
+          "body": "Pot prelua ce e făcut, pot termina ce s-a blocat sau pot lucra alături de cine l-a construit. Prefer să nu arunc ceva pentru care ai plătit deja."
+        },
+        "managing": {
+          "label": "Nu vrei să administrezi un programator",
+          "body": "Nici n-ar trebui. Întreb când chiar am nevoie de un răspuns și în rest îmi văd de treabă, iar tu vezi unde s-a ajuns fără să fie nevoie să alergi după mine."
         },
         "money": {
           "label": "Cost și termene",
-          "body": "Primești lista de lucru și o sumă înainte să înceapă ceva și afli devreme dacă vreuna dintre ele se schimbă. Fără surprize la final."
+          "body": "Primești un preț și o dată înainte să înceapă orice muncă. Dacă vreuna dintre ele se mișcă, afli de la mine cât încă se mai poate face ceva."
         }
       }
     },
     "outro": {
       "title": "Departe de ecran.",
-      "body": "Citesc mai multe newslettere din domeniu decât e rezonabil și petrec destul timp cu programare creativă, care nu are nicio justificare de business. Cam ăsta e și farmecul."
+      "body": "Citesc mai multe newslettere decât e rezonabil și îmi petrec mult din timpul liber făcând lucruri fără niciun scop. Fără client, fără termen, fără să mi le ceară cineva. Cam ăsta e și farmecul."
     }
   },
   "error": {
@@ -260,7 +264,7 @@
     "goHome": "Înapoi acasă"
   },
   "footer": {
-    "tagline": "Software la comandă pentru afaceri care au depășit soluțiile improvizate.",
+    "tagline": "Software pentru părțile dintr-o afacere care se fac încă manual.",
     "navLabel": "Pagini",
     "contactLabel": "Ia legătura",
     "languages": { "en": "Engleză", "ru": "Rusă", "ro": "Română" },
