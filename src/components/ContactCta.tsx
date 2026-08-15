@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { mailto, site } from '../data/site';
+import { mailto, messagingChannels, site } from '../data/site';
 import { usePointerSpotlight } from '../hooks';
+import { ActionLink } from './ActionLink';
 import { ButtonLink } from './Button';
 import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
@@ -53,6 +54,20 @@ export const ContactCta = () => {
 								</ButtonLink>
 							</div>
 						</Reveal>
+
+						{messagingChannels.length > 0 && (
+							<Reveal delay={0.22}>
+								<div className='mt-7 flex flex-wrap items-center gap-x-6 gap-y-3'>
+									<span className='font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]'>
+										{t('contact.messagingLabel')}
+									</span>
+
+									{messagingChannels.map((channel) => (
+										<ActionLink external href={channel.href} key={channel.id} label={t(channel.labelKey)} muted />
+									))}
+								</div>
+							</Reveal>
+						)}
 					</div>
 
 					<div className='flex flex-col justify-end gap-6 lg:col-span-5'>

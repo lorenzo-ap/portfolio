@@ -1,7 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { site } from '../data/site';
-import { GithubIcon, LinkedinIcon, LogoMark } from './icons';
+import { type MessagingChannelId, messagingChannels, site } from '../data/site';
+import { GithubIcon, LinkedinIcon, LogoMark, TelegramIcon, WhatsappIcon } from './icons';
+
+const channelIcon: Record<MessagingChannelId, typeof WhatsappIcon> = {
+	whatsapp: WhatsappIcon,
+	telegram: TelegramIcon
+};
 
 const columnTitle = 'mb-4 font-medium font-mono text-eyebrow text-faded-text uppercase';
 const columnLink =
@@ -52,6 +57,20 @@ export const Footer = () => {
 									{site.email}
 								</a>
 							</li>
+
+							{messagingChannels.map((channel) => {
+								const ChannelIcon = channelIcon[channel.id];
+
+								return (
+									<li key={channel.id}>
+										<Link className={`${columnLink} inline-flex items-center gap-2`} target='_blank' to={channel.href}>
+											<ChannelIcon size={14} title={t(channel.labelKey)} />
+											{t(channel.labelKey)}
+										</Link>
+									</li>
+								);
+							})}
+
 							<li>
 								<Link className={`${columnLink} inline-flex items-center gap-2`} target='_blank' to={site.linkedin}>
 									<LinkedinIcon size={14} title={t('footer.linkedin')} />

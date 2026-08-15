@@ -192,6 +192,7 @@
     "title": "Spune-mi ce nu funcționează.",
     "lede": "Nu ai nevoie de un document, de un buget sau de o idee clară despre ce trebuie construit. Câteva fraze despre ce merge prost sunt de ajuns. Dacă mi se pare că nu merită construit sau că altcineva ar face-o mai bine, îți spun și asta.",
     "emailLabel": "Email",
+    "messagingLabel": "Sau scrie-mi pe",
     "availability": "Deschis pentru proiecte noi"
   },
   "about": {
@@ -268,6 +269,8 @@
     "navLabel": "Pagini",
     "contactLabel": "Ia legătura",
     "languages": { "en": "Engleză", "ru": "Rusă", "ro": "Română" },
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "lightMode": "Mod luminos",
