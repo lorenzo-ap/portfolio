@@ -1,14 +1,14 @@
 {
   "pageTitles": {
-    "home": "Lorenzo Apolloni | Software engineer",
+    "home": "Lorenzo Apolloni | Custom software",
     "work": "Selected work | Lorenzo Apolloni",
     "about": "About | Lorenzo Apolloni",
     "error": "Page not found | Lorenzo Apolloni"
   },
   "meta": {
-    "home": "I'm Lorenzo, a senior software engineer. I build web apps, internal tools, integrations and automation, usually starting from a problem rather than a spec.",
-    "work": "Selected work. Full-stack AI products, client platforms and a couple of things built at hackathon speed, with what was actually hard about each one.",
-    "about": "Senior software engineer. Frontend heavy, comfortable across the backend and architecture. How I think about building software, and what I've built."
+    "home": "I'm Lorenzo. I build custom software for businesses: tools for the work your team does every day, automation for the repetitive parts, and products built from nothing. You bring the problem.",
+    "work": "Selected work. For each one: what was wrong, what I built, and the part that turned out to be difficult.",
+    "about": "How I approach a problem that arrives without a spec, what working with me looks like, and what I've built."
   },
   "nav": {
     "home": "Home",
@@ -40,59 +40,59 @@
       "line2": "for problems still",
       "line3": "solved by hand."
     },
-    "lede": "I'm Lorenzo. I write software for a living: web apps, APIs, internal tools. The hard part is usually working out what to build, so that's where I start.",
+    "lede": "I'm Lorenzo. Businesses bring me the part of the work that's slow, repetitive or held together by a spreadsheet, and I build the thing that replaces it. Working out what should be built is usually the hard part, so that's where I start.",
     "facts": {
       "currentLabel": "Right now",
-      "currentValue": "Senior engineer on",
+      "currentValue": "Senior engineer at",
       "latestLabel": "Latest thing I built",
-      "latestValue": "AInterest, a full-stack AI app",
+      "latestValue": "AInterest, an app anyone can use",
       "studyingLabel": "Also",
       "studyingValue": "Finishing a master's at Oradea"
     }
   },
   "capabilities": {
-    "eyebrow": "What I do",
-    "title": "Nobody hands me a finished spec.",
-    "lede": "It's usually a description of something slow, repetitive, or held together by a spreadsheet. Working out what to build from that is most of the job. This is the kind of thing it turns into.",
+    "eyebrow": "What I can help with",
+    "title": "Most people arrive with a problem, not a plan.",
+    "lede": "Usually it's something slow, repetitive, or living in a spreadsheet nobody quite trusts. Turning that into something worth building is most of the job. And if you're not sure software is the answer at all, that's a fine place to start — working that out is part of the work.",
     "items": {
-      "productsFromScratch": {
-        "title": "Products from nothing",
-        "body": "An idea turned into something people can sign up for. Architecture, interface, API, database, deploys. AInterest is the whole thing done this way, so you can go and click around it."
+      "manualWork": {
+        "title": "Work your team still does by hand",
+        "body": "The report someone rebuilds every Monday. Numbers moved from one system into another. Anything repetitive enough that people have stopped reading it properly. That part can be handled for you, and the hours go back to the team."
       },
-      "internalTools": {
-        "title": "Internal tools",
-        "body": "The admin panel, the dashboard, the thing that finally replaces a shared spreadsheet nobody trusts. Built around how the work actually happens."
+      "customTool": {
+        "title": "The tool you wish existed",
+        "body": "Every business has a way of working that no off-the-shelf product quite fits, so it ends up spread across spreadsheets, shared inboxes and someone's memory. This is the thing built around how you actually operate, instead of you bending to fit the software."
       },
-      "automation": {
-        "title": "Automating the boring parts",
-        "body": "The report someone assembles by hand every Monday. Data copied between two systems. Anything repetitive enough that people have stopped reading it properly."
+      "ideaToProduct": {
+        "title": "An idea that needs to become a product",
+        "body": "Something real people can sign up for and use, not a deck describing it. I've taken my own product from an idea to a live app with accounts and paying attention to the details, so you can go and click around the result."
       },
-      "integrations": {
-        "title": "Getting systems to talk",
-        "body": "APIs, third-party services, an old database nobody wants to touch. Most of the work is in the failure cases, which is also what decides whether anyone trusts the output."
+      "systemsTalking": {
+        "title": "Tools that don't talk to each other",
+        "body": "The accounting system, the CRM, a supplier's portal, an old database nobody wants to touch. Getting information to move between them on its own, reliably enough that people stop double-checking it by hand."
       },
-      "aiWorkflows": {
-        "title": "AI where it's worth it",
-        "body": "I've shipped AI features to production and recorded a course on working with AI tooling. That's also why I'll tell you when a model is a worse answer than fifty lines of code."
+      "aiWhereItPays": {
+        "title": "AI where it genuinely saves time",
+        "body": "I've put AI features in front of real users and recorded a course on working with these tools. That's also why I'll tell you when it's an expensive answer to something a simpler build solves better."
       },
-      "modernisation": {
-        "title": "Codebases that got slow",
-        "body": "Frontend architecture, performance, structure. Usually an app that grew faster than anyone had time to plan for, where every small change now takes a week."
+      "outgrown": {
+        "title": "Something you've outgrown",
+        "body": "It still works, but every small change takes weeks, everyone has a workaround, and nobody wants to touch it. Sometimes that's worth repairing and sometimes it's worth replacing. I'll tell you which, and why."
       }
     }
   },
   "work": {
     "eyebrow": "Selected work",
     "title": "Things I've built.",
-    "lede": "What each one was, and the part that turned out to be hard.",
+    "lede": "What the problem was, and what changed once the thing existed.",
     "pageTitle": "Selected work.",
-    "pageLede": "Products, client work, and a couple of things built at hackathon speed. For each one I've written down the problem, what I built, and where it got difficult.",
+    "pageLede": "Products, client work, and a couple of things built at hackathon speed. For each one: what was wrong, what I built, and the part that turned out to be difficult.",
     "labels": {
       "problem": "The problem",
       "built": "What I built",
-      "challenge": "What was hard",
+      "challenge": "The hard part",
       "value": "Why it mattered",
-      "stack": "Stack"
+      "stack": "Built with"
     },
     "kinds": {
       "product": "My own product",
@@ -108,130 +108,149 @@
     },
     "cases": {
       "ainterest": {
-        "summary": "A full-stack AI image app with a shared feed.",
-        "problem": "Image generation tools bury everything in a chat log. You can't easily go back to what you made last week, and you never see what anyone else is doing with the same model.",
-        "built": "Prompt goes in, image comes out, and you can publish it to a feed anyone can browse. React and TypeScript on the front, a Fastify API behind it, with accounts, storage and persistence.",
-        "challenge": "Almost none of the difficulty is the model call. Generation is slow, it costs money, and it fails in ways a normal API doesn't. The interface has to be honest about that without looking broken, and the feed has to stay quick as it fills up.",
-        "value": "Talking about AI features is easy. Shipping one with accounts, storage and a UI people can actually use is the part that counts, so I did that."
+        "summary": "An AI image app strangers can sign up for and use.",
+        "problem": "Tools that generate images bury everything in a chat log. Whatever you made last week is effectively gone, and you never see what anyone else is doing with the same tool.",
+        "built": "You describe what you want, you get an image back, and you can publish it to a feed anyone can browse. Accounts, saved work, a shared feed — a product people can use, not a demo.",
+        "challenge": "Almost none of the difficulty was the AI itself. Generating an image is slow, it costs real money every single time, and it fails in ways ordinary software doesn't. The app has to be honest about all of that without ever looking broken, and stay quick as the feed fills up.",
+        "value": "Anyone can talk about adding AI to a product. Building one that strangers can sign up for, use and come back to is the part that counts, so that's the one I built."
       },
       "nextremum": {
-        "summary": "A telecoms provider that had to be understandable before anyone would call.",
-        "problem": "Nextremum sells private networking and connectivity across Europe and Asia. It's a technical purchase with a lot of trust attached, and nobody starts that conversation before they understand the offer.",
-        "built": "A Next.js and TypeScript site built around services and coverage. Layouts that survive the offering growing, and pages that still read properly on a phone.",
-        "challenge": "Infrastructure copy is dense. It had to become scannable for whoever signs off on the budget without losing the detail the engineer on the call is checking for.",
+        "summary": "A telecoms provider that had to be understood before anyone would call.",
+        "problem": "Nextremum sells private networks and connectivity across Europe and Asia. It's a considered purchase with a lot of trust attached, and nobody starts that conversation before they understand what's actually on offer.",
+        "built": "A site organised around what they sell and where they cover, structured so the offer can keep growing without a rebuild, and readable on a phone in a taxi.",
+        "challenge": "The subject is dense. It had to be quick to scan for the person signing off the budget without losing the detail the specialist on the call is checking for. Two very different readers, one page.",
         "value": "The offer holds up whether the person reading it is buying it or specifying it."
       },
       "kraanveld": {
         "summary": "A crane rental company, presented like someone you'd trust with a crane.",
-        "problem": "Renting heavy equipment is a trust decision. Before anyone picks up the phone they want to see the fleet, what you've lifted, and that this clearly isn't your first job.",
-        "built": "Next.js and TypeScript. Services, completed projects, contact. Built so it can be updated for years instead of rebuilt in two.",
-        "challenge": "The work is visual, so the site leans on large photography. That has to load quickly on a phone at a site with bad signal, not only on a fast connection.",
-        "value": "Whatever gets someone to pick up the phone is the first thing on the page."
+        "problem": "Renting heavy equipment is a trust decision. Before anyone picks up the phone they want to see the fleet, what's been lifted before, and that this clearly isn't the first job.",
+        "built": "The fleet, completed work and contact details, built around large photography, and built to be updated for years rather than replaced in two.",
+        "challenge": "The work is visual, so the site leans on big images. Those have to appear immediately on a phone, on a site with bad signal — not just on a fast office connection. That's where most of the engineering went.",
+        "value": "Whatever makes someone pick up the phone is the first thing they see."
       },
       "aiForFrontend": {
-        "summary": "An online course on using AI tooling for frontend work.",
-        "problem": "Teams were adopting AI coding tools without agreeing on where they help and where they quietly cost an afternoon.",
-        "built": "I designed and recorded the whole course. Curriculum, worked examples, delivery.",
-        "challenge": "The tooling moves every few months, so the material had to be about how you work rather than whichever tool happened to be ahead that month.",
-        "value": "Explaining AI-assisted development to other developers is a stricter test than using it yourself."
+        "summary": "An online course on getting real value out of AI tools.",
+        "problem": "Teams were adopting AI tools without ever agreeing on where they help and where they quietly cost an afternoon.",
+        "built": "I designed and recorded the whole course: what to cover, the worked examples, the delivery.",
+        "challenge": "These tools change every few months. The material had to be about how you work, so it wouldn't expire alongside whichever tool happened to be ahead that month.",
+        "value": "Explaining something well enough to teach it is a stricter test than being good at it yourself."
       },
       "wayport": {
-        "summary": "Indoor airport navigation, built at hackathon speed.",
+        "summary": "Indoor airport navigation, designed and built in a weekend.",
         "problem": "Airports are hard to read when you're late. Gates, services and facilities are exactly what you can't find at the moment you need them.",
-        "built": "A React Native app for getting around inside an airport. Designed, built and demoed inside a hackathon.",
-        "challenge": "Deciding what to cut. With a fixed deadline the only way to end up with something real is to pick the one flow that has to work and drop everything else.",
-        "value": "Same instinct an MVP needs. Pick the thing that proves the idea and build that part properly."
+        "built": "A phone app for finding your way around inside an airport. Designed, built and demoed inside a hackathon.",
+        "challenge": "Deciding what to cut. With a fixed deadline, the only way to end up with something real is to pick the one thing that has to work and drop everything else.",
+        "value": "That's the same judgement a first version needs. Pick what proves the idea, and build that part properly."
       }
     },
     "archiveItems": {
       "cahulConnect": "A city platform pulling local businesses, events and public services into one place. Built at GigaHack.",
       "weather": "Weather where you are, or the forecast for any city you look up.",
       "pulse": "A sports store template, built to get the layout fundamentals right.",
-      "writerWorks": "A template on plain web technologies, mostly an excuse to work on animation and layout."
+      "writerWorks": "A template built mostly as an excuse to work on animation and layout."
     }
   },
   "process": {
     "eyebrow": "How I work",
-    "title": "You talk to the person writing the code.",
+    "title": "You talk to the person building it.",
     "lede": "Small engagements, no account manager in the middle.",
     "steps": {
       "understand": {
-        "title": "Understand the problem",
-        "body": "A call and a lot of questions about how the work gets done today. Fairly often the thing worth building isn't the thing that was asked for."
+        "title": "Work out the real problem",
+        "body": "A call and a lot of questions about how the work gets done today. Fairly often the thing worth building isn't the thing that was asked for, and it's much cheaper to find that out now."
       },
       "scope": {
         "title": "Agree the smallest useful version",
-        "body": "What ships first, what it costs, what's deliberately left out. No open-ended discovery phase billed by the hour."
+        "body": "What ships first, what it costs, what's deliberately left out. A scope and a number before anything starts, not an open-ended discovery phase billed by the hour."
       },
       "build": {
-        "title": "Build where you can see it",
-        "body": "You get something you can click through while it's being built. Changing direction is cheap early and expensive late, so I'd rather hear it early."
+        "title": "Build it where you can see it",
+        "body": "You get something you can click through while it's still being built. Changing your mind is cheap early and expensive late, so I'd much rather hear it early."
       },
       "handOver": {
         "title": "Ship it and hand it over",
-        "body": "Deployed, documented, yours. You shouldn't need me on a retainer to keep it running."
+        "body": "Live, documented and yours. You shouldn't need me on a monthly retainer just to keep it running."
       }
     }
   },
   "aboutTeaser": {
     "eyebrow": "Who you'd be working with",
     "title": "One person, start to finish.",
-    "body1": "I'm Lorenzo. Senior software engineer, currently working on <barca>Barça Mobile</barca>, with a small number of client projects alongside it. I'm also finishing a master's at the University of Oradea.",
-    "body2": "Most of my work has been frontend heavy (React, Next.js, Solid.js, Angular) but I've built and run the backend side too, mostly Fastify and Express. I use agentic tooling every day and recorded a course teaching it.",
-    "body3": "In practice that means one person holding the whole thing, from the first conversation about what's going wrong to the version running in production."
+    "body1": "I'm Lorenzo. A software engineer, currently senior on <barca>Barça Mobile</barca>, with a small number of client projects alongside it. I'm also finishing a master's at the University of Oradea.",
+    "body2": "I've spent years building things end to end: the part people use every day, the part running quietly behind it, and the decisions in between. Which tools that involves is my problem to solve, not something you should have to have an opinion about.",
+    "body3": "In practice it means one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning.",
+    "proof": {
+      "title": "Recently",
+      "productLabel": "My own product",
+      "clientsLabel": "Client work",
+      "teachingLabel": "Teaching",
+      "teachingValue": "A course on working with AI tools"
+    }
   },
   "contact": {
     "eyebrow": "Next step",
     "title": "Tell me what isn't working.",
-    "lede": "A few sentences is enough. I'll tell you honestly whether it's worth building, and whether I'm the right person to build it.",
+    "lede": "You don't need a spec, a budget or a plan. A few sentences about what's slow, repetitive or annoying is enough. I'll tell you honestly whether it's worth building, and whether I'm the right person to build it.",
     "emailLabel": "Email",
     "availability": "Open to new work"
   },
   "about": {
     "title": "The longer version.",
     "lede": "Software engineer. Currently senior, still mostly curious.",
-    "intro": "I'm Lorenzo, a software engineer and a master's student at the University of Oradea. Day to day I work as a Senior Software Engineer on <barca>Barça Mobile</barca>.",
-    "freelance": "On the side I take a small number of client projects and keep my own things running. That's where I try ideas out before they end up in anyone's production system.",
-    "career": "Most of my career has been spent near the interface, React and Next.js above all. The interesting problems are rarely only frontend though. I've built APIs, designed data models, made architecture calls, and owned features from the first conversation through to deploy.",
-    "interests": "The part I actually enjoy comes before the code, working out what should exist at all. Fast interfaces and interactions that feel right are the craft. Deciding what to build is the harder half.",
+    "intro": "I'm Lorenzo, a software engineer and a master's student at the University of Oradea. Day to day I'm a senior engineer on <barca>Barça Mobile</barca>.",
+    "freelance": "Alongside that I take a small number of client projects and keep my own things running. That's where I try ideas out before they end up in anyone else's business.",
+    "career": "Most of what I've built has ended up in front of real people, which is a useful discipline: it becomes obvious very quickly when something is confusing or slow. I've also owned the parts nobody sees — how information is structured, how systems pass work between each other, and what happens on the day something fails.",
+    "interests": "The part I actually enjoy comes before any of that: sitting with a problem until it's clear what should exist. Plenty of people can build what you describe. Fewer will tell you that what you described isn't quite what you need.",
     "principles": {
       "title": "A few things I believe about building software.",
       "items": {
         "problem": {
           "title": "The brief is a guess",
-          "body": "People describe solutions because that's the vocabulary they have. My first job is finding the problem underneath and checking whether the requested solution actually solves it."
+          "body": "People describe solutions, because that's the vocabulary they have. My first job is finding the problem underneath and checking whether the thing you asked for actually solves it."
         },
         "smallest": {
           "title": "Ship the smallest real thing",
-          "body": "A narrow version in production teaches you more than a broad version in a document. Scope is a design decision, not a negotiating position."
+          "body": "A narrow version people are using teaches you more than a broad version in a document. Starting small isn't caution — it's how you avoid paying for the wrong thing twice."
         },
         "maintainable": {
-          "title": "Someone has to maintain this",
-          "body": "Clever code is a liability. I write for whoever reads it in a year, which is usually me. Structure, types, boring predictable patterns."
+          "title": "Someone has to live with this",
+          "body": "Whatever I build has to make sense to whoever picks it up next, including you. Clever is a liability. Boring and predictable ages far better."
         },
         "ai": {
           "title": "AI is a tool, not a plan",
-          "body": "I use agentic tooling every day and taught a course on it. That's exactly why I'll say when a model is the wrong answer to your problem."
+          "body": "I use these tools every day and recorded a course on them. That's exactly why I'll say it when the answer to your problem isn't AI at all."
         }
       }
     },
-    "techStack": {
-      "title": "What I reach for.",
-      "intro": "The choice follows the problem. These are the ones I know well enough to argue about.",
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "agentic": "Agentic coding"
-    },
-    "tools": {
-      "title": "Tools I use.",
-      "editors": "Editors",
-      "browsers": "Browsers",
-      "design": "Design",
-      "communication": "Communication"
+    "working": {
+      "title": "What working with me usually looks like.",
+      "intro": "Most of what people want to know before a first conversation is some version of these.",
+      "items": {
+        "noSpec": {
+          "label": "No spec yet",
+          "body": "Normal. Almost nobody has one. A description of what's slow or annoying is a better starting point than a document written to guess at a solution."
+        },
+        "notSure": {
+          "label": "Not sure it's software",
+          "body": "Sometimes it isn't, and I'll say so. A change to the process, or a setting in something you already pay for, beats a build you'd have to live with."
+        },
+        "tooSmall": {
+          "label": "It feels too small",
+          "body": "A week of work that removes something your team does every single day is a good project. I'd rather do that than a six-month plan nobody finishes."
+        },
+        "existing": {
+          "label": "Something already exists",
+          "body": "I can take over what's there, finish what stalled, or work next to whoever built it. Starting again from scratch is a decision, not a default."
+        },
+        "money": {
+          "label": "Cost and timing",
+          "body": "You get a scope and a number before anything starts, and you hear from me early if either is going to move. No surprises at the end."
+        }
+      }
     },
     "outro": {
       "title": "Away from the screen.",
-      "body": "I read more JavaScript newsletters than is reasonable, and spend a fair amount of time on creative coding, which has no business case whatsoever. That's mostly the appeal."
+      "body": "I read more industry newsletters than is reasonable, and spend a fair amount of time on creative coding, which has no business case whatsoever. That's mostly the appeal."
     }
   },
   "error": {
@@ -241,7 +260,7 @@
     "goHome": "Back home"
   },
   "footer": {
-    "tagline": "Web apps, internal tools and automation for businesses that have outgrown the workaround.",
+    "tagline": "Custom software for businesses that have outgrown the workaround.",
     "navLabel": "Pages",
     "contactLabel": "Get in touch",
     "languages": { "en": "English", "ru": "Russian", "ro": "Romanian" },

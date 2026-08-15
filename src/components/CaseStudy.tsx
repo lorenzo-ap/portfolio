@@ -69,10 +69,8 @@ export const FeaturedCaseStudy = ({ caseStudy, index }: CaseStudyProps) => {
 				</p>
 
 				<p className='mt-5 max-w-prose text-[0.9375rem] text-subfaded-text leading-relaxed'>
-					{t(`work.cases.${caseStudy.key}.challenge`)}
+					{t(`work.cases.${caseStudy.key}.problem`)}
 				</p>
-
-				<SkillChips className='mt-6' skills={caseStudy.skills} />
 
 				<div className='mt-7'>
 					<ActionLink external href={caseStudy.link} label={t('actions.visitSite')} />

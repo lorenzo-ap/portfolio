@@ -4,6 +4,7 @@ import { ContactCta, Eyebrow, PageHeader, Reveal, RevealGroup, RevealItem, Secti
 import { site } from '../data/site';
 
 const principleKeys = ['problem', 'smallest', 'maintainable', 'ai'] as const;
+const workingKeys = ['noSpec', 'notSure', 'tooSmall', 'existing', 'money'] as const;
 
 interface DefinitionRow {
 	label: string;
@@ -36,7 +37,7 @@ const DefinitionTable = ({ title, intro, rows }: DefinitionTableProps) => {
 							<span className='font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em] sm:col-span-4'>
 								{row.label}
 							</span>
-							<span className='text-[0.9375rem] text-text sm:col-span-8'>{row.value}</span>
+							<span className='max-w-prose text-[0.9375rem] text-text leading-relaxed sm:col-span-8'>{row.value}</span>
 						</div>
 					</RevealItem>
 				))}
@@ -48,18 +49,10 @@ const DefinitionTable = ({ title, intro, rows }: DefinitionTableProps) => {
 export const AboutPage = () => {
 	const { t } = useTranslation();
 
-	const stackRows: DefinitionRow[] = [
-		{ label: t('about.techStack.frontend'), value: 'React, Next.js, Solid.js, Angular' },
-		{ label: t('about.techStack.backend'), value: 'Fastify, Express, Node.js' },
-		{ label: t('about.techStack.agentic'), value: 'Claude Code' }
-	];
-
-	const toolRows: DefinitionRow[] = [
-		{ label: t('about.tools.editors'), value: 'VS Code, Cursor, IntelliJ' },
-		{ label: t('about.tools.browsers'), value: 'Chrome, Safari' },
-		{ label: t('about.tools.design'), value: 'Figma' },
-		{ label: t('about.tools.communication'), value: 'Telegram, Slack, Discord' }
-	];
+	const workingRows: DefinitionRow[] = workingKeys.map((key) => ({
+		label: t(`about.working.items.${key}.label`),
+		value: t(`about.working.items.${key}.body`)
+	}));
 
 	return (
 		<>
@@ -121,10 +114,7 @@ export const AboutPage = () => {
 			</Section>
 
 			<Section>
-				<div className='grid gap-x-16 gap-y-16 lg:grid-cols-2'>
-					<DefinitionTable intro={t('about.techStack.intro')} rows={stackRows} title={t('about.techStack.title')} />
-					<DefinitionTable rows={toolRows} title={t('about.tools.title')} />
-				</div>
+				<DefinitionTable intro={t('about.working.intro')} rows={workingRows} title={t('about.working.title')} />
 			</Section>
 
 			<Section>

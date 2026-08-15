@@ -1,19 +1,27 @@
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { caseStudies } from '../data/projects';
 import { site } from '../data/site';
 import { ActionLink } from './ActionLink';
 import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
 import { Section } from './Section';
 
-const stackRows = [
-	{ labelKey: 'about.techStack.frontend' as const, value: 'React, Next.js, Solid.js, Angular' },
-	{ labelKey: 'about.techStack.backend' as const, value: 'Fastify, Express, Node.js' },
-	{ labelKey: 'about.techStack.agentic' as const, value: 'Claude Code' }
-];
+/** Proof, not stack: the names stay in sync with the work page. */
+const namesByKind = (kind: (typeof caseStudies)[number]['kind']) =>
+	caseStudies
+		.filter((caseStudy) => caseStudy.kind === kind)
+		.map((caseStudy) => caseStudy.name)
+		.join(', ');
 
 export const AboutTeaser = () => {
 	const { t } = useTranslation();
+
+	const proofRows = [
+		{ label: t('aboutTeaser.proof.productLabel'), value: namesByKind('product') },
+		{ label: t('aboutTeaser.proof.clientsLabel'), value: namesByKind('client') },
+		{ label: t('aboutTeaser.proof.teachingLabel'), value: t('aboutTeaser.proof.teachingValue') }
+	];
 
 	return (
 		<Section id='about'>
@@ -58,16 +66,16 @@ export const AboutTeaser = () => {
 					<Reveal delay={0.12}>
 						<div className='rounded-2xl border border-border bg-surface p-8'>
 							<p className='font-medium font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]'>
-								{t('about.techStack.title')}
+								{t('aboutTeaser.proof.title')}
 							</p>
 
 							<dl className='mt-6 flex flex-col'>
-								{stackRows.map((row) => (
+								{proofRows.map((row) => (
 									<div
 										className='flex flex-col gap-1 border-border border-t py-4 first:border-t-0 first:pt-0'
-										key={row.labelKey}
+										key={row.label}
 									>
-										<dt className='text-[0.8125rem] text-faded-text'>{t(row.labelKey)}</dt>
+										<dt className='text-[0.8125rem] text-faded-text'>{row.label}</dt>
 										<dd className='text-[0.9375rem] text-text'>{row.value}</dd>
 									</div>
 								))}

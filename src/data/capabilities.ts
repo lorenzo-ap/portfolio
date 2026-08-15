@@ -1,16 +1,16 @@
 import type { CapabilityKey, ProcessStepKey } from '../types';
 
 /**
- * Framed as outcomes a business can buy, not as a technology list.
- * Every item is backed by work that exists on the work page.
+ * Situations a business recognises itself in, not a technology list.
+ * Each one is a problem someone can arrive with, phrased the way they'd phrase it.
  */
 export const capabilityKeys: CapabilityKey[] = [
-	'productsFromScratch',
-	'internalTools',
-	'automation',
-	'integrations',
-	'aiWorkflows',
-	'modernisation'
+	'manualWork',
+	'customTool',
+	'ideaToProduct',
+	'systemsTalking',
+	'aiWhereItPays',
+	'outgrown'
 ];
 
 export const processStepKeys: ProcessStepKey[] = ['understand', 'scope', 'build', 'handOver'];
