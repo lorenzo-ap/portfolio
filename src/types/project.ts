@@ -13,6 +13,8 @@ export interface CaseStudyModel {
 	kind: ProjectKindKey;
 	/** Optional real screenshot in `public/`; falls back to a generated visual. */
 	image?: string;
+	/** The product's own icon in `public/icons/`, shown before the title. */
+	icon?: string;
 	/** Label for the main link. Defaults to `visitSite`. */
 	primaryLabelKey?: ProjectLinkLabelKey;
 	secondaryLink?: {

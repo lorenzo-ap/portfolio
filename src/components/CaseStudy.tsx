@@ -27,6 +27,36 @@ const CaseStudyMeta = ({ caseStudy, index }: CaseStudyProps) => {
 	);
 };
 
+interface CaseStudyTitleProps {
+	caseStudy: CaseStudyModel;
+	className: string;
+	as?: 'h2' | 'h3';
+}
+
+/**
+ * The product's own icon, then its name. The icon is sized in `em` so it tracks
+ * whichever heading size the surface uses, and stays inline so it rides the
+ * first line when a title wraps instead of centring itself between two lines.
+ * It's decorative — the name beside it already carries the meaning.
+ */
+const CaseStudyTitle = ({ caseStudy, className, as: Heading = 'h3' }: CaseStudyTitleProps) => (
+	<Heading className={className}>
+		{caseStudy.icon && (
+			<img
+				alt=''
+				aria-hidden='true'
+				className='mr-[0.4em] inline-block h-[0.85em] w-[0.85em] object-contain align-[-0.1em]'
+				decoding='async'
+				height={128}
+				loading='lazy'
+				src={caseStudy.icon}
+				width={128}
+			/>
+		)}
+		{caseStudy.name}
+	</Heading>
+);
+
 interface CaseStudyLinksProps {
 	caseStudy: CaseStudyModel;
 }
@@ -86,7 +116,11 @@ const CourseSurface = ({ hue, className = '', children }: CourseSurfaceProps) =>
 	<div className={`relative overflow-hidden rounded-2xl border border-border bg-surface ${className}`}>
 		<div aria-hidden='true' className='absolute inset-0' style={courseSurfaceStyle(hue)} />
 		<div aria-hidden='true' className='grid-backdrop absolute inset-0 opacity-50' />
-		<div aria-hidden='true' className='absolute inset-x-0 top-0 h-px bg-accent-line' />
+		{/* Fades out before the rounded corners; a flat hairline gets clipped mid-curve and reads as a stray line. */}
+		<div
+			aria-hidden='true'
+			className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-line to-transparent'
+		/>
 		<div className='relative'>{children}</div>
 	</div>
 );
@@ -119,7 +153,7 @@ export const FeaturedCaseStudy = ({ caseStudy, index }: CaseStudyProps) => {
 			<motion.div className={`lg:col-span-5 ${flipped ? 'lg:order-1' : ''}`} variants={fadeUp}>
 				<CaseStudyMeta caseStudy={caseStudy} index={index} />
 
-				<h3 className='mt-5 font-semibold text-text text-title'>{caseStudy.name}</h3>
+				<CaseStudyTitle caseStudy={caseStudy} className='mt-5 font-semibold text-text text-title' />
 
 				<p className='mt-3 text-[1.0625rem] text-faded-text leading-relaxed'>
 					{t(`work.cases.${caseStudy.key}.summary`)}
@@ -144,7 +178,7 @@ export const FeaturedTeaching = ({ caseStudy, index }: CaseStudyProps) => {
 	return (
 		<CourseSurface hue={caseStudy.hue}>
 			<motion.article
-				className='grid gap-x-14 gap-y-10 p-8 sm:p-10 lg:grid-cols-12 lg:p-14'
+				className='grid gap-x-14 gap-y-10 p-8 sm:p-10 lg:grid-cols-12 lg:p-12'
 				initial={inView.initial}
 				variants={stagger(0.08)}
 				viewport={inView.viewport}
@@ -153,15 +187,17 @@ export const FeaturedTeaching = ({ caseStudy, index }: CaseStudyProps) => {
 				<motion.div className='lg:col-span-7' variants={fadeUp}>
 					<CaseStudyMeta caseStudy={caseStudy} index={index} />
 
-					<h3 className='mt-5 max-w-[18ch] text-balance font-semibold text-headline text-text'>{caseStudy.name}</h3>
+					<CaseStudyTitle caseStudy={caseStudy} className='mt-5 font-semibold text-text text-title' />
 
-					<p className='mt-4 max-w-prose text-faded-text text-lede'>{t(`work.cases.${caseStudy.key}.summary`)}</p>
+					<p className='mt-3 max-w-prose text-[1.0625rem] text-faded-text leading-relaxed'>
+						{t(`work.cases.${caseStudy.key}.summary`)}
+					</p>
 
 					<p className='mt-5 max-w-prose text-[0.9375rem] text-subfaded-text leading-relaxed'>
 						{t(`work.cases.${caseStudy.key}.situation`)}
 					</p>
 
-					<div className='mt-8'>
+					<div className='mt-7'>
 						<CaseStudyLinks caseStudy={caseStudy} />
 					</div>
 				</motion.div>
@@ -190,7 +226,7 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 					</Reveal>
 
 					<Reveal delay={0.06}>
-						<h2 className='mt-5 font-semibold text-display-sm text-text'>{caseStudy.name}</h2>
+						<CaseStudyTitle as='h2' caseStudy={caseStudy} className='mt-5 font-semibold text-display-sm text-text' />
 					</Reveal>
 				</div>
 

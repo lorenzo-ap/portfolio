@@ -18,6 +18,7 @@ const barcaMobile: CaseStudyModel = {
 		href: 'https://apps.apple.com/bg/app/bar%C3%A7a-mobile-your-travel-esim/id6741801803',
 		labelKey: 'appStoreLink'
 	},
+	icon: '/icons/barca-mobile.png',
 	hue: 214
 };
 
@@ -27,6 +28,7 @@ const examin: CaseStudyModel = {
 	name: 'Examin.ai',
 	link: 'https://examin.ai/',
 	kind: 'client',
+	icon: '/icons/examin.png',
 	hue: 226
 };
 
@@ -36,6 +38,7 @@ const ainterest: CaseStudyModel = {
 	name: 'AInterest',
 	link: 'https://www.ainterest.me/',
 	kind: 'product',
+	icon: '/icons/ainterest.svg',
 	hue: 236
 };
 
@@ -46,6 +49,7 @@ const aiForFrontend: CaseStudyModel = {
 	link: 'https://itlogia.ru/ai-front',
 	kind: 'course',
 	primaryLabelKey: 'viewCourse',
+	icon: '/icons/itlogia.png',
 	hue: 204
 };
 
