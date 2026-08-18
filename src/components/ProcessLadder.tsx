@@ -28,8 +28,8 @@ export const ProcessLadder = () => {
 
 			<RevealGroup as='ol' step={0.06}>
 				{processStepKeys.map((key, index) => (
-					<RevealItem as='li' key={key}>
-						<div className='group grid gap-x-8 gap-y-2 border-border border-t py-8 first:border-t-0 first:pt-0 sm:grid-cols-12'>
+					<RevealItem as='li' className='group border-border border-t py-8 first:border-t-0 first:pt-0' key={key}>
+						<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
 							<span className='font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-2'>
 								{String(index + 1).padStart(2, '0')}
 							</span>

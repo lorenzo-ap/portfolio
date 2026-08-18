@@ -141,8 +141,8 @@ export const AboutPage = () => {
 
 					<RevealGroup as='ul' className='lg:col-span-7 lg:col-start-6' step={0.06}>
 						{principleKeys.map((key, index) => (
-							<RevealItem as='li' key={key}>
-								<div className='group row grid gap-x-8 gap-y-2 py-9 last:border-b last:border-b-border sm:grid-cols-12'>
+							<RevealItem as='li' className='group row py-9 last:border-b last:border-b-border' key={key}>
+								<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
 									<span className='relative font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-2'>
 										{String(index + 1).padStart(2, '0')}
 									</span>
@@ -172,8 +172,8 @@ export const AboutPage = () => {
 
 					<RevealGroup as='ul' className='lg:col-span-7 lg:col-start-6' step={0.05}>
 						{workingKeys.map((key) => (
-							<RevealItem as='li' key={key}>
-								<div className='group row grid gap-x-8 gap-y-2 py-7 last:border-b last:border-b-border sm:grid-cols-12'>
+							<RevealItem as='li' className='group row py-7 last:border-b last:border-b-border' key={key}>
+								<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
 									<span className='relative font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-4'>
 										{t(`about.working.items.${key}.label`)}
 									</span>
