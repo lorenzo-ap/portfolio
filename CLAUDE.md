@@ -99,9 +99,13 @@ Single-page React 18 + Vite + TypeScript site, deployed to Vercel (`vercel.json`
 
 **Routes:** `/` (home), `/work`, `/about`, `*` (error). `/projects` is a permanent `<Navigate>` to `/work`. Keep it, old links point there.
 
+The home page is Hero, Selected work, Capabilities, Positioning, Contact. Anything that explains how I work in detail lives on `/about` instead, so the home page stays a pitch and the about page is worth opening.
+
 Each route element is wrapped in `<Page titleKey='…' descriptionKey='…'>`, which applies the page transition, renders the `#main` landmark, and calls `useSeo` (title, description, canonical and Open Graph tags, derived from the live origin so they're correct on any domain).
 
 **Adding a page:** create it in `src/pages/`, export from `src/pages/index.ts`, add a `<Route>` whose element is a `<Page>` wrapper, and add the matching `pageTitles` / `meta` keys to all three locale files.
+
+**Routes animate in and nothing animates out.** There's no `AnimatePresence` around the routes, on purpose. An exit transition makes the incoming page wait for the outgoing one, and anything that stops that outgoing animation completing leaves a page that has already faded to nothing sitting there permanently. That was a real intermittent blank screen. The entrance is what reads as a transition anyway, since every page header uncovers its headline word by word.
 
 ## Layout & design system
 
@@ -128,7 +132,7 @@ Three gotchas that have already caused bugs:
 
 ## Motion system
 
-`src/lib/motion.ts` is the single source of easing, durations and variants (`fadeUp`, `uncover`, `wordStagger`, `ruleReveal`, `wipeUp`, `pageTransition`, `stagger`, `inView`). Everything decelerates on the same expo curve, and exits run at roughly 60% of the matching entrance.
+`src/lib/motion.ts` is the single source of easing, durations and variants (`fadeUp`, `uncover`, `wordStagger`, `ruleReveal`, `wipeUp`, `stagger`, `inView`). Everything decelerates on the same expo curve.
 
 The site has one signature move: **type is uncovered, never faded in.**
 
@@ -141,7 +145,7 @@ The site has one signature move: **type is uncovered, never faded in.**
 
 **Two traps worth knowing before adding motion here:**
 
-1. **A motion component nested inside a motion parent that has `variants` inherits that parent's animation state.** Giving the child its own `whileInView` does not reliably override it, and the symptom is an element stuck in its `hidden` state forever. Either let the child inherit (give it only `variants`) or keep it outside the parent's variant tree.
+1. **A motion component nested inside a motion parent that has `variants` inherits that parent's animation state.** Giving the child its own `whileInView` does not reliably override it, and the symptom is an element stuck in its `hidden` state forever. Either let the child inherit (give it only `variants`) or keep it outside the parent's variant tree. This is why `<Page>` writes its transition as plain objects: it wraps every page, so making it a variant parent put the whole tree at its mercy.
 2. **`style` motion values beat variant animations for the same property.** An element can't take a scroll-linked `y` from `style` and an entrance `y` from a variant; the scroll value wins and the entrance never plays. Split them across two nested elements. The hero poster does exactly this.
 
 Scroll-linked transforms can't be softened, only removed, so every one of them is guarded with `useReducedMotion`.
@@ -151,7 +155,7 @@ Scroll-linked transforms can't be softened, only removed, so every one of them i
 Three locales (`en`, `ro`, `ru`) in `src/i18n/locales/*.json`, one `translation` namespace. English is the fallback and the source of truth for types: `src/i18n/i18next.d.ts` declares `CustomTypeOptions.resources.translation = typeof en`, and `src/types/i18n.ts` derives `PageTitleKey`, `CaseStudyKey`, `ProjectKindKey`, `CapabilityKey` and `ProcessStepKey` from the same JSON.
 
 - Add the key to `en.json` **first**, then mirror it into `ro.json` and `ru.json`. The three files must stay structurally identical. Missing keys in `ro`/`ru` fall back silently with no type error.
-- Rich text uses `<Trans>` with a `components` map (see `Approach.tsx`); tag names like `<barca>` must match across all three files.
+- Rich text uses `<Trans>` with a `components` map (see `Positioning.tsx`); tag names like `<barca>` must match across all three files.
 - Detection order is `localStorage` → `navigator`, cached under the `language` key; `src/i18n/index.ts` keeps `document.documentElement.lang` in sync.
 
 **All user-facing copy is translated**, including `aria-label`s and page metadata. Only proper nouns stay in `src/data/`: project names, links, icons and hues.

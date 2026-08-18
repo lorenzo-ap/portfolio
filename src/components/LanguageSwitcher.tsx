@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ease } from '../lib/motion';
 import { Language, languages } from '../types';
-import { CheckIcon } from './icons';
+import { CheckIcon, ChevronIcon } from './icons';
 
 interface LanguageSwitcherProps {
 	className?: string;
@@ -73,15 +73,18 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 
 	return (
 		<div className={`relative ${className}`} ref={rootRef}>
-			{/* Sized and shaped exactly like the theme toggle, so the two read as one pair of controls. */}
+			{/*
+			 * Set like a navigation item rather than shaped like an icon button. A
+			 * two-letter word inside a circle read as a badge that had wandered into
+			 * the header; as type with a chevron it belongs to the same row as Work
+			 * and About, which is what it is.
+			 */}
 			<button
 				aria-expanded={open}
 				aria-haspopup='listbox'
 				aria-label={t('footer.language')}
-				className={`${code} flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 ease-expo ${
-					open
-						? 'border-border bg-faded-bg text-text'
-						: 'border-transparent text-faded-text hover:border-border hover:text-text'
+				className={`flex items-center gap-1.5 rounded-full px-2 py-2 font-medium font-mono text-[0.8125rem] uppercase tracking-[0.12em] transition-colors duration-300 ease-expo ${
+					open ? 'text-text' : 'text-faded-text hover:text-text'
 				}`}
 				onClick={() => setOpen((isOpen) => !isOpen)}
 				ref={triggerRef}
@@ -89,6 +92,12 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 				type='button'
 			>
 				{currentLanguage}
+				<span
+					aria-hidden='true'
+					className={`inline-flex transition-transform duration-300 ease-expo ${open ? 'rotate-180' : ''}`}
+				>
+					<ChevronIcon size={11} />
+				</span>
 			</button>
 
 			<AnimatePresence>

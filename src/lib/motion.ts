@@ -83,12 +83,6 @@ export const wipeUp: Variants = {
 	}
 };
 
-export const pageTransition: Variants = {
-	hidden: { opacity: 0, y: 18 },
-	visible: { opacity: 1, y: 0, transition: { duration: duration.page, ease } },
-	exit: { opacity: 0, y: -12, transition: { duration: 0.28, ease: easeInOut } }
-};
-
 /** Shared `whileInView` config so every section reveals with the same rhythm. */
 export const inView = {
 	initial: 'hidden',

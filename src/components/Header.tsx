@@ -23,7 +23,7 @@ interface NavLinkProps {
 
 const NavLink = ({ path, label, isActive }: NavLinkProps) => (
 	<Link
-		className={`relative py-1.5 font-medium font-mono text-[0.8125rem] uppercase tracking-[0.12em] transition-colors duration-300 ease-expo hover:text-text ${
+		className={`relative py-2 font-medium font-mono text-[0.8125rem] uppercase tracking-[0.12em] transition-colors duration-300 ease-expo hover:text-text ${
 			isActive ? 'text-text' : 'text-faded-text'
 		}`}
 		to={path}
@@ -31,7 +31,7 @@ const NavLink = ({ path, label, isActive }: NavLinkProps) => (
 		{label}
 		{isActive && (
 			<motion.span
-				className='absolute inset-x-0 -bottom-px h-px bg-accent'
+				className='absolute inset-x-0 bottom-0 h-px bg-accent'
 				layoutId='nav-underline'
 				transition={{ duration: 0.4, ease }}
 			/>
@@ -42,16 +42,18 @@ const NavLink = ({ path, label, isActive }: NavLinkProps) => (
 /**
  * The header.
  *
- * It has three states rather than two. At the top of a page it's just marks on
- * the page with no bar behind them. Once past the fold it earns a background.
- * And while the visitor is scrolling forwards it leaves, because navigation is
- * only useful at the moment somebody looks for it, which is when they scroll
- * back up.
+ * At the top of a page it's just marks on the page, sitting on the same grid as
+ * everything under it. Once past the fold it lifts off and becomes a floating
+ * bar: glass, a hairline, a shadow, and a little air above it. It never leaves,
+ * because navigation you have to go hunting for isn't navigation.
+ *
+ * The bar changes size but the space it reserves in the layout doesn't, so
+ * nothing below it moves when it settles.
  */
 export const Header = () => {
 	const { t } = useTranslation();
 	const { pathname } = useLocation();
-	const { scrolled, hidden } = useHeaderState();
+	const scrolled = useHeaderState();
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	// Close on route change, and never leave the page scroll-locked.
@@ -81,9 +83,7 @@ export const Header = () => {
 	}, [menuOpen]);
 
 	const isActive = (path: string) => pathname === path || (path === '/work' && pathname === '/projects');
-	// The bar shrinks as you leave the first screen. The space it reserves in the
-	// layout doesn't, so nothing below it moves when the bar changes size.
-	const compact = scrolled && !menuOpen;
+	const floating = scrolled && !menuOpen;
 
 	return (
 		<>
@@ -95,77 +95,75 @@ export const Header = () => {
 			</a>
 
 			<motion.header
-				animate={{ y: hidden && !menuOpen ? '-100%' : '0%', opacity: 1 }}
+				animate={{ y: 0, opacity: 1 }}
 				className='fixed inset-x-0 top-0 z-50'
-				initial={{ y: '-100%', opacity: 0 }}
-				transition={{ duration: 0.5, ease }}
+				initial={{ y: -20, opacity: 0 }}
+				transition={{ duration: 0.6, ease, delay: 0.1 }}
 			>
-				<div
-					className={`transition-colors duration-500 ease-expo ${
-						scrolled && !menuOpen
-							? 'border-border border-b bg-bg-translucent backdrop-blur-xl'
-							: 'border-transparent border-b'
-					}`}
-				>
-					<div
-						className={`shell flex items-center justify-between gap-6 transition-[height] duration-500 ease-expo ${
-							compact ? 'h-14' : 'h-20'
-						}`}
-					>
-						<Link
-							aria-label={site.name}
-							className='-ml-1 flex items-center gap-2.5 text-text'
-							onClick={() => setMenuOpen(false)}
-							to='/'
+				<div className={`transition-[padding] duration-500 ease-expo ${floating ? 'pt-3' : 'pt-0'}`}>
+					<div className='shell'>
+						<div
+							className={`flex items-center justify-between gap-6 transition-all duration-500 ease-expo ${
+								floating
+									? 'h-14 rounded-full border border-border bg-bg-translucent px-5 shadow-[0_14px_44px_-28px_var(--shadow-pop)] backdrop-blur-xl'
+									: 'h-20 rounded-full border border-transparent px-0'
+							}`}
 						>
-							<span className='transition-transform duration-700 ease-expo hover:rotate-180'>
-								<LogoMark size={28} title={t('nav.home')} />
-							</span>
-							<span className='hidden font-medium text-[0.9375rem] tracking-tight sm:inline'>{site.name}</span>
-						</Link>
-
-						<div className='flex items-center gap-3 md:gap-6'>
-							<nav aria-label={t('nav.label')} className='hidden md:block'>
-								<ul className='flex items-center gap-8'>
-									{routes.map((route) => (
-										<li key={route.path}>
-											<NavLink isActive={isActive(route.path)} label={t(route.labelKey)} path={route.path} />
-										</li>
-									))}
-								</ul>
-							</nav>
-
-							<span aria-hidden='true' className='hidden h-4 w-px bg-border md:block' />
-
-							<div className='flex items-center gap-1'>
-								<LanguageSwitcher className='hidden md:flex' />
-								<ThemeSwitcher />
-							</div>
-
-							<ButtonLink className='hidden md:inline-flex' href={mailto()} small variant='ghost' withArrow={false}>
-								{t('actions.startProject')}
-							</ButtonLink>
-
-							<button
-								aria-expanded={menuOpen}
-								aria-label={menuOpen ? t('nav.close') : t('nav.menu')}
-								className='-mr-2 flex h-11 w-11 items-center justify-center text-text md:hidden'
-								onClick={() => setMenuOpen((open) => !open)}
-								type='button'
+							<Link
+								aria-label={site.name}
+								className='flex items-center gap-2.5 text-text'
+								onClick={() => setMenuOpen(false)}
+								to='/'
 							>
-								<span className='relative block h-3 w-6'>
-									<motion.span
-										animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 5.5 : 0 }}
-										className='absolute inset-x-0 top-0 h-px bg-current'
-										transition={{ duration: 0.35, ease: easeInOut }}
-									/>
-									<motion.span
-										animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -5.5 : 0 }}
-										className='absolute inset-x-0 bottom-0 h-px bg-current'
-										transition={{ duration: 0.35, ease: easeInOut }}
-									/>
+								<span className='transition-transform duration-700 ease-expo hover:rotate-180'>
+									<LogoMark size={26} title={t('nav.home')} />
 								</span>
-							</button>
+								<span className='hidden font-medium text-[0.9375rem] tracking-tight sm:inline'>{site.name}</span>
+							</Link>
+
+							<div className='flex items-center gap-2 md:gap-5'>
+								<nav aria-label={t('nav.label')} className='hidden md:block'>
+									<ul className='flex items-center gap-7'>
+										{routes.map((route) => (
+											<li key={route.path}>
+												<NavLink isActive={isActive(route.path)} label={t(route.labelKey)} path={route.path} />
+											</li>
+										))}
+									</ul>
+								</nav>
+
+								<span aria-hidden='true' className='hidden h-4 w-px bg-border md:block' />
+
+								<div className='flex items-center gap-1'>
+									<LanguageSwitcher className='hidden md:flex' />
+									<ThemeSwitcher />
+								</div>
+
+								<ButtonLink className='hidden md:inline-flex' href={mailto()} small variant='ghost' withArrow={false}>
+									{t('actions.startProject')}
+								</ButtonLink>
+
+								<button
+									aria-expanded={menuOpen}
+									aria-label={menuOpen ? t('nav.close') : t('nav.menu')}
+									className='-mr-2 flex h-11 w-11 items-center justify-center text-text md:hidden'
+									onClick={() => setMenuOpen((open) => !open)}
+									type='button'
+								>
+									<span className='relative block h-3 w-6'>
+										<motion.span
+											animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 5.5 : 0 }}
+											className='absolute inset-x-0 top-0 h-px bg-current'
+											transition={{ duration: 0.35, ease: easeInOut }}
+										/>
+										<motion.span
+											animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -5.5 : 0 }}
+											className='absolute inset-x-0 bottom-0 h-px bg-current'
+											transition={{ duration: 0.35, ease: easeInOut }}
+										/>
+									</span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -174,7 +172,7 @@ export const Header = () => {
 					{menuOpen && (
 						<motion.div
 							animate={{ opacity: 1 }}
-							className={`fixed inset-0 bg-bg-color md:hidden ${compact ? 'top-14' : 'top-20'}`}
+							className='fixed inset-0 top-20 bg-bg-color md:hidden'
 							exit={{ opacity: 0, transition: { duration: 0.2, ease: easeInOut } }}
 							initial={{ opacity: 0 }}
 							transition={{ duration: 0.32, ease }}
