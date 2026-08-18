@@ -26,8 +26,8 @@ export const Capabilities = () => {
 
 			<RevealGroup as='ul' className='mt-20 lg:mt-28' step={0.06}>
 				{capabilityKeys.map((key, index) => (
-					<RevealItem as='li' key={key}>
-						<div className='group row grid gap-x-12 gap-y-3 py-8 last:border-b last:border-b-border lg:grid-cols-12 lg:py-11'>
+					<RevealItem as='li' className='group row py-8 last:border-b last:border-b-border lg:py-11' key={key}>
+						<div className='grid gap-x-12 gap-y-3 lg:grid-cols-12'>
 							<span className='relative font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent lg:col-span-1'>
 								{String(index + 1).padStart(2, '0')}
 							</span>
