@@ -41,7 +41,7 @@
       "line2": "pentru probleme",
       "line3": "rezolvate încă manual."
     },
-    "lede": "Sunt Lorenzo. Oamenii vin la mine când ceva din afacere merge greu, se face de două ori sau stă într-un fișier Excel pe care îl înțelege cu adevărat un singur om. Nu trebuie să vii cu un plan despre ce ar trebui construit. Asta e o parte din treabă.",
+    "lede": "Sunt Lorenzo. Oamenii vin la mine când ceva din afacere merge greu, se face de două ori sau stă într-un fișier Excel pe care îl înțelege cu adevărat un singur om.",
     "facts": {
       "currentLabel": "Acum",
       "currentValue": "Inginer senior la",
@@ -175,14 +175,7 @@
     "title": "Un singur om, de la cap la coadă.",
     "body1": "Sunt Lorenzo. În timpul săptămânii lucrez ca inginer senior la <barca>Barça Mobile</barca> și iau câteva proiecte pentru clienți în paralel. Termin și masterul la Universitatea din Oradea.",
     "body2": "Construiesc software de ani buni și am lucrat pe fiecare parte a lui, de la ecranele pe care le apasă oamenii până la tot ce rulează liniștit în spatele lor. Alegerea uneltelor e treaba mea, nu ceva despre care ai nevoie de o părere.",
-    "body3": "Adică un singur om ține toată problema, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața.",
-    "proof": {
-      "title": "Cum a arătat asta",
-      "dayToDayLabel": "Zi de zi",
-      "clientsLabel": "Proiecte pentru clienți",
-      "productLabel": "Produsul meu",
-      "teachingLabel": "Predare"
-    }
+    "body3": "Adică un singur om ține toată problema, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața."
   },
   "contact": {
     "eyebrow": "Pasul următor",
@@ -265,7 +258,11 @@
     "tagline": "Software pentru părțile dintr-o afacere care se fac încă manual.",
     "navLabel": "Pagini",
     "contactLabel": "Ia legătura",
-    "languages": { "en": "Engleză", "ru": "Rusă", "ro": "Română" },
+    "languages": {
+      "en": "Engleză",
+      "ru": "Rusă",
+      "ro": "Română"
+    },
     "whatsapp": "WhatsApp",
     "telegram": "Telegram",
     "github": "GitHub",

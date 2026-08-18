@@ -1,6 +1,9 @@
+import { motion } from 'framer-motion';
 import type { PropsWithChildren, ReactNode } from 'react';
+import { inView, ruleReveal } from '../lib/motion';
 import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
+import { Statement } from './Statement';
 
 interface SectionProps extends PropsWithChildren {
 	id?: string;
@@ -11,41 +14,50 @@ interface SectionProps extends PropsWithChildren {
 
 export const Section = ({ id, className = '', divider = true, children }: SectionProps) => (
 	<section className={`shell ${className}`} id={id}>
-		{divider && <span aria-hidden='true' className='block h-px w-full bg-border' />}
+		{divider && (
+			<motion.span
+				aria-hidden='true'
+				className='block h-px w-full origin-left bg-border'
+				initial={inView.initial}
+				variants={ruleReveal}
+				viewport={inView.viewport}
+				whileInView={inView.whileInView}
+			/>
+		)}
 		<div className='py-[var(--section-gap)]'>{children}</div>
 	</section>
 );
 
 interface SectionHeaderProps {
 	eyebrow: string;
-	title: ReactNode;
+	title: string;
 	lede?: ReactNode;
 	aside?: ReactNode;
 	className?: string;
 }
 
 /**
- * Editorial two-column header: statement on the left, supporting text on the
- * right. Keeps every section on the same grid instead of stacked centre-aligned
- * blocks, which is what makes a page read as designed.
+ * Editorial two-column header: the statement on the left in the serif, the
+ * supporting sentence on the right in the sans. The size gap between the two is
+ * the hierarchy, so neither column needs a rule or a box to be readable.
  */
 export const SectionHeader = ({ eyebrow, title, lede, aside, className = '' }: SectionHeaderProps) => (
-	<div className={`grid gap-x-16 gap-y-6 lg:grid-cols-12 ${className}`}>
+	<div className={`grid gap-x-16 gap-y-8 lg:grid-cols-12 ${className}`}>
 		<div className='lg:col-span-7'>
 			<Reveal>
-				<Eyebrow className='mb-6'>{eyebrow}</Eyebrow>
+				<Eyebrow className='mb-8'>{eyebrow}</Eyebrow>
 			</Reveal>
 
-			<Reveal delay={0.06}>
-				<h2 className='max-w-[16ch] text-balance font-semibold text-headline text-text'>{title}</h2>
-			</Reveal>
+			<Statement className='max-w-[15ch] text-statement' delay={0.06}>
+				{title}
+			</Statement>
 		</div>
 
 		{(lede || aside) && (
-			<div className='flex flex-col justify-end gap-5 lg:col-span-5'>
+			<div className='flex flex-col justify-end gap-7 lg:col-span-5 lg:col-start-8'>
 				{lede && (
 					<Reveal delay={0.12}>
-						<p className='max-w-prose text-[1.0625rem] text-faded-text leading-[1.65]'>{lede}</p>
+						<p className='max-w-prose text-body-sm text-faded-text'>{lede}</p>
 					</Reveal>
 				)}
 				{aside}

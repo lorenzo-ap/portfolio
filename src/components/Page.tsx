@@ -17,14 +17,7 @@ export const Page = ({ titleKey, descriptionKey, children }: PageProps) => {
 	useSeo({ titleKey, descriptionKey });
 
 	return (
-		<motion.main
-			animate='visible'
-			className='pt-[68px]'
-			exit='exit'
-			id='main'
-			initial='hidden'
-			variants={pageTransition}
-		>
+		<motion.main animate='visible' className='pt-20' exit='exit' id='main' initial='hidden' variants={pageTransition}>
 			{children}
 		</motion.main>
 	);

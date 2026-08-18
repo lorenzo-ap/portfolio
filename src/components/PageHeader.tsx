@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
+import { Statement } from './Statement';
 
 interface PageHeaderProps {
 	eyebrow: string;
@@ -10,18 +11,20 @@ interface PageHeaderProps {
 
 /** Opening block for the interior pages, so /work and /about share a rhythm. */
 export const PageHeader = ({ eyebrow, title, lede }: PageHeaderProps) => (
-	<header className='shell pt-24 pb-16 sm:pt-32 sm:pb-20'>
+	<header className='shell pt-28 pb-20 sm:pt-36 sm:pb-28'>
 		<Reveal>
-			<Eyebrow className='mb-7'>{eyebrow}</Eyebrow>
+			<Eyebrow className='mb-9'>{eyebrow}</Eyebrow>
 		</Reveal>
 
-		<div className='grid gap-x-16 gap-y-8 lg:grid-cols-12'>
-			<Reveal className='lg:col-span-7' delay={0.05}>
-				<h1 className='max-w-[14ch] text-balance font-semibold text-display-sm text-text'>{title}</h1>
-			</Reveal>
+		<div className='grid gap-x-16 gap-y-10 lg:grid-cols-12'>
+			<div className='lg:col-span-7'>
+				<Statement as='h1' className='max-w-[13ch] text-display-sm' delay={0.05} immediate>
+					{title}
+				</Statement>
+			</div>
 
 			{lede && (
-				<Reveal className='flex flex-col justify-end lg:col-span-5' delay={0.12}>
+				<Reveal className='flex flex-col justify-end lg:col-span-4 lg:col-start-9' delay={0.24}>
 					<p className='max-w-prose text-faded-text text-lede'>{lede}</p>
 				</Reveal>
 			)}
