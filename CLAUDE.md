@@ -105,52 +105,71 @@ Each route element is wrapped in `<Page titleKey='…' descriptionKey='…'>`, w
 
 ## Layout & design system
 
-- `.shell` (in `index.scss`) is the page container, 1180px max plus a fluid `--shell-gutter`. Use it instead of ad-hoc `max-w-*` wrappers.
-- `<Section>` adds the top hairline and the `--section-gap` vertical rhythm. `<SectionHeader>` is the editorial two-column header (statement left, supporting text right) used by every section. Reuse it so sections stay on one grid.
-- Typography scale lives in `tailwind.config.ts` as named sizes: `text-display`, `text-display-sm`, `text-headline`, `text-title`, `text-lede`, `text-eyebrow`. Prefer these over one-off `text-[…]` for anything structural.
-- Body/UI is IBM Plex Sans; `font-mono` (IBM Plex Mono) is reserved for eyebrows, labels, metadata and numbers.
+- `.shell` (in `index.scss`) is the page container, 1240px max plus a fluid `--shell-gutter`. Use it instead of ad-hoc `max-w-*` wrappers.
+- `<Section>` adds the top hairline (which draws itself in on scroll) and the `--section-gap` vertical rhythm. `<SectionHeader>` is the editorial two-column header (statement left, supporting text right) used by most sections. Reuse it so sections stay on one grid.
 
-**Theming** is CSS-variable based. `src/index.scss` defines the palette on `html` and overrides it inside `html.dark`; `tailwind.config.ts` maps those variables to utility names (`text-text`, `bg-faded-bg`, `border-border`, `text-accent`, …) with `darkMode: 'class'`. To add a theme colour, declare it in **both** blocks *and* register it in the Tailwind config.
+**There are two typefaces doing two jobs.** IBM Plex Serif carries every statement on the site through the `.statement` class and the `<Statement>` component; IBM Plex Sans carries body and UI and never goes above `text-title`. IBM Plex Mono is reserved for eyebrows, labels, metadata and numbers. The size gap between the serif and the sans is most of the hierarchy, which is why sections rarely need a rule or a box to be readable.
 
-**There is exactly one accent** (cobalt), expressed as `--accent` (text, icons, details), `--accent-solid` (fill behind white text), `--accent-strong` (hover), plus `--accent-line`, `--accent-soft` and `--accent-glow`. Don't introduce a second brand colour. The generated project previews take a `hue` in the 200-250 range so they stay in the same family. The accent is used for primary buttons, active nav, links on hover, index numbers, the availability dot, focus rings and selection, and nothing else.
+Typography scale lives in `tailwind.config.ts` as named sizes: `text-display` (hero only), `text-statement` (section statements), `text-display-sm`, `text-headline`, `text-title`, `text-lede`, `text-body`, `text-body-sm`, `text-label`, `text-eyebrow`. Prefer these over one-off `text-[…]` for anything structural.
+
+**Corners stay small.** `--radius-sm` through `--radius-xl` are 4/8/12/18px, and buttons are the only pill. The page is built from hairlines, type and whitespace rather than cards, so reach for a `.row` before reaching for a bordered box.
+
+**Theming** is CSS-variable based. `src/index.scss` defines the palette on `html` and overrides it inside `html.dark`; `tailwind.config.ts` maps those variables to utility names (`text-text`, `bg-faded-bg`, `border-border`, `text-accent`, `text-wordmark`, …) with `darkMode: 'class'`. To add a theme colour, declare it in **both** blocks *and* register it in the Tailwind config.
+
+**There is exactly one accent** (cobalt), expressed as `--accent` (text, icons, details), `--accent-solid` (fill behind white text), `--accent-strong` (hover), plus `--accent-line`, `--accent-soft` and `--accent-glow`. Don't introduce a second brand colour. The generated project posters take a `hue` in the 200-250 range so they stay in the same family. The accent is used for primary buttons, active nav, links on hover, index numbers, the availability dot, row hover rules, focus rings and selection, and nothing else.
 
 **Interactive elements come in three tiers.** `.btn` (`ButtonLink`) is a real call to action; `.link-action` (`ActionLink`) is a standalone action that shouldn't shout, with an underline that draws in under the label and an icon that shifts; `.link` is an inline reference inside a paragraph. Reach for the smallest tier that fits, and don't hand-roll a fourth.
 
-Two gotchas that have already caused bugs:
+Three gotchas that have already caused bugs:
 
 1. **Tailwind opacity modifiers don't work on these colours.** They're plain `var(--x)` values, so `bg-bg-color/80` produces nothing. Add an explicit token instead. That's why `--bg-translucent` and `--wordmark` exist.
-2. **Custom classes live in `@layer components`.** `.btn`, `.link`, `.shell` etc. are inside `@layer components` in `index.scss` so utilities like `hidden` and `w-full` still win. Because Tailwind tree-shakes that layer against source text, **never build those class names dynamically**, because `btn__${variant}` gets stripped. See `variantClass` in `Button.tsx`.
+2. **Custom classes live in `@layer components`.** `.btn`, `.link`, `.shell`, `.statement`, `.row` etc. are inside `@layer components` in `index.scss` so utilities like `hidden` and `w-full` still win. Because Tailwind tree-shakes that layer against source text, **never build those class names dynamically**, because `btn__${variant}` gets stripped. See `variantClass` in `Button.tsx`.
+3. **`body` uses `overflow-x: clip`, not `hidden`.** `hidden` turns the body into a scroll container, and a scroll container that never scrolls silently kills every `position: sticky` inside it. The pinned work stage depends on that one word.
 
 ## Motion system
 
-`src/lib/motion.ts` is the single source of easing, durations and variants (`fadeUp`, `lineReveal`, `pageTransition`, `stagger`, `inView`). Everything decelerates on the same expo curve.
+`src/lib/motion.ts` is the single source of easing, durations and variants (`fadeUp`, `uncover`, `wordStagger`, `ruleReveal`, `wipeUp`, `pageTransition`, `stagger`, `inView`). Everything decelerates on the same expo curve, and exits run at roughly 60% of the matching entrance.
 
-- `<Reveal>` / `<RevealGroup>` + `<RevealItem>` (`src/components/Reveal.tsx`) wrap the scroll-reveal pattern. Use them rather than hand-writing `whileInView`.
-- `usePointerSpotlight` writes pointer position to CSS custom properties instead of React state, so cursor tracking never re-renders. Pair it with `.spotlight` + `.grid-backdrop`.
-- Keep entrances under ~0.8s and travel under ~28px.
+The site has one signature move: **type is uncovered, never faded in.**
+
+- `<Statement>` (`src/components/Statement.tsx`) is every headline. It splits the string into words, gives each one its own clipping box, and releases them in sequence. `<StatementLine>` is the same idea for a line that must not rewrap, which is what the hero uses because its line breaks come from the locale files. Both fall back to a plain fade under `prefers-reduced-motion`, since a reveal made only of movement has nothing left once movement is off.
+- `<Reveal>` / `<RevealGroup>` + `<RevealItem>` (`src/components/Reveal.tsx`) wrap the scroll-reveal pattern for everything that isn't a headline. Use them rather than hand-writing `whileInView`.
+- `usePointerSpotlight` and `useMagnetic` write pointer position to CSS custom properties instead of React state, so cursor tracking never re-renders. Pair the first with `.spotlight`, the second with `.magnetic`.
+- `useHeaderState` reads scroll position and direction in one listener and drives the header's three states.
+- `<Cursor>` is a ring that trails the pointer and opens over anything actionable. It sits behind the real cursor, and it's off entirely without a fine pointer or under reduced motion.
+- Keep entrances under ~0.9s and travel under ~28px.
+
+**Two traps worth knowing before adding motion here:**
+
+1. **A motion component nested inside a motion parent that has `variants` inherits that parent's animation state.** Giving the child its own `whileInView` does not reliably override it, and the symptom is an element stuck in its `hidden` state forever. Either let the child inherit (give it only `variants`) or keep it outside the parent's variant tree.
+2. **`style` motion values beat variant animations for the same property.** An element can't take a scroll-linked `y` from `style` and an entrance `y` from a variant; the scroll value wins and the entrance never plays. Split them across two nested elements. The hero poster does exactly this.
+
+Scroll-linked transforms can't be softened, only removed, so every one of them is guarded with `useReducedMotion`.
 
 ## Content & i18n
 
 Three locales (`en`, `ro`, `ru`) in `src/i18n/locales/*.json`, one `translation` namespace. English is the fallback and the source of truth for types: `src/i18n/i18next.d.ts` declares `CustomTypeOptions.resources.translation = typeof en`, and `src/types/i18n.ts` derives `PageTitleKey`, `CaseStudyKey`, `ProjectKindKey`, `CapabilityKey` and `ProcessStepKey` from the same JSON.
 
 - Add the key to `en.json` **first**, then mirror it into `ro.json` and `ru.json`. The three files must stay structurally identical. Missing keys in `ro`/`ru` fall back silently with no type error.
-- Rich text uses `<Trans>` with a `components` map (see `AboutTeaser.tsx`); tag names like `<barca>` must match across all three files.
+- Rich text uses `<Trans>` with a `components` map (see `Approach.tsx`); tag names like `<barca>` must match across all three files.
 - Detection order is `localStorage` → `navigator`, cached under the `language` key; `src/i18n/index.ts` keeps `document.documentElement.lang` in sync.
 
 **All user-facing copy is translated**, including `aria-label`s and page metadata. Only proper nouns stay in `src/data/`: project names, links, icons and hues.
 
 ## Adding work
 
-`src/data/projects.ts` exports `productCaseStudies` (the three software projects, strongest first), `teachingCaseStudy` (the course, shown on its own surface) and `caseStudies` (all four, in reading order).
+`src/data/projects.ts` exports one list, `caseStudies`, in the order the story is told: real product, complex product, my own product, teaching. The piece that isn't software says so through its `kind`, not by living in a separate array.
 
 To add a case study:
 
-1. Add a `CaseStudyModel` and put it in `productCaseStudies` (or make it the `teachingCaseStudy`). `hue` drives the generated preview and must stay in the 200-250 range.
+1. Add a `CaseStudyModel` to `caseStudies`. `hue` drives the generated poster and must stay in the 200-250 range.
 2. Add `summary`, `situation`, `contribution`, `challenge`, `proof` and `role` under `work.cases.<key>` in **all three** locale files. The key is type-checked against `en.json`.
 3. Optionally set `icon` (a file in `public/icons/`), `image`, `primaryLabelKey` and `secondaryLink`.
 4. The home and work pages both say "four" in the copy. Change the counts in all three locales if the number of case studies changes.
 
-`ProjectVisual` shows a real screenshot when `image` is set (put it in `public/`) and otherwise renders a generated composition inside a browser frame. It deliberately never mocks up a UI that doesn't exist.
+`ProjectPoster` shows a real screenshot when `image` is set (put it in `public/`) and otherwise composes a poster from the product's own icon, its name in the editorial serif, and the address it lives at. It deliberately never mocks up a UI that doesn't exist, and it deliberately isn't dressed as a browser window.
+
+**The home page shows the work as a pinned stage.** The poster column sticks while the four projects scroll past it, and each panel reports itself as active when it crosses the middle of the viewport (`WorkPanel` in `CaseStudy.tsx`). Below the pinning breakpoint there is no stage: each panel carries its own poster and the section degrades to four ordinary blocks. `/work` uses `CaseStudyArticle` instead, which tells the full Situation / What I did / Hard part / What this shows story under a full-width poster.
 
 ## Contact details
 

@@ -1,7 +1,7 @@
 import { AnimatePresence, MotionConfig } from 'framer-motion';
 import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { Footer, Header, Page, ScrollProgress } from './components';
+import { Cursor, Footer, Header, Page, ScrollProgress } from './components';
 import { AboutPage, ErrorPage, HomePage, WorkPage } from './pages';
 
 /** Every route change starts at the top, including browser back/forward. */
@@ -71,6 +71,7 @@ export const App = () => (
 		>
 			<ScrollToTop />
 			<ScrollProgress />
+			<Cursor />
 			<Header />
 
 			<div className='flex min-h-dvh flex-col'>

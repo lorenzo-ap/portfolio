@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
+import { useMagnetic } from '../hooks';
 import { ArrowIcon } from './icons';
 
 type ButtonVariant = 'primary' | 'ghost';
@@ -22,12 +23,14 @@ interface ButtonLinkProps extends PropsWithChildren {
 	withArrow?: boolean;
 	external?: boolean;
 	small?: boolean;
+	/** Leans towards the cursor. Reserved for the primary action on a screen. */
+	magnetic?: boolean;
 }
 
 /**
  * One button treatment for the whole site. Primary carries the accent, ghost
- * stays neutral until hover. Both lift by a pixel and settle on press, so a
- * click always gets acknowledged.
+ * stays neutral until hover. Both settle on press, so a click always gets
+ * acknowledged.
  */
 export const ButtonLink = ({
 	to,
@@ -37,9 +40,13 @@ export const ButtonLink = ({
 	withArrow = true,
 	external = false,
 	small = false,
+	magnetic = false,
 	children
 }: ButtonLinkProps) => {
-	const classes = `btn ${variantClass[variant]} ${small ? 'btn__sm' : ''} ${className}`;
+	const { ref, onPointerMove, onPointerLeave, onBlur } = useMagnetic<HTMLAnchorElement>();
+
+	const classes = `btn ${variantClass[variant]} ${small ? 'btn__sm' : ''} ${magnetic ? 'magnetic' : ''} ${className}`;
+	const magnetProps = magnetic ? { ref, onPointerMove, onPointerLeave, onBlur } : {};
 	const content = (
 		<>
 			{children}
@@ -53,7 +60,7 @@ export const ButtonLink = ({
 
 	if (to) {
 		return (
-			<Link className={classes} to={to}>
+			<Link className={classes} to={to} {...magnetProps}>
 				{content}
 			</Link>
 		);
@@ -65,6 +72,7 @@ export const ButtonLink = ({
 			href={href}
 			rel={external ? 'noopener noreferrer' : undefined}
 			target={external ? '_blank' : undefined}
+			{...magnetProps}
 		>
 			{content}
 		</a>

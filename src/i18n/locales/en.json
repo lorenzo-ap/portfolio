@@ -41,7 +41,7 @@
       "line2": "for problems still",
       "line3": "solved by hand."
     },
-    "lede": "I'm Lorenzo. People come to me when something in the business is slow, gets done twice, or lives in a spreadsheet only one person really understands. You don't need to arrive with a plan for what to build. Working that out is part of the job.",
+    "lede": "I'm Lorenzo. People come to me when something in the business is slow, gets done twice, or lives in a spreadsheet only one person really understands.",
     "facts": {
       "currentLabel": "Right now",
       "currentValue": "Senior engineer at",
@@ -175,14 +175,7 @@
     "title": "One person, start to finish.",
     "body1": "I'm Lorenzo. During the week I work as a senior engineer on <barca>Barça Mobile</barca>, and I take on a small number of client projects alongside it. I'm also finishing a master's at the University of Oradea.",
     "body2": "I've been building software for years and I've worked on every part of it, from the screens people click on to everything running quietly behind them. Picking the tools for that is my job, not something you need an opinion about.",
-    "body3": "So one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning.",
-    "proof": {
-      "title": "What that's looked like",
-      "dayToDayLabel": "Day to day",
-      "clientsLabel": "Client work",
-      "productLabel": "My own product",
-      "teachingLabel": "Teaching"
-    }
+    "body3": "So one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning."
   },
   "contact": {
     "eyebrow": "Next step",
@@ -265,7 +258,11 @@
     "tagline": "Software for the parts of a business that are still done by hand.",
     "navLabel": "Pages",
     "contactLabel": "Get in touch",
-    "languages": { "en": "English", "ru": "Russian", "ro": "Romanian" },
+    "languages": {
+      "en": "English",
+      "ru": "Russian",
+      "ro": "Romanian"
+    },
     "whatsapp": "WhatsApp",
     "telegram": "Telegram",
     "github": "GitHub",

@@ -53,11 +53,9 @@ const aiForFrontend: CaseStudyModel = {
 	hue: 204
 };
 
-/** The three software products, shown as full-width alternating rows. */
-export const productCaseStudies: CaseStudyModel[] = [barcaMobile, examin, ainterest];
-
-/** Teaching sits apart: the same weight, a different kind of proof. */
-export const teachingCaseStudy: CaseStudyModel = aiForFrontend;
-
-/** Everything, in the order the story is told. */
-export const caseStudies: CaseStudyModel[] = [...productCaseStudies, teachingCaseStudy];
+/**
+ * Everything, in the order the story is told. One list: the pages read it
+ * straight through, and the piece that isn't software says so through its
+ * `kind` rather than by being kept in a separate array.
+ */
+export const caseStudies: CaseStudyModel[] = [barcaMobile, examin, ainterest, aiForFrontend];

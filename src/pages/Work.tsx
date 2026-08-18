@@ -15,9 +15,7 @@ export const WorkPage = () => {
 				))}
 			</div>
 
-			<div className='pb-[var(--section-gap)]'>
-				<ContactCta />
-			</div>
+			<ContactCta />
 		</>
 	);
 };
