@@ -73,7 +73,7 @@ export const ThemeSwitcher = ({ className = '' }: ThemeSwitcherProps) => {
 	return (
 		<button
 			aria-label={label}
-			className={`flex h-10 w-10 items-center justify-center rounded-full border border-transparent text-faded-text transition-colors duration-300 ease-expo hover:border-border hover:text-text ${className}`}
+			className={`flex h-9 w-9 items-center justify-center rounded-full text-faded-text transition-colors duration-300 ease-expo hover:bg-faded-bg hover:text-text ${className}`}
 			onClick={() => setTheme(nextTheme)}
 			title={label}
 			type='button'
