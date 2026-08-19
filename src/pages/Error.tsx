@@ -13,7 +13,7 @@ export const ErrorPage = () => {
 				<div className='spotlight absolute inset-0' />
 			</div>
 
-			<div className='shell relative flex min-h-[calc(100svh-80px)] flex-col justify-center py-24'>
+			<div className='shell relative flex min-h-[calc(100svh-var(--header-h))] flex-col justify-center py-20 sm:py-24'>
 				<p className='font-medium font-mono text-accent text-eyebrow uppercase'>{t('error.code')}</p>
 
 				<Statement as='h1' className='mt-8 max-w-[14ch] text-statement' immediate>
@@ -22,7 +22,7 @@ export const ErrorPage = () => {
 
 				<p className='mt-8 max-w-prose text-faded-text text-lede'>{t('error.text')}</p>
 
-				<div className='mt-11 flex flex-col gap-3 sm:flex-row sm:flex-wrap'>
+				<div className='mt-10 flex flex-col gap-3 sm:mt-11 sm:flex-row sm:flex-wrap'>
 					<ButtonLink className='w-full sm:w-auto' magnetic to='/'>
 						{t('error.goHome')}
 					</ButtonLink>

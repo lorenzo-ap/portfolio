@@ -42,10 +42,10 @@ interface SectionHeaderProps {
  * the hierarchy, so neither column needs a rule or a box to be readable.
  */
 export const SectionHeader = ({ eyebrow, title, lede, aside, className = '' }: SectionHeaderProps) => (
-	<div className={`grid gap-x-16 gap-y-8 lg:grid-cols-12 ${className}`}>
+	<div className={`grid gap-x-16 gap-y-7 lg:grid-cols-12 ${className}`}>
 		<div className='lg:col-span-7'>
 			<Reveal>
-				<Eyebrow className='mb-8'>{eyebrow}</Eyebrow>
+				<Eyebrow className='mb-6 sm:mb-8'>{eyebrow}</Eyebrow>
 			</Reveal>
 
 			<Statement className='max-w-[15ch] text-statement' delay={0.06}>

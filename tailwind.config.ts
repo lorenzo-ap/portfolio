@@ -33,12 +33,17 @@ export default {
 			 * Two voices. `display`/`statement` are the serif editorial sizes and
 			 * carry the argument; `title` down is the sans UI scale that supports it.
 			 * The gap between them is deliberate: that jump is most of the hierarchy.
+			 *
+			 * Every serif size is a clamp whose floor only governs below roughly
+			 * 530px. That floor is what a phone actually gets, and it's set so a
+			 * headline reads as a headline without eating the first screen: three
+			 * words per line rather than one, and room left for the lede under it.
 			 */
 			fontSize: {
-				display: ['clamp(2.625rem, min(6.4vw, 10.5vh), 6rem)', { lineHeight: '0.96', letterSpacing: '-0.026em' }],
-				statement: ['clamp(2.25rem, 1.1rem + 4.6vw, 4.75rem)', { lineHeight: '0.98', letterSpacing: '-0.022em' }],
-				'display-sm': ['clamp(2rem, 1.2rem + 3.2vw, 3.5rem)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],
-				headline: ['clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem)', { lineHeight: '1.08', letterSpacing: '-0.018em' }],
+				display: ['clamp(1.875rem, min(6.4vw, 10.5vh), 6rem)', { lineHeight: '0.96', letterSpacing: '-0.026em' }],
+				statement: ['clamp(2rem, 1rem + 4.6vw, 4.75rem)', { lineHeight: '0.98', letterSpacing: '-0.022em' }],
+				'display-sm': ['clamp(1.875rem, 1.1rem + 3.2vw, 3.5rem)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],
+				headline: ['clamp(1.625rem, 1.1rem + 2.2vw, 2.75rem)', { lineHeight: '1.08', letterSpacing: '-0.018em' }],
 				title: ['clamp(1.3125rem, 1.05rem + 0.9vw, 1.75rem)', { lineHeight: '1.18', letterSpacing: '-0.012em' }],
 				lede: ['clamp(1.0625rem, 1rem + 0.35vw, 1.25rem)', { lineHeight: '1.58', letterSpacing: '-0.004em' }],
 				body: ['1.0625rem', { lineHeight: '1.65' }],

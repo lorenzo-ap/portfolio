@@ -7,11 +7,18 @@ import { useEffect, useState } from 'react';
  * doesn't any more: navigation that vanishes is navigation you have to go
  * looking for, and one that's always there costs nothing but a strip of glass.
  * So this reads one thing, and the bar changes shape rather than leaving.
+ *
+ * `frozen` holds the answer still. The mobile sheet takes the body out of the
+ * flow to lock scrolling, which reports a scroll position of zero; without this
+ * the bar would drop its floating shape the moment the menu opened and pick it
+ * up again on close, which is exactly the jump the sheet is trying to avoid.
  */
-export const useHeaderState = (threshold = 16) => {
+export const useHeaderState = (frozen = false, threshold = 16) => {
 	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
+		if (frozen) return;
+
 		let frame = 0;
 
 		const read = () => {
@@ -32,7 +39,7 @@ export const useHeaderState = (threshold = 16) => {
 			window.removeEventListener('scroll', onScroll);
 			if (frame) cancelAnimationFrame(frame);
 		};
-	}, [threshold]);
+	}, [frozen, threshold]);
 
 	return scrolled;
 };

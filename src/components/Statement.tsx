@@ -23,6 +23,12 @@ interface StatementProps {
  *
  * The clipping box carries padding for descenders and cancels it again with a
  * negative margin, so adding the effect doesn't change line spacing.
+ *
+ * The whole element is keyed on the text it renders. Switching language swaps
+ * every word, and a word arriving under a `whileInView` parent that already
+ * fired with `once: true` mounts hidden with nothing left to release it, which
+ * is a headline that has silently gone blank. Remounting restarts the observer,
+ * so the new wording is uncovered the same way the old one was.
  */
 export const Statement = ({ children, as = 'h2', className = '', immediate = false, delay = 0 }: StatementProps) => {
 	const prefersReducedMotion = useReducedMotion();
@@ -34,7 +40,7 @@ export const Statement = ({ children, as = 'h2', className = '', immediate = fal
 	// A reveal made only of movement has nothing left once movement is off.
 	if (prefersReducedMotion) {
 		return (
-			<Component className={`statement ${className}`} variants={fadeUp} {...gate}>
+			<Component className={`statement ${className}`} key={children} variants={fadeUp} {...gate}>
 				{children}
 			</Component>
 		);
@@ -44,7 +50,7 @@ export const Statement = ({ children, as = 'h2', className = '', immediate = fal
 	const lastIndex = words.length - 1;
 
 	return (
-		<Component className={`statement ${className}`} variants={wordStagger(delay)} {...gate}>
+		<Component className={`statement ${className}`} key={children} variants={wordStagger(delay)} {...gate}>
 			{words.map((entry, index) => (
 				<Fragment key={entry.id}>
 					<span className='statement__mask'>

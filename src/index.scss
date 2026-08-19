@@ -12,7 +12,19 @@
 
 :root {
   --shell-gutter: clamp(1.25rem, 0.5rem + 2.4vw, 3.5rem);
-  --section-gap: clamp(5.5rem, 3rem + 8vw, 10rem);
+  /* Vertical rhythm, in two steps: between sections, and between a section's
+     header and its content.
+
+     Phones get their own values rather than a share of the desktop ones. Above
+     `sm` the section gap is the same fluid curve the site has always used, so
+     nothing about the desktop rhythm moves; below it the gap is roughly two
+     thirds of that, which is the difference between a page that breathes and a
+     page you have to scroll through twice. */
+  --section-gap: clamp(3.5rem, 2rem + 7vw, 5.5rem);
+  --block-gap: 3rem;
+  /* The space the header reserves in the layout. The bar changes shape as you
+     scroll, this number doesn't, so nothing below it ever moves. */
+  --header-h: 4rem;
   --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Corners stay small. The page is built from hairlines and type, not cards. */
@@ -20,6 +32,25 @@
   --radius: 8px;
   --radius-lg: 12px;
   --radius-xl: 18px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --section-gap: clamp(5.5rem, 3rem + 8vw, 10rem);
+    --block-gap: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --block-gap: 7rem;
+  }
 }
 
 html {
@@ -96,6 +127,18 @@ html {
 
 html {
   scroll-behavior: smooth;
+  /* Firefox has no pseudo-elements for this. Thin plus a transparent track is
+     as close as it gets to the pill below. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+/* Smooth scrolling is movement like any other, including the trip back to the
+   top from a header link. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -136,21 +179,28 @@ body::after {
   border-radius: 3px;
 }
 
+/* A hairline page doesn't want a grey trough down its right edge. The track
+   stays out of it entirely and the thumb is a 4px pill, held off the edge by a
+   transparent border that the background is clipped inside. */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 6px;
+  width: 12px;
+  height: 12px;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--faded-bg);
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--faded-line);
+  background-color: var(--border-strong);
+  background-clip: content-box;
+  border: 4px solid transparent;
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--faded-text);
+  background-color: var(--faded-text);
 }
 
 a {
@@ -166,7 +216,10 @@ a {
     width: 100%;
     max-width: calc(1240px + var(--shell-gutter) * 2);
     margin-inline: auto;
-    padding-inline: var(--shell-gutter);
+    /* env() is only non-zero on a notched device in landscape, where the gutter
+       alone would let type run under the cutout. */
+    padding-left: max(var(--shell-gutter), env(safe-area-inset-left));
+    padding-right: max(var(--shell-gutter), env(safe-area-inset-right));
   }
 
   /* The editorial voice. Serif carries every statement on the site; the sans
@@ -242,6 +295,12 @@ a {
     background-size: 88px 88px;
   }
 
+  @media (max-width: 639px) {
+    .grid-backdrop {
+      background-size: 56px 56px;
+    }
+  }
+
   /* Fades the hairline grid into the page at the top and bottom edges.
      Deliberately an overlay in the page colour rather than a mask: over a solid
      background the result is identical, and a mask forces the whole layer
@@ -291,9 +350,13 @@ a {
       color 0.25s var(--ease-expo),
       text-decoration-color 0.25s var(--ease-expo);
 
-    &:hover {
-      color: var(--accent);
-      text-decoration-color: var(--accent-line);
+    /* Hover states are gated on a device that can actually hover. Without the
+       guard a tap latches the hover style until you tap something else. */
+    @media (hover: hover) {
+      &:hover {
+        color: var(--accent);
+        text-decoration-color: var(--accent-line);
+      }
     }
 
     /* Accent links are always underlined, but with a hairline that sits low
@@ -302,9 +365,11 @@ a {
       color: var(--accent);
       text-decoration-color: var(--accent-line);
 
-      &:hover {
-        color: var(--accent-strong);
-        text-decoration-color: currentcolor;
+      @media (hover: hover) {
+        &:hover {
+          color: var(--accent-strong);
+          text-decoration-color: currentcolor;
+        }
       }
     }
   }
@@ -340,21 +405,29 @@ a {
       transition: transform 0.4s var(--ease-expo);
     }
 
-    &:hover {
-      color: var(--accent);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+
+      &:hover &__label::after {
+        transform: scaleX(1);
+      }
+
+      &:hover &__icon {
+        transform: translateX(3px);
+      }
+
+      /* External links use the diagonal arrow, so it travels diagonally too. */
+      &__diagonal:hover &__icon {
+        transform: translate(2px, -2px);
+      }
     }
 
-    &:hover &__label::after {
-      transform: scaleX(1);
-    }
-
-    &:hover &__icon {
-      transform: translateX(3px);
-    }
-
-    /* External links use the diagonal arrow, so it travels diagonally too. */
-    &__diagonal:hover &__icon {
-      transform: translate(2px, -2px);
+    /* A finger is not a cursor. On touch the label keeps its size and the row
+       around it grows to something you can actually hit. */
+    @media (pointer: coarse) {
+      min-height: 2.75rem;
     }
 
     /* Muted variant for footer and secondary navigation. */
@@ -392,8 +465,14 @@ a {
       transition: transform 0.4s var(--ease-expo);
     }
 
-    &:hover &__icon {
-      transform: translateX(3px);
+    @media (hover: hover) {
+      &:hover &__icon {
+        transform: translateX(3px);
+      }
+    }
+
+    @media (pointer: coarse) {
+      min-height: 3rem;
     }
 
     /* Magnetic buttons own their transform, so the press scale lives on
@@ -412,9 +491,11 @@ a {
       color: var(--accent-contrast);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
 
-      &:hover {
-        background-color: var(--accent-strong);
-        box-shadow: 0 8px 24px -10px var(--accent-glow);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--accent-strong);
+          box-shadow: 0 8px 24px -10px var(--accent-glow);
+        }
       }
     }
 
@@ -438,21 +519,28 @@ a {
         transition: transform 0.55s var(--ease-expo);
       }
 
-      &:hover {
-        border-color: var(--accent-line);
-        color: var(--accent);
-      }
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--accent-line);
+          color: var(--accent);
+        }
 
-      &:hover::before {
-        transform: scaleY(1);
+        &:hover::before {
+          transform: scaleY(1);
+        }
       }
     }
 
-    /* Small size for the persistent header CTA. */
+    /* Small size for the persistent header CTA. It only ever appears on the
+       pointer breakpoints, so it keeps its own height on coarse devices too. */
     &__sm {
       min-height: 2.25rem;
       padding: 0.4375rem 1rem;
       font-size: 0.875rem;
+
+      @media (pointer: coarse) {
+        min-height: 2.25rem;
+      }
     }
   }
 
@@ -488,10 +576,24 @@ a {
     color: var(--poster-ink);
   }
 
+  /* Sized in viewport units because the poster is a fraction of the page at
+     every width. The `max` is the phone case: 4.4vw of a 390px screen is 17px,
+     which reads as a caption rather than as the product's name, so below about
+     760px a second, gentler curve takes over. */
+  .poster__name--lg {
+    font-size: clamp(1.5rem, max(4.4vw, min(1.875rem, 0.5rem + 5vw)), 4.25rem);
+  }
+
+  .poster__name--sm {
+    font-size: clamp(1.375rem, 2.1vw, 1.875rem);
+  }
+
   /* The lift belongs to the whole tile, and the field drifts a little further,
      so the two layers separate instead of moving as one flat rectangle. */
-  .group\/poster:hover .poster__field {
-    transform: scale(1.06);
+  @media (hover: hover) {
+    .group\/poster:hover .poster__field {
+      transform: scale(1.06);
+    }
   }
 
   /* Pulled a few pixels towards the cursor by `useMagnetic`. The transition
@@ -544,14 +646,29 @@ a {
       pointer-events: none;
     }
 
-    &:hover::before,
     &:focus-within::before {
       opacity: 1;
     }
 
-    &:hover::after,
     &:focus-within::after {
       transform: scaleX(1);
+    }
+
+    @media (hover: hover) {
+      &:hover::before {
+        opacity: 1;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    /* Touch gets the wash on press instead, so a tap is still acknowledged. */
+    @media (hover: none) {
+      &:active::before {
+        opacity: 1;
+      }
     }
   }
 
@@ -561,9 +678,14 @@ a {
     transition: transform 0.7s var(--ease-expo);
   }
 
-  .group:hover .row__shift,
   .group:focus-within .row__shift {
     transform: translateX(0.625rem);
+  }
+
+  @media (hover: hover) {
+    .group:hover .row__shift {
+      transform: translateX(0.625rem);
+    }
   }
 
   /* ---------------------------------------------------------------------------
@@ -586,6 +708,82 @@ a {
     border-radius: 50%;
     pointer-events: none;
     will-change: transform;
+  }
+
+  /* ---------------------------------------------------------------------------
+     Mobile navigation
+
+     The sheet is a full-viewport surface that sits behind the header bar rather
+     than starting under it, so the bar never has to change shape to make room
+     and nothing from the page shows through the strip at the top.
+
+     `dvh` rather than `vh`: on a phone the browser chrome comes and goes, and
+     the bottom of this sheet is where the call to action lives.
+     --------------------------------------------------------------------------- */
+
+  .nav-sheet {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    /* The strip the bar sits in is padding on the sheet rather than space
+       inside the scroller, so a long menu scrolls under nothing. */
+    padding-top: calc(var(--header-h) + 0.5rem);
+    background-color: var(--bg-color);
+  }
+
+  .nav-sheet__body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    overflow-y: auto;
+    /* The sheet is its own scroll world: a flick at either end stops here
+       instead of handing the gesture back to the page underneath. */
+    overscroll-behavior: contain;
+    padding-top: 0.5rem;
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom) + 1.5rem);
+  }
+
+  /* A nav row is a whole line of the sheet, so the target is the line. */
+  .nav-sheet__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.5rem;
+    padding-block: 1.125rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--faded-text);
+    transition: color 0.3s var(--ease-expo);
+
+    &[aria-current='page'] {
+      color: var(--text);
+    }
+
+    &:active {
+      color: var(--text);
+    }
+  }
+
+  /* The reading indicator belongs to the page, and while the sheet is open the
+     page isn't what you're looking at. */
+  .scroll-progress {
+    transition: opacity 0.3s var(--ease-expo);
+  }
+
+  html[data-nav-open] .scroll-progress {
+    opacity: 0;
+  }
+
+  /* Anything that has to clear a thumb rather than a cursor. */
+  .tap {
+    display: inline-flex;
+    align-items: center;
+
+    @media (pointer: coarse) {
+      min-height: 2.75rem;
+    }
   }
 }
 

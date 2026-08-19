@@ -59,7 +59,7 @@ const CourseFacts = ({ compact = false }: { compact?: boolean }) => {
 	const { t } = useTranslation();
 
 	return (
-		<dl className={compact ? 'grid gap-x-10 gap-y-5 sm:grid-cols-2' : 'flex flex-col'}>
+		<dl className={compact ? 'grid gap-x-10 gap-y-5 min-[400px]:grid-cols-2' : 'flex flex-col'}>
 			{courseFactKeys.map((factKey) => (
 				<div
 					className={
@@ -124,6 +124,21 @@ interface PosterFrameProps extends CaseStudyProps {
  * are clearly two planes, not enough to notice as an effect. Skipped entirely
  * when the visitor has asked for reduced motion, since a scroll-linked
  * transform can't be softened, only removed.
+ *
+ * Two elements, and which one carries which is the whole point.
+ *
+ * The outer element is the one `whileInView` watches, so it must never clip
+ * itself: an IntersectionObserver measures the target's own clip, and `wipeUp`
+ * starts at `inset(100% 0 0 0)`. An element hidden that way has no intersection
+ * area at all, so the observer never reports it, so the animation that would
+ * uncover it never starts. The poster stayed clipped to nothing for good, which
+ * on the work page also put the link it wraps out of reach of the pointer.
+ *
+ * So the outer element only drifts, which leaves its box intact, and the wipe
+ * runs on the child, which inherits the state rather than gating it. Keeping
+ * the two apart also settles the other conflict: both want `y`, and a motion
+ * value passed through `style` always beats a variant animating the same
+ * property.
  */
 export const PosterFrame = ({ caseStudy, index, priority = false, wide = false }: PosterFrameProps) => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -137,16 +152,18 @@ export const PosterFrame = ({ caseStudy, index, priority = false, wide = false }
 			<motion.div
 				initial={inViewOnce.initial}
 				style={prefersReducedMotion ? undefined : { y }}
-				variants={wipeUp}
+				variants={stagger(0)}
 				viewport={inViewOnce.viewport}
 				whileInView={inViewOnce.whileInView}
 			>
-				<PosterLink
-					caseStudy={caseStudy}
-					index={index}
-					posterClassName={wide ? 'aspect-[16/9]' : ''}
-					priority={priority}
-				/>
+				<motion.div variants={wipeUp}>
+					<PosterLink
+						caseStudy={caseStudy}
+						index={index}
+						posterClassName={wide ? 'aspect-[4/3] sm:aspect-[16/9]' : ''}
+						priority={priority}
+					/>
+				</motion.div>
 			</motion.div>
 		</div>
 	);
@@ -176,34 +193,45 @@ export const WorkPanel = ({ caseStudy, index, setActive }: WorkPanelProps) => {
 
 	return (
 		<div
-			className='flex flex-col justify-center border-border border-t py-16 first:border-t-0 first:pt-0 lg:min-h-[68vh] lg:border-t-0 lg:py-0'
+			className='flex flex-col justify-center border-border border-t py-12 first:border-t-0 first:pt-0 sm:py-16 lg:min-h-[68vh] lg:border-t-0 lg:py-0'
 			ref={ref}
 		>
-			<div className='mb-10 lg:hidden'>
-				<PosterFrame caseStudy={caseStudy} index={index} priority={index === 0} />
+			{/*
+			 * A tablet is wide enough to read the poster and the writing at once,
+			 * so between `md` and the pinned stage the panel is a spread rather
+			 * than a stack. Below that the poster leads and the text follows.
+			 */}
+			<div className='md:grid md:grid-cols-12 md:items-center md:gap-x-10 lg:block'>
+				<div className='mb-8 md:col-span-5 md:mb-0 lg:hidden'>
+					<PosterFrame caseStudy={caseStudy} index={index} priority={index === 0} />
+				</div>
+
+				<div className='md:col-span-7'>
+					<Reveal>
+						<CaseStudyMeta caseStudy={caseStudy} index={index} />
+					</Reveal>
+
+					<Statement as='h3' className='mt-5 text-headline sm:mt-6'>
+						{caseStudy.name}
+					</Statement>
+
+					<Reveal delay={0.08}>
+						<p className='mt-4 max-w-prose text-faded-text text-lede sm:mt-5'>
+							{t(`work.cases.${caseStudy.key}.summary`)}
+						</p>
+					</Reveal>
+
+					{isCourse && (
+						<Reveal className='mt-8 border-border border-t pt-7' delay={0.12}>
+							<CourseFacts compact />
+						</Reveal>
+					)}
+
+					<Reveal className='mt-8' delay={0.16}>
+						<CaseStudyLinks caseStudy={caseStudy} />
+					</Reveal>
+				</div>
 			</div>
-
-			<Reveal>
-				<CaseStudyMeta caseStudy={caseStudy} index={index} />
-			</Reveal>
-
-			<Statement as='h3' className='mt-6 text-headline'>
-				{caseStudy.name}
-			</Statement>
-
-			<Reveal delay={0.08}>
-				<p className='mt-5 max-w-prose text-faded-text text-lede'>{t(`work.cases.${caseStudy.key}.summary`)}</p>
-			</Reveal>
-
-			{isCourse && (
-				<Reveal className='mt-9 border-border border-t pt-8' delay={0.12}>
-					<CourseFacts compact />
-				</Reveal>
-			)}
-
-			<Reveal className='mt-9' delay={0.16}>
-				<CaseStudyLinks caseStudy={caseStudy} />
-			</Reveal>
 		</div>
 	);
 };
@@ -216,14 +244,19 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 	const isCourse = caseStudy.kind === 'course';
 
 	return (
-		<article className='border-border border-t pt-14 lg:pt-20'>
-			<div className='grid gap-x-16 gap-y-8 lg:grid-cols-12'>
+		/*
+		 * No rule of its own. The previous case study closes with the bottom
+		 * border of its narrative list, and a second hairline a gap below it
+		 * reads as an empty band rather than as the start of something.
+		 */
+		<article className='pt-10 sm:pt-14 lg:pt-20'>
+			<div className='grid gap-x-16 gap-y-7 lg:grid-cols-12'>
 				<div className='lg:col-span-7'>
 					<Reveal>
 						<CaseStudyMeta caseStudy={caseStudy} index={index} />
 					</Reveal>
 
-					<Statement as='h2' className='mt-7 text-statement'>
+					<Statement as='h2' className='mt-6 text-statement sm:mt-7'>
 						{caseStudy.name}
 					</Statement>
 				</div>
@@ -239,27 +272,27 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 				</div>
 			</div>
 
-			<motion.div
-				className='mt-14 grid gap-x-16 gap-y-12 lg:mt-16 lg:grid-cols-12'
-				initial={inViewOnce.initial}
-				variants={stagger(0.08)}
-				viewport={inViewOnce.viewport}
-				whileInView={inViewOnce.whileInView}
-			>
+			{/*
+			 * A plain div, not a variant parent. `PosterFrame` governs its own
+			 * reveal, and a motion parent carrying `variants` hands its state to
+			 * every motion descendant: the poster latched to `hidden` and sat
+			 * there clipped to nothing, which also took its link out of reach.
+			 */}
+			<div className='mt-10 grid gap-x-16 gap-y-10 sm:mt-14 lg:mt-16 lg:grid-cols-12'>
 				<div className={isCourse ? 'lg:col-span-7' : 'lg:col-span-12'}>
 					<PosterFrame caseStudy={caseStudy} index={index} priority={index === 0} wide={!isCourse} />
 				</div>
 
 				{isCourse && (
-					<motion.div className='lg:col-span-4 lg:col-start-9' variants={fadeUp}>
+					<Reveal className='lg:col-span-4 lg:col-start-9' delay={0.08}>
 						<CourseFacts />
-						<p className='mt-8 max-w-prose text-body-sm text-faded-text'>{t('work.course.note')}</p>
-					</motion.div>
+						<p className='mt-7 max-w-prose text-body-sm text-faded-text'>{t('work.course.note')}</p>
+					</Reveal>
 				)}
-			</motion.div>
+			</div>
 
 			<motion.dl
-				className='mt-16 border-border border-b'
+				className='mt-12 border-border border-b sm:mt-16'
 				initial={inView.initial}
 				variants={stagger(0.06)}
 				viewport={inView.viewport}
@@ -267,7 +300,7 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 			>
 				{narrativeRows.map((row) => (
 					<motion.div
-						className='grid gap-x-16 gap-y-2 border-border border-t py-8 lg:grid-cols-12'
+						className='grid gap-x-16 gap-y-2 border-border border-t py-6 sm:py-8 lg:grid-cols-12'
 						key={row}
 						variants={fadeUp}
 					>

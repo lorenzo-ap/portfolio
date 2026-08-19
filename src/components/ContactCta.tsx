@@ -32,10 +32,10 @@ export const ContactCta = () => {
 				<div className='spotlight absolute inset-0' />
 			</div>
 
-			<div className='shell relative grid gap-x-16 gap-y-14 py-[var(--section-gap)] lg:grid-cols-12'>
+			<div className='shell relative grid gap-x-16 gap-y-12 py-[var(--section-gap)] lg:grid-cols-12'>
 				<div className='lg:col-span-7'>
 					<Reveal>
-						<Eyebrow className='mb-8'>{t('contact.eyebrow')}</Eyebrow>
+						<Eyebrow className='mb-6 sm:mb-8'>{t('contact.eyebrow')}</Eyebrow>
 					</Reveal>
 
 					<Statement className='max-w-[13ch] text-statement' delay={0.06}>
@@ -43,11 +43,11 @@ export const ContactCta = () => {
 					</Statement>
 
 					<Reveal delay={0.18}>
-						<p className='mt-8 max-w-prose text-faded-text text-lede'>{t('contact.lede')}</p>
+						<p className='mt-7 max-w-prose text-faded-text text-lede sm:mt-8'>{t('contact.lede')}</p>
 					</Reveal>
 
 					<Reveal delay={0.24}>
-						<div className='mt-11 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center'>
+						<div className='mt-9 flex flex-col gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:items-center'>
 							<ButtonLink className='w-full sm:w-auto' href={mailto()} magnetic>
 								{t('actions.emailMe')}
 							</ButtonLink>
@@ -64,7 +64,7 @@ export const ContactCta = () => {
 							<span className='font-medium font-mono text-eyebrow text-faded-text uppercase'>
 								{t('contact.emailLabel')}
 							</span>
-							<a className='link link__accent break-all font-medium text-title' href={mailto()}>
+							<a className='link link__accent tap break-words font-medium text-title' href={mailto()}>
 								{site.email}
 							</a>
 						</div>

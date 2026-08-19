@@ -26,7 +26,7 @@ export const Page = ({ titleKey, descriptionKey, children }: PageProps) => {
 	return (
 		<motion.main
 			animate={{ opacity: 1, y: 0 }}
-			className='pt-20'
+			className='pt-[var(--header-h)]'
 			id='main'
 			initial={{ opacity: 0, y: 18 }}
 			transition={{ duration: duration.page, ease }}

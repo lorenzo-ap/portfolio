@@ -57,7 +57,7 @@ export const LanguageSwitcher = ({ className = '', variant = 'dropdown' }: Langu
 					<button
 						aria-current={language === currentLanguage}
 						aria-label={t(`footer.languages.${language}`)}
-						className={`${code} rounded-full px-2.5 py-2 transition-colors duration-300 ease-expo ${
+						className={`${code} flex h-10 min-w-[2.75rem] items-center justify-center rounded-full transition-colors duration-300 ease-expo ${
 							language === currentLanguage ? 'bg-accent-soft text-accent' : 'text-faded-text hover:text-text'
 						}`}
 						key={language}

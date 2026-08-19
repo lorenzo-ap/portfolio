@@ -41,9 +41,9 @@ export const SelectedWork = () => {
 				title={t('work.title')}
 			/>
 
-			<div className='mt-20 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-x-16'>
+			<div className='mt-[var(--block-gap)] lg:grid lg:grid-cols-12 lg:gap-x-16'>
 				<div className='hidden lg:col-span-6 lg:block'>
-					<div className='sticky top-[7.5rem]'>
+					<div className='sticky top-[calc(var(--header-h)+2.5rem)]'>
 						<div className='relative aspect-[4/3]'>
 							{caseStudies.map((caseStudy, index) => (
 								<motion.div

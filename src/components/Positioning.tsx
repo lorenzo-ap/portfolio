@@ -21,10 +21,10 @@ export const Positioning = () => {
 	return (
 		<Section id='about'>
 			<Reveal>
-				<Eyebrow className='mb-8'>{t('aboutTeaser.eyebrow')}</Eyebrow>
+				<Eyebrow className='mb-6 sm:mb-8'>{t('aboutTeaser.eyebrow')}</Eyebrow>
 			</Reveal>
 
-			<div className='grid gap-x-16 gap-y-10 lg:grid-cols-12'>
+			<div className='grid gap-x-16 gap-y-8 lg:grid-cols-12'>
 				<div className='lg:col-span-5'>
 					<Statement className='max-w-[13ch] text-statement' delay={0.06}>
 						{t('aboutTeaser.title')}
@@ -52,7 +52,7 @@ export const Positioning = () => {
 						</Reveal>
 					</div>
 
-					<Reveal className='mt-10' delay={0.24}>
+					<Reveal className='mt-8 sm:mt-10' delay={0.24}>
 						<ActionLink label={t('actions.moreAbout')} to='/about' />
 					</Reveal>
 				</div>

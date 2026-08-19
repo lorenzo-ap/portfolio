@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {
 	ContactCta,
 	Eyebrow,
+	MarkerRow,
 	PageHeader,
 	ProcessLadder,
 	Reveal,
@@ -141,20 +142,13 @@ export const AboutPage = () => {
 
 					<RevealGroup as='ul' className='lg:col-span-7 lg:col-start-6' step={0.06}>
 						{principleKeys.map((key, index) => (
-							<RevealItem as='li' className='group row py-9 last:border-b last:border-b-border' key={key}>
-								<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
-									<span className='relative font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-2'>
-										{String(index + 1).padStart(2, '0')}
-									</span>
-
-									<div className='row__shift relative sm:col-span-10'>
-										<h2 className='font-medium text-text text-title'>{t(`about.principles.items.${key}.title`)}</h2>
-										<p className='mt-3 max-w-prose text-body-sm text-faded-text'>
-											{t(`about.principles.items.${key}.body`)}
-										</p>
-									</div>
-								</div>
-							</RevealItem>
+							<MarkerRow
+								key={key}
+								marker={String(index + 1).padStart(2, '0')}
+								title={t(`about.principles.items.${key}.title`)}
+							>
+								{t(`about.principles.items.${key}.body`)}
+							</MarkerRow>
 						))}
 					</RevealGroup>
 				</div>
@@ -172,16 +166,9 @@ export const AboutPage = () => {
 
 					<RevealGroup as='ul' className='lg:col-span-7 lg:col-start-6' step={0.05}>
 						{workingKeys.map((key) => (
-							<RevealItem as='li' className='group row py-7 last:border-b last:border-b-border' key={key}>
-								<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
-									<span className='relative font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-4'>
-										{t(`about.working.items.${key}.label`)}
-									</span>
-									<p className='row__shift relative max-w-prose text-body-sm text-subfaded-text sm:col-span-8'>
-										{t(`about.working.items.${key}.body`)}
-									</p>
-								</div>
-							</RevealItem>
+							<MarkerRow key={key} marker={t(`about.working.items.${key}.label`)} wideMarker>
+								{t(`about.working.items.${key}.body`)}
+							</MarkerRow>
 						))}
 					</RevealGroup>
 				</div>

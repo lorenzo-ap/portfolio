@@ -2,7 +2,8 @@ import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { processStepKeys } from '../data/capabilities';
-import { RevealGroup, RevealItem } from './Reveal';
+import { MarkerRow } from './MarkerRow';
+import { RevealGroup } from './Reveal';
 
 /**
  * The four steps, threaded onto a spine that fills as the section scrolls past.
@@ -18,7 +19,7 @@ export const ProcessLadder = () => {
 	const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
 	return (
-		<div className='relative pl-8' ref={ref}>
+		<div className='relative pl-6 sm:pl-8' ref={ref}>
 			<span aria-hidden='true' className='absolute top-0 left-0 h-full w-px bg-border' />
 			<motion.span
 				aria-hidden='true'
@@ -28,18 +29,15 @@ export const ProcessLadder = () => {
 
 			<RevealGroup as='ol' step={0.06}>
 				{processStepKeys.map((key, index) => (
-					<RevealItem as='li' className='group border-border border-t py-8 first:border-t-0 first:pt-0' key={key}>
-						<div className='grid gap-x-8 gap-y-2 sm:grid-cols-12'>
-							<span className='font-medium font-mono text-eyebrow text-faded-text uppercase transition-colors duration-500 ease-expo group-hover:text-accent sm:col-span-2'>
-								{String(index + 1).padStart(2, '0')}
-							</span>
-
-							<div className='sm:col-span-10'>
-								<h3 className='font-medium text-text text-title'>{t(`process.steps.${key}.title`)}</h3>
-								<p className='mt-3 max-w-prose text-body-sm text-faded-text'>{t(`process.steps.${key}.body`)}</p>
-							</div>
-						</div>
-					</RevealItem>
+					<MarkerRow
+						className='first:border-t-0 first:pt-0'
+						key={key}
+						marker={String(index + 1).padStart(2, '0')}
+						quiet
+						title={t(`process.steps.${key}.title`)}
+					>
+						{t(`process.steps.${key}.body`)}
+					</MarkerRow>
 				))}
 			</RevealGroup>
 		</div>

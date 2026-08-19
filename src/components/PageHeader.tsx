@@ -11,12 +11,12 @@ interface PageHeaderProps {
 
 /** Opening block for the interior pages, so /work and /about share a rhythm. */
 export const PageHeader = ({ eyebrow, title, lede }: PageHeaderProps) => (
-	<header className='shell pt-28 pb-20 sm:pt-36 sm:pb-28'>
+	<header className='shell pt-14 pb-14 sm:pt-24 sm:pb-20 lg:pt-36 lg:pb-28'>
 		<Reveal>
-			<Eyebrow className='mb-9'>{eyebrow}</Eyebrow>
+			<Eyebrow className='mb-7 sm:mb-9'>{eyebrow}</Eyebrow>
 		</Reveal>
 
-		<div className='grid gap-x-16 gap-y-10 lg:grid-cols-12'>
+		<div className='grid gap-x-16 gap-y-8 lg:grid-cols-12'>
 			<div className='lg:col-span-7'>
 				<Statement as='h1' className='max-w-[13ch] text-display-sm' delay={0.05} immediate>
 					{title}

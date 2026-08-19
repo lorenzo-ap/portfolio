@@ -10,6 +10,7 @@ export * from './Header';
 export * from './Hero';
 export * from './icons';
 export * from './LanguageSwitcher';
+export * from './MarkerRow';
 export * from './Page';
 export * from './PageHeader';
 export * from './Positioning';

@@ -22,14 +22,14 @@ const sizeClass: Record<PosterSize, { pad: string; icon: string; name: string; r
 	sm: {
 		pad: 'p-6',
 		icon: 'mb-5 h-9 w-9',
-		name: 'text-[clamp(1.375rem,2.1vw,1.875rem)]',
+		name: 'poster__name--sm',
 		rule: 'w-4'
 	},
 	lg: {
-		pad: 'p-8 sm:p-10',
-		icon: 'mb-7 h-12 w-12 sm:h-16 sm:w-16',
-		name: 'text-[clamp(1.875rem,4.4vw,4.25rem)]',
-		rule: 'w-6'
+		pad: 'p-5 sm:p-8 lg:p-10',
+		icon: 'mb-5 h-10 w-10 sm:mb-7 sm:h-12 sm:w-12 lg:h-16 lg:w-16',
+		name: 'poster__name--lg',
+		rule: 'w-4 sm:w-6'
 	}
 };
 

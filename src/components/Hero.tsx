@@ -56,7 +56,7 @@ export const Hero = () => {
 		>
 			<div aria-hidden='true' className='edge-fade grid-backdrop absolute inset-0' />
 
-			<div className='shell relative flex min-h-[calc(100svh-80px)] flex-col justify-between gap-10 pt-12 pb-5 lg:pt-14'>
+			<div className='shell relative flex min-h-[calc(100svh-var(--header-h))] flex-col justify-between gap-10 pt-8 pb-4 sm:pt-12 sm:pb-5 lg:pt-14'>
 				<motion.div
 					animate='visible'
 					className='relative flex flex-1 flex-col justify-center'
@@ -72,7 +72,7 @@ export const Hero = () => {
 							{t('hero.status')}
 						</motion.p>
 
-						<h1 className='statement mt-9 text-display lg:mt-11'>
+						<h1 className='statement mt-7 text-display sm:mt-9 lg:mt-11'>
 							{headlineLines.map((line, index) => (
 								<StatementLine
 									className={index === headlineLines.length - 1 ? 'italic' : ''}
@@ -85,13 +85,13 @@ export const Hero = () => {
 						</h1>
 					</motion.div>
 
-					<motion.div className='mt-11 lg:mt-14' style={depth(lowerY)}>
+					<motion.div className='mt-8 sm:mt-11 lg:mt-14' style={depth(lowerY)}>
 						<motion.p className='max-w-[46ch] text-faded-text text-lede' variants={settle(0.5)}>
 							{t('hero.lede')}
 						</motion.p>
 
 						<motion.div
-							className='mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center'
+							className='mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center'
 							variants={settle(0.58)}
 						>
 							<ButtonLink className='w-full sm:w-auto' href={mailto()} magnetic>
@@ -161,7 +161,7 @@ export const Hero = () => {
 						{caseStudies.map((caseStudy, index) => (
 							<motion.li key={caseStudy.key} variants={settle(0)}>
 								<Link
-									className='group relative block py-5 pr-4 sm:py-6'
+									className='group relative block py-4 pr-3 sm:py-6 sm:pr-4'
 									onFocus={() => setActiveIndex(index)}
 									onPointerEnter={() => setActiveIndex(index)}
 									to='/work'
@@ -188,7 +188,7 @@ export const Hero = () => {
 										</span>
 									</span>
 
-									<span className='mt-1.5 block pl-[2.125rem] font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em]'>
+									<span className='mt-1.5 block font-mono text-[0.6875rem] text-faded-text uppercase tracking-[0.14em] sm:pl-[2.125rem]'>
 										{t(`work.kinds.${caseStudy.kind}`)}
 									</span>
 								</Link>

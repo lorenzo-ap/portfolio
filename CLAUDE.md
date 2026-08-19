@@ -143,10 +143,11 @@ The site has one signature move: **type is uncovered, never faded in.**
 - `<Cursor>` is a ring that trails the pointer and opens over anything actionable. It sits behind the real cursor, and it's off entirely without a fine pointer or under reduced motion.
 - Keep entrances under ~0.9s and travel under ~28px.
 
-**Two traps worth knowing before adding motion here:**
+**Three traps worth knowing before adding motion here:**
 
 1. **A motion component nested inside a motion parent that has `variants` inherits that parent's animation state.** Giving the child its own `whileInView` does not reliably override it, and the symptom is an element stuck in its `hidden` state forever. Either let the child inherit (give it only `variants`) or keep it outside the parent's variant tree. This is why `<Page>` writes its transition as plain objects: it wraps every page, so making it a variant parent put the whole tree at its mercy.
 2. **`style` motion values beat variant animations for the same property.** An element can't take a scroll-linked `y` from `style` and an entrance `y` from a variant; the scroll value wins and the entrance never plays. Split them across two nested elements. The hero poster does exactly this.
+3. **Never put a clipping hidden state on the element `whileInView` is watching.** An IntersectionObserver measures the target's own clip, so an element sitting at `clip-path: inset(100% 0 0 0)` has no intersection area, is never reported as in view, and never receives the animation that would uncover it. It stays invisible for good, and because clip-path clips hit testing too, anything clickable inside it is unreachable. `wipeUp` is the variant this applies to: put it on a child and let the observed parent keep its box. `PosterFrame` is the worked example.
 
 Scroll-linked transforms can't be softened, only removed, so every one of them is guarded with `useReducedMotion`.
 
