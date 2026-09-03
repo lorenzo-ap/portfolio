@@ -42,6 +42,17 @@
       "line3": "rezolvate încă manual."
     },
     "lede": "Sunt Lorenzo. Oamenii vin la mine când ceva din afacere merge greu, se face de două ori sau stă într-un fișier Excel pe care îl înțelege cu adevărat un singur om.",
+    "visual": {
+      "process": "Proces",
+      "steps": {
+        "intake": "Preluare",
+        "check": "Verificare",
+        "update": "Actualizare",
+        "send": "Trimitere"
+      },
+      "source": "Manual",
+      "result": "Rezolvat"
+    },
     "facts": {
       "currentLabel": "Acum",
       "currentValue": "Inginer senior la",

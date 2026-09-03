@@ -208,6 +208,121 @@ a {
 }
 
 @layer components {
+  /* The long logo.
+
+     --wm-h is the only number that sizes it: the artwork is 213.14 x 24 user
+     units, so every width below falls out of the height.
+
+     Three lengths, picked from the viewport alone: the full name, then
+     Lorenzo, then L. The bar keeps whichever one fits while it scrolls, so
+     the logo never changes under you mid-page. */
+  .wordmark {
+    --wm-h: 1.0625rem;
+    --wm-full: calc(var(--wm-h) * 213.14 / 24);
+    --wm-mid: calc(var(--wm-h) * 105.34 / 24);
+    --wm-short: calc(var(--wm-h) * 22.9 / 24);
+    display: inline-block;
+    height: var(--wm-h);
+    width: var(--wm-full);
+    overflow: hidden;
+  }
+
+  .wordmark__art {
+    display: block;
+    height: 100%;
+    width: var(--wm-full);
+    color: var(--text);
+  }
+
+  /* The lit copy is the same outlines in the accent, clipped to whatever the
+     stop has already passed. It sits in a <use> shadow tree, so the ink takes
+     its fill from an attribute on the group rather than from a rule here. */
+  .wordmark__lit {
+    color: var(--accent);
+  }
+
+  .wordmark__ink {
+    fill: currentColor;
+  }
+
+  .wordmark__lit {
+    fill: var(--accent);
+  }
+
+  /* Hover: a split-flap.
+
+     Every letter is two copies of itself. The ink rolls up and out of the box
+     while the cobalt twin rolls in from underneath, and each glyph starts a
+     beat after the one to its right, so the flap travels back from the stop to
+     the L. The box clips at the viewBox, which is what hides both copies while
+     they are outside it.
+
+     This is the one thing the mark can do that a webfont logo cannot, since
+     the glyphs are separate outlines rather than one merged shape. */
+  .wordmark__ink,
+  .wordmark__lit {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.32s var(--ease-expo) var(--wm-d, 0ms);
+  }
+
+  .wordmark__lit {
+    transform: translateY(26px);
+  }
+
+  .logo-link:hover .wordmark__ink {
+    transform: translateY(-26px);
+  }
+
+  .logo-link:hover .wordmark__lit {
+    transform: translateY(0);
+  }
+
+  .wordmark__stop {
+    fill: var(--accent);
+  }
+
+  /* Lorenzo. once the full name stops being comfortable. The stop has to come
+     with it, or it sits outside the clip and reads as a missing dot. */
+  @media (max-width: 29.999rem) {
+    .wordmark {
+      width: var(--wm-mid);
+    }
+
+    .wordmark__surname {
+      opacity: 0;
+    }
+
+    .wordmark__stop {
+      transform: translateX(-106.86px);
+    }
+
+  }
+
+  /* L. on the narrowest phones. */
+  @media (max-width: 22.499rem) {
+    .wordmark {
+      width: var(--wm-short);
+    }
+
+    .wordmark__given {
+      opacity: 0;
+    }
+
+    .wordmark__stop {
+      transform: translateX(-189.3px);
+    }
+
+  }
+
+  /* Colour still arrives, it just arrives at once. */
+  @media (prefers-reduced-motion: reduce) {
+    .wordmark__ink,
+    .wordmark__lit {
+      transition: none;
+    }
+  }
+
   /* ---------------------------------------------------------------------------
      Primitives
      --------------------------------------------------------------------------- */
@@ -783,6 +898,371 @@ a {
 
     @media (pointer: coarse) {
       min-height: 2.75rem;
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+     Hero visual
+
+     One composition in three planes: the sheet the job lives on today, the
+     software that takes it over, and what's left at the end of a run. Built
+     from the same hairlines, mono micro-type and single accent as the rest of
+     the page, so it reads as part of the site rather than as an illustration
+     dropped into it.
+     --------------------------------------------------------------------------- */
+
+  .hero-visual {
+    /* Small enough that the tilt on the central surface is a suggestion of a
+       turn rather than a card being spun. */
+    perspective: 1400px;
+    isolation: isolate;
+    /* Every label inside is mono micro-type. Set once here rather than on nine
+       elements, because nothing in the composition is ever anything else. */
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faded-text);
+  }
+
+  /* The field the composition sits on: the page's own grid at half its size, so
+     it nests inside it instead of arguing with it. Masked to a soft circle,
+     because a hard rectangle of grid would read as a panel. */
+  .hero-visual__field {
+    position: absolute;
+    inset: -16%;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(closest-side, #000 40%, transparent 100%);
+    filter: blur(0.4px);
+  }
+
+  /* Every plane reads the same two numbers the pointer writes on the
+     composition and multiplies them by its own depth. The transition is the
+     lag, and the lag is what makes it read as depth rather than as dragging. */
+  .hero-layer {
+    height: 100%;
+    transform: translate3d(calc(var(--px, 0) * var(--depth, 0) * 1px), calc(var(--py, 0) * var(--depth, 0) * 1px), 0);
+    transition: transform 0.9s var(--ease-expo);
+  }
+
+  .hero-layer--tilt {
+    transform:
+      translate3d(calc(var(--px, 0) * var(--depth, 0) * 1px), calc(var(--py, 0) * var(--depth, 0) * 1px), 0)
+      rotateY(calc(var(--px, 0) * 1.1deg))
+      rotateX(calc(var(--py, 0) * -0.8deg));
+  }
+
+  /* `translate` rather than `transform`, so the idle drift composes with the
+     pointer instead of overwriting it. */
+  .hero-layer--drift {
+    animation: hero-drift 12s ease-in-out infinite;
+  }
+
+  @keyframes hero-drift {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -0.5rem;
+    }
+  }
+
+  /* --- the surface ---------------------------------------------------------- */
+
+  .hero-surface {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    box-shadow: 0 26px 60px -44px var(--shadow-pop);
+    transition: box-shadow 0.8s var(--ease-expo);
+  }
+
+  .hero-surface__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .hero-surface__label {
+    color: var(--subfaded-text);
+  }
+
+  .hero-surface__count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The one live signal inside the composition. `.pulse` is spoken for: it means
+     availability, and it means it in one place. */
+  .hero-live {
+    width: 0.3125rem;
+    height: 0.3125rem;
+    border-radius: 1px;
+    background-color: var(--accent);
+    animation: hero-breathe 3.2s ease-in-out infinite;
+  }
+
+  .hero-live--done {
+    animation: none;
+  }
+
+  .hero-surface__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9375rem 1rem;
+    border-top: 1px solid var(--border);
+    transition: background-color 0.7s var(--ease-expo);
+  }
+
+  .hero-step--active {
+    background-color: var(--accent-soft);
+  }
+
+  .hero-step__index {
+    width: 1.125rem;
+    color: var(--faded-line);
+    transition: color 0.7s var(--ease-expo);
+  }
+
+  .hero-step__label {
+    color: var(--faded-text);
+    transition: color 0.7s var(--ease-expo);
+  }
+
+  .hero-step--active .hero-step__index,
+  .hero-step--active .hero-step__label,
+  .hero-step--done .hero-step__label {
+    color: var(--text);
+  }
+
+  .hero-step--done .hero-step__index {
+    color: var(--faded-text);
+  }
+
+  /* A leader line, the way a contents page runs one from a title to its page
+     number. On the running step it fills at the speed of the step. */
+  .hero-step__leader {
+    position: relative;
+    flex: 1;
+    height: 1px;
+    min-width: 1rem;
+    background-color: var(--border);
+  }
+
+  .hero-step__fill {
+    position: absolute;
+    inset: 0;
+    transform-origin: left;
+    background-color: var(--accent);
+    opacity: 0.9;
+    transition: opacity 0.7s var(--ease-expo);
+  }
+
+  .hero-step--done .hero-step__fill {
+    opacity: 0.4;
+  }
+
+  .hero-step__mark {
+    width: 0.375rem;
+    height: 0.375rem;
+    flex: none;
+    border: 1px solid var(--border-strong);
+    border-radius: 1px;
+    transition:
+      background-color 0.7s var(--ease-expo),
+      border-color 0.7s var(--ease-expo);
+  }
+
+  .hero-step--active .hero-step__mark {
+    border-color: var(--accent);
+  }
+
+  .hero-step--done .hero-step__mark {
+    border-color: var(--accent);
+    background-color: var(--accent);
+  }
+
+  /* The run's progress, drawn on the surface's own bottom edge. */
+  .hero-surface__progress {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 1px;
+    transform-origin: left;
+    background-color: var(--accent);
+  }
+
+  /* --- the fragments -------------------------------------------------------- */
+
+  .hero-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--surface);
+  }
+
+  .hero-card__label {
+    display: block;
+    color: var(--faded-text);
+  }
+
+  /* Held back a little, and brought forward when the pointer arrives. */
+  .hero-source {
+    padding: 0.625rem 0.75rem;
+    opacity: 0.82;
+    transition:
+      opacity 0.9s var(--ease-expo),
+      transform 0.9s var(--ease-expo);
+  }
+
+  .hero-source__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 0.5625rem;
+    border: 1px solid var(--border);
+    background-color: var(--border);
+  }
+
+  .hero-cell {
+    display: flex;
+    align-items: center;
+    height: 1.0625rem;
+    padding-inline: 0.25rem;
+    background-color: var(--surface);
+  }
+
+  .hero-cell__bar {
+    height: 1px;
+    background-color: var(--border-strong);
+    opacity: 0.75;
+  }
+
+  /* Sized to exactly one cell and moved by its own size plus the gap, so it
+     lands on a cell at any width without anything having to be measured. */
+  .hero-cell__cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc((100% - 3px) / 4);
+    height: 1.0625rem;
+    border: 1px solid var(--accent);
+    transform: translate(calc(var(--col, 0) * (100% + 1px)), calc(var(--row, 0) * (100% + 1px)));
+    transition: transform 0.6s var(--ease-expo);
+  }
+
+  .hero-result {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 16px 40px -30px var(--shadow-pop);
+  }
+
+  .hero-tick {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 1px;
+    background-color: var(--accent);
+  }
+
+  /* --- what connects them --------------------------------------------------- */
+
+  .hero-wire {
+    position: absolute;
+    width: 1px;
+    overflow: hidden;
+    transform-origin: top;
+    opacity: 0.7;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--border-strong) 20%,
+      var(--border-strong) 80%,
+      transparent
+    );
+    transition: opacity 0.9s var(--ease-expo);
+  }
+
+  /* A signal travelling the wire, slowly and rarely enough that noticing it is
+     a reward for looking rather than something demanding to be looked at. */
+  .hero-wire__signal {
+    position: absolute;
+    inset-inline: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    animation: hero-signal 5.4s var(--ease-expo) infinite;
+  }
+
+  @keyframes hero-signal {
+    0% {
+      transform: translateY(-140%);
+      opacity: 0;
+    }
+    22% {
+      opacity: 1;
+    }
+    64% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(280%);
+      opacity: 0;
+    }
+  }
+
+  .hero-speck {
+    display: block;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 1px;
+    background-color: var(--accent);
+    animation: hero-breathe 7s ease-in-out infinite;
+  }
+
+  @keyframes hero-breathe {
+    0%,
+    100% {
+      opacity: 0.18;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+
+  /* The composition comes forward as a whole when the pointer is anywhere near
+     it: the sheet slides up towards the surface it's about to be replaced by,
+     the wires firm up, and the surface takes a little more elevation. */
+  @media (hover: hover) {
+    .hero-visual:hover .hero-source {
+      opacity: 1;
+      transform: translate(-0.625rem, 0.5rem);
+    }
+
+    .hero-visual:hover .hero-wire {
+      opacity: 1;
+    }
+
+    .hero-visual:hover .hero-surface {
+      box-shadow: 0 34px 72px -42px var(--shadow-pop);
     }
   }
 }

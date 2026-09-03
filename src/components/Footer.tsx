@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { site } from '../data/site';
-import { GithubIcon, LinkedinIcon, LogoMark } from './icons';
+import { GithubIcon, LinkedinIcon } from './icons';
+import { Wordmark } from './Wordmark';
 
 const columnTitle = 'mb-5 font-medium font-mono text-eyebrow text-faded-text uppercase';
 /** `tap` gives the link a thumb-sized row on touch without changing its type. */
@@ -29,9 +30,8 @@ export const Footer = () => {
 			<div className='pt-14 pb-[max(3rem,env(safe-area-inset-bottom))] sm:pt-16'>
 				<div className='grid gap-x-12 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-12'>
 					<div className='lg:col-span-6'>
-						<Link className='tap -my-2 gap-2.5 py-2 text-text' to='/'>
-							<LogoMark size={24} title={t('nav.home')} />
-							<span className='font-medium text-[0.9375rem] tracking-tight'>{site.name}</span>
+						<Link aria-label={site.name} className='logo-link tap -my-2 py-2 text-text' to='/'>
+							<Wordmark />
 						</Link>
 
 						<p className='mt-6 max-w-[32ch] text-body-sm text-faded-text'>{t('footer.tagline')}</p>

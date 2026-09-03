@@ -6,9 +6,9 @@ import { mailto, messagingChannels, site } from '../data/site';
 import { useFocusTrap, useHeaderState, useMediaQuery, useScrollLock } from '../hooks';
 import { ease, easeInOut } from '../lib/motion';
 import { ButtonLink } from './Button';
-import { LogoMark } from './icons';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import { Wordmark } from './Wordmark';
 
 const routes = [
 	{ path: '/work', labelKey: 'nav.work' as const },
@@ -231,21 +231,18 @@ export const Header = () => {
 				<div className={`relative z-10 transition-[padding] duration-500 ease-expo ${scrolled ? 'pt-3' : 'pt-0'}`}>
 					<div className='shell'>
 						<div className={`${BAR} ${barSurface}`}>
-							{/* The mark and the name are one target, so the turn belongs to the
-							    whole link rather than to whichever half the pointer landed on. */}
+							{/* The wordmark is the whole logo: no separate mark beside it, since
+							    an L next to Lorenzo says the letter twice. */}
 							<Link
 								aria-label={site.name}
-								className='group/logo -my-2 flex min-w-0 items-center gap-2.5 py-2 text-text'
+								className='logo-link -my-2 flex flex-none items-center py-2 text-text'
 								onClick={() => {
 									setMenuOpen(false);
 									if (pathname === '/') window.scrollTo({ top: 0 });
 								}}
 								to='/'
 							>
-								<span className='flex-none transition-transform duration-700 ease-expo group-hover/logo:rotate-180'>
-									<LogoMark size={26} title={t('nav.home')} />
-								</span>
-								<span className='truncate font-medium text-[0.9375rem] tracking-tight'>{site.name}</span>
+								<Wordmark />
 							</Link>
 
 							<div className='flex flex-none items-center gap-1 md:gap-5'>

@@ -2,6 +2,7 @@ export * from './useFocusTrap';
 export * from './useHeaderState';
 export * from './useMagnetic';
 export * from './useMediaQuery';
+export * from './usePointerParallax';
 export * from './usePointerSpotlight';
 export * from './useScrollLock';
 export * from './useSeo';

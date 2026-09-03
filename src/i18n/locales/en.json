@@ -42,6 +42,17 @@
       "line3": "solved by hand."
     },
     "lede": "I'm Lorenzo. People come to me when something in the business is slow, gets done twice, or lives in a spreadsheet only one person really understands.",
+    "visual": {
+      "process": "Process",
+      "steps": {
+        "intake": "Intake",
+        "check": "Check",
+        "update": "Update",
+        "send": "Send"
+      },
+      "source": "By hand",
+      "result": "Handled"
+    },
     "facts": {
       "currentLabel": "Right now",
       "currentValue": "Senior engineer at",

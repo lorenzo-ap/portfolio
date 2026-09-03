@@ -73,11 +73,15 @@ export const ruleReveal: Variants = {
 /**
  * Wipe used by the project posters. Revealing the field from the bottom edge
  * reads as the image arriving, where a plain fade reads as a loading state.
+ *
+ * The resting state opens the top edge past the box rather than stopping at
+ * it. The value stays inline after the animation, and a clip that ends flush
+ * with the box would trim the top of the poster link when it lifts on hover.
  */
 export const wipeUp: Variants = {
 	hidden: { clipPath: 'inset(100% 0 0 0)', y: 16 },
 	visible: {
-		clipPath: 'inset(0% 0 0 0)',
+		clipPath: 'inset(-10% 0 0 0)',
 		y: 0,
 		transition: { duration: 1, ease }
 	}
@@ -96,3 +100,13 @@ export const inViewOnce = {
 	whileInView: 'visible',
 	viewport: { once: true, amount: 0.12, margin: '0px 0px -8% 0px' }
 } as const;
+
+/**
+ * Everything that isn't a headline arrives on the same curve, just later. The
+ * hero uses it to release the eyebrow, the lede, the buttons and every layer of
+ * the visual in one sequence.
+ */
+export const settle = (delay = 0): Variants => ({
+	hidden: { opacity: 0, y: 16 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease, delay } }
+});
