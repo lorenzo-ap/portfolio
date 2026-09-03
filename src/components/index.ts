@@ -17,6 +17,7 @@ export * from './LanguageSwitcher';
 export * from './MarkerRow';
 export * from './Page';
 export * from './PageHeader';
+export * from './Portrait';
 export * from './Positioning';
 export * from './ProcessLadder';
 export * from './ProjectPoster';

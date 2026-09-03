@@ -52,14 +52,6 @@
       },
       "source": "By hand",
       "result": "Handled"
-    },
-    "facts": {
-      "currentLabel": "Right now",
-      "currentValue": "Senior engineer at",
-      "latestLabel": "Latest thing I built",
-      "latestValue": "AInterest, live and open to anyone",
-      "studyingLabel": "Also",
-      "studyingValue": "Finishing a master's at Oradea"
     }
   },
   "capabilities": {
@@ -184,7 +176,7 @@
   "aboutTeaser": {
     "eyebrow": "Who you'd be working with",
     "title": "One person, start to finish.",
-    "body1": "I'm Lorenzo. During the week I work as a senior engineer on <barca>Barça Mobile</barca>, and I take on a small number of client projects alongside it. I'm also finishing a master's at the University of Oradea.",
+    "body1": "I'm Lorenzo. During the week I work as a senior engineer on <barca>Barça Mobile</barca>, and I take on a small number of client projects alongside it. I'm also finishing a master's in computer science.",
     "body2": "I've been building software for years and I've worked on every part of it, from the screens people click on to everything running quietly behind them. Picking the tools for that is my job, not something you need an opinion about.",
     "body3": "So one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning."
   },
@@ -199,10 +191,11 @@
   "about": {
     "title": "The longer version.",
     "lede": "How I work, how I decide what's worth building, and what I'm like to deal with.",
-    "intro": "I'm Lorenzo. During the week I'm a senior engineer on <barca>Barça Mobile</barca>, and I'm finishing a master's at the University of Oradea.",
+    "intro": "I'm Lorenzo. During the week I'm a senior engineer on <barca>Barça Mobile</barca>, and I'm finishing a master's in computer science.",
     "freelance": "Alongside that I take on a few client projects and keep my own products running. That's where I try things out before they go anywhere near someone else's business.",
     "career": "Most of what I've built ended up in front of real people, which teaches you quickly. You find out within a day if something is confusing. I've also looked after the parts nobody ever sees, the ones that decide whether the thing still works at four on a Friday afternoon.",
     "interests": "The part I like most happens before any of that, sitting with a problem until it's clear what should exist. Plenty of people will build exactly what you describe. That isn't always the useful thing to do.",
+    "portraitAlt": "Lorenzo sitting at a table on a terrace, with the Dubai skyline behind him.",
     "principles": {
       "title": "A few things I've settled on.",
       "items": {

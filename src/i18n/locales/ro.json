@@ -52,14 +52,6 @@
       },
       "source": "Manual",
       "result": "Rezolvat"
-    },
-    "facts": {
-      "currentLabel": "Acum",
-      "currentValue": "Inginer senior la",
-      "latestLabel": "Cel mai recent proiect",
-      "latestValue": "AInterest, live și deschis oricui",
-      "studyingLabel": "În paralel",
-      "studyingValue": "Termin masterul la Oradea"
     }
   },
   "capabilities": {
@@ -184,7 +176,7 @@
   "aboutTeaser": {
     "eyebrow": "Cu cine ai lucra",
     "title": "Un singur om, de la cap la coadă.",
-    "body1": "Sunt Lorenzo. În timpul săptămânii lucrez ca inginer senior la <barca>Barça Mobile</barca> și iau câteva proiecte pentru clienți în paralel. Termin și masterul la Universitatea din Oradea.",
+    "body1": "Sunt Lorenzo. În timpul săptămânii lucrez ca inginer senior la <barca>Barça Mobile</barca> și iau câteva proiecte pentru clienți în paralel. Termin și un master în informatică.",
     "body2": "Construiesc software de ani buni și am lucrat pe fiecare parte a lui, de la ecranele pe care le apasă oamenii până la tot ce rulează liniștit în spatele lor. Alegerea uneltelor e treaba mea, nu ceva despre care ai nevoie de o părere.",
     "body3": "Adică un singur om ține toată problema, de la prima discuție despre ce nu merge până la versiunea pe care echipa ta o deschide luni dimineața."
   },
@@ -199,10 +191,11 @@
   "about": {
     "title": "Varianta lungă.",
     "lede": "Cum lucrez, cum decid ce merită construit și cum e să ai de-a face cu mine.",
-    "intro": "Sunt Lorenzo. În timpul săptămânii sunt inginer senior la <barca>Barça Mobile</barca> și termin masterul la Universitatea din Oradea.",
+    "intro": "Sunt Lorenzo. În timpul săptămânii sunt inginer senior la <barca>Barça Mobile</barca> și termin un master în informatică.",
     "freelance": "În paralel iau câteva proiecte pentru clienți și îmi țin propriile produse în viață. Acolo încerc lucruri înainte să ajungă prin preajma afacerii altcuiva.",
     "career": "Cea mai mare parte din ce am construit a ajuns în fața unor oameni reali, ceea ce te învață repede. Afli într-o zi dacă ceva e confuz. M-am ocupat și de părțile pe care nu le vede nimeni, alea care decid dacă lucrul respectiv mai merge vineri la ora patru.",
     "interests": "Partea care îmi place cel mai mult se întâmplă înaintea tuturor acestora, când stai cu o problemă până devine clar ce ar trebui să existe. Destui oameni construiesc exact ce le descrii. Nu întotdeauna ăsta e lucrul util de făcut.",
+    "portraitAlt": "Lorenzo stă la o masă pe o terasă, cu Dubaiul în spate.",
     "principles": {
       "title": "Câteva lucruri la care am ajuns.",
       "items": {

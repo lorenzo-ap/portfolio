@@ -703,6 +703,29 @@ a {
     font-size: clamp(1.375rem, 2.1vw, 1.875rem);
   }
 
+  /* ---------------------------------------------------------------------------
+     Portrait
+
+     The photo on the about page, framed like a poster: same border, same
+     corners, and the picture fills the frame edge to edge.
+     --------------------------------------------------------------------------- */
+
+  .portrait {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background-color: var(--poster-base);
+  }
+
+  .portrait__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   /* The lift belongs to the whole tile, and the field drifts a little further,
      so the two layers separate instead of moving as one flat rectangle. */
   @media (hover: hover) {
