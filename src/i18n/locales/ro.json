@@ -98,6 +98,10 @@
       "proof": "Ce arată asta",
       "role": "Rolul meu"
     },
+    "index": {
+      "label": "Proiectele de pe această pagină",
+      "jump": "Citește"
+    },
     "kinds": {
       "live": "Produs live",
       "client": "Proiect pentru client",

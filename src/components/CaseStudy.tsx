@@ -81,6 +81,7 @@ interface PosterLinkProps extends CaseStudyProps {
 	className?: string;
 	posterClassName?: string;
 	priority?: boolean;
+	plate?: boolean;
 }
 
 /** The poster as a destination. Lifts on hover, opens the product in a new tab. */
@@ -89,7 +90,8 @@ export const PosterLink = ({
 	index,
 	className = '',
 	posterClassName = '',
-	priority = false
+	priority = false,
+	plate = false
 }: PosterLinkProps) => {
 	const { t } = useTranslation();
 
@@ -105,6 +107,7 @@ export const PosterLink = ({
 				className={posterClassName}
 				index={index}
 				kind={t(`work.kinds.${caseStudy.kind}`)}
+				layout={plate ? 'plate' : 'corner'}
 				priority={priority}
 			/>
 		</Link>
@@ -113,7 +116,11 @@ export const PosterLink = ({
 
 interface PosterFrameProps extends CaseStudyProps {
 	priority?: boolean;
-	/** Full-width plate on the work page, where nothing sits beside it. */
+	/**
+	 * Full-width plate on the work page, where nothing sits beside it. Shorter
+	 * than the 4:3 tile, because a 16:9 frame at shell width is most of a screen
+	 * of nothing, and composed around the centre rather than the corner.
+	 */
 	wide?: boolean;
 }
 
@@ -160,7 +167,8 @@ export const PosterFrame = ({ caseStudy, index, priority = false, wide = false }
 					<PosterLink
 						caseStudy={caseStudy}
 						index={index}
-						posterClassName={wide ? 'aspect-[4/3] sm:aspect-[16/9]' : ''}
+						plate={wide}
+						posterClassName={wide ? 'aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]' : ''}
 						priority={priority}
 					/>
 				</motion.div>
@@ -239,7 +247,12 @@ export const WorkPanel = ({ caseStudy, index, setActive }: WorkPanelProps) => {
 const narrativeRows = ['situation', 'contribution', 'challenge', 'proof', 'role'] as const;
 
 /** Work page: the full Situation → What I did → Hard part → What this shows story. */
-export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
+interface CaseStudyArticleProps extends CaseStudyProps {
+	/** Anchor target for the index under the page header. */
+	id?: string;
+}
+
+export const CaseStudyArticle = ({ caseStudy, index, id }: CaseStudyArticleProps) => {
 	const { t } = useTranslation();
 	const isCourse = caseStudy.kind === 'course';
 
@@ -249,7 +262,7 @@ export const CaseStudyArticle = ({ caseStudy, index }: CaseStudyProps) => {
 		 * border of its narrative list, and a second hairline a gap below it
 		 * reads as an empty band rather than as the start of something.
 		 */
-		<article className='pt-10 sm:pt-14 lg:pt-20'>
+		<article className='scroll-mt-28 pt-10 sm:pt-14 lg:pt-20' id={id}>
 			<div className='grid gap-x-16 gap-y-7 lg:grid-cols-12'>
 				<div className='lg:col-span-7'>
 					<Reveal>

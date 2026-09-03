@@ -15,6 +15,10 @@ const RAY_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
  * Sun and moon are the same shape. The disc grows, a second circle slides across
  * to bite a crescent out of it, and the rays retract, so the icon morphs in one
  * move instead of cross-fading between two drawings.
+ *
+ * `initial={false}` on each part: without it the first render comes from an
+ * empty state, so the circles paint with no radius or centre for a frame and
+ * the rays animate their opacity from nothing.
  */
 const ThemeIcon = ({ isDark }: { isDark: boolean }) => {
 	const maskId = useId();
@@ -26,9 +30,8 @@ const ThemeIcon = ({ isDark }: { isDark: boolean }) => {
 				<rect fill='white' height='24' width='24' x='0' y='0' />
 				<motion.circle
 					animate={{ cx: isDark ? 17 : 26, cy: isDark ? 7 : 0 }}
-					cx={26}
-					cy={0}
 					fill='black'
+					initial={false}
 					r={9}
 					transition={transition}
 				/>
@@ -39,13 +42,14 @@ const ThemeIcon = ({ isDark }: { isDark: boolean }) => {
 				cx={12}
 				cy={12}
 				fill='currentColor'
+				initial={false}
 				mask={`url(#${maskId})`}
-				r={5.25}
 				transition={transition}
 			/>
 
 			<motion.g
 				animate={{ opacity: isDark ? 0 : 1, rotate: isDark ? -45 : 0, scale: isDark ? 0.5 : 1 }}
+				initial={false}
 				stroke='currentColor'
 				strokeLinecap='round'
 				strokeWidth={1.6}

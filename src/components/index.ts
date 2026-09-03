@@ -30,3 +30,4 @@ export * from './Statement';
 export * from './StepCounter';
 export * from './ThemeSwitcher';
 export * from './Wordmark';
+export * from './WorkIndex';

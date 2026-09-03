@@ -98,6 +98,10 @@
       "proof": "What this shows",
       "role": "My role"
     },
+    "index": {
+      "label": "Projects on this page",
+      "jump": "Read"
+    },
     "kinds": {
       "live": "Live product",
       "client": "Client work",

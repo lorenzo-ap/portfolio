@@ -2,6 +2,14 @@ import type { CaseStudyModel } from '../types';
 
 type PosterSize = 'sm' | 'lg';
 
+/**
+ * `corner` is the default composition, name in the lower left with the kind
+ * above it. `plate` is the full-width poster on the work page: icon and name
+ * sit in the middle, and the eyebrow goes, since the page header directly
+ * above already carries the index and the kind.
+ */
+type PosterLayout = 'corner' | 'plate';
+
 interface ProjectPosterProps {
 	caseStudy: CaseStudyModel;
 	/** Kind label, already translated. */
@@ -9,6 +17,7 @@ interface ProjectPosterProps {
 	index: number;
 	/** `sm` is the hero panel, `lg` is a full case-study row. */
 	size?: PosterSize;
+	layout?: PosterLayout;
 	className?: string;
 	/** Above the fold: the first poster on a page shouldn't wait for lazy loading. */
 	priority?: boolean;
@@ -68,10 +77,24 @@ export const ProjectPoster = ({
 	kind,
 	index,
 	size = 'lg',
+	layout = 'corner',
 	className = '',
 	priority = false
 }: ProjectPosterProps) => {
 	const style = sizeClass[size];
+	const iconImage = caseStudy.icon && (
+		<img
+			alt=''
+			aria-hidden='true'
+			className={`object-contain ${layout === 'plate' ? 'mb-6 h-14 w-14 sm:mb-8 sm:h-16 sm:w-16 lg:h-20 lg:w-20' : style.icon}`}
+			decoding='async'
+			height={128}
+			loading={priority ? 'eager' : 'lazy'}
+			src={caseStudy.icon}
+			width={128}
+		/>
+	);
+	const hostname = <p className='font-mono text-[0.6875rem] text-faded-text'>{hostnameOf(caseStudy.link)}</p>;
 
 	return (
 		<div className={`poster ${className || 'aspect-[4/3]'}`}>
@@ -90,34 +113,39 @@ export const ProjectPoster = ({
 					<div aria-hidden='true' className='poster__field' style={fieldStyle(caseStudy.hue)} />
 					<div aria-hidden='true' className='grid-backdrop absolute inset-0 opacity-40' />
 
-					<div className={`relative flex h-full flex-col justify-between ${style.pad}`}>
-						<div className='flex items-center gap-3 font-medium font-mono text-eyebrow text-faded-text uppercase'>
-							<span className='text-accent'>{String(index + 1).padStart(2, '0')}</span>
-							<span aria-hidden='true' className={`h-px bg-border-strong ${style.rule}`} />
-							<span>{kind}</span>
+					{layout === 'plate' ? (
+						<div className={`relative flex h-full flex-col ${style.pad}`}>
+							<div className='flex flex-1 flex-col items-center justify-center text-center'>
+								{iconImage}
+								<p aria-hidden='true' className={`poster__name ${style.name}`}>
+									{caseStudy.name}
+								</p>
+							</div>
+
+							<div className='flex items-center justify-between gap-6'>
+								{hostname}
+								<p className='font-medium font-mono text-eyebrow text-faded-text uppercase'>{kind}</p>
+							</div>
 						</div>
+					) : (
+						<div className={`relative flex h-full flex-col justify-between ${style.pad}`}>
+							<div className='flex items-center gap-3 font-medium font-mono text-eyebrow text-faded-text uppercase'>
+								<span className='text-accent'>{String(index + 1).padStart(2, '0')}</span>
+								<span aria-hidden='true' className={`h-px bg-border-strong ${style.rule}`} />
+								<span>{kind}</span>
+							</div>
 
-						<div>
-							{caseStudy.icon && (
-								<img
-									alt=''
-									aria-hidden='true'
-									className={`object-contain ${style.icon}`}
-									decoding='async'
-									height={128}
-									loading={priority ? 'eager' : 'lazy'}
-									src={caseStudy.icon}
-									width={128}
-								/>
-							)}
+							<div>
+								{iconImage}
 
-							<p aria-hidden='true' className={`poster__name ${style.name}`}>
-								{caseStudy.name}
-							</p>
+								<p aria-hidden='true' className={`poster__name ${style.name}`}>
+									{caseStudy.name}
+								</p>
+							</div>
+
+							{hostname}
 						</div>
-
-						<p className='font-mono text-[0.6875rem] text-faded-text'>{hostnameOf(caseStudy.link)}</p>
-					</div>
+					)}
 				</>
 			)}
 		</div>

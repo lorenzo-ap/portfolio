@@ -126,6 +126,10 @@ html {
 }
 
 html {
+  /* Every scroll-linked value on the site is measured against the root, and
+     framer-motion measures a static container wrongly and says so in the
+     console. Relative changes nothing else here. */
+  position: relative;
   scroll-behavior: smooth;
   /* Firefox has no pseudo-elements for this. Thin plus a transparent track is
      as close as it gets to the pill below. */
@@ -741,6 +745,67 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* The offset hairline round the photo. `overflow: visible` so the stroke,
+     centred on the edge, isn't cut in half by the SVG's own box, and the
+     offset eases outward on hover so the frame and the photo separate. */
+  .portrait__frame {
+    --portrait-frame-offset: 0.75rem;
+    --portrait-frame-radius: calc(var(--radius-lg) + var(--portrait-frame-offset));
+    position: absolute;
+    top: calc(var(--portrait-frame-offset) * -1);
+    left: calc(var(--portrait-frame-offset) * -1);
+    /* A replaced element doesn't stretch between insets, so the size is
+       written out rather than left to `auto`. */
+    width: calc(100% + var(--portrait-frame-offset) * 2);
+    height: calc(100% + var(--portrait-frame-offset) * 2);
+    overflow: visible;
+    pointer-events: none;
+    transition:
+      top 0.7s var(--ease-expo),
+      left 0.7s var(--ease-expo),
+      width 0.7s var(--ease-expo),
+      height 0.7s var(--ease-expo);
+  }
+
+  .portrait__frame-line,
+  .portrait__frame-trace {
+    fill: none;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .portrait__frame-line {
+    stroke: var(--accent-line);
+  }
+
+  /* A short run of accent that circles the frame. `pathLength` is 1, so a
+     dash of 0.1 is a tenth of the perimeter and an offset of -1 is one lap. */
+  .portrait__frame-trace {
+    stroke: var(--accent);
+    stroke-linecap: round;
+    stroke-dasharray: 0.1 0.9;
+    animation: portrait-trace 9s linear infinite;
+  }
+
+  @media (hover: hover) {
+    .group\/portrait:hover .portrait__frame {
+      --portrait-frame-offset: 1.125rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portrait__frame-trace {
+      animation: none;
+      opacity: 0 !important;
+    }
+  }
+
+  @keyframes portrait-trace {
+    to {
+      stroke-dashoffset: -1;
+    }
   }
 
   /* The lift belongs to the whole tile, and the field drifts a little further,

@@ -1,16 +1,20 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import { Eyebrow } from './Eyebrow';
 import { Reveal } from './Reveal';
 import { Statement } from './Statement';
 
-interface PageHeaderProps {
+interface PageHeaderProps extends PropsWithChildren {
 	eyebrow: string;
 	title: string;
 	lede?: ReactNode;
 }
 
-/** Opening block for the interior pages, so /work and /about share a rhythm. */
-export const PageHeader = ({ eyebrow, title, lede }: PageHeaderProps) => (
+/**
+ * Opening block for the interior pages, so /work and /about share a rhythm.
+ * Anything passed as children sits under the title and lede, still inside the
+ * header, for a page that has something to point at before it begins.
+ */
+export const PageHeader = ({ eyebrow, title, lede, children }: PageHeaderProps) => (
 	<header className='shell pt-14 pb-14 sm:pt-24 sm:pb-20 lg:pt-36 lg:pb-28'>
 		<Reveal>
 			<Eyebrow className='mb-7 sm:mb-9'>{eyebrow}</Eyebrow>
@@ -29,5 +33,7 @@ export const PageHeader = ({ eyebrow, title, lede }: PageHeaderProps) => (
 				</Reveal>
 			)}
 		</div>
+
+		{children}
 	</header>
 );
