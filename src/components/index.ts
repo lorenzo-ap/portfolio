@@ -25,6 +25,8 @@ export * from './Reveal';
 export * from './ScrollProgress';
 export * from './Section';
 export * from './SelectedWork';
+export * from './SmoothScroll';
 export * from './Statement';
+export * from './StepCounter';
 export * from './ThemeSwitcher';
 export * from './Wordmark';

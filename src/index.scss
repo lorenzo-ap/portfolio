@@ -133,6 +133,22 @@ html {
   scrollbar-color: var(--border-strong) transparent;
 }
 
+/* Lenis takes over wheel scrolling on fine pointers. The page's own smooth
+   scrolling has to step aside while it runs, or the two animate the same
+   trip twice. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 /* Smooth scrolling is movement like any other, including the trip back to the
    top from a header link. */
 @media (prefers-reduced-motion: reduce) {
@@ -717,6 +733,7 @@ a {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background-color: var(--poster-base);
+    box-shadow: 0 30px 70px -48px var(--shadow-pop);
   }
 
   .portrait__photo {

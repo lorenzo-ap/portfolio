@@ -5,5 +5,6 @@ export * from './useMediaQuery';
 export * from './usePointerParallax';
 export * from './usePointerSpotlight';
 export * from './useScrollLock';
+export * from './useScrollToTop';
 export * from './useSeo';
 export * from './useTheme';

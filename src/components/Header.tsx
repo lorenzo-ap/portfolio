@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { mailto, messagingChannels, site } from '../data/site';
-import { useFocusTrap, useHeaderState, useMediaQuery, useScrollLock } from '../hooks';
+import { useFocusTrap, useHeaderState, useMediaQuery, useScrollLock, useScrollToTop } from '../hooks';
 import { ease, easeInOut } from '../lib/motion';
 import { ButtonLink } from './Button';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -43,23 +44,20 @@ const barSurfaceClass = {
  * header link takes you back to the top instead, which is what a visitor
  * clicking the logo or the current section is asking for.
  */
-const scrollToTopIfCurrent = (isCurrent: boolean) => () => {
-	if (isCurrent) window.scrollTo({ top: 0 });
-};
-
 interface NavLinkProps {
 	path: string;
 	label: string;
 	isActive: boolean;
+	onCurrent: () => void;
 }
 
-const NavLink = ({ path, label, isActive }: NavLinkProps) => (
+const NavLink = ({ path, label, isActive, onCurrent }: NavLinkProps) => (
 	<Link
 		aria-current={isActive ? 'page' : undefined}
 		className={`relative py-2 font-medium font-mono text-[0.8125rem] uppercase tracking-[0.12em] transition-colors duration-300 ease-expo hover:text-text ${
 			isActive ? 'text-text' : 'text-faded-text'
 		}`}
-		onClick={scrollToTopIfCurrent(isActive)}
+		onClick={isActive ? onCurrent : undefined}
 		to={path}
 	>
 		{label}
@@ -101,6 +99,15 @@ export const Header = () => {
 	const scrolled = useHeaderState(menuOpen);
 	useScrollLock(menuOpen, pathname);
 	useFocusTrap(headerRef, menuOpen);
+	const scrollToTop = useScrollToTop();
+	const lenis = useLenis();
+
+	// The lock takes the body out of the flow; smooth scrolling has to stop
+	// reading the wheel for the duration or it scrolls a page that can't move.
+	useEffect(() => {
+		if (menuOpen) lenis?.stop();
+		else lenis?.start();
+	}, [menuOpen, lenis]);
 
 	const isDesktop = useMediaQuery('(min-width: 768px)');
 
@@ -172,7 +179,7 @@ export const Header = () => {
 													setMenuOpen(false);
 													// The scroll lock restores its offset as it lifts, so the
 													// trip to the top has to wait for the frame after that.
-													if (isActive(route.path)) requestAnimationFrame(() => window.scrollTo({ top: 0 }));
+													if (isActive(route.path)) requestAnimationFrame(() => scrollToTop());
 												}}
 												to={route.path}
 											>
@@ -238,7 +245,7 @@ export const Header = () => {
 								className='logo-link -my-2 flex flex-none items-center py-2 text-text'
 								onClick={() => {
 									setMenuOpen(false);
-									if (pathname === '/') window.scrollTo({ top: 0 });
+									if (pathname === '/') scrollToTop();
 								}}
 								to='/'
 							>
@@ -250,7 +257,12 @@ export const Header = () => {
 									<ul className='flex items-center gap-7'>
 										{routes.map((route) => (
 											<li key={route.path}>
-												<NavLink isActive={isActive(route.path)} label={t(route.labelKey)} path={route.path} />
+												<NavLink
+													isActive={isActive(route.path)}
+													label={t(route.labelKey)}
+													onCurrent={() => scrollToTop()}
+													path={route.path}
+												/>
 											</li>
 										))}
 									</ul>
