@@ -1,9 +1,19 @@
 import { MotionConfig } from 'framer-motion';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Cursor, Footer, Header, Page, ScrollProgress, SmoothScroll } from './components';
 import { useScrollToTop } from './hooks';
 import { AboutPage, ErrorPage, HomePage, WorkPage } from './pages';
+
+/**
+ * A mockup built for one prospect, linked from nowhere. Loading it on demand
+ * keeps it out of the bundle every ordinary visitor downloads, which is also
+ * why it isn't re-exported from `src/pages/index.ts`: a static re-export there
+ * would pull it back into the main chunk.
+ */
+const GenergyDemoPage = lazy(() =>
+	import('./pages/demo/Genergy').then((module) => ({ default: module.GenergyDemoPage }))
+);
 
 /** Every route change starts at the top, including browser back/forward. */
 const ScrollToTop = () => {
@@ -57,6 +67,19 @@ const AnimatedRoutes = () => {
 					</Page>
 				}
 				path='/about'
+			/>
+			{/*
+			 * Not wrapped in `Page`: the demo is Romanian whatever the header's
+			 * language switcher says, so it sets its own title and description
+			 * rather than taking a translated key. It renders its own `#main`.
+			 */}
+			<Route
+				element={
+					<Suspense fallback={null}>
+						<GenergyDemoPage />
+					</Suspense>
+				}
+				path='/demo/genergy'
 			/>
 			<Route
 				element={
