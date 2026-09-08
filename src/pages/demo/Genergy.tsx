@@ -276,7 +276,7 @@ export const GenergyDemoPage = () => {
 							<h1 className='font-serif text-[#1d1d1f] text-title'>Ce stație vă trebuie?</h1>
 
 							<p className='mt-3 max-w-prose text-[#4a463f] text-[0.9375rem]'>
-								Împărțim consumul anual la {KWH_PER_KW}, așa cum scrie pe pagina de instalare, și vă arătăm rândul din
+								Împart consumul anual la {KWH_PER_KW}, așa cum scrie pe pagina de instalare, și vă arăt rândul din
 								tabel.
 							</p>
 
