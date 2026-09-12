@@ -154,6 +154,46 @@
       }
     }
   },
+  "builds": {
+    "eyebrow": "Built on my own",
+    "title": "Five builds, no client behind any of them.",
+    "lede": "The businesses are invented, the software isn't. Every one of them runs: you can book a table, buy a seat, or open a console and work through three months of made-up invoices.",
+    "open": "Open it",
+    "groups": {
+      "storefront": {
+        "label": "Guest side",
+        "title": "Three hospitality sites, and the booking behind them.",
+        "lede": "A beach club, a restaurant and a fourteen-seat counter. Each one also has the admin screen the staff work from on the night."
+      },
+      "console": {
+        "label": "Operator side",
+        "title": "Two consoles for Monday morning.",
+        "lede": "Both let you sign in as an owner, an operations director or a single-site manager, and each role sees a different amount."
+      }
+    },
+    "items": {
+      "soleAndSalt": {
+        "tag": "Beach club, Naples FL",
+        "body": "Loungers, a carta and ten nights in September. The free nights take an RSVP, so there's a guestlist filling up in the background and a screen for whoever is working the door."
+      },
+      "casaMarisol": {
+        "tag": "Restaurant, Miami Beach",
+        "body": "Reservations and online ordering on the same site, an order status page for after you've paid, guest reviews, and an admin the owner runs all of it from."
+      },
+      "sundial": {
+        "tag": "Tasting counter, Santa Barbara",
+        "body": "Fourteen seats and two seatings a night, sold as prepaid tickets with a QR code. A menu that changes with the season, a way to gift a seat, and a journal about the producers."
+      },
+      "ledgerline": {
+        "tag": "Six restaurants, cost control",
+        "body": "It reads the invoices and the closing notes overnight, then writes the morning brief: this one was entered twice, avocados are 50% over their 30-day average, Chapel Hill has been over on staffing seven days running. Every line links back to the record it came from."
+      },
+      "tablevoice": {
+        "tag": "Seven restaurants, guest feedback",
+        "body": "Google, Yelp, OpenTable, TripAdvisor and the post-visit surveys land in one inbox. Replies come drafted in the group's voice, a bad night goes to a recovery queue, and the complaints that keep repeating get counted."
+      }
+    }
+  },
   "process": {
     "eyebrow": "How I work",
     "title": "You talk to the person building it.",

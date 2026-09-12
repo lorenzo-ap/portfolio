@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { CaseStudyArticle, ContactCta, PageHeader, WorkIndex } from '../components';
+import { BuildCollection, CaseStudyArticle, ContactCta, PageHeader, WorkIndex } from '../components';
 import { caseStudies } from '../data/projects';
 
 export const WorkPage = () => {
@@ -16,6 +16,8 @@ export const WorkPage = () => {
 					<CaseStudyArticle caseStudy={caseStudy} id={caseStudy.key} index={index} key={caseStudy.key} />
 				))}
 			</div>
+
+			<BuildCollection />
 
 			<ContactCta />
 		</>

@@ -11,3 +11,7 @@ export type ProjectKindKey = keyof Translations['work']['kinds'];
 export type CapabilityKey = keyof Translations['capabilities']['items'];
 
 export type ProcessStepKey = keyof Translations['process']['steps'];
+
+export type BuildKey = keyof Translations['builds']['items'];
+
+export type BuildGroupKey = keyof Translations['builds']['groups'];

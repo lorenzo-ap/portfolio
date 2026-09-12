@@ -1,4 +1,4 @@
-import { Capabilities, ContactCta, Hero, Positioning, SelectedWork } from '../components';
+import { Builds, Capabilities, ContactCta, Hero, Positioning, SelectedWork } from '../components';
 
 /**
  * Proof first.
@@ -12,6 +12,7 @@ export const HomePage = () => (
 	<>
 		<Hero />
 		<SelectedWork />
+		<Builds />
 		<Capabilities />
 		<Positioning />
 		<ContactCta />
