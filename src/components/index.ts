@@ -1,4 +1,5 @@
 export * from './ActionLink';
+export * from './Builds';
 export * from './Button';
 export * from './Capabilities';
 export * from './CaseStudy';

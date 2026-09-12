@@ -154,6 +154,46 @@
       }
     }
   },
+  "builds": {
+    "eyebrow": "Făcute pe cont propriu",
+    "title": "Cinci proiecte fără niciun client în spate.",
+    "lede": "Afacerile sunt inventate, software-ul nu. Toate funcționează: poți rezerva o masă, poți cumpăra un loc sau poți deschide o consolă și să treci prin trei luni de facturi inventate.",
+    "open": "Deschide",
+    "groups": {
+      "storefront": {
+        "label": "Partea clientului",
+        "title": "Trei site-uri de ospitalitate, cu rezervarea în spate.",
+        "lede": "Un beach club, un restaurant și un bar de degustare cu paisprezece locuri. Fiecare are și ecranul de administrare din care lucrează personalul în seara respectivă."
+      },
+      "console": {
+        "label": "Partea patronului",
+        "title": "Două console pentru luni dimineața.",
+        "lede": "În amândouă intri ca patron, ca director de operațiuni sau ca manager al unei singure locații, și fiecare rol vede altceva."
+      }
+    },
+    "items": {
+      "soleAndSalt": {
+        "tag": "Beach club, Naples FL",
+        "body": "Șezlonguri, un meniu și zece seri în septembrie. Serile gratuite se rezervă din timp, așa că există o listă de invitați care se umple pe parcurs și un ecran pentru cine stă la intrare."
+      },
+      "casaMarisol": {
+        "tag": "Restaurant, Miami Beach",
+        "body": "Rezervări și comenzi online pe același site, o pagină cu starea comenzii după ce ai plătit, recenzii de la clienți și un admin din care patronul conduce tot."
+      },
+      "sundial": {
+        "tag": "Bar de degustare, Santa Barbara",
+        "body": "Paisprezece locuri și două serii pe seară, vândute ca bilete plătite în avans, cu cod QR. Un meniu care se schimbă cu sezonul, o variantă de cadou și un jurnal despre producători."
+      },
+      "ledgerline": {
+        "tag": "Șase restaurante, control de costuri",
+        "body": "Citește facturile și rapoartele de închidere peste noapte, apoi scrie raportul de dimineață: factura asta a fost introdusă de două ori, avocado e cu 50% peste media pe 30 de zile, Chapel Hill a depășit norma de personal șapte zile la rând. Fiecare rând trimite înapoi la documentul din care vine."
+      },
+      "tablevoice": {
+        "tag": "Șapte restaurante, păreri de la clienți",
+        "body": "Google, Yelp, OpenTable, TripAdvisor și chestionarele de după vizită ajung toate într-o singură căsuță. Răspunsurile vin deja scrise în tonul grupului, o vizită proastă ajunge într-o listă separată ca să fie rezolvată, iar reclamațiile care se repetă sunt numărate."
+      }
+    }
+  },
   "process": {
     "eyebrow": "Cum lucrez",
     "title": "Vorbești cu omul care o construiește.",
