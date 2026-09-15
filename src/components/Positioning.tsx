@@ -47,12 +47,9 @@ export const Positioning = () => {
 						<Reveal delay={0.16}>
 							<p>{t('aboutTeaser.body2')}</p>
 						</Reveal>
-						<Reveal delay={0.2}>
-							<p>{t('aboutTeaser.body3')}</p>
-						</Reveal>
 					</div>
 
-					<Reveal className='mt-8 sm:mt-10' delay={0.24}>
+					<Reveal className='mt-8 sm:mt-10' delay={0.2}>
 						<ActionLink label={t('actions.moreAbout')} to='/about' />
 					</Reveal>
 				</div>

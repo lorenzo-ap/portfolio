@@ -6,8 +6,8 @@
     "error": "Page not found | Lorenzo Apolloni"
   },
   "meta": {
-    "home": "I'm Lorenzo. I build software for the parts of a business that are still done by hand. You don't need to arrive with a plan. Tell me what isn't working and we'll work out the rest.",
-    "work": "Five projects: a travel eSIM, software that watches camera feeds, a product of my own, an open-source engine that scores a codebase, and a course I wrote. For each one, what the situation was, what I did, and what was hard about it.",
+    "home": "I'm Lorenzo. I build software for the parts of a business that are still done by hand. Tell me what isn't working and we'll work out the rest.",
+    "work": "Five projects: a travel eSIM, software that watches camera feeds, a product of my own, an engine I published, and a course I wrote. What each one was, and what was hard about it.",
     "about": "How I work, what I do before I write any code, and a bit about who I am."
   },
   "nav": {
@@ -58,47 +58,46 @@
   },
   "capabilities": {
     "eyebrow": "What I can help with",
-    "title": "Six things people usually arrive with.",
-    "lede": "Almost nobody writes to me with a spec. They write with a description of something that isn't working: a process that takes three days when it should take an afternoon, or a number one person retypes into a second system every morning. That's plenty to start from.",
+    "title": "What people come to me with.",
+    "lede": "One of these is usually close enough to yours to start from.",
     "items": {
       "manualWork": {
         "title": "Work your team still does by hand",
-        "body": "The report somebody rebuilds every Monday morning. Numbers copied out of one system and typed into another. It's usually the dullest part of someone's job and the easiest part to hand over to software."
+        "body": "The report somebody rebuilds every Monday, or numbers copied out of one system and typed into another."
       },
       "customTool": {
         "title": "The tool you wish existed",
-        "body": "Most businesses do at least one thing in a way no ready-made product covers properly, so it ends up spread across a few spreadsheets, a shared inbox and one person's memory. This is the thing built around how you already work."
+        "body": "The thing you do differently from everyone else, currently held together by three spreadsheets and one person's memory."
       },
       "ideaToProduct": {
         "title": "An idea that needs to become a product",
-        "body": "You've got something in your head and no clear picture yet of what it looks like. I've done this with my own product, from the first idea to something anyone can sign up for today. You can go and look at how it turned out."
+        "body": "You know what it should do, not yet what it looks like. I took my own product from exactly there to live."
       },
       "systemsTalking": {
         "title": "Tools that don't talk to each other",
-        "body": "Your accounting software, whatever the sales team lives in, a supplier's website, something old nobody wants to touch. Getting information to move between them on its own, and getting it right often enough that people stop checking it by hand."
+        "body": "Your accounting software, whatever the sales team lives in, a supplier's site. Moving information between them without anyone retyping it."
       },
       "aiWhereItPays": {
         "title": "AI where it actually saves time",
-        "body": "I've built AI into a product people use, and I wrote a course on working with these tools. Doing both taught me mostly where they stop being worth the money."
+        "body": "I've built it into a product people pay for and I teach a course on it. That's mostly how I know where it stops paying off."
       },
       "outgrown": {
         "title": "Something you've outgrown",
-        "body": "It still works, but every small change takes weeks, everyone has their own workaround, and nobody wants to be the person who breaks it. Sometimes that's worth repairing and sometimes it's worth starting again. I'll give you my honest read on which."
+        "body": "It still works, but every small change takes weeks and nobody wants to be the one who breaks it."
       }
     }
   },
   "work": {
     "eyebrow": "Selected work",
-    "title": "Five projects, and the hard part of each.",
-    "lede": "A travel eSIM under the FC Barcelona name, software that watches camera feeds, a product of my own, an open-source engine that scores a codebase, and a course I wrote.",
+    "title": "Five projects you can go and open.",
+    "lede": "The day job, client work, a product of my own, an engine I published and a course.",
     "pageTitle": "Five projects, and the hard part of each.",
-    "pageLede": "Not everything I've made. These five cover the most ground: a product with paying customers, a complicated product I helped define, one entirely mine, an engine I wrote alone and published, and one that isn't software.",
+    "pageLede": "Not everything I've made. These five cover the most ground, and each one gets the full story.",
     "labels": {
       "situation": "The situation",
       "contribution": "What I did",
       "challenge": "The hard part",
-      "proof": "What this shows",
-      "role": "My role"
+      "proof": "What this shows"
     },
     "index": {
       "label": "Projects on this page",
@@ -128,64 +127,59 @@
         "situation": "Barça Mobile sells mobile data in over 170 countries. The person buying it is usually standing in a terminal with no signal yet.",
         "contribution": "Senior engineer on the team that builds it, across the app, the site and the parts behind both. Picking a destination, buying a plan, getting the eSIM onto the phone.",
         "challenge": "Installing an eSIM happens once, on borrowed airport wifi, and if it goes wrong nobody tries again. Most of the care goes into the few screens that can fail quietly.",
-        "proof": "A real product with paying customers, release after release. Other people's code, and problems that surface long after you thought you were finished.",
-        "role": "Senior software engineer on the product team: the app, the site and what sits behind them."
+        "proof": "A real product with paying customers, release after release. Other people's code, and problems that surface long after you thought you were finished."
       },
       "examin": {
         "summary": "Software that watches camera feeds and tells people what just happened.",
         "situation": "Plenty of businesses have cameras everywhere and nobody with time to watch them. Examin uses the cameras they already own, across jobs as different as solar farms and number plates.",
         "contribution": "Brought in to build the product: live views, alerts, the evidence attached to each one, and the parts underneath keeping it connected to the cameras. There was no specification, so I helped decide what it should be.",
         "challenge": "Restraint. An alert nobody trusts is worse than no alert, because people mute it inside a week. Most of the work went into what not to show.",
-        "proof": "Somebody handed me a complicated product and let me help decide what it should be. That's the shape of problem I'm used to.",
-        "role": "Brought in as the developer: the product, the parts behind it, and a say in what got built."
+        "proof": "Somebody handed me a complicated product and let me help decide what it should be. That's the shape of problem I'm used to."
       },
       "ainterest": {
         "summary": "My own product. Make images with AI, then put them somewhere other people can see them.",
         "situation": "Every tool for making images with AI buries the results in a chat window. Whatever you made last week is gone, and you never see what anyone else is doing.",
         "contribution": "Built the whole thing and it's live. Describe what you want, get an image, keep it in your account, publish it to a feed other people browse. Accounts, generation, the feed and the bill are mine.",
         "challenge": "Almost none of the difficulty was the AI. One image is slow, costs real money every time, and sometimes fails. The app has to be honest about that without looking broken.",
-        "proof": "Someone had to decide what this was, what to leave out, and when it was good enough to show a stranger. Here that was me.",
-        "role": "Mine, start to finish: the idea, every product decision, the build, and the bills."
+        "proof": "Someone had to decide what this was, what to leave out, and when it was good enough to show a stranger. Here that was me."
       },
       "repolens": {
         "summary": "Point it at a GitHub repository and it scores the codebase, with the file and line behind every point.",
         "situation": "Everyone has an opinion about whether a codebase is healthy. Almost nobody can show you where the opinion came from.",
         "contribution": "All of it, alone. Eight analyzers over the TypeScript AST, the import graph, the manifests, the lockfile and git history. A scoring model that shows its arithmetic, a Postgres queue, and the interface on top.",
         "challenge": "It reads code strangers wrote, so that code never runs: no install, no plugins, no scripts. The pipeline asserts exact findings against a fixture repo, so scoring can't drift.",
-        "proof": "Most of the job in one project: analysis engine, queue, database, deployment, product. Every line is public, and the demo runs on a real open-source repo.",
-        "role": "Mine entirely: architecture, analyzers, API, interface and deployment."
+        "proof": "Most of the job in one project: analysis engine, queue, database, deployment, product. Every line is public, and the demo runs on a real open-source repo."
       },
       "aiForFrontend": {
         "summary": "An online course teaching developers to work with AI properly. I wrote it and I teach it.",
         "situation": "Developers picked up AI tools in a hurry and use them by feel. Some of it saves hours. Some of it quietly hands you something that looks right and isn't.",
         "contribution": "Wrote every example and recorded all of it. Two modules, eleven lessons: where these tools mislead you, how to ask for something usable, and how to use them on someone else's code, bugs and tests. Published by Itlogia.",
         "challenge": "These tools change every few months, so a course about the tools would date immediately. I taught the habits instead: what to check, what never to trust.",
-        "proof": "You can't hide a vague explanation from people who will go and try it that evening. It's also where I drew the line I use when a client asks about AI.",
-        "role": "Author and instructor. I chose what it covers, wrote the material and recorded every lesson."
+        "proof": "You can't hide a vague explanation from people who will go and try it that evening. It's also where I drew the line I use when a client asks about AI."
       }
     }
   },
   "builds": {
     "eyebrow": "Built on my own",
-    "title": "Five builds, no client behind any of them.",
-    "lede": "The businesses are invented, the software isn't. Every one of them runs: you can book a table, buy a seat, or open a console and work through three months of made-up invoices.",
+    "title": "Nobody hired me to build these.",
+    "lede": "The businesses are invented, the software isn't. Book a table, buy a seat, or sign in to a console and work through three months of made-up invoices.",
     "open": "Open it",
     "groups": {
       "storefront": {
         "label": "Guest side",
         "title": "Three hospitality sites, and the booking behind them.",
-        "lede": "A beach club, a restaurant and a fourteen-seat counter. Each one also has the admin screen the staff work from on the night."
+        "lede": "A beach club, a restaurant and a fourteen-seat counter, each with the admin screen the staff work from on the night."
       },
       "console": {
         "label": "Operator side",
         "title": "Two consoles for Monday morning.",
-        "lede": "Both let you sign in as an owner, an operations director or a single-site manager, and each role sees a different amount."
+        "lede": "Sign in as an owner, an operations director or a single-site manager. Each role sees a different amount."
       }
     },
     "items": {
       "soleAndSalt": {
         "tag": "Beach club, Naples FL",
-        "body": "Loungers, a carta and ten nights in September. The free nights take an RSVP, so there's a guestlist filling up in the background and a screen for whoever is working the door."
+        "body": "Loungers, a carta and ten nights in September. The free nights take an RSVP, so a guestlist fills up in the background and whoever works the door gets a screen."
       },
       "casaMarisol": {
         "tag": "Restaurant, Miami Beach",
@@ -197,11 +191,11 @@
       },
       "ledgerline": {
         "tag": "Six restaurants, cost control",
-        "body": "It reads the invoices and the closing notes overnight, then writes the morning brief: this one was entered twice, avocados are 50% over their 30-day average, Chapel Hill has been over on staffing seven days running. Every line links back to the record it came from."
+        "body": "It reads the invoices and the closing notes overnight, then writes the morning brief. This one was entered twice. Avocados are 50% over their 30-day average. Every line links back to the record it came from."
       },
       "tablevoice": {
         "tag": "Seven restaurants, guest feedback",
-        "body": "Google, Yelp, OpenTable, TripAdvisor and the post-visit surveys land in one inbox. Replies come drafted in the group's voice, a bad night goes to a recovery queue, and the complaints that keep repeating get counted."
+        "body": "Google, Yelp, OpenTable, TripAdvisor and the post-visit surveys land in one inbox. Replies come drafted in the group's voice, and the complaints that keep repeating get counted."
       }
     }
   },
@@ -212,7 +206,7 @@
     "steps": {
       "understand": {
         "title": "Work out the real problem",
-        "body": "A conversation and a lot of questions about how the work happens now. Quite often what's worth building isn't what was asked for, and it's much cheaper to find that out at the start."
+        "body": "A conversation and a lot of questions about how the work actually happens now, before anyone decides what gets built."
       },
       "scope": {
         "title": "Agree the smallest useful version",
@@ -220,11 +214,11 @@
       },
       "build": {
         "title": "Build it where you can see it",
-        "body": "You get something you can click through long before it's finished. Changing your mind is cheap early and expensive late, so tell me early."
+        "body": "You get something you can click through long before it's finished, while changing your mind is still cheap."
       },
       "handOver": {
         "title": "Hand it over properly",
-        "body": "It goes live, it's written down, and it's yours. You get the code, the accounts and enough of a walkthrough that someone else could pick it up. I'm around afterwards if you want me."
+        "body": "It goes live and it's yours. The code, the accounts, and enough of a walkthrough that someone else could pick it up. I'm around afterwards if you want me."
       }
     }
   },
@@ -232,13 +226,12 @@
     "eyebrow": "Who you'd be working with",
     "title": "One person, start to finish.",
     "body1": "I'm Lorenzo. During the week I work as a senior engineer on <barca>Barça Mobile</barca>, and I take on a small number of client projects alongside it. I'm also finishing a master's in computer science.",
-    "body2": "I've been building software for years, on every part of it: the screens people click on, the services behind them, the databases, and getting the whole thing deployed. Picking the tools for that is my job, not something you need an opinion about.",
-    "body3": "So one person holds the whole thing: the first conversation about what's going wrong, and the version your team opens on a Monday morning."
+    "body2": "I do every part of the build. The screens people click on, the services behind them, the databases, and getting the whole thing deployed. Which tools go into that is my job, not something you need an opinion about."
   },
   "contact": {
     "eyebrow": "Next step",
     "title": "Tell me what isn't working.",
-    "lede": "You don't need a document, a budget, or a clear idea of what to build. A couple of sentences about what's going wrong is plenty. If I think it isn't worth building, or that someone else would do it better, I'll say so.",
+    "lede": "You don't need a document or a budget. A couple of sentences about what's going wrong is plenty. If I think it isn't worth building, I'll say so.",
     "emailLabel": "Email",
     "messagingLabel": "Or message me on",
     "availability": "Open to new work"
@@ -248,8 +241,8 @@
     "lede": "How I work, how I decide what's worth building, and what I'm like to deal with.",
     "intro": "I'm Lorenzo. During the week I'm a senior engineer on <barca>Barça Mobile</barca>, and I'm finishing a master's in computer science.",
     "freelance": "Alongside that I take on a few client projects and keep my own products running, including RepoLens, an open-source engine that scores a codebase and shows where the score came from. That's where I try things out before they go anywhere near someone else's business.",
-    "career": "Most of what I've built ended up in front of real people, which teaches you quickly. You find out within a day if something is confusing. I've also looked after the parts nobody ever sees, the ones that decide whether the thing still works at four on a Friday afternoon.",
-    "interests": "The part I like most happens before any of that, sitting with a problem until it's clear what should exist. Plenty of people will build exactly what you describe. That isn't always the useful thing to do.",
+    "career": "Most of what I've built ended up in front of real people, and you find out within a day when something is confusing. I've looked after the parts nobody sees too, the ones that decide whether it still works at four on a Friday.",
+    "interests": "The part I like most happens before any of that, sitting with a problem until it's clear what should exist. Most projects go wrong there, not in the code.",
     "portraitAlt": "Lorenzo sitting at a table on a terrace, with the Dubai skyline behind him.",
     "principles": {
       "eyebrow": "Principles",
@@ -258,10 +251,6 @@
         "problem": {
           "title": "The brief is a guess",
           "body": "People ask for solutions, because that's easier than describing a problem. So the first thing I do is work backwards to what's actually wrong, then check that the thing you asked for would fix it."
-        },
-        "smallest": {
-          "title": "Start with the smallest useful thing",
-          "body": "A small version people are already using tells you more than a big version described in a document. It's also how you avoid paying twice for the wrong thing."
         },
         "maintainable": {
           "title": "Someone has to live with this",
@@ -279,33 +268,29 @@
       "items": {
         "noSpec": {
           "label": "You don't have a plan",
-          "body": "That's the normal case. Almost nobody arrives with one. Telling me what's slow, or what keeps going wrong, is a better start than a document guessing at the answer."
+          "body": "Almost nobody arrives with one. Telling me what's slow, or what keeps going wrong, beats a document guessing at the answer."
         },
         "notSure": {
           "label": "Not sure it's software",
-          "body": "Sometimes it isn't, and I'll tell you. Changing how something is done, or turning on a setting in software you already pay for, is often the better answer."
+          "body": "Sometimes it isn't, and I'll tell you. Turning on a setting in software you already pay for is often the better answer."
         },
         "tooSmall": {
           "label": "It feels too small",
-          "body": "A week of work that takes away something your team does every single day is a good project. I'd take that over a six-month plan that never gets finished."
+          "body": "A week of work that removes something your team does every day beats a six-month plan that never gets finished."
         },
         "existing": {
           "label": "Something already exists",
-          "body": "I can pick up what's there, finish something that stalled, or work alongside whoever built it. I'd rather not throw away something you've already paid for."
+          "body": "I can pick up what's there, finish something that stalled, or work alongside whoever built it. I'd rather not throw away what you've already paid for."
         },
         "managing": {
           "label": "You don't want to manage a developer",
-          "body": "You shouldn't have to. I'll ask when I genuinely need an answer and get on with it the rest of the time, and you'll see where things are without having to chase me."
+          "body": "You shouldn't have to. I ask when I genuinely need an answer, and you can see where things are without chasing me."
         },
         "money": {
           "label": "Cost and timing",
-          "body": "You get a price and a date before any work starts. If either one is going to move, you hear it from me while there's still time to do something about it."
+          "body": "You get a price and a date before any work starts. If either is going to move, you hear it from me while there's still time to do something."
         }
       }
-    },
-    "outro": {
-      "title": "Away from the screen.",
-      "body": "I read more newsletters than is reasonable, and I spend a lot of my own time building things with no purpose at all. No client, no deadline, nobody waiting for it. That's mostly the point."
     }
   },
   "error": {

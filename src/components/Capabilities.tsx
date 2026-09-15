@@ -10,9 +10,14 @@ import { Section, SectionHeader } from './Section';
  * These used to be six cards, which meant six boxes of equal weight and a wall
  * of body copy. As a hairline list the titles carry it: a visitor scans six
  * lines, recognises their own situation in one of them, and only then reads the
- * paragraph next to it. Pointing at a row draws an accent rule across its top
- * edge and leans the whole line into it, so the list responds without moving
+ * line next to it. Pointing at a row draws an accent rule across its top edge
+ * and leans the whole line into it, so the list responds without moving
  * anything a reader is trying to read.
+ *
+ * Each body is one sentence for the same reason. This section sits after a
+ * pinned stage of five case studies and five builds, so by the time a visitor
+ * reaches it they have read a lot; six paragraphs here turned the list back
+ * into the wall the cards were. The title is what does the recognising.
  */
 export const Capabilities = () => {
 	const { t } = useTranslation();
