@@ -65,7 +65,15 @@ export const Hero = () => {
 							{t('hero.status')}
 						</motion.p>
 
-						<h1 className='statement mt-7 text-display sm:mt-9 lg:mt-11'>
+						{/*
+						 * The width cap is the composition's own width, expressed the same
+						 * way. The visual is absolutely positioned, so nothing in the
+						 * normal flow knows it is there: a locale whose headline runs
+						 * longer than English slid straight under the panel and was painted
+						 * over. Capping the column means the worst case is a line that
+						 * wraps, not a line that disappears.
+						 */}
+						<h1 className='statement mt-7 text-display sm:mt-9 lg:mt-11 lg:max-w-[calc(100%-clamp(19rem,29vw,27rem)-2.5rem)]'>
 							{headlineLines.map((line, index) => (
 								<StatementLine
 									className={index === headlineLines.length - 1 ? 'italic' : ''}

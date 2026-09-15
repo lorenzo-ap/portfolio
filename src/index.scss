@@ -254,48 +254,23 @@ a {
     color: var(--text);
   }
 
-  /* The lit copy is the same outlines in the accent, clipped to whatever the
-     stop has already passed. It sits in a <use> shadow tree, so the ink takes
-     its fill from an attribute on the group rather than from a rule here. */
-  .wordmark__lit {
-    color: var(--accent);
-  }
+  /* Hover: the accent washes across the name.
 
+     Nothing moves. Each letter takes the colour a beat after the one to its
+     left, so the change reads left to right the way the name is read, and it
+     lands last on the stop, which is cobalt already. The delay is the only
+     reason the glyphs are separate paths.
+
+     `fill` is set to the variable rather than left as `currentColor`, because a
+     transition needs a property that actually changes on this element. */
   .wordmark__ink {
-    fill: currentColor;
+    fill: var(--text);
+    transition: fill 0.3s var(--ease-expo) var(--wm-d, 0ms);
   }
 
-  .wordmark__lit {
+  .logo-link:hover .wordmark__ink,
+  .logo-link:focus-visible .wordmark__ink {
     fill: var(--accent);
-  }
-
-  /* Hover: a split-flap.
-
-     Every letter is two copies of itself. The ink rolls up and out of the box
-     while the cobalt twin rolls in from underneath, and each glyph starts a
-     beat after the one to its right, so the flap travels back from the stop to
-     the L. The box clips at the viewBox, which is what hides both copies while
-     they are outside it.
-
-     This is the one thing the mark can do that a webfont logo cannot, since
-     the glyphs are separate outlines rather than one merged shape. */
-  .wordmark__ink,
-  .wordmark__lit {
-    transform-box: fill-box;
-    transform-origin: center;
-    transition: transform 0.32s var(--ease-expo) var(--wm-d, 0ms);
-  }
-
-  .wordmark__lit {
-    transform: translateY(26px);
-  }
-
-  .logo-link:hover .wordmark__ink {
-    transform: translateY(-26px);
-  }
-
-  .logo-link:hover .wordmark__lit {
-    transform: translateY(0);
   }
 
   .wordmark__stop {
@@ -337,8 +312,7 @@ a {
 
   /* Colour still arrives, it just arrives at once. */
   @media (prefers-reduced-motion: reduce) {
-    .wordmark__ink,
-    .wordmark__lit {
+    .wordmark__ink {
       transition: none;
     }
   }
@@ -366,15 +340,29 @@ a {
     text-wrap: balance;
   }
 
-  /* One word's clipping box. The padding gives descenders somewhere to live
-     while they're still below the line, and the negative margin hands that
-     space straight back so line spacing is untouched. */
+  /* One word's clipping box.
+
+     `overflow: hidden` is what makes the uncover work, and it clips on all four
+     sides, so the box has to be bigger than the word on all four sides. Each
+     side pads outwards and then hands the space straight back with a negative
+     margin, so nothing about line spacing, word spacing or alignment moves.
+
+     Both directions are load-bearing, and both were measured rather than
+     guessed. Sideways: the hook of IBM Plex Serif's `f` overhangs its own
+     advance width by about 0.056em, so any word ending in one came out with a
+     flat top right, which is where `part of each.` lost the top of its `f`.
+     Upwards: the serif sizes all run a line-height under 1, and a Romanian
+     circumflex sits about 0.08em above the box that leaves. */
   .statement__mask {
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
+    padding-top: 0.22em;
+    margin-top: -0.22em;
     padding-bottom: 0.2em;
     margin-bottom: -0.2em;
+    padding-inline: 0.1em;
+    margin-inline: -0.1em;
   }
 
   .dot {
