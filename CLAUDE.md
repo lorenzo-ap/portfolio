@@ -168,7 +168,7 @@ Three locales (`en`, `ro`, `ru`) in `src/i18n/locales/*.json`, one `translation`
 To add a case study:
 
 1. Add a `CaseStudyModel` to `caseStudies`. `hue` drives the generated poster and must stay in the 200-250 range.
-2. Add `summary`, `situation`, `contribution`, `challenge`, `proof` and `role` under `work.cases.<key>` in **all three** locale files. The key is type-checked against `en.json`.
+2. Add `summary`, `situation`, `contribution`, `challenge` and `proof` under `work.cases.<key>` in **all three** locale files. The key is type-checked against `en.json`.
 3. Optionally set `icon` (a file in `public/icons/`), `image`, `primaryLabelKey` and `secondaryLink`.
 4. The home and work pages both say "five" in the copy. Change the counts in all three locales if the number of case studies changes.
 

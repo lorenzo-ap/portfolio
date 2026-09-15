@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { buildGroups } from '../data/projects';
 import type { BuildGroupModel } from '../types';
-import { ActionLink } from './ActionLink';
 import { ArrowUpRightIcon } from './icons';
 import { Reveal, RevealGroup, RevealItem } from './Reveal';
 import { Section, SectionHeader } from './Section';
@@ -10,43 +9,32 @@ import { Section, SectionHeader } from './Section';
 /**
  * The five builds, as two topics rather than five entries.
  *
- * Nine separate things under one heading is a list nobody finishes. Grouped by
+ * Five separate things under one heading is a list nobody finishes. Grouped by
  * what they are, the reader takes in two ideas and can go deeper on either, and
  * the pairing is the point on its own: the same invented restaurant group seen
  * from the dining room and from the office.
+ *
+ * This only runs on /work. The home page used to carry a names-only version of
+ * it directly under the case studies, which meant ten things to open before the
+ * page had made its case.
  */
 
-/** Label over title over supporting line. Shared by both treatments. */
-const GroupHeading = ({ group, stacked = false }: { group: BuildGroupModel; stacked?: boolean }) => {
+/** Label over title, with the supporting line in the second column. */
+const GroupHeading = ({ group }: { group: BuildGroupModel }) => {
 	const { t } = useTranslation();
-	const label = (
-		<p className='font-medium font-mono text-eyebrow text-faded-text uppercase'>
-			{t(`builds.groups.${group.key}.label`)}
-		</p>
-	);
-	const title = (
-		<h3 className='mt-5 max-w-[24ch] font-medium text-text text-title'>{t(`builds.groups.${group.key}.title`)}</h3>
-	);
-	const lede = <p className='max-w-prose text-body-sm text-faded-text'>{t(`builds.groups.${group.key}.lede`)}</p>;
-
-	if (stacked) {
-		return (
-			<div>
-				{label}
-				{title}
-				<div className='mt-4'>{lede}</div>
-			</div>
-		);
-	}
 
 	return (
 		<div className='grid gap-x-16 gap-y-4 lg:grid-cols-12'>
 			<div className='lg:col-span-5'>
-				{label}
-				{title}
+				<p className='font-medium font-mono text-eyebrow text-faded-text uppercase'>
+					{t(`builds.groups.${group.key}.label`)}
+				</p>
+				<h3 className='mt-5 max-w-[24ch] font-medium text-text text-title'>{t(`builds.groups.${group.key}.title`)}</h3>
 			</div>
 
-			<div className='lg:col-span-6 lg:col-start-7 lg:self-end'>{lede}</div>
+			<div className='lg:col-span-6 lg:col-start-7 lg:self-end'>
+				<p className='max-w-prose text-body-sm text-faded-text'>{t(`builds.groups.${group.key}.lede`)}</p>
+			</div>
 		</div>
 	);
 };
@@ -97,47 +85,6 @@ const BuildGroup = ({ group }: { group: BuildGroupModel }) => {
 				))}
 			</RevealGroup>
 		</div>
-	);
-};
-
-/**
- * The home page version: both topics side by side, names only.
- *
- * The home page already spends a whole pinned stage on the case studies, so
- * this one stays at two blocks. A visitor reads what the two groups are and
- * opens whichever name they recognise; the sentence explaining each build waits
- * on /work for somebody who wants it.
- */
-export const Builds = () => {
-	const { t } = useTranslation();
-
-	return (
-		<Section id='builds'>
-			<SectionHeader eyebrow={t('builds.eyebrow')} lede={t('builds.lede')} title={t('builds.title')} />
-
-			<div className='mt-[var(--block-gap)] grid gap-x-16 gap-y-12 lg:grid-cols-2'>
-				{buildGroups.map((group, index) => (
-					<Reveal delay={index * 0.1} key={group.key}>
-						<div className='border-border border-t pt-7 sm:pt-9'>
-							<GroupHeading group={group} stacked />
-
-							{/*
-							 * The same treatment every other external project link on the
-							 * site gets, so the arrow says these open somewhere else before
-							 * anybody has to hover to find out.
-							 */}
-							<ul className='mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 sm:mt-9'>
-								{group.builds.map((build) => (
-									<li key={build.key}>
-										<ActionLink external href={build.link} label={build.name} />
-									</li>
-								))}
-							</ul>
-						</div>
-					</Reveal>
-				))}
-			</div>
-		</Section>
 	);
 };
 

@@ -244,9 +244,17 @@ export const WorkPanel = ({ caseStudy, index, setActive }: WorkPanelProps) => {
 	);
 };
 
-const narrativeRows = ['situation', 'contribution', 'challenge', 'proof', 'role'] as const;
+const narrativeRows = ['situation', 'contribution', 'challenge', 'proof'] as const;
 
-/** Work page: the full Situation → What I did → Hard part → What this shows story. */
+/**
+ * Work page: the full Situation → What I did → Hard part → What this shows story.
+ *
+ * There used to be a fifth row, "My role". It said in a sentence what "What I
+ * did" already opens with, next to a `kind` label that has said "Client work"
+ * or "My own product" further up the same article. Five rows per project over
+ * five projects is twenty-five paragraphs, so the one that was pure restatement
+ * went.
+ */
 interface CaseStudyArticleProps extends CaseStudyProps {
 	/** Anchor target for the index under the page header. */
 	id?: string;

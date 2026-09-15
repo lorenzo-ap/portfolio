@@ -16,7 +16,7 @@ import {
 import { processStepKeys } from '../data/capabilities';
 import { site } from '../data/site';
 
-const principleKeys = ['problem', 'smallest', 'maintainable', 'ai'] as const;
+const principleKeys = ['problem', 'maintainable', 'ai'] as const;
 const workingKeys = ['noSpec', 'notSure', 'tooSmall', 'existing', 'managing', 'money'] as const;
 
 /** Below this the left columns stick while their lists scroll past. */
@@ -146,17 +146,6 @@ export const AboutPage = () => {
 							</MarkerRow>
 						))}
 					</RevealGroup>
-				</div>
-			</Section>
-
-			<Section>
-				<div className='grid gap-x-16 gap-y-8 lg:grid-cols-12'>
-					<div className='lg:col-span-5'>
-						<Statement className='max-w-[14ch] text-headline'>{t('about.outro.title')}</Statement>
-					</div>
-					<Reveal className='lg:col-span-6 lg:col-start-7' delay={0.14}>
-						<p className='max-w-prose text-body text-faded-text'>{t('about.outro.body')}</p>
-					</Reveal>
 				</div>
 			</Section>
 
