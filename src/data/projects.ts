@@ -1,8 +1,9 @@
 import type { BuildGroupModel, CaseStudyModel } from '../types';
 
 /**
- * Four pieces of work, in the order they're meant to be read:
- * real product → complex product → my own product → teaching.
+ * Five pieces of work, in the order they're meant to be read:
+ * the day job → client work → a product of my own → the engine I published →
+ * teaching.
  *
  * `key` resolves the Situation / What I did / Hard part / What this shows copy
  * from the locale files, so every language tells the same story.
@@ -42,6 +43,25 @@ const ainterest: CaseStudyModel = {
 	hue: 236
 };
 
+/**
+ * Built alone and published, so the whole of it can be read: the analysis
+ * engine, the API, the interface and the deployment are all one person's
+ * decisions, and the repository is the evidence.
+ */
+const repolens: CaseStudyModel = {
+	key: 'repolens',
+	name: 'RepoLens',
+	link: 'https://repolens-sepia.vercel.app/r/vercel/swr',
+	kind: 'openSource',
+	primaryLabelKey: 'seeItRun',
+	secondaryLink: {
+		href: 'https://github.com/lorenzo-ap/repolens',
+		labelKey: 'viewSource'
+	},
+	icon: '/icons/repolens.svg',
+	hue: 246
+};
+
 /** Not software. Same weight on the page, deliberately different in shape. */
 const aiForFrontend: CaseStudyModel = {
 	key: 'aiForFrontend',
@@ -58,17 +78,17 @@ const aiForFrontend: CaseStudyModel = {
  * straight through, and the piece that isn't software says so through its
  * `kind` rather than by being kept in a separate array.
  */
-export const caseStudies: CaseStudyModel[] = [barcaMobile, examin, ainterest, aiForFrontend];
+export const caseStudies: CaseStudyModel[] = [barcaMobile, examin, ainterest, repolens, aiForFrontend];
 
 /* -----------------------------------------------------------------------------
    Builds
 
    Five complete things with no client behind them, for businesses that don't
    exist. They're kept out of `caseStudies` on purpose: a case study is work
-   somebody paid for and can be asked about, and putting invented restaurants in
-   the same list would quietly claim otherwise.
+   somebody can go and ask about, and putting invented restaurants in the same
+   list would quietly claim otherwise.
 
-   They're grouped rather than listed because five more names under four case
+   They're grouped rather than listed because five more names under five case
    studies is a longer page, not a better one. Two topics read as two things.
    -------------------------------------------------------------------------- */
 

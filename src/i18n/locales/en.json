@@ -7,7 +7,7 @@
   },
   "meta": {
     "home": "I'm Lorenzo. I build software for the parts of a business that are still done by hand. You don't need to arrive with a plan. Tell me what isn't working and we'll work out the rest.",
-    "work": "Four projects: a travel eSIM, software that watches camera feeds, a product of my own, and a course I wrote. For each one, what the situation was, what I did, and what was hard about it.",
+    "work": "Five projects: a travel eSIM, software that watches camera feeds, a product of my own, an open-source engine that scores a codebase, and a course I wrote. For each one, what the situation was, what I did, and what was hard about it.",
     "about": "How I work, what I do before I write any code, and a bit about who I am."
   },
   "nav": {
@@ -24,10 +24,12 @@
     "startConversation": "Email me",
     "seeWork": "See what I've built",
     "emailMe": "Email me",
-    "allWork": "See all four",
+    "allWork": "See all five",
     "visitSite": "Visit the site",
     "appStoreLink": "App Store",
     "viewCourse": "See the course",
+    "seeItRun": "Try the live demo",
+    "viewSource": "Source on GitHub",
     "moreAbout": "More about me",
     "backHome": "Back home",
     "backToTop": "Back to top",
@@ -87,10 +89,10 @@
   },
   "work": {
     "eyebrow": "Selected work",
-    "title": "Four projects, and the hard part of each.",
-    "lede": "A travel eSIM sold under the FC Barcelona name, software that watches camera feeds for a living, a product of my own, and a course I wrote.",
-    "pageTitle": "Four projects, and the hard part of each.",
-    "pageLede": "Not everything I've made. These four cover the most ground: a product with paying customers, a complicated one I helped shape, one that was entirely mine, and one that isn't software at all.",
+    "title": "Five projects, and the hard part of each.",
+    "lede": "A travel eSIM under the FC Barcelona name, software that watches camera feeds, a product of my own, an open-source engine that scores a codebase, and a course I wrote.",
+    "pageTitle": "Five projects, and the hard part of each.",
+    "pageLede": "Not everything I've made. These five cover the most ground: a product with paying customers, a complicated product I helped define, one entirely mine, an engine I wrote alone and published, and one that isn't software.",
     "labels": {
       "situation": "The situation",
       "contribution": "What I did",
@@ -106,6 +108,7 @@
       "live": "Live product",
       "client": "Client work",
       "product": "My own product",
+      "openSource": "Open source",
       "course": "Teaching"
     },
     "course": {
@@ -122,34 +125,42 @@
     "cases": {
       "barcaMobile": {
         "summary": "A travel eSIM sold under the FC Barcelona name. The product I work on day to day.",
-        "situation": "Getting online in another country still means either a bill you find out about afterwards or a queue at an airport shop. Barça Mobile sells mobile data in over 170 countries under a name people already know, which doesn't leave much room for a clumsy screen. The person using it is usually standing in a terminal with no signal yet.",
-        "contribution": "I'm a senior engineer on the team that builds it, and I work across the product rather than one corner of it. The app people manage their plan in, the site where they choose one, and the parts behind both. In practice that means picking a destination, buying a plan, getting the eSIM onto the phone and checking how much data is left. Those are the moments where somebody either gets connected or gives up and walks to a shop.",
-        "challenge": "Installing an eSIM is the step that doesn't forgive you. It happens once, on a phone the person has never set up this way, usually on borrowed airport wifi, and if it goes wrong they don't try again. So most of the care goes into a handful of screens where things can fail quietly, and into being sure a change hasn't broken anything for the people already using it.",
-        "proof": "I spend my working week inside a real product with paying customers and a brand attached to it. That's a different discipline from building something and moving on. Release after release, other people's code, decisions you have to defend, and problems that turn up long after you thought you'd finished.",
-        "role": "Senior software engineer on the product team, across the app, the site and what sits behind them."
+        "situation": "Barça Mobile sells mobile data in over 170 countries. The person buying it is usually standing in a terminal with no signal yet.",
+        "contribution": "Senior engineer on the team that builds it, across the app, the site and the parts behind both. Picking a destination, buying a plan, getting the eSIM onto the phone.",
+        "challenge": "Installing an eSIM happens once, on borrowed airport wifi, and if it goes wrong nobody tries again. Most of the care goes into the few screens that can fail quietly.",
+        "proof": "A real product with paying customers, release after release. Other people's code, and problems that surface long after you thought you were finished.",
+        "role": "Senior software engineer on the product team: the app, the site and what sits behind them."
       },
       "examin": {
         "summary": "Software that watches camera feeds and tells people what just happened.",
-        "situation": "Plenty of businesses have cameras everywhere and nobody with the time to watch them. A cracked solar panel or a pallet left where it shouldn't be is already on camera, and it gets noticed hours later if it gets noticed at all. Examin uses cameras a company already owns to say what happened while it's still happening, across jobs as different as inspecting solar farms and reading number plates.",
-        "contribution": "I was brought in to build the product. That covers everything the person on shift touches: the live views, the alerts, the evidence attached to each one, the settings that decide what's worth interrupting somebody for. It also covers the work underneath that keeps all of it connected to the cameras and the detections coming out of them. There was no finished specification, so I was part of deciding what the product should be.",
-        "challenge": "Restraint. Software like this can flag almost anything, and an alert nobody trusts is worse than no alert, because people mute it inside a week. So a lot of the work went into what not to show, and into what somebody needs in the one second they spend deciding whether to believe it. The frame itself, the time, how sure the system is. Then making one product cover very different industries without it turning into a settings screen nobody can face.",
-        "proof": "Somebody handed me a complicated product and let me help decide what it should be. If what you have is a suspicion that something in your process is being missed, and no clear idea what the answer looks like, that's the shape of problem I'm used to.",
-        "role": "Brought in as the developer: the product people use, the parts behind it, and a say in what got built."
+        "situation": "Plenty of businesses have cameras everywhere and nobody with time to watch them. Examin uses the cameras they already own, across jobs as different as solar farms and number plates.",
+        "contribution": "Brought in to build the product: live views, alerts, the evidence attached to each one, and the parts underneath keeping it connected to the cameras. There was no specification, so I helped decide what it should be.",
+        "challenge": "Restraint. An alert nobody trusts is worse than no alert, because people mute it inside a week. Most of the work went into what not to show.",
+        "proof": "Somebody handed me a complicated product and let me help decide what it should be. That's the shape of problem I'm used to.",
+        "role": "Brought in as the developer: the product, the parts behind it, and a say in what got built."
       },
       "ainterest": {
         "summary": "My own product. Make images with AI, then put them somewhere other people can see them.",
-        "situation": "Nobody asked for this one. Every tool for making images with AI buries the results in a chat window. Whatever you made last week is gone unless you thought to save it, and you never see what anyone else is doing. That felt like the wrong shape for something people mostly do for the pleasure of it.",
-        "contribution": "I built the whole thing and it's live. You describe what you want and you get an image. Everything you make stays in your account, and you can publish any of it to a feed other people browse and search. Accounts, generation, the feed and the bill for keeping it running are all mine. There was no specification, because there was nobody to write one.",
-        "challenge": "Almost none of the difficulty was the AI. Making one image is slow, costs real money every single time, and sometimes simply fails. The app has to be honest about that while you wait without looking broken, and stay quick as the feed fills up. Every wrong decision was one I paid for myself that month.",
-        "proof": "Somebody had to decide what this was, what to leave out, what happens when it fails, and when it was good enough to put a stranger in front of. Here that was all me. Someone has to make those same decisions on your project too.",
+        "situation": "Every tool for making images with AI buries the results in a chat window. Whatever you made last week is gone, and you never see what anyone else is doing.",
+        "contribution": "Built the whole thing and it's live. Describe what you want, get an image, keep it in your account, publish it to a feed other people browse. Accounts, generation, the feed and the bill are mine.",
+        "challenge": "Almost none of the difficulty was the AI. One image is slow, costs real money every time, and sometimes fails. The app has to be honest about that without looking broken.",
+        "proof": "Someone had to decide what this was, what to leave out, and when it was good enough to show a stranger. Here that was me.",
         "role": "Mine, start to finish: the idea, every product decision, the build, and the bills."
+      },
+      "repolens": {
+        "summary": "Point it at a GitHub repository and it scores the codebase, with the file and line behind every point.",
+        "situation": "Everyone has an opinion about whether a codebase is healthy. Almost nobody can show you where the opinion came from.",
+        "contribution": "All of it, alone. Eight analyzers over the TypeScript AST, the import graph, the manifests, the lockfile and git history. A scoring model that shows its arithmetic, a Postgres queue, and the interface on top.",
+        "challenge": "It reads code strangers wrote, so that code never runs: no install, no plugins, no scripts. The pipeline asserts exact findings against a fixture repo, so scoring can't drift.",
+        "proof": "Most of the job in one project: analysis engine, queue, database, deployment, product. Every line is public, and the demo runs on a real open-source repo.",
+        "role": "Mine entirely: architecture, analyzers, API, interface and deployment."
       },
       "aiForFrontend": {
         "summary": "An online course teaching developers to work with AI properly. I wrote it and I teach it.",
-        "situation": "Developers picked up AI tools in a hurry and started using them by feel. Some of it saves an absurd amount of time. Some of it quietly eats an afternoon and hands you something that looks right and isn't. Nobody was saying plainly where the line falls.",
-        "contribution": "I decided what the course covers, wrote every example and recorded all of it. Two modules and eleven lessons: how these tools actually work and where they mislead you, how to ask for something and get back something usable, and how to use them on real work like someone else's code, finding bugs, tests and documentation. It's published by Itlogia, a licensed online school, and it's available now.",
-        "challenge": "These tools change every few months. Teach the tools and the course is out of date before anyone finishes it, so I taught the habits instead: what to check, what never to trust, where a person still has to think. Working that out meant putting into words what I'd been doing on instinct, which took longer than recording it.",
-        "proof": "You can't hide a vague explanation from people who will go and try it themselves that evening. Writing the course made me put a line on paper about where these tools stop being useful, and that's the same line I use when a client asks whether AI is the answer to their problem.",
+        "situation": "Developers picked up AI tools in a hurry and use them by feel. Some of it saves hours. Some of it quietly hands you something that looks right and isn't.",
+        "contribution": "Wrote every example and recorded all of it. Two modules, eleven lessons: where these tools mislead you, how to ask for something usable, and how to use them on someone else's code, bugs and tests. Published by Itlogia.",
+        "challenge": "These tools change every few months, so a course about the tools would date immediately. I taught the habits instead: what to check, what never to trust.",
+        "proof": "You can't hide a vague explanation from people who will go and try it that evening. It's also where I drew the line I use when a client asks about AI.",
         "role": "Author and instructor. I chose what it covers, wrote the material and recorded every lesson."
       }
     }
@@ -221,8 +232,8 @@
     "eyebrow": "Who you'd be working with",
     "title": "One person, start to finish.",
     "body1": "I'm Lorenzo. During the week I work as a senior engineer on <barca>Barça Mobile</barca>, and I take on a small number of client projects alongside it. I'm also finishing a master's in computer science.",
-    "body2": "I've been building software for years and I've worked on every part of it, from the screens people click on to everything running quietly behind them. Picking the tools for that is my job, not something you need an opinion about.",
-    "body3": "So one person holds the whole thing, from the first conversation about what's going wrong to the version your team opens on a Monday morning."
+    "body2": "I've been building software for years, on every part of it: the screens people click on, the services behind them, the databases, and getting the whole thing deployed. Picking the tools for that is my job, not something you need an opinion about.",
+    "body3": "So one person holds the whole thing: the first conversation about what's going wrong, and the version your team opens on a Monday morning."
   },
   "contact": {
     "eyebrow": "Next step",
@@ -236,7 +247,7 @@
     "title": "The longer version.",
     "lede": "How I work, how I decide what's worth building, and what I'm like to deal with.",
     "intro": "I'm Lorenzo. During the week I'm a senior engineer on <barca>Barça Mobile</barca>, and I'm finishing a master's in computer science.",
-    "freelance": "Alongside that I take on a few client projects and keep my own products running. That's where I try things out before they go anywhere near someone else's business.",
+    "freelance": "Alongside that I take on a few client projects and keep my own products running, including RepoLens, an open-source engine that scores a codebase and shows where the score came from. That's where I try things out before they go anywhere near someone else's business.",
     "career": "Most of what I've built ended up in front of real people, which teaches you quickly. You find out within a day if something is confusing. I've also looked after the parts nobody ever sees, the ones that decide whether the thing still works at four on a Friday afternoon.",
     "interests": "The part I like most happens before any of that, sitting with a problem until it's clear what should exist. Plenty of people will build exactly what you describe. That isn't always the useful thing to do.",
     "portraitAlt": "Lorenzo sitting at a table on a terrace, with the Dubai skyline behind him.",

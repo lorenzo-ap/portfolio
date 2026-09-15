@@ -1,7 +1,7 @@
 import type { BuildGroupKey, BuildKey, CaseStudyKey, ProjectKindKey } from './i18n';
 
 /** Labels available to a project's external links. Matches keys under `actions`. */
-export type ProjectLinkLabelKey = 'visitSite' | 'appStoreLink' | 'viewCourse';
+export type ProjectLinkLabelKey = 'visitSite' | 'appStoreLink' | 'viewCourse' | 'seeItRun' | 'viewSource';
 
 /** Narrative case study. This is the only format the site uses. */
 export interface CaseStudyModel {

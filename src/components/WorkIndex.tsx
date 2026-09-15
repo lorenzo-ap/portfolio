@@ -8,7 +8,7 @@ interface WorkIndexProps {
 }
 
 /**
- * The four projects as a list you can jump from, under the work page header.
+ * The projects as a list you can jump from, under the work page header.
  *
  * The header alone was a title and a paragraph with most of a screen of
  * nothing beneath them. This gives that space a job: the reader sees what's

@@ -13,14 +13,14 @@ const pad = (value: number) => String(value).padStart(2, '0');
 /**
  * Selected work, as a stage rather than a list.
  *
- * The poster stays pinned while the four projects scroll through beside it, so
- * the imagery is at full size for the entire section instead of appearing and
- * leaving four times. Crossing the middle of the viewport is what changes it,
- * which means scroll position alone drives the whole thing and there is nothing
- * to click to make it work.
+ * The poster stays pinned while the projects scroll through beside it, so the
+ * imagery is at full size for the entire section instead of appearing and
+ * leaving once per project. Crossing the middle of the viewport is what
+ * changes it, which means scroll position alone drives the whole thing and
+ * there is nothing to click to make it work.
  *
  * Below the pinning breakpoint there is no stage: each project carries its own
- * poster and the section degrades to four ordinary blocks.
+ * poster and the section degrades to a stack of ordinary blocks.
  */
 export const SelectedWork = () => {
 	const { t } = useTranslation();

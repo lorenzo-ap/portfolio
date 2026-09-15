@@ -103,7 +103,7 @@ const BuildGroup = ({ group }: { group: BuildGroupModel }) => {
 /**
  * The home page version: both topics side by side, names only.
  *
- * The home page already spends a whole pinned stage on four case studies, so
+ * The home page already spends a whole pinned stage on the case studies, so
  * this one stays at two blocks. A visitor reads what the two groups are and
  * opens whichever name they recognise; the sentence explaining each build waits
  * on /work for somebody who wants it.

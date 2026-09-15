@@ -163,18 +163,18 @@ Three locales (`en`, `ro`, `ru`) in `src/i18n/locales/*.json`, one `translation`
 
 ## Adding work
 
-`src/data/projects.ts` exports one list, `caseStudies`, in the order the story is told: real product, complex product, my own product, teaching. The piece that isn't software says so through its `kind`, not by living in a separate array.
+`src/data/projects.ts` exports one list, `caseStudies`, in the order the story is told: the day job, client work, a product of my own, the open-source engine, teaching. The piece that isn't software says so through its `kind`, not by living in a separate array.
 
 To add a case study:
 
 1. Add a `CaseStudyModel` to `caseStudies`. `hue` drives the generated poster and must stay in the 200-250 range.
 2. Add `summary`, `situation`, `contribution`, `challenge`, `proof` and `role` under `work.cases.<key>` in **all three** locale files. The key is type-checked against `en.json`.
 3. Optionally set `icon` (a file in `public/icons/`), `image`, `primaryLabelKey` and `secondaryLink`.
-4. The home and work pages both say "four" in the copy. Change the counts in all three locales if the number of case studies changes.
+4. The home and work pages both say "five" in the copy. Change the counts in all three locales if the number of case studies changes.
 
 `ProjectPoster` shows a real screenshot when `image` is set (put it in `public/`) and otherwise composes a poster from the product's own icon, its name in the editorial serif, and the address it lives at. It deliberately never mocks up a UI that doesn't exist, and it deliberately isn't dressed as a browser window.
 
-**The home page shows the work as a pinned stage.** The poster column sticks while the four projects scroll past it, and each panel reports itself as active when it crosses the middle of the viewport (`WorkPanel` in `CaseStudy.tsx`). Below the pinning breakpoint there is no stage: each panel carries its own poster and the section degrades to four ordinary blocks. `/work` uses `CaseStudyArticle` instead, which tells the full Situation / What I did / Hard part / What this shows story under a full-width poster.
+**The home page shows the work as a pinned stage.** The poster column sticks while the projects scroll past it, and each panel reports itself as active when it crosses the middle of the viewport (`WorkPanel` in `CaseStudy.tsx`). Below the pinning breakpoint there is no stage: each panel carries its own poster and the section degrades to a stack of ordinary blocks. `/work` uses `CaseStudyArticle` instead, which tells the full Situation / What I did / Hard part / What this shows story under a full-width poster.
 
 ## Contact details
 
