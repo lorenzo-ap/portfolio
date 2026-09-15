@@ -1,0 +1,6 @@
+<svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+	<title>RepoLens</title>
+	<rect fill="#18181b" height="32" rx="6" width="32" />
+	<circle cx="14" cy="14" fill="none" r="7" stroke="#fafafa" stroke-width="3" />
+	<path d="M19.5 19.5L26 26" stroke="#fafafa" stroke-linecap="round" stroke-width="3" />
+</svg>

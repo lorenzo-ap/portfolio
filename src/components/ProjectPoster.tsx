@@ -54,8 +54,8 @@ const hostnameOf = (link: string) => {
 
 /**
  * Two accent-family washes over the theme's poster base. The hue comes from the
- * project and stays inside 200-250, so four posters read as a set rather than
- * four different brands.
+ * project and stays inside 200-250, so the posters read as a set rather than as
+ * five different brands.
  */
 const fieldStyle = (hue: number) => ({
 	backgroundImage: [
